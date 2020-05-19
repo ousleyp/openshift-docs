@@ -1,8 +1,8 @@
 // Module included in the following assemblies:
 //
-// * cnv/cnv_users_guide/cnv-manage-virtual-machine-instances.adoc
+// * virt/virtual_machines/virt-manage-virtual-machine-instances.adoc
 
-[id="cnv-listing-vmis-web_{context}"]
+[id="virt-listing-vmis-web_{context}"]
 = Listing standalone virtual machine instances using the web console
 
 Using the web console, you can list and view standalone virtual machine instances in your cluster that are not owned by virtual machines.
