@@ -1,4 +1,4 @@
-[id="virt-manage-virtual-machine-instances.adoc"]
+[id="virt-manage-virtual-machine-instances"]
 = Managing virtual machine instances
 include::modules/virt-document-attributes.adoc[]
 :context: virt-manage-virtual-machine-instances
