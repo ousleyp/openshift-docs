@@ -61,8 +61,13 @@ Other operating system templates shipped with {VirtProductName} are not supporte
 //CNV-9455: Improvements to KubeVirt and CDI ensure that storage is allocated on the correct node
 
 //CNV-9456: When importing VM disk images, you can now control which multus network is used
+* You can now add select supported annotations in the `metadata.annotations` field of a `DataVolume` object.
+** To control which network the Containerized Data Importer (CDI) uses when importing virtual machine disk images, edit the `metadata.annotations` field of the `DataVolume` object, adding one of the following annotations:
+`k8s.v1.cni.cncf.io/networks: <network_name>`:: If you use this annotation, the transfer pods use both the default network from the cluster and the secondary Multus network.
+`v1.multus-cni.io/default-network: <network_name>`:: If you use this annotation, the transfer pods use the Multus network by default.
+** By default, Istio sidecar injection to transfer pods is disabled. You can override the default option by using the following annotation:
+`sidecar.istio.io/inject: “true”`::  This option enables sidecar injection to the transfer pods.
 
-* The Containerized Data Importer (CDI) can now xref:../virt/virtual_machines/virtual_disks/virt-using-preallocation-for-datavolumes.adoc#virt-using-preallocation-for-datavolumes[preallocate disk space] to import and upload data and create blank data volumes at a faster speed.
 
 [id="virt-2-6-web-new"]
 === Web console
@@ -70,7 +75,8 @@ Other operating system templates shipped with {VirtProductName} are not supporte
 //CNV-9312: The VM wizard has been completely redesigned, simplifying VM creation
 * The virtual machine wizard has been redesigned to simplify the process of xref:../virt/virtual_machines/virt-create-vms.adoc#virt-create-vms[creating virtual machines] by using preconfigured xref:../virt/vm_templates/virt-creating-vm-template.adoc#virt-creating-vm-template[virtual machine templates].
 
-* When you xref:../virt/vm_templates/virt-creating-vm-template.adoc#virt-creating-template-wizard-web_virt-creating-vm-template[create a virtual machine template with the interactive wizard], selecting the *Operating System* will automatically select the default *Flavor* and *Workload Type* for that operating system. Virtual machines created from a virtual machine template now have these details automatically selected.
+//CNV-9305: Templates in UI now contain default flavor and workload profile
+
 
 [id="virt-2-6-changes"]
 == Notable technical changes
@@ -78,20 +84,17 @@ Other operating system templates shipped with {VirtProductName} are not supporte
 //CNV-9339: When deploying from the GUI, the CR for the HCO is now created during subscription
 * The procedure for xref:../virt/install/installing-virt-web.adoc#installing-virt-web[installing {VirtProductName} in the web console] has been streamlined. You can now create the `HyperConverged` custom resource immediately after installing the {VirtProductName} Operator by clicking *Create HyperConverged*.
 
+//CNV-9457: CDI configuration parameters have moved from the CDIConfig object to the CDI CR
+
 //CNV-10153: BareMetalPlatform removed from HCO CR
 * Previously, there was a `spec.BareMetalPlatform` field in the `HyperConverged` object. This field has been removed.
-
-* The Containerized Data Importer (CDI) configuration parameters have moved from the `CDIConfig` object to the `CDI` object. All changes to the CDI configuration must now be made in the `spec.config` field of the `CDI` object.
 
 [id="virt-2-6-known-issues"]
 == Known issues
 
 //New known issues for 2.6 (WIP)
 
-* Some CDI operations are currently not xref:../virt/virtual_machines/virtual_disks/virt-using-preallocation-for-datavolumes.adoc#virt-using-preallocation-for-datavolumes[preallocated] when requested. These include:
-
-** Creating blank block disks
-** Importing VMWare disk images
+//CNV-9288: Blank block disks and VMware imported disk images are not preallocated even if requested
 
 //BZ-1855182 (https://bugzilla.redhat.com/show_bug.cgi?id=1855182): [Storage] Clone could not be continued after virtctl stop the vm if the clone dv have been created for more than 3 minutes
 
