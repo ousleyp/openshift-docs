@@ -19,7 +19,6 @@ Learn more about xref:../virt/about-virt.adoc#about-virt[what you can do with {V
 include::modules/virt-supported-cluster-version.adoc[leveloffset=+2]
 
 [id="virt-guest-os"]
-//CNV-8167  Supported guest operating systems
 === Supported guest operating systems
 {VirtProductName} guests can use the following operating systems:
 
@@ -28,6 +27,8 @@ include::modules/virt-supported-cluster-version.adoc[leveloffset=+2]
 * Microsoft Windows 10.
 
 Other operating system templates shipped with {VirtProductName} are not supported.
+
+//CNV-8167  Supported guest operating systems
 
 [id="virt-4-8-inclusive-language"]
 == Making open source more inclusive
@@ -45,9 +46,6 @@ The SVVP Certification applies to:
 ** Intel and AMD CPUs.
 * The Containerized Data Importer (CDI) now uses the {product-title} xref:../networking/enable-cluster-wide-proxy.adoc#enable-cluster-wide-proxy[cluster-wide proxy configuration].
 
-//CNV-9518 Release Note for calico
-* {VirtProductName} now supports third-party Container Network Interface (CNI) plug-ins that are link:https://access.redhat.com/articles/5436171[certified by Red Hat] for use with {product-title}.
-
 //CNV-12323 OpenShift Virtualization is exposing additional metrics
 * {VirtProductName} now provides metrics for monitoring how infrastructure resources are consumed in the cluster. You can use the {product-title} monitoring dashboard to xref:../virt/logging_events_monitoring/virt-prometheus-queries.adoc#virt-prometheus-queries[query metrics] for the following resources:
 +
@@ -56,14 +54,18 @@ The SVVP Certification applies to:
 ** Storage
 ** Guest memory swapping
 
-//CNV-12326 Openshift Virtualization is providing an unified API to configure cert rotation on different components.
-* {VirtProductName} now provides a unified API to xref:../virt/virtual_machines/vm_networking/virt-configuring-certificate-rotation.adoc#virt-configuring-certificate-rotation[configure certificate rotation].
-
 //CNV-12346 Windows VMs will now only be scheduled to hyper-v capable nodes
 * If a Windows virtual machine is created from a template or has predefined Hyper-V capabilities, it can now only be scheduled to Hyper-V capable nodes.
 
 //CNV-12348 Add `--proxy-only` option to `virtctl vnc` for only proxying a VNC connection to allow manual connections
 * The `--proxy-only` option for the `virtctl vnc` command allows you to xref:../virt/virt-using-the-cli-tools.adoc#virt-virtctl-commands_virt-using-the-cli-tools[manually connect to a virtual machine instance] through a Virtual Network Client (VNC) connection by using any VNC viewer.
+
+//CNV-12326 Openshift Virtualization is providing an unified API to configure cert rotation on different components.
+* {VirtProductName} now provides a unified API to xref:../virt/virtual_machines/vm_networking/virt-configuring-certificate-rotation.adoc#virt-configuring-certificate-rotation[configure certificate rotation].
+
+//CNV-9518 Release Note for calico
+
+* {VirtProductName} now supports third-party Container Network Interface (CNI) plug-ins that are link:https://access.redhat.com/articles/5436171[certified by Red Hat] for use with {product-title}.
 
 [id="virt-4-8-quick-starts"]
 === Quick starts
@@ -97,10 +99,11 @@ The SVVP Certification applies to:
 * You can now xref:../virt/virtual_machines/cloning_vms/virt-cloning-vm-disk-into-new-datavolume#virt-cloning-vm-disk-into-new-datavolume[clone virtual machine disks between different data volume modes] if they have the content type `kubevirt`. For example, you can clone a persistent volume (PV) with `volumeMode: Block` to a PV with `volumeMode: Filesystem.`
 
 //CNV-12273 CDI now follows the OpenShift cluster-wide proxy configuration when importing virtual machine disk images.
+
 * You can xref:../virt/virtual_machines/virtual_disks/virt-creating-and-using-boot-sources.adoc#virt-creating-a-custom-disk-image-boot-source-web_virt-creating-and-using-boot-sources[create a custom disk image as a boot source] for any template that has a defined source by running a wizard in the {VirtProductName} console.
 
-//[id="virt-4-8-web-new"]
-//=== Web console
+[id="virt-4-8-web-new"]
+=== Web console
 
 [id="virt-4-8-deprecated-removed"]
 == Deprecated and removed features
@@ -118,11 +121,6 @@ Deprecated features are included in the current release and supported. However, 
 
 [id="virt-4-8-changes"]
 == Notable technical changes
-//CNV-9052 OpenShift Virtualization now automatically configures IPv6 IP when running on dual-stack clusters.
-* {VirtProductName} now configures IPv6 addresses when running on clusters that have dual-stack networking enabled. You can xref:../virt/virtual_machines/vm_networking/virt-using-the-default-pod-network-with-virt.adoc#virt-creating-a-service-from-a-virtual-machine_virt-using-the-default-pod-network-with-virt[create a service] that uses IPv4, IPv6, or both IP address families, if dual-stack networking is enabled for the underlying {product-title} cluster.
-
-//CNV-9054 MAC address pool is now enabled on all namespaces by default.
-* KubeMacPool is now enabled by default when you install {VirtProductName}. You can xref:../virt/virtual_machines/vm_networking/virt-using-mac-address-pool-for-vms.adoc#virt-using-mac-address-pool-for-vms[disable a MAC address pool] for a namespace by adding the `mutatevirtualmachines.kubemacpool.io=ignore` label to the namespace. Re-enable KubeMacPool for the namespace by removing the label.
 
 //CNV-12325 All product configuration options are expressed from the HCO CR
 * The `HyperConverged` custom resource (CR) is now the central point of configuration for {VirtProductName}. By editing the `HyperConverged` CR, you can:
@@ -132,6 +130,12 @@ Deprecated features are included in the current release and supported. However, 
 ** xref:../virt/virtual_machines/virtual_disks/virt-using-container-disks-with-vms.adoc#virt-disabling-tls-for-registry_virt-using-container-disks-with-vms[Disable TLS for container registries]
 ** xref:../virt/virtual_machines/virtual_disks/virt-preparing-cdi-scratch-space.adoc#virt-defining-storageclass_virt-preparing-cdi-scratch-space[Configure a storage class for scratch space]
 ** xref:../virt/virtual_machines/virtual_disks/virt-configuring-cdi-for-namespace-resourcequota.adoc#virt-overriding-cpu-and-memory-defaults_virt-configuring-cdi-for-namespace-resourcequota[Configure resource requirements for storage workloads]
+
+//CNV-9052 OpenShift Virtualization now automatically configures IPv6 IP when running on dual-stack clusters.
+* {VirtProductName} now configures IPv6 addresses when running on clusters that have dual-stack networking enabled. You can xref:../virt/virtual_machines/vm_networking/virt-using-the-default-pod-network-with-virt.adoc#virt-creating-a-service-from-a-virtual-machine_virt-using-the-default-pod-network-with-virt[create a service] that uses IPv4, IPv6, or both IP address families, if dual-stack networking is enabled for the underlying {product-title} cluster.
+
+//CNV-9054 MAC address pool is now enabled on all namespaces by default.
+* KubeMacPool is now enabled by default when you install {VirtProductName}. You can xref:../virt/virtual_machines/vm_networking/virt-using-mac-address-pool-for-vms.adoc#virt-using-mac-address-pool-for-vms[disable a MAC address pool] for a namespace by adding the `mutatevirtualmachines.kubemacpool.io=ignore` label to the namespace. Re-enable KubeMacPool for the namespace by removing the label.
 
 [id="virt-4-8-technology-preview"]
 == Technology Preview features
@@ -145,7 +149,39 @@ link:https://access.redhat.com/support/offerings/techpreview[Technology Preview 
 [id="virt-4-8-known-issues"]
 == Known issues
 
-* If you delete {VirtProductName}-provided templates in version 4.8 or later, the templates are automatically recreated by the {VirtProductName} Operator. However, if you delete {VirtProductName}-provided templates created before version 4.8, those earlier templates are not automatically recreated after deletion. As a result, any edit or update to a virtual machine referencing a deleted earlier template will fail.
+* If you initially deployed {VirtProductName} at version 2.4.z or earlier, upgrading to version 4.8 fails with the following message: `risk of data loss updating hyperconvergeds.hco.kubevirt.io: new CRD removes version v1alpha1 that is listed as a stored version on the existing CRD`. This bug does not affect clusters where {VirtProductName} was initially deployed at version 2.5.0 or later. (link:https://bugzilla.redhat.com/show_bug.cgi?id=1986989[*BZ#1986989*])
++
+** As a workaround, remove the `v1alpha1` version and continue the upgrade.
++
+. Run a proxy to the Kubernetes API server by running the following command:
++
+[source,terminal]
+----
+$ oc proxy &
+----
++
+. Remove the `v1alpha1` version from `.status.storedVersions` on the `HyperConverged` custom resource definition (CRD) by running the following command:
++
+[source,terminal]
+----
+$ curl --header "Content-Type: application/json-patch+json" --request PATCH http://localhost:8001/apis/apiextensions.k8s.io/v1/customresourcedefinitions/hyperconvergeds.hco.kubevirt.io/status --data '[{"op": "replace", "path": "/status/storedVersions", "value":["v1beta1"]}]'
+----
++
+. Restart the upgrade process by running the following command:
++
+[source,terminal]
+----
+$ curl --header "Content-Type: application/json-patch+json" --request PATCH http://localhost:8001/apis/operators.coreos.com/v1alpha1/namespaces/openshift-cnv/installplans/$(oc get installplan -n openshift-cnv | grep kubevirt-hyperconverged-operator.v4.8.0 | cut -d' ' -f1)/status --data '[{"op": "remove", "path": "/status/conditions"},{"op": "remove", "path": "/status/message"},{"op": "replace", "path": "/status/phase", "value": "Installing"}]'
+----
++
+. Kill the `oc proxy` process. For example:
++
+[source,terminal]
+----
+$ kill $(ps -C "oc proxy" -o pid=)
+----
++
+. Verify that the upgrade continues successfully by xref:../virt/upgrading-virt.adoc#virt-monitoring-upgrade-status_upgrading-virt[monitoring the upgrade status].
 
 * If a cloning operation is initiated before the source is available to be cloned, the operation stalls indefinitely. This is because the clone authorization expires before the cloning operation starts. (link:https://bugzilla.redhat.com/show_bug.cgi?id=1855182[*BZ#1855182*])
 +
@@ -164,24 +200,31 @@ link:https://access.redhat.com/support/offerings/techpreview[Technology Preview 
 
 * Live migration fails when nodes have different CPU models. Even in cases where nodes have the same physical CPU model, differences introduced by microcode updates have the same effect. This is because the default settings trigger host CPU passthrough behavior, which is incompatible with live migration. (link:https://bugzilla.redhat.com/show_bug.cgi?id=1760028[*BZ#1760028*])
 
-** As a workaround, set the default CPU model by running the following command:
+** As a workaround, set the default CPU model in the `kubevirt-config` config map, as shown in the following example:
 +
 [NOTE]
 ====
 You must make this change before starting the virtual machines that support live migration.
 ====
 +
+. Open the `kubevirt-config` config map for editing by running the following command:
++
 [source,terminal]
 ----
-$ oc annotate --overwrite -n openshift-cnv hyperconverged kubevirt-hyperconverged kubevirt.kubevirt.io/jsonpatch='[
-  {
-      "op": "add",
-      "path": "/spec/configuration/cpuModel",
-      "value": "<cpu_model>" <1>
-  }
-]'
+$ oc edit configmap kubevirt-config -n openshift-cnv
 ----
-<1> Replace `<cpu_model>` with the actual CPU model value. You can determine this value by running `oc describe node <node>` for all nodes and looking at the `cpu-model-<name>` labels. Select the CPU model that is present on all of your nodes.
++
+. Edit the config map:
++
+[source,yaml]
+----
+kind: ConfigMap
+metadata:
+  name: kubevirt-config
+data:
+  default-cpu-model: "<cpu-model>" <1>
+----
+<1> Replace `<cpu-model>` with the actual CPU model value. You can determine this value by running `oc describe node <node>` for all nodes and looking at the `cpu-model-<name>` labels. Select the CPU model that is present on all of your nodes.
 
 * If you enter the wrong credentials for the RHV Manager while importing a RHV VM, the Manager might lock the admin user account because the `vm-import-operator` tries repeatedly to connect to the RHV API. (link:https://bugzilla.redhat.com/show_bug.cgi?id=1887140[*BZ#1887140*])
 +
@@ -206,42 +249,43 @@ No model registered for VirtualMachines
 +
 You can ignore this message. It does not affect VM import. (link:https://bugzilla.redhat.com/show_bug.cgi?id=1974812[*BZ#1974812*])
 
-* If you run {VirtProductName} 2.6.5 with {product-title} 4.8, various issues occur. You can avoid these issues by upgrading {VirtProductName} to version 4.8.
+* When creating a virtual machine after upgrading to OCP 4.8 while running CNV 2.6.5, various errors occur.
 +
-** In the web console, if you navigate to the *Virtualization* page and select *Create* -> *With YAML* the following error message is displayed:
+** Selecting *Create* -> *With YAML* on the *Virtualization* page of the {VirtProductName} console displays the following warning message:
 +
-[source,text]
+[source]
 ----
 The server doesn't have a resource type "kind: VirtualMachine, apiVersion: kubevirt.io/v1"
 ----
 +
-*** As a workaround, edit the `VirtualMachine` manifest so the `apiVersion` is `kubevirt.io/v1alpha3`. For example:
+*** As a workaround, modify the `apiVersion` in the manifest.
 +
 [source,yaml]
 ----
-apiVersion: kubevirt.io/v1alpha3
+apiVersion: kubevirt.io/v1alpha3 <1>
 kind: VirtualMachine
 metadata:
   annotations:
 ...
 ----
+<1> The modified `apiVersion: kubevirt.io/v1alpha3`
 +
 (link:https://bugzilla.redhat.com/show_bug.cgi?id=1979114[*BZ#1979114*])
+
+** Creating a virtual machine from the Customize wizard provides a unclear and non-specific error message:
 +
-** If you use the *Customize* wizard to create a VM, the following error message is displayed:
-+
-[source,text]
+[source]
 ----
 Error creating virtual machine
 ----
 +
-*** As a workaround, copy the manifest and xref:../virt/virtual_machines/virt-create-vms.adoc#virt-creating-vm_virt-create-vms[create the virtual machine from the CLI].
+*** As a workaround, copy the manifest and create the virtual machine from the CLI.
 +
 (link:https://bugzilla.redhat.com/show_bug.cgi?id=1979116[*BZ#1979116*])
-+
+
 // fix targeted for 4.8.1
-** When connecting to the VNC console by using the {VirtProductName} web console, the VNC console always fails to respond.
+* When connecting to the VNC console by using the {VirtProductName} web console and `virtctl` command, the VNC console always fails to respond.
 +
-*** As a workaround, create the virtual machine from the CLI or upgrade to {VirtProductName} 4.8.
+** As a workaround, create the virtual machine from the CLI or upgrade to CNV 4.8.
 +
 (link:https://bugzilla.redhat.com/show_bug.cgi?id=1977037[*BZ#1977037*])
