@@ -6,6 +6,7 @@ include::_attributes/common-attributes.adoc[]
 
 toc::[]
 
+[id="about-openshift-virtualization"]
 == About Red Hat {VirtProductName}
 
 Red Hat {VirtProductName} enables you to bring traditional virtual machines (VMs) into {product-title} where they run alongside containers, and are managed as native Kubernetes objects.
