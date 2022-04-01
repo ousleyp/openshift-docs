@@ -3,6 +3,7 @@
 include::_attributes/common-attributes.adoc[]
 = {VirtProductName} release notes
 :context: virt-4-8-release-notes
+
 toc::[]
 
 Do not add or edit release notes here. Edit release notes directly in the branch
