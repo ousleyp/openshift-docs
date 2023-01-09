@@ -1,6 +1,6 @@
 :_content-type: ASSEMBLY
 [id="virt-hot-plugging-virtual-disks"]
-= Hot-plugging virtual disks
+= Hot plugging virtual disks
 include::_attributes/common-attributes.adoc[]
 :context: virt-hot-plugging-virtual-disks
 
