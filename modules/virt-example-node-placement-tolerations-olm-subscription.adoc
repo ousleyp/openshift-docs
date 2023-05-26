@@ -7,6 +7,7 @@
 
 In this example, nodes that are reserved for OLM to deploy {VirtProductName} Operators are labeled with the `key=virtualization:NoSchedule` taint. Only pods with the matching tolerations are scheduled to these nodes.
 
+ifdef::openshift-enterprise[]
 [source,yaml,subs="attributes+"]
 ----
 apiVersion: operators.coreos.com/v1beta1
@@ -27,3 +28,27 @@ spec:
       value: "virtualization"
       effect: "NoSchedule"
 ----
+endif::openshift-enterprise[]
+
+ifdef::openshift-origin[]
+ [source,yaml,subs="attributes+"]
+----
+apiVersion: operators.coreos.com/v1beta1
+kind: Subscription
+metadata:
+  name: hco-operatorhub
+  namespace: kubevirt-hyperconverged
+spec:
+  source: community-operators
+  sourceNamespace: openshift-marketplace
+  name: community-kubevirt-hyperconverged
+  startingCSV: kubevirt-hyperconverged-operator.v{HCOVersion}
+  channel: "stable"
+  config:
+    tolerations:
+    - key: "key"
+      operator: "Equal"
+      value: "virtualization"
+      effect: "NoSchedule"
+----
+endif::openshift-origin[]

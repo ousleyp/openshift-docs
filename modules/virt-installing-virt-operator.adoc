@@ -15,11 +15,19 @@ You can install the {VirtProductName} Operator from the {product-title} web cons
 
 .Procedure
 
-. From the *Administrator* perspective, click *Operators* -> *OperatorHub*.
 
+. From the *Administrator* perspective, click *Operators* -> *OperatorHub*.
+ifdef::openshift-enterprise[]
 . In the *Filter by keyword* field, type *{VirtProductName}*.
 
 . Select the *{VirtProductName}* tile.
+endif::openshift-enterprise[]
+
+ifdef::openshift-origin[]
+. In the *Filter by keyword* field, type *KubeVirt HyperConverged Cluster Operator*.
+
+. Select the *KubeVirt HyperConverged Cluster Operator* tile.
+endif::openshift-origin[]
 
 . Read the information about the Operator and click *Install*.
 
@@ -27,13 +35,27 @@ You can install the {VirtProductName} Operator from the {product-title} web cons
 
 .. Select *stable* from the list of available *Update Channel* options. This ensures that you install the version of {VirtProductName} that is compatible with your {product-title} version.
 
+ifdef::openshift-enterprise[]
 .. For *Installed Namespace*, ensure that the *Operator recommended namespace* option is selected. This installs the Operator in the mandatory `openshift-cnv` namespace, which is automatically created if it does not exist.
+endif::openshift-enterprise[]
+
+ifdef::openshift-origin[]
+.. For *Installed Namespace*, ensure that the *Operator recommended namespace* option is selected. This installs the Operator in the mandatory `kubevirt-hyperconverged` namespace, which is automatically created if it does not exist.
+endif::openshift-origin[]
 +
+ifdef::openshift-enterprise[]
 [WARNING]
 ====
 Attempting to install the {VirtProductName} Operator in a namespace other than `openshift-cnv` causes the installation to fail.
 ====
+endif::openshift-enterprise[]
 
+ifdef::openshift-origin[]
+[WARNING]
+====
+Attempting to install the {VirtProductName} Operator in a namespace other than `kubevirt-hyperconverged` causes the installation to fail.
+====
+endif::openshift-origin[]
 .. For *Approval Strategy*, it is highly recommended that you select *Automatic*, which is the default value, so that {VirtProductName} automatically updates when a new version is available in the *stable* update channel.
 +
 While it is possible to select the *Manual* approval strategy, this is inadvisable because of the high risk that it presents to the supportability and functionality of your cluster. Only select *Manual* if you fully understand these risks and cannot use *Automatic*.
@@ -43,7 +65,13 @@ While it is possible to select the *Manual* approval strategy, this is inadvisab
 Because {VirtProductName} is only supported when used with the corresponding {product-title} version, missing {VirtProductName} updates can cause your cluster to become unsupported.
 ====
 
+ifdef::openshift-enterprise[]
 . Click *Install* to make the Operator available to the `openshift-cnv` namespace.
+endif::openshift-enterprise[]
+
+ifdef::openshift-origin[]
+. Click *Install* to make the Operator available to the `kubevirt-hyperconverged` namespace.
+endif::openshift-origin[]
 
 . When the Operator installs successfully, click *Create HyperConverged*.
 
