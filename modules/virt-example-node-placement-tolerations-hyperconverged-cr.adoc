@@ -7,7 +7,6 @@
 
 In this example, nodes that are reserved for {VirtProductName} components are labeled with the `key=virtualization:NoSchedule` taint. Only pods with the matching tolerations are scheduled to these nodes.
 
-ifdef::openshift-enterprise[]
 [source,yaml]
 ----
 apiVersion: hco.kubevirt.io/v1beta1
@@ -24,23 +23,3 @@ spec:
         value: "virtualization"
         effect: "NoSchedule"
 ----
-endif::openshift-enterprise[]
-
-ifdef::openshift-origin[]
-[source,yaml]
-----
-apiVersion: hco.kubevirt.io/v1beta1
-kind: HyperConverged
-metadata:
-  name: kubevirt-hyperconverged
-  namespace: kubevirt-hyperconverged
-spec:
-  workloads:
-    nodePlacement:
-      tolerations:
-      - key: "key"
-        operator: "Equal"
-        value: "virtualization"
-        effect: "NoSchedule"
-----
-endif::openshift-origin[]

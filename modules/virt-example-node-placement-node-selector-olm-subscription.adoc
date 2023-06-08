@@ -7,7 +7,6 @@
 
 In this example, `nodeSelector` is configured so that OLM places the {VirtProductName} Operators on nodes that are labeled with `example.io/example-infra-key = example-infra-value`.
 
-ifdef::openshift-enterprise[]
 [source,yaml,subs="attributes+"]
 ----
 apiVersion: operators.coreos.com/v1beta1
@@ -25,24 +24,3 @@ spec:
     nodeSelector:
       example.io/example-infra-key: example-infra-value
 ----
-endif::openshift-enterprise[]
-
-ifdef::openshift-origin[]
-[source,yaml,subs="attributes+"]
-----
-apiVersion: operators.coreos.com/v1beta1
-kind: Subscription
-metadata:
-  name: hco-operatorhub
-  namespace: kubevirt-hyperconverged
-spec:
-  source: community-operators
-  sourceNamespace: openshift-marketplace
-  name: community-kubevirt-hyperconverged
-  startingCSV: kubevirt-hyperconverged-operator.v{HCOVersion}
-  channel: "stable"
-  config:
-    nodeSelector:
-      example.io/example-infra-key: example-infra-value
-----
-endif::openshift-origin[]

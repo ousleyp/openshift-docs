@@ -10,19 +10,12 @@ You can deploy the {VirtProductName} Operator by using the `oc` CLI.
 
 .Prerequisites
 
-ifdef::openshift-enterprise[]
 * An active subscription to the {VirtProductName} catalog in the `openshift-cnv` namespace.
-endif::openshift-enterprise[]
-
-ifdef::openshift-origin[]
-* An active subscription to the {VirtProductName} catalog in the `kubevirt-hyperconverged` namespace.
-endif::openshift-origin[]
 
 .Procedure
 
 . Create a YAML file that contains the following manifest:
 +
-ifdef::openshift-enterprise[]
 [source,yaml]
 ----
 apiVersion: hco.kubevirt.io/v1beta1
@@ -32,19 +25,6 @@ metadata:
   namespace: openshift-cnv
 spec:
 ----
-endif::openshift-enterprise[]
-
-ifdef::openshift-origin[]
-[source,yaml]
-----
-apiVersion: hco.kubevirt.io/v1beta1
-kind: HyperConverged
-metadata:
-  name: kubevirt-hyperconverged
-  namespace: kubevirt-hyperconverged
-spec:
-----
-endif::openshift-origin[]
 
 . Deploy the {VirtProductName} Operator by running the following command:
 +
@@ -55,29 +35,15 @@ $ oc apply -f <file_name>.yaml
 
 .Verification
 
-ifdef::openshift-enterprise[]
 * Ensure that {VirtProductName} deployed successfully by watching the `PHASE` of the cluster service version (CSV) in the `openshift-cnv` namespace. Run the following command:
-endif::openshift-enterprise[]
-ifdef::openshift-origin[]
-* Ensure that {VirtProductName} deployed successfully by watching the `PHASE` of the cluster service version (CSV) in the `kubevirt-hyperconverged` namespace. Run the following command:
-endif::openshift-origin[]
 +
-ifdef::openshift-enterprise[]
 [source,terminal]
 ----
 $ watch oc get csv -n openshift-cnv
 ----
-endif::openshift-enterprise[]
-
-ifdef::openshift-origin[]
-[source,terminal]
-----
-$ watch oc get csv -n kubevirt-hyperconverged
-----
-endif::openshift-origin[]
-
++
 The following output displays if deployment was successful:
-
++
 .Example output
 [source,terminal,subs="attributes+"]
 ----

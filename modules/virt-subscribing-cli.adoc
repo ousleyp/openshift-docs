@@ -6,13 +6,7 @@
 [id="virt-subscribing-cli_{context}"]
 = Subscribing to the {VirtProductName} catalog by using the CLI
 
-ifdef::openshift-enterprise[]
 Before you install {VirtProductName}, you must subscribe to the {VirtProductName} catalog. Subscribing gives the `openshift-cnv` namespace access to the {VirtProductName} Operators.
-endif::openshift-enterprise[]
-
-ifdef::openshift-origin[]
-Before you install {VirtProductName}, you must subscribe to the {VirtProductName} catalog. Subscribing gives the `kubevirt-hyperconverged` namespace access to the {VirtProductName} Operators.
-endif::openshift-origin[]
 
 To subscribe, configure `Namespace`, `OperatorGroup`, and `Subscription` objects by applying a single manifest to your cluster.
 
@@ -20,7 +14,6 @@ To subscribe, configure `Namespace`, `OperatorGroup`, and `Subscription` objects
 
 . Create a YAML file that contains the following manifest:
 +
-ifdef::openshift-enterprise[]
 [source,yaml,subs="attributes+"]
 ----
 apiVersion: v1
@@ -35,7 +28,7 @@ metadata:
   namespace: openshift-cnv
 spec:
   targetNamespaces:
-      - openshift-cnv
+    - openshift-cnv
 ---
 apiVersion: operators.coreos.com/v1beta1
 kind: Subscription
@@ -51,46 +44,9 @@ spec:
 ----
 <1> Using the `stable` channel ensures that you install the version of
 {VirtProductName} that is compatible with your {product-title} version.
-+
-. Create the required `Namespace`, `OperatorGroup`, and `Subscription` objects
-for {VirtProductName} by running the following command:
-endif::openshift-enterprise[]
 
-ifdef::openshift-origin[]
-[source,yaml,subs="attributes+"]
-----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: kubevirt-hyperconverged
----
-apiVersion: operators.coreos.com/v1
-kind: OperatorGroup
-metadata:
-  name: kubevirt-hyperconverged-group
-  namespace: kubevirt-hyperconverged
-spec:
-  targetNamespaces:
-      - kubevirt-hyperconverged
----
-apiVersion: operators.coreos.com/v1beta1
-kind: Subscription
-metadata:
-  name: hco-operatorhub
-  namespace: kubevirt-hyperconverged
-spec:
-  source: community-operators
-  sourceNamespace: openshift-marketplace
-  name: community-kubevirt-hyperconverged
-  startingCSV: kubevirt-hyperconverged-operator.v{HCOVersion}
-  channel: "stable" <1>
-----
-<1> Using the `stable` channel ensures that you install the version of
-{VirtProductName} that is compatible with your {product-title} version.
-+
 . Create the required `Namespace`, `OperatorGroup`, and `Subscription` objects
 for {VirtProductName} by running the following command:
-endif::openshift-origin[]
 +
 [source,terminal]
 ----
