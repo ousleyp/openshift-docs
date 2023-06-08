@@ -107,6 +107,7 @@ endif::[]
 :KubeVirtVersion: v0.59.0
 :HCOVersion: 4.13.0
 :delete: image:delete.png[title="Delete"]
+// this is only a test
 ifdef::openshift-origin[]
 :VirtProductName: OKD Virtualization
 endif::[]
