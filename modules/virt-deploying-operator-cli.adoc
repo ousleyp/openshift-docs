@@ -77,7 +77,7 @@ $ watch oc get csv -n kubevirt-hyperconverged
 endif::openshift-origin[]
 
 The following output displays if deployment was successful:
-+
+
 .Example output
 [source,terminal,subs="attributes+"]
 ----
