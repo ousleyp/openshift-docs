@@ -65,6 +65,9 @@ This release adds new features and enhancements related to the following compone
 
 * Configuring xref:../../virt/nodes/virt-node-maintenance.adoc#eviction-strategies[VM eviction strategies] for an xref:../../virt/nodes/virt-node-maintenance.adoc#virt-configuring-cluster-eviction-strategy-cli_virt-node-maintenance[entire cluster] is now generally available.
 
+//CNV-36328
+* You can now select a custom namespace for Red Hat golden images instead of using the default `openshift-virtualization-os-images` namespace. By using a custom namespace, cluster administrators can restrict user access to the default boot sources. To update this setting by using the web console, go to *Virtualization* -> *Overview* -> *Settings* -> *Cluster* -> *General settings* -> *Bootable volumes project*.
+
 [id="virt-4-17-virtualization"]
 === Virtualization
 
