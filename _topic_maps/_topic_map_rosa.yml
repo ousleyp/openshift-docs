@@ -1829,6 +1829,9 @@ Topics:
   - Name: About OKD Virtualization
     File: about-virt
     Distros: openshift-origin
+  - Name: Supported limits
+    File: virt-supported-limits
+    Distros: openshift-rosa
   - Name: Security policies
     File: virt-security-policies
   - Name: Architecture
