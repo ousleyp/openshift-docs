@@ -28,6 +28,7 @@ include::modules/virt-hot-unplugging-bridge-network-interface-cli.adoc[leveloffs
 [id="additional-resources_{context}"]
 == Additional resources
 
+* xref:../../virt/live_migration/virt-about-live-migration.adoc#virt-about-live-migration-permissions_virt-about-live-migration[About live migration permissions]
 * xref:../../virt/getting_started/virt-using-the-cli-tools.adoc#virt-installing-virtctl-binary_virt-using-the-cli-tools[Installing virtctl]
 * xref:../../virt/live_migration/virt-about-live-migration.adoc#virt-about-live-migration-permissions_virt-about-live-migration[About live migration permissions]
 ifndef::openshift-rosa,openshift-dedicated,openshift-rosa-hcp[]
