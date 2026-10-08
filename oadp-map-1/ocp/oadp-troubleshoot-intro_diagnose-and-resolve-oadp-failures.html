@@ -478,7 +478,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <!-- navmap-right-toc-end -->
 </head>
-<body id="oadp-troubleshoot-intro_troubleshoot-oadp" class="book toc2 toc-left navmap-has-right-toc">
+<body id="oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures" class="book toc2 toc-left navmap-has-right-toc">
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -1060,29 +1060,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="configure-rhacm-for-telco-deployments-con_configure-rhacm-for-telco-deployments.html">Configure Red&#160;Hat Advanced Cluster Management (RHACM) for telco deployments</a>
 </li>
-<li><a href="oadp-intro_understand-oadp-capabilities.html">Protect application data with OADP</a>
+<li><a href="oadp-intro_learn-about-oadp-capabilities.html">Protect application data with OADP</a>
+</li>
+<li><a href="oadp-release-notes-intro_review-oadp-release-notes.html">OADP release notes</a>
 </li>
 <li><a href="oadp-about-backup-snapshot-locations_plan-oadp-deployment.html">About backup and snapshot locations and their secrets</a>
 </li>
-<li><a href="oadp-install-and-configure-intro_install-and-configure-oadp.html">Install and configure OADP</a>
+<li><a href="oadp-install-and-configure-intro_install-oadp.html">Install and configure OADP</a>
+</li>
+<li><a href="oadp-connect-to-backup-storage-intro_connect-oadp-to-backup-storage.html">Connect OADP to backup storage</a>
+</li>
+<li><a href="oadp-configure-security-performance-intro_configure-oadp-security-and-performance.html">Configure OADP security and performance</a>
+</li>
+<li><a href="oadp-cli-setup_manage-oadp-with-cli-plugin.html">Set up the OADP CLI plugin</a>
 </li>
 <li><a href="oadp-back-up-applications-intro_back-up-applications.html">Back up applications</a>
 </li>
 <li><a href="oadp-restore-applications-intro_restore-applications.html">Restore applications</a>
 </li>
-<li><a href="oadp-protect-virtual-machine-data-intro_protect-virtual-machine-data.html">Protect virtual machine data</a>
+<li><a href="oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management.html">Back up and restore 3scale API Management</a>
 </li>
-<li><a href="oadp-self-service-overview_delegate-backup-operations-with-oadp-self-service.html">About OADP Self-Service</a>
+<li><a href="oadp-rosa-sts-intro_back-up-and-restore-applications-on-rosa-with-sts.html">Back up and restore applications on ROSA with STS</a>
+</li>
+<li><a href="oadp-data-mover-support_configure-data-mover-and-tune-backup-performance.html">Data Mover support</a>
+</li>
+<li><a href="oadp-protect-virtual-machine-data-intro_back-up-and-restore-virtual-machines.html">Protect virtual machine data</a>
+</li>
+<li><a href="oadp-vmfr-overview_restore-vm-files-with-vmfr.html">What problem is OADP VMFR solving</a>
+</li>
+<li><a href="oadp-vmdp-overview_back-up-and-restore-vm-data-with-vmdp.html">About OADP virtual machine data protection</a>
+</li>
+<li><a href="oadp-self-service-overview_enable-oadp-self-service.html">About OADP Self-Service</a>
 </li>
 <li><a href="oadp-about-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters.html">About backing up data from one cluster and restoring it on another cluster</a>
-</li>
-<li><a href="oadp-data-mover-support_optimize-backup-performance.html">Data Mover support</a>
 </li>
 <li><a href="oadp-upgrade-intro_upgrade-oadp.html">Upgrade OADP</a>
 </li>
 <li><a href="oadp-monitor-and-validate-intro_monitor-and-validate-oadp.html">Monitor and validate OADP</a>
 </li>
-<li><a href="oadp-troubleshoot-intro_troubleshoot-oadp.html"><span class="toc-current">Troubleshoot OADP</span></a>
+<li><a href="oadp-api-reference-intro_oadp-api-reference.html">OADP API reference</a>
+</li>
+<li><a href="oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures.html"><span class="toc-current">Troubleshoot OADP</span></a>
+</li>
+<li><a href="oadp-uninstall-intro_uninstall-oadp.html">Uninstall OADP</a>
 </li>
 </ul>
 </li>
@@ -1875,15 +1895,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#oadp-cli-installing_troubleshoot-oadp">Install the OADP CLI plugin</a></li><li class="level-4"><a href="#velero-oadp-version-relationship_troubleshoot-oadp">OADP-Velero-Red Hat OpenShift Container Platform version relationship</a></li><li class="level-5"><a href="#_additional_resources_11">Additional resources</a></li><li class="level-4"><a href="#velero-obtaining-by-downloading_troubleshoot-oadp">Download the Velero CLI tool</a></li><li class="level-4"><a href="#migration-debugging-velero-resources_troubleshoot-oadp">Debug backups and restores using the OADP CLI</a></li><li class="level-4"><a href="#oadp-debugging-oc-cli_troubleshoot-oadp">Debug Velero resources with the OpenShift CLI tool</a></li><li class="level-4"><a href="#oadp-cli-must-gather_troubleshoot-oadp">Collect diagnostic data</a></li><li class="level-4"><a href="#resolving-oadp-operator-fails-silently-issue_troubleshoot-oadp">Resolve silent failure of the OADP Operator</a></li><li class="level-4"><a href="#resolving-incorrect-aws-credentials-issue_troubleshoot-oadp">Resolve incorrect AWS credentials</a></li><li class="level-4"><a href="#resolving-backup-storage-contains-invalid-directories-issue_troubleshoot-oadp">Resolve invalid directories in backup storage</a></li><li class="level-4"><a href="#troubleshooting-backup-cr-status-remains-in-progress-issue_troubleshoot-oadp">Troubleshoot issue where backup CR status remains in progress</a></li><li class="level-4"><a href="#troubleshooting-backup-cr-status-remains-in-partiallyfailed-issue_troubleshoot-oadp">Troubleshoot issue where backup CR status remains partially failed</a></li><li class="level-4"><a href="#troubleshooting-backup-cr-cannot-retrieve-volume-issue_troubleshoot-oadp">Troubleshoot issue where backup CR cannot retrieve volume</a></li><li class="level-4"><a href="#oadp-troubleshooting-pvc-binding-delay_troubleshoot-oadp">Troubleshoot PVC binding failures with the waitForFirstConsumer storage class</a></li><li class="level-4"><a href="#velero-default-item-operation-timeout_troubleshoot-oadp">Implement velero default item operation timeout</a></li><li class="level-5"><a href="#velero-timeout_troubleshoot-oadp">Implement velero resource timeout</a></li><li class="level-5"><a href="#restic-timeout_troubleshoot-oadp">Implement restic timeout</a></li><li class="level-5"><a href="#item-operation-timeout-backup_troubleshoot-oadp">Implement item operation timeout - backup</a></li><li class="level-5"><a href="#item-operation-timeout-restore_troubleshoot-oadp">Implement item operation timeout - restore</a></li><li class="level-5"><a href="#csisnapshot-timeout_troubleshoot-oadp">Implement CSI snapshot timeout</a></li><li class="level-5"><a href="#datamover-timeout_troubleshoot-oadp">Implement Data Mover timeout</a></li><li class="level-4"><a href="#oadp-pod-crash-resource-request-velero_troubleshoot-oadp">Set resource requests for a Velero pod</a></li><li class="level-5"><a href="#oadp-pod-crash-resource-request-retics_troubleshoot-oadp">Set resource requests for a Restic pod</a></li><li class="level-5"><a href="#setting-resource-requests-for-a-nodeagent-pod_troubleshoot-oadp">Set resource requests for a nodeAgent pod</a></li><li class="level-5"><a href="#velero-oomkilled-large-kopia-repos_troubleshoot-oadp">Velero server terminates with OOMKilled when accessing large Kopia repositories</a></li><li class="level-4"><a href="#oadp-restic-restore-failing-psa-policy_troubleshoot-oadp">Troubleshoot restic restore partially failed issue on OpenShift Container Platform 4.14 onward due to changed PSA policy</a></li><li class="level-4"><a href="#restic-backup-cr-cannot-be-recreated-after-bucket-is-emptied_troubleshoot-oadp">Troubleshoot Restic Backup CR issue that cannot be re-created after bucket is emptied</a></li><li class="level-4"><a href="#restic-permission-error-for-nfs-data-volumes-with-root-squash-enabled_troubleshoot-oadp">Troubleshoot Restic permission errors for NFS data volumes</a></li><li class="level-4"><a href="#avoiding-the-velero-plugin-panic-error_troubleshoot-oadp">Avoid the Velero plugin panic error</a></li><li class="level-4"><a href="#workaround-for-openshift-adp-controller-segmentation-fault_troubleshoot-oadp">Workaround for OpenShift ADP Controller segmentation fault</a></li><li class="level-4"><a href="#migration-debugging-velero-admission-webhooks-knative_troubleshoot-oadp">Restore Knative resources</a></li><li class="level-4"><a href="#migration-debugging-velero-admission-webhooks-ibm-appconnect_troubleshoot-oadp">Restore IBM AppConnect resources</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#oadp-cli-installing_diagnose-and-resolve-oadp-failures">Install the OADP CLI plugin</a></li><li class="level-4"><a href="#velero-oadp-version-relationship_diagnose-and-resolve-oadp-failures">OADP-Velero-Red Hat OpenShift Container Platform version relationship</a></li><li class="level-5"><a href="#_additional_resources_11">Additional resources</a></li><li class="level-4"><a href="#velero-obtaining-by-downloading_diagnose-and-resolve-oadp-failures">Download the Velero CLI tool</a></li><li class="level-4"><a href="#migration-debugging-velero-resources_diagnose-and-resolve-oadp-failures">Debug backups and restores using the OADP CLI</a></li><li class="level-4"><a href="#oadp-debugging-oc-cli_diagnose-and-resolve-oadp-failures">Debug Velero resources with the OpenShift CLI tool</a></li><li class="level-4"><a href="#oadp-cli-must-gather_diagnose-and-resolve-oadp-failures">Collect diagnostic data</a></li><li class="level-4"><a href="#resolving-oadp-operator-fails-silently-issue_diagnose-and-resolve-oadp-failures">Resolve silent failure of the OADP Operator</a></li><li class="level-4"><a href="#resolving-incorrect-aws-credentials-issue_diagnose-and-resolve-oadp-failures">Resolve incorrect AWS credentials</a></li><li class="level-4"><a href="#resolving-backup-storage-contains-invalid-directories-issue_diagnose-and-resolve-oadp-failures">Resolve invalid directories in backup storage</a></li><li class="level-4"><a href="#troubleshooting-backup-cr-status-remains-in-progress-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR status remains in progress</a></li><li class="level-4"><a href="#troubleshooting-backup-cr-status-remains-in-partiallyfailed-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR status remains partially failed</a></li><li class="level-4"><a href="#troubleshooting-backup-cr-cannot-retrieve-volume-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR cannot retrieve volume</a></li><li class="level-4"><a href="#oadp-troubleshooting-pvc-binding-delay_diagnose-and-resolve-oadp-failures">Troubleshoot PVC binding failures with the waitForFirstConsumer storage class</a></li><li class="level-4"><a href="#velero-default-item-operation-timeout_diagnose-and-resolve-oadp-failures">Implement velero default item operation timeout</a></li><li class="level-5"><a href="#velero-timeout_diagnose-and-resolve-oadp-failures">Implement velero resource timeout</a></li><li class="level-5"><a href="#restic-timeout_diagnose-and-resolve-oadp-failures">Implement restic timeout</a></li><li class="level-5"><a href="#item-operation-timeout-backup_diagnose-and-resolve-oadp-failures">Implement item operation timeout - backup</a></li><li class="level-5"><a href="#item-operation-timeout-restore_diagnose-and-resolve-oadp-failures">Implement item operation timeout - restore</a></li><li class="level-5"><a href="#csisnapshot-timeout_diagnose-and-resolve-oadp-failures">Implement CSI snapshot timeout</a></li><li class="level-5"><a href="#datamover-timeout_diagnose-and-resolve-oadp-failures">Implement Data Mover timeout</a></li><li class="level-4"><a href="#oadp-pod-crash-resource-request-velero_diagnose-and-resolve-oadp-failures">Set resource requests for a Velero pod</a></li><li class="level-5"><a href="#oadp-pod-crash-resource-request-retics_diagnose-and-resolve-oadp-failures">Set resource requests for a Restic pod</a></li><li class="level-5"><a href="#setting-resource-requests-for-a-nodeagent-pod_diagnose-and-resolve-oadp-failures">Set resource requests for a nodeAgent pod</a></li><li class="level-5"><a href="#velero-oomkilled-large-kopia-repos_diagnose-and-resolve-oadp-failures">Velero server terminates with OOMKilled when accessing large Kopia repositories</a></li><li class="level-4"><a href="#oadp-restic-restore-failing-psa-policy_diagnose-and-resolve-oadp-failures">Troubleshoot restic restore partially failed issue on OpenShift Container Platform 4.14 onward due to changed PSA policy</a></li><li class="level-4"><a href="#restic-backup-cr-cannot-be-recreated-after-bucket-is-emptied_diagnose-and-resolve-oadp-failures">Troubleshoot Restic Backup CR issue that cannot be re-created after bucket is emptied</a></li><li class="level-4"><a href="#restic-permission-error-for-nfs-data-volumes-with-root-squash-enabled_diagnose-and-resolve-oadp-failures">Troubleshoot Restic permission errors for NFS data volumes</a></li><li class="level-4"><a href="#avoiding-the-velero-plugin-panic-error_diagnose-and-resolve-oadp-failures">Avoid the Velero plugin panic error</a></li><li class="level-4"><a href="#workaround-for-openshift-adp-controller-segmentation-fault_diagnose-and-resolve-oadp-failures">Workaround for OpenShift ADP Controller segmentation fault</a></li><li class="level-4"><a href="#migration-debugging-velero-admission-webhooks-knative_diagnose-and-resolve-oadp-failures">Restore Knative resources</a></li><li class="level-4"><a href="#migration-debugging-velero-admission-webhooks-ibm-appconnect_diagnose-and-resolve-oadp-failures">Restore IBM AppConnect resources</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
-<h3 id="oadp-troubleshoot-intro_troubleshoot-oadp">Troubleshoot OADP</h3>
+<h3 id="oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures">Troubleshoot OADP</h3>
 <div class="paragraph _abstract">
 <p>Diagnose and resolve common issues with the OpenShift API for Data Protection (OADP), including installation problems, backup and restore failures, timeout errors, pod crashes, and Restic or Velero errors.</p>
 </div>
 <div class="sect3">
-<h4 id="oadp-cli-installing_troubleshoot-oadp">Install the OADP CLI plugin</h4>
+<h4 id="oadp-cli-installing_diagnose-and-resolve-oadp-failures">Install the OADP CLI plugin</h4>
 <div class="paragraph _abstract">
 <p>The OADP command-line interface (CLI) plugin is available from the <strong>Command-line tools</strong> page in the Red&#160;Hat OpenShift Container Platform web console when the OADP Operator is installed.</p>
 </div>
@@ -1922,7 +1942,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="velero-oadp-version-relationship_troubleshoot-oadp">OADP-Velero-Red&#160;Hat OpenShift Container Platform version relationship</h4>
+<h4 id="velero-oadp-version-relationship_diagnose-and-resolve-oadp-failures">OADP-Velero-Red&#160;Hat OpenShift Container Platform version relationship</h4>
 <div class="paragraph _abstract">
 <p>Review the version relationship between OADP, Velero, and Red&#160;Hat OpenShift Container Platform to decide compatible version combinations. This helps you select the appropriate OADP version for your cluster environment.</p>
 </div>
@@ -2015,7 +2035,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="velero-obtaining-by-downloading_troubleshoot-oadp">Download the Velero CLI tool</h4>
+<h4 id="velero-obtaining-by-downloading_diagnose-and-resolve-oadp-failures">Download the Velero CLI tool</h4>
 <div class="paragraph _abstract">
 <p>Download and install the <code>velero</code> CLI tool from the Velero documentation page, which provides instructions for macOS by using Homebrew, GitHub, and Windows by using Chocolatey. This helps you to access the <code>velero</code> CLI for debugging backup and restore operations.</p>
 </div>
@@ -2046,7 +2066,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="migration-debugging-velero-resources_troubleshoot-oadp">Debug backups and restores using the OADP CLI</h4>
+<h4 id="migration-debugging-velero-resources_diagnose-and-resolve-oadp-failures">Debug backups and restores using the OADP CLI</h4>
 <div class="paragraph _abstract">
 <p>Use the OADP CLI plugin to retrieve logs and descriptions of backup and restore custom resources (CRs). Use the following information to interpret the output.</p>
 </div>
@@ -2106,7 +2126,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="oadp-debugging-oc-cli_troubleshoot-oadp">Debug Velero resources with the OpenShift CLI tool</h4>
+<h4 id="oadp-debugging-oc-cli_diagnose-and-resolve-oadp-failures">Debug Velero resources with the OpenShift CLI tool</h4>
 <div class="paragraph _abstract">
 <p>Debug a failed backup or restore by checking Velero custom resources (CRs) and the <code>Velero</code> pod log with the OpenShift CLI tool.</p>
 </div>
@@ -2193,7 +2213,7 @@ spec:
 </div>
 </div>
 <div class="sect3">
-<h4 id="oadp-cli-must-gather_troubleshoot-oadp">Collect diagnostic data</h4>
+<h4 id="oadp-cli-must-gather_diagnose-and-resolve-oadp-failures">Collect diagnostic data</h4>
 <div class="paragraph _abstract">
 <p>You can use the OADP command-line interface (CLI) to collect diagnostic information for OADP installations. The <code>must-gather</code> command runs the OADP must-gather tool to collect logs and cluster state information needed for troubleshooting and support cases.</p>
 </div>
@@ -2222,7 +2242,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 580. Flags for the <code>oc oadp must-gather</code> command</caption>
+<caption class="title">Table 593. Flags for the <code>oc oadp must-gather</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2259,7 +2279,7 @@ spec:
 </div>
 </div>
 <div class="sect3">
-<h4 id="resolving-oadp-operator-fails-silently-issue_troubleshoot-oadp">Resolve silent failure of the OADP Operator</h4>
+<h4 id="resolving-oadp-operator-fails-silently-issue_diagnose-and-resolve-oadp-failures">Resolve silent failure of the OADP Operator</h4>
 <div class="paragraph _abstract">
 <p>Resolve the silent failure issue where the OADP Operator reports a <code>Running</code> status but the AWS S3 buckets remain empty due to incorrect cloud credentials permissions. This helps you identify and fix credential permission problems in your backup storage locations.</p>
 </div>
@@ -2348,7 +2368,7 @@ metadata:
 </div>
 </div>
 <div class="sect3">
-<h4 id="resolving-incorrect-aws-credentials-issue_troubleshoot-oadp">Resolve incorrect AWS credentials</h4>
+<h4 id="resolving-incorrect-aws-credentials-issue_diagnose-and-resolve-oadp-failures">Resolve incorrect AWS credentials</h4>
 <div class="paragraph _abstract">
 <p>Resolve credential errors such as <code>InvalidAccessKeyId</code> or <code>NoCredentialProviders</code> that occur when the <code>credentials-velero</code> file is incorrectly formatted. This helps you configure valid AWS credentials for OADP backup operations.</p>
 </div>
@@ -2407,7 +2427,7 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="resolving-backup-storage-contains-invalid-directories-issue_troubleshoot-oadp">Resolve invalid directories in backup storage</h4>
+<h4 id="resolving-backup-storage-contains-invalid-directories-issue_diagnose-and-resolve-oadp-failures">Resolve invalid directories in backup storage</h4>
 <div class="paragraph _abstract">
 <p>Resolve the <code>Backup storage contains invalid top-level directories</code> error that occurs when object storage contains non-Velero directories. This helps you configure the correct bucket prefix for shared object storage.</p>
 </div>
@@ -2421,7 +2441,7 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="troubleshooting-backup-cr-status-remains-in-progress-issue_troubleshoot-oadp">Troubleshoot issue where backup CR status remains in progress</h4>
+<h4 id="troubleshooting-backup-cr-status-remains-in-progress-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR status remains in progress</h4>
 <div class="paragraph _abstract">
 <p>Resolve the issue where an interrupted backup causes the <code>Backup</code> CR status to remain in the <code>InProgress</code> phase. This helps you clear stalled backups and create new ones to complete your backup operations.</p>
 </div>
@@ -2463,7 +2483,7 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="troubleshooting-backup-cr-status-remains-in-partiallyfailed-issue_troubleshoot-oadp">Troubleshoot issue where backup CR status remains partially failed</h4>
+<h4 id="troubleshooting-backup-cr-status-remains-in-partiallyfailed-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR status remains partially failed</h4>
 <div class="paragraph _abstract">
 <p>Resolve the <code>PartiallyFailed</code> status that occurs when a <code>Backup</code> CR cannot create a CSI snapshot due to a missing label on the <code>VolumeSnapshotClass</code>. This helps you ensure successful backups by properly labeling the snapshot class.</p>
 </div>
@@ -2504,7 +2524,7 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="troubleshooting-backup-cr-cannot-retrieve-volume-issue_troubleshoot-oadp">Troubleshoot issue where backup CR cannot retrieve volume</h4>
+<h4 id="troubleshooting-backup-cr-cannot-retrieve-volume-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR cannot retrieve volume</h4>
 <div class="paragraph _abstract">
 <p>Resolve the <code>InvalidVolume.NotFound</code> error that occurs when the persistent volume (PV) and snapshot locations are in different regions. This helps you ensure the <code>Backup</code> CR can successfully retrieve volumes.</p>
 </div>
@@ -2529,7 +2549,7 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="oadp-troubleshooting-pvc-binding-delay_troubleshoot-oadp">Troubleshoot PVC binding failures with the waitForFirstConsumer storage class</h4>
+<h4 id="oadp-troubleshooting-pvc-binding-delay_diagnose-and-resolve-oadp-failures">Troubleshoot PVC binding failures with the waitForFirstConsumer storage class</h4>
 <div class="paragraph _abstract">
 <p>To ensure that restored persistent volume claims (PVCs) successfully bind to PVs when node affinity is configured, adjust the storage class binding mode settings during restore operations.</p>
 </div>
@@ -2563,7 +2583,7 @@ spec:
 </div>
 </div>
 <div class="sect3">
-<h4 id="velero-default-item-operation-timeout_troubleshoot-oadp">Implement velero default item operation timeout</h4>
+<h4 id="velero-default-item-operation-timeout_diagnose-and-resolve-oadp-failures">Implement velero default item operation timeout</h4>
 <div class="paragraph _abstract">
 <p>Configure the <code>defaultItemOperationTimeout</code> parameter in the `DataProtectionApplication`ccustom resource (CR) to define how long Velero waits for backup and restore operations to finish. Adjusting this timeout helps you prevent errors during Container Storage Interface (CSI) Data Mover tasks.</p>
 </div>
@@ -2605,7 +2625,7 @@ spec:
 </ul>
 </div>
 <div class="sect4">
-<h5 id="velero-timeout_troubleshoot-oadp">Implement velero resource timeout</h5>
+<h5 id="velero-timeout_diagnose-and-resolve-oadp-failures">Implement velero resource timeout</h5>
 <div class="paragraph _abstract">
 <p>Configure the <code>resourceTimeout</code> parameter in the <code>DataProtectionApplication</code> custom resource (CR) to define how long Velero waits for resource availability. Adjusting this timeout helps you prevent errors during large backups, repository readiness checks, and restore operations.</p>
 </div>
@@ -2655,7 +2675,7 @@ spec:
 </div>
 </div>
 <div class="sect4">
-<h5 id="restic-timeout_troubleshoot-oadp">Implement restic timeout</h5>
+<h5 id="restic-timeout_diagnose-and-resolve-oadp-failures">Implement restic timeout</h5>
 <div class="paragraph _abstract">
 <p>Configure the Restic timeout parameter to prevent backup failures for large persistent volumes or long-running backup operations. This helps you avoid timeout errors when backing up data greater than 500GB or when backups exceed the default one-hour limit.</p>
 </div>
@@ -2705,7 +2725,7 @@ spec:
 </div>
 </div>
 <div class="sect4">
-<h5 id="item-operation-timeout-backup_troubleshoot-oadp">Implement item operation timeout - backup</h5>
+<h5 id="item-operation-timeout-backup_diagnose-and-resolve-oadp-failures">Implement item operation timeout - backup</h5>
 <div class="paragraph _abstract">
 <p>Configure the <code>ItemOperationTimeout</code> parameter in the <code>Backup</code> custom resource (CR) to define how long asynchronous <code>BackupItemAction</code> operations wait to complete. Adjusting this timeout prevents failures when Data Mover needs more time to upload large storage volumes. The default value is <code>1h</code>.</p>
 </div>
@@ -2730,7 +2750,7 @@ spec:
 </div>
 </div>
 <div class="sect4">
-<h5 id="item-operation-timeout-restore_troubleshoot-oadp">Implement item operation timeout - restore</h5>
+<h5 id="item-operation-timeout-restore_diagnose-and-resolve-oadp-failures">Implement item operation timeout - restore</h5>
 <div class="paragraph _abstract">
 <p>Configure the <code>ItemOperationTimeout</code> parameter in the <code>Restore</code> custom resource (CR) to define how long restore operations wait to complete. Adjusting this timeout prevents failures when Data Mover needs more time to download large storage volumes. The default value is <code>1h</code>.</p>
 </div>
@@ -2755,7 +2775,7 @@ spec:
 </div>
 </div>
 <div class="sect4">
-<h5 id="csisnapshot-timeout_troubleshoot-oadp">Implement CSI snapshot timeout</h5>
+<h5 id="csisnapshot-timeout_diagnose-and-resolve-oadp-failures">Implement CSI snapshot timeout</h5>
 <div class="paragraph _abstract">
 <p>Configure the <code>CSISnapshotTimeout</code> parameter in the <code>Backup</code> custom resource (CR) to define how long to wait for a CSI snapshot to become ready. Adjusting this timeout prevents errors when using the CSI plugin to take snapshots of large storage volumes that require more time. The default value is <code>10m</code>.</p>
 </div>
@@ -2794,7 +2814,7 @@ spec:
 </div>
 </div>
 <div class="sect4">
-<h5 id="datamover-timeout_troubleshoot-oadp">Implement Data Mover timeout</h5>
+<h5 id="datamover-timeout_diagnose-and-resolve-oadp-failures">Implement Data Mover timeout</h5>
 <div class="paragraph _abstract">
 <p>Configure the Data Mover <code>timeout</code> parameter in the <code>DataProtectionApplication</code> custom resource (CR) to define how long backup and restore operations run. Adjusting this value helps prevent timeouts in large environments over 500GB or when using the <code>VolumeSnapshotMover</code> plugin. The default value is <code>10m</code>.</p>
 </div>
@@ -2838,7 +2858,7 @@ spec:
 </div>
 </div>
 <div class="sect3">
-<h4 id="oadp-pod-crash-resource-request-velero_troubleshoot-oadp">Set resource requests for a Velero pod</h4>
+<h4 id="oadp-pod-crash-resource-request-velero_diagnose-and-resolve-oadp-failures">Set resource requests for a Velero pod</h4>
 <div class="paragraph _abstract">
 <p>Use the <code>configuration.velero.podConfig.resourceAllocations</code> specification field in the <code>oadp_v1alpha1_dpa.yaml</code> file to set specific resource requests for a <code>Velero</code> pod.</p>
 </div>
@@ -2868,7 +2888,7 @@ configuration:
 </ul>
 </div>
 <div class="sect4">
-<h5 id="oadp-pod-crash-resource-request-retics_troubleshoot-oadp">Set resource requests for a Restic pod</h5>
+<h5 id="oadp-pod-crash-resource-request-retics_diagnose-and-resolve-oadp-failures">Set resource requests for a Restic pod</h5>
 <div class="paragraph _abstract">
 <p>Use the <code>configuration.restic.podConfig.resourceAllocations</code> specification field to set specific resource requests for a <code>Restic</code> pod.</p>
 </div>
@@ -2913,7 +2933,7 @@ configuration:
 </div>
 </div>
 <div class="sect4">
-<h5 id="setting-resource-requests-for-a-nodeagent-pod_troubleshoot-oadp">Set resource requests for a nodeAgent pod</h5>
+<h5 id="setting-resource-requests-for-a-nodeagent-pod_diagnose-and-resolve-oadp-failures">Set resource requests for a nodeAgent pod</h5>
 <div class="paragraph _abstract">
 <p>Use the <code>configuration.nodeAgent.podConfig.resourceAllocations</code> specification field to set specific resource requests for a <code>nodeAgent</code> pod.</p>
 </div>
@@ -3045,7 +3065,7 @@ velero-7b6c7fb8d7-ppc8m                                     1/1     Running     
 </div>
 </div>
 <div class="sect4">
-<h5 id="velero-oomkilled-large-kopia-repos_troubleshoot-oadp">Velero server terminates with OOMKilled when accessing large Kopia repositories</h5>
+<h5 id="velero-oomkilled-large-kopia-repos_diagnose-and-resolve-oadp-failures">Velero server terminates with OOMKilled when accessing large Kopia repositories</h5>
 <div class="paragraph _abstract">
 <p>If the Velero server accesses large Kopia repositories, the Velero pod might crash and report an <code>OOMKilled</code> event.</p>
 </div>
@@ -3130,7 +3150,7 @@ velero-7b6c7fb8d7-ppc8m                                     1/1     Running     
 </div>
 </div>
 <div class="sect3">
-<h4 id="oadp-restic-restore-failing-psa-policy_troubleshoot-oadp">Troubleshoot restic restore partially failed issue on OpenShift Container Platform 4.14 onward due to changed PSA policy</h4>
+<h4 id="oadp-restic-restore-failing-psa-policy_diagnose-and-resolve-oadp-failures">Troubleshoot restic restore partially failed issue on OpenShift Container Platform 4.14 onward due to changed PSA policy</h4>
 <div class="paragraph _abstract">
 <p>Resolve a partial failure of Restic restore on OpenShift Container Platform 4.14 onward caused by Pod Security Admission (PSA) policy enforcement by adjusting the <code>restore-resource-priorities</code> field in your <code>DataProtectionApplication</code> (DPA) custom resource (CR). By doing so, you ensure that <code>SecurityContextConstraints</code> (SCC) resources are restored before pods. This helps you to complete restore operations successfully when PSA policies deny pod admission due to Velero resource restore order.</p>
 </div>
@@ -3231,7 +3251,7 @@ configuration:
 </div>
 </div>
 <div class="sect3">
-<h4 id="restic-backup-cr-cannot-be-recreated-after-bucket-is-emptied_troubleshoot-oadp">Troubleshoot Restic Backup CR issue that cannot be re-created after bucket is emptied</h4>
+<h4 id="restic-backup-cr-cannot-be-recreated-after-bucket-is-emptied_diagnose-and-resolve-oadp-failures">Troubleshoot Restic Backup CR issue that cannot be re-created after bucket is emptied</h4>
 <div class="paragraph _abstract">
 <p>Resolve the <code>Backup</code> custom resource (CR) re-creation failure that occurs after you empty the object storage bucket. This failure occurs because Velero does not automatically re-create the Restic repository from the <code>ResticRepository</code> manifest.</p>
 </div>
@@ -3282,7 +3302,7 @@ configuration:
 </div>
 </div>
 <div class="sect3">
-<h4 id="restic-permission-error-for-nfs-data-volumes-with-root-squash-enabled_troubleshoot-oadp">Troubleshoot Restic permission errors for NFS data volumes</h4>
+<h4 id="restic-permission-error-for-nfs-data-volumes-with-root-squash-enabled_diagnose-and-resolve-oadp-failures">Troubleshoot Restic permission errors for NFS data volumes</h4>
 <div class="paragraph _abstract">
 <p>Create a supplemental group and add its group ID to the <code>DataProtectionApplication</code> customer resource CR to resolve <code>Restic</code> permission errors on NFS data volumes with <code>root_squash</code> enabled. This helps you to restore backup functionality for NFS volumes without disabling root squash.</p>
 </div>
@@ -3339,7 +3359,7 @@ spec:
 </div>
 </div>
 <div class="sect3">
-<h4 id="avoiding-the-velero-plugin-panic-error_troubleshoot-oadp">Avoid the Velero plugin panic error</h4>
+<h4 id="avoiding-the-velero-plugin-panic-error_diagnose-and-resolve-oadp-failures">Avoid the Velero plugin panic error</h4>
 <div class="paragraph _abstract">
 <p>Label a custom Backup Storage Location (BSL) to resolve Velero plugin panic errors during <code>imagestream</code> backups. This helps you to ensure the OADP controller creates the required registry secret when you manage the BSL outside the <code>DataProtectionApplication</code> (DPA) CR.</p>
 </div>
@@ -3402,7 +3422,7 @@ runtime error: index out of range with length 1, stack trace: goroutine 94…</c
 </div>
 </div>
 <div class="sect3">
-<h4 id="workaround-for-openshift-adp-controller-segmentation-fault_troubleshoot-oadp">Workaround for OpenShift ADP Controller segmentation fault</h4>
+<h4 id="workaround-for-openshift-adp-controller-segmentation-fault_diagnose-and-resolve-oadp-failures">Workaround for OpenShift ADP Controller segmentation fault</h4>
 <div class="paragraph _abstract">
 <p>Define either <code>velero</code> or <code>cloudstorage</code> in your Data Protection Application (DPA) configuration to prevent indefinite pod crashes. This configuration resolves a segmentation fault in the <code>openshift-adp-controller-manager</code> pod that occurs when both components are enabled.</p>
 </div>
@@ -3432,7 +3452,7 @@ runtime error: index out of range with length 1, stack trace: goroutine 94…</c
 </div>
 </div>
 <div class="sect3">
-<h4 id="migration-debugging-velero-admission-webhooks-knative_troubleshoot-oadp">Restore Knative resources</h4>
+<h4 id="migration-debugging-velero-admission-webhooks-knative_diagnose-and-resolve-oadp-failures">Restore Knative resources</h4>
 <div class="paragraph _abstract">
 <p>Resolve issues with restoring Knative resources that use admission webhooks by restoring the top-level <code>service.serving.knative.dev</code> service resource with Velero. This helps you to ensure that Knative resources are restored successfully without admission webhook errors.</p>
 </div>
@@ -3453,7 +3473,7 @@ runtime error: index out of range with length 1, stack trace: goroutine 94…</c
 </div>
 </div>
 <div class="sect3">
-<h4 id="migration-debugging-velero-admission-webhooks-ibm-appconnect_troubleshoot-oadp">Restore IBM AppConnect resources</h4>
+<h4 id="migration-debugging-velero-admission-webhooks-ibm-appconnect_diagnose-and-resolve-oadp-failures">Restore IBM AppConnect resources</h4>
 <div class="paragraph _abstract">
 <p>Troubleshoot Velero restore failures for IBM&#174; AppConnect resources that use admission webhooks. Verify your webhook rules and check that the installed Operator supports the backup&#8217;s version to successfully complete the restore.</p>
 </div>
@@ -3479,12 +3499,12 @@ runtime error: index out of range with length 1, stack trace: goroutine 94…</c
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="oadp-monitor-and-validate-intro_monitor-and-validate-oadp.html">Monitor and validate OADP</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="_develop.html">Develop</a> →</p>
+<p>← Previous: <a href="oadp-api-reference-intro_oadp-api-reference.html">OADP API reference</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="oadp-uninstall-intro_uninstall-oadp.html">Uninstall OADP</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-08 15:28:17 -0400
+Last updated 2026-10-08 16:37:29 -0400
 </div>
 </div>
 <style>

@@ -1060,29 +1060,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="configure-rhacm-for-telco-deployments-con_configure-rhacm-for-telco-deployments.html">Configure Red&#160;Hat Advanced Cluster Management (RHACM) for telco deployments</a>
 </li>
-<li><a href="oadp-intro_understand-oadp-capabilities.html">Protect application data with OADP</a>
+<li><a href="oadp-intro_learn-about-oadp-capabilities.html">Protect application data with OADP</a>
+</li>
+<li><a href="oadp-release-notes-intro_review-oadp-release-notes.html">OADP release notes</a>
 </li>
 <li><a href="oadp-about-backup-snapshot-locations_plan-oadp-deployment.html">About backup and snapshot locations and their secrets</a>
 </li>
-<li><a href="oadp-install-and-configure-intro_install-and-configure-oadp.html">Install and configure OADP</a>
+<li><a href="oadp-install-and-configure-intro_install-oadp.html">Install and configure OADP</a>
+</li>
+<li><a href="oadp-connect-to-backup-storage-intro_connect-oadp-to-backup-storage.html">Connect OADP to backup storage</a>
+</li>
+<li><a href="oadp-configure-security-performance-intro_configure-oadp-security-and-performance.html">Configure OADP security and performance</a>
+</li>
+<li><a href="oadp-cli-setup_manage-oadp-with-cli-plugin.html">Set up the OADP CLI plugin</a>
 </li>
 <li><a href="oadp-back-up-applications-intro_back-up-applications.html">Back up applications</a>
 </li>
 <li><a href="oadp-restore-applications-intro_restore-applications.html">Restore applications</a>
 </li>
-<li><a href="oadp-protect-virtual-machine-data-intro_protect-virtual-machine-data.html">Protect virtual machine data</a>
+<li><a href="oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management.html">Back up and restore 3scale API Management</a>
 </li>
-<li><a href="oadp-self-service-overview_delegate-backup-operations-with-oadp-self-service.html">About OADP Self-Service</a>
+<li><a href="oadp-rosa-sts-intro_back-up-and-restore-applications-on-rosa-with-sts.html">Back up and restore applications on ROSA with STS</a>
+</li>
+<li><a href="oadp-data-mover-support_configure-data-mover-and-tune-backup-performance.html">Data Mover support</a>
+</li>
+<li><a href="oadp-protect-virtual-machine-data-intro_back-up-and-restore-virtual-machines.html">Protect virtual machine data</a>
+</li>
+<li><a href="oadp-vmfr-overview_restore-vm-files-with-vmfr.html">What problem is OADP VMFR solving</a>
+</li>
+<li><a href="oadp-vmdp-overview_back-up-and-restore-vm-data-with-vmdp.html">About OADP virtual machine data protection</a>
+</li>
+<li><a href="oadp-self-service-overview_enable-oadp-self-service.html">About OADP Self-Service</a>
 </li>
 <li><a href="oadp-about-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters.html">About backing up data from one cluster and restoring it on another cluster</a>
-</li>
-<li><a href="oadp-data-mover-support_optimize-backup-performance.html">Data Mover support</a>
 </li>
 <li><a href="oadp-upgrade-intro_upgrade-oadp.html">Upgrade OADP</a>
 </li>
 <li><a href="oadp-monitor-and-validate-intro_monitor-and-validate-oadp.html"><span class="toc-current">Monitor and validate OADP</span></a>
 </li>
-<li><a href="oadp-troubleshoot-intro_troubleshoot-oadp.html">Troubleshoot OADP</a>
+<li><a href="oadp-api-reference-intro_oadp-api-reference.html">OADP API reference</a>
+</li>
+<li><a href="oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures.html">Troubleshoot OADP</a>
+</li>
+<li><a href="oadp-uninstall-intro_uninstall-oadp.html">Uninstall OADP</a>
 </li>
 </ul>
 </li>
@@ -2109,7 +2129,7 @@ spec:
 <p>Review the following table for a list of <code>Velero</code> metrics provided by OADP together with their <a href="https://prometheus.io/docs/concepts/metric_types/">Types</a>:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 576. Velero metrics</caption>
+<caption class="title">Table 579. Velero metrics</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2610,7 +2630,7 @@ status:
 <p>Review the specification fields available in the <code>DataProtectionTest</code> (DPT) custom resource (CR) to configure backup location, upload speed tests, CSI volume snapshot tests, and other options. This helps you customize the DPT CR to validate your specific OADP configuration requirements.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 577. DPT CR spec fields</caption>
+<caption class="title">Table 580. DPT CR spec fields</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2663,7 +2683,7 @@ status:
 <p>Review the status fields in the <code>DataProtectionTest</code> (DPT) custom resource (CR) to monitor test progress, upload speed results, bucket metadata, and snapshot test outcomes. This helps you interpret the DPT CR results and identify any issues with your OADP configuration.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 578. DPT CR status fields</caption>
+<caption class="title">Table 581. DPT CR status fields</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3024,7 +3044,7 @@ spec:
 <p>Troubleshoot common <code>DataProtectionTest</code> (DPT) custom resource (CR) issues, such as stuck progress states, upload test failures, and snapshot test failures. This helps you identify and resolve problems with your DPT configuration.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 579. DPT CR troubleshooting</caption>
+<caption class="title">Table 582. DPT CR troubleshooting</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3418,12 +3438,12 @@ spec:
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="oadp-upgrade-intro_upgrade-oadp.html">Upgrade OADP</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="oadp-troubleshoot-intro_troubleshoot-oadp.html">Troubleshoot OADP</a> →</p>
+<p>← Previous: <a href="oadp-upgrade-intro_upgrade-oadp.html">Upgrade OADP</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="oadp-api-reference-intro_oadp-api-reference.html">OADP API reference</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-08 15:28:17 -0400
+Last updated 2026-10-08 16:37:29 -0400
 </div>
 </div>
 <style>

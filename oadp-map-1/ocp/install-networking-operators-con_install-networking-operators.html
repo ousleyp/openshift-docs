@@ -1061,29 +1061,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="configure-rhacm-for-telco-deployments-con_configure-rhacm-for-telco-deployments.html">Configure Red&#160;Hat Advanced Cluster Management (RHACM) for telco deployments</a>
 </li>
-<li><a href="oadp-intro_understand-oadp-capabilities.html">Protect application data with OADP</a>
+<li><a href="oadp-intro_learn-about-oadp-capabilities.html">Protect application data with OADP</a>
+</li>
+<li><a href="oadp-release-notes-intro_review-oadp-release-notes.html">OADP release notes</a>
 </li>
 <li><a href="oadp-about-backup-snapshot-locations_plan-oadp-deployment.html">About backup and snapshot locations and their secrets</a>
 </li>
-<li><a href="oadp-install-and-configure-intro_install-and-configure-oadp.html">Install and configure OADP</a>
+<li><a href="oadp-install-and-configure-intro_install-oadp.html">Install and configure OADP</a>
+</li>
+<li><a href="oadp-connect-to-backup-storage-intro_connect-oadp-to-backup-storage.html">Connect OADP to backup storage</a>
+</li>
+<li><a href="oadp-configure-security-performance-intro_configure-oadp-security-and-performance.html">Configure OADP security and performance</a>
+</li>
+<li><a href="oadp-cli-setup_manage-oadp-with-cli-plugin.html">Set up the OADP CLI plugin</a>
 </li>
 <li><a href="oadp-back-up-applications-intro_back-up-applications.html">Back up applications</a>
 </li>
 <li><a href="oadp-restore-applications-intro_restore-applications.html">Restore applications</a>
 </li>
-<li><a href="oadp-protect-virtual-machine-data-intro_protect-virtual-machine-data.html">Protect virtual machine data</a>
+<li><a href="oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management.html">Back up and restore 3scale API Management</a>
 </li>
-<li><a href="oadp-self-service-overview_delegate-backup-operations-with-oadp-self-service.html">About OADP Self-Service</a>
+<li><a href="oadp-rosa-sts-intro_back-up-and-restore-applications-on-rosa-with-sts.html">Back up and restore applications on ROSA with STS</a>
+</li>
+<li><a href="oadp-data-mover-support_configure-data-mover-and-tune-backup-performance.html">Data Mover support</a>
+</li>
+<li><a href="oadp-protect-virtual-machine-data-intro_back-up-and-restore-virtual-machines.html">Protect virtual machine data</a>
+</li>
+<li><a href="oadp-vmfr-overview_restore-vm-files-with-vmfr.html">What problem is OADP VMFR solving</a>
+</li>
+<li><a href="oadp-vmdp-overview_back-up-and-restore-vm-data-with-vmdp.html">About OADP virtual machine data protection</a>
+</li>
+<li><a href="oadp-self-service-overview_enable-oadp-self-service.html">About OADP Self-Service</a>
 </li>
 <li><a href="oadp-about-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters.html">About backing up data from one cluster and restoring it on another cluster</a>
-</li>
-<li><a href="oadp-data-mover-support_optimize-backup-performance.html">Data Mover support</a>
 </li>
 <li><a href="oadp-upgrade-intro_upgrade-oadp.html">Upgrade OADP</a>
 </li>
 <li><a href="oadp-monitor-and-validate-intro_monitor-and-validate-oadp.html">Monitor and validate OADP</a>
 </li>
-<li><a href="oadp-troubleshoot-intro_troubleshoot-oadp.html">Troubleshoot OADP</a>
+<li><a href="oadp-api-reference-intro_oadp-api-reference.html">OADP API reference</a>
+</li>
+<li><a href="oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures.html">Troubleshoot OADP</a>
+</li>
+<li><a href="oadp-uninstall-intro_uninstall-oadp.html">Uninstall OADP</a>
 </li>
 </ul>
 </li>
@@ -3332,7 +3352,7 @@ spec:
 <p>The following table describes the <code>sriovoperatorconfig</code> CR fields:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 635. SR-IOV Network Operator config custom resource</caption>
+<caption class="title">Table 648. SR-IOV Network Operator config custom resource</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -3517,7 +3537,7 @@ spec:
 <p>The following table describes the possible <code>Ready</code> condition values for each object.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 636. SR-IOV Network Operator Ready condition</caption>
+<caption class="title">Table 649. SR-IOV Network Operator Ready condition</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 37.5%;">
@@ -3621,7 +3641,7 @@ spec:
 <p>When the <code>Ready</code> condition is <code>False</code>, the condition <code>reason</code> and <code>message</code> fields identify the failure. The following reasons are commonly reported:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 637. Common Ready condition reasons</caption>
+<caption class="title">Table 650. Common Ready condition reasons</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 37.5%;">
@@ -4344,7 +4364,7 @@ sriov-network-operator.{product-version}.0-202211021237   SR-IOV Network Operato
 <p>The following table describes the SR-IOV VF metrics that the metrics exporter reads and exposes in Prometheus format:</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
-<caption class="title">Table 638. SR-IOV VF metrics</caption>
+<caption class="title">Table 651. SR-IOV VF metrics</caption>
 <colgroup>
 <col>
 <col>
@@ -4613,7 +4633,7 @@ sriov-network-operator-cc6fd88bc-9bsmt   1/1     Running   0          5d22h</cod
 <p>The following section highlights the supported features of the <code>UserDefinedNetwork</code> and <code>NetworkAttachmentDefinition</code> CRs when used as either the primary or secondary network. A separate table for the <code>ClusterUserDefinedNetwork</code> CR is also included.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 639. Primary network support matrix for <code>UserDefinedNetwork</code> and <code>NetworkAttachmentDefinition</code> CRs</caption>
+<caption class="title">Table 652. Primary network support matrix for <code>UserDefinedNetwork</code> and <code>NetworkAttachmentDefinition</code> CRs</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -4933,7 +4953,7 @@ sriov-network-operator-cc6fd88bc-9bsmt   1/1     Running   0          5d22h</cod
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 640. Secondary network support matrix for <code>UserDefinedNetwork</code> and <code>NetworkAttachmentDefinition</code> CRs</caption>
+<caption class="title">Table 653. Secondary network support matrix for <code>UserDefinedNetwork</code> and <code>NetworkAttachmentDefinition</code> CRs</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -5333,7 +5353,7 @@ sriov-network-operator-cc6fd88bc-9bsmt   1/1     Running   0          5d22h</cod
 <p>The Localnet topology is unavailable for use with the <code>UserDefinedNetwork</code> CR. It is only supported on secondary networks for <code>NetworkAttachmentDefinition</code> CRs.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 641. Support matrix for <code>ClusterUserDefinedNetwork</code> CRs</caption>
+<caption class="title">Table 654. Support matrix for <code>ClusterUserDefinedNetwork</code> CRs</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -5895,7 +5915,7 @@ spec:
 <p>The configuration for the API is described in the following table:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 642. <code>NetworkAttachmentDefinition</code> API fields</caption>
+<caption class="title">Table 655. <code>NetworkAttachmentDefinition</code> API fields</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 20%;">
@@ -6660,7 +6680,7 @@ metadata:
 <p>The following table describes the configuration parameters for the Bond CNI plugin:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 643. Bond CNI plugin JSON configuration object</caption>
+<caption class="title">Table 656. Bond CNI plugin JSON configuration object</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -7427,7 +7447,7 @@ metadata:
 <p>The OVN-Kubernetes network plugin JSON configuration object describes the configuration parameters for the OVN-Kubernetes CNI network plugin.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 644. OVN-Kubernetes network plugin JSON configuration table</caption>
+<caption class="title">Table 657. OVN-Kubernetes network plugin JSON configuration table</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -8198,7 +8218,7 @@ If the installation later succeeds with an <strong>InstallSucceeded</strong> mes
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-08 15:28:17 -0400
+Last updated 2026-10-08 16:37:29 -0400
 </div>
 </div>
 <style>

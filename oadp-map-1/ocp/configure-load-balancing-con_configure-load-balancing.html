@@ -1061,29 +1061,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="configure-rhacm-for-telco-deployments-con_configure-rhacm-for-telco-deployments.html">Configure Red&#160;Hat Advanced Cluster Management (RHACM) for telco deployments</a>
 </li>
-<li><a href="oadp-intro_understand-oadp-capabilities.html">Protect application data with OADP</a>
+<li><a href="oadp-intro_learn-about-oadp-capabilities.html">Protect application data with OADP</a>
+</li>
+<li><a href="oadp-release-notes-intro_review-oadp-release-notes.html">OADP release notes</a>
 </li>
 <li><a href="oadp-about-backup-snapshot-locations_plan-oadp-deployment.html">About backup and snapshot locations and their secrets</a>
 </li>
-<li><a href="oadp-install-and-configure-intro_install-and-configure-oadp.html">Install and configure OADP</a>
+<li><a href="oadp-install-and-configure-intro_install-oadp.html">Install and configure OADP</a>
+</li>
+<li><a href="oadp-connect-to-backup-storage-intro_connect-oadp-to-backup-storage.html">Connect OADP to backup storage</a>
+</li>
+<li><a href="oadp-configure-security-performance-intro_configure-oadp-security-and-performance.html">Configure OADP security and performance</a>
+</li>
+<li><a href="oadp-cli-setup_manage-oadp-with-cli-plugin.html">Set up the OADP CLI plugin</a>
 </li>
 <li><a href="oadp-back-up-applications-intro_back-up-applications.html">Back up applications</a>
 </li>
 <li><a href="oadp-restore-applications-intro_restore-applications.html">Restore applications</a>
 </li>
-<li><a href="oadp-protect-virtual-machine-data-intro_protect-virtual-machine-data.html">Protect virtual machine data</a>
+<li><a href="oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management.html">Back up and restore 3scale API Management</a>
 </li>
-<li><a href="oadp-self-service-overview_delegate-backup-operations-with-oadp-self-service.html">About OADP Self-Service</a>
+<li><a href="oadp-rosa-sts-intro_back-up-and-restore-applications-on-rosa-with-sts.html">Back up and restore applications on ROSA with STS</a>
+</li>
+<li><a href="oadp-data-mover-support_configure-data-mover-and-tune-backup-performance.html">Data Mover support</a>
+</li>
+<li><a href="oadp-protect-virtual-machine-data-intro_back-up-and-restore-virtual-machines.html">Protect virtual machine data</a>
+</li>
+<li><a href="oadp-vmfr-overview_restore-vm-files-with-vmfr.html">What problem is OADP VMFR solving</a>
+</li>
+<li><a href="oadp-vmdp-overview_back-up-and-restore-vm-data-with-vmdp.html">About OADP virtual machine data protection</a>
+</li>
+<li><a href="oadp-self-service-overview_enable-oadp-self-service.html">About OADP Self-Service</a>
 </li>
 <li><a href="oadp-about-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters.html">About backing up data from one cluster and restoring it on another cluster</a>
-</li>
-<li><a href="oadp-data-mover-support_optimize-backup-performance.html">Data Mover support</a>
 </li>
 <li><a href="oadp-upgrade-intro_upgrade-oadp.html">Upgrade OADP</a>
 </li>
 <li><a href="oadp-monitor-and-validate-intro_monitor-and-validate-oadp.html">Monitor and validate OADP</a>
 </li>
-<li><a href="oadp-troubleshoot-intro_troubleshoot-oadp.html">Troubleshoot OADP</a>
+<li><a href="oadp-api-reference-intro_oadp-api-reference.html">OADP API reference</a>
+</li>
+<li><a href="oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures.html">Troubleshoot OADP</a>
+</li>
+<li><a href="oadp-uninstall-intro_uninstall-oadp.html">Uninstall OADP</a>
 </li>
 </ul>
 </li>
@@ -2224,7 +2244,7 @@ install-tsz2g   metallb-operator.v{product-version}.0-202503102139   Manual     
 <p>MetalLB exposes status information for several key components, providing a comprehensive view of its configuration and operation.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 645. MetalLB status resources</caption>
+<caption class="title">Table 658. MetalLB status resources</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -3224,7 +3244,7 @@ frr-k8s-statuscleaner-59cf6f5d44-9wkfr   1/1     Running   0          4h</code><
 <p>To monitor network connectivity and diagnose routing states, refer to the Prometheus metrics for MetalLB. These metrics provide visibility into the status of BGP peers and BFD profiles so that you can ensure stable external communication.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 646. MetalLB BFD metrics</caption>
+<caption class="title">Table 659. MetalLB BFD metrics</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 70%;">
@@ -3271,7 +3291,7 @@ frr-k8s-statuscleaner-59cf6f5d44-9wkfr   1/1     Running   0          4h</code><
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 647. MetalLB BGP metrics</caption>
+<caption class="title">Table 660. MetalLB BGP metrics</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 70%;">
@@ -4740,7 +4760,7 @@ spec:
 <p>The IP failover environment variables reference lists all variables you can use to configure IP failover in Red&#160;Hat OpenShift Container Platform, including VIP addresses, monitoring ports, and network interfaces.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 648. IP failover environment variables</caption>
+<caption class="title">Table 661. IP failover environment variables</caption>
 <colgroup>
 <col style="width: 37.5%;">
 <col style="width: 12.5%;">
@@ -6054,7 +6074,7 @@ The old node can continue to forward traffic for outdated clients until their ca
 <p>The following table details the parameters for the <code>IPAddressPool</code> CR:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 649. MetalLB IPAddressPool pool custom resource</caption>
+<caption class="title">Table 662. MetalLB IPAddressPool pool custom resource</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -6173,7 +6193,7 @@ Specify <code>false</code> if you want to explicitly request an IP address from 
 <p>You can assign IP addresses from an <code>IPAddressPool</code> to services and namespaces by configuring the <code>spec.serviceAllocation</code> specification.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 650. MetalLB IPAddressPool custom resource spec.serviceAllocation subfields</caption>
+<caption class="title">Table 663. MetalLB IPAddressPool custom resource spec.serviceAllocation subfields</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -6606,7 +6626,7 @@ spec:
 <p>The following table details parameters for the <code>l2Advertisements</code> CR:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 651. L2 advertisements configuration</caption>
+<caption class="title">Table 664. L2 advertisements configuration</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -7742,7 +7762,7 @@ If you specify a value for this field, you must specify the same value for all o
 <p>The following table describes the parameters for the <code>BGPAdvertisements</code> CR:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 652. BGPAdvertisements configuration</caption>
+<caption class="title">Table 665. BGPAdvertisements configuration</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -8436,7 +8456,7 @@ spec:
 <p>The following table describes the parameters for the BGP peer CR:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 653. MetalLB BGP peer custom resource</caption>
+<caption class="title">Table 666. MetalLB BGP peer custom resource</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -9335,7 +9355,7 @@ Each interface is limited to one BGP connection.</p>
 </table>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 654. MetalLB community custom resource</caption>
+<caption class="title">Table 667. MetalLB community custom resource</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -9395,7 +9415,7 @@ Specify the same namespace that the MetalLB Operator uses.</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 655. CommunityAlias</caption>
+<caption class="title">Table 668. CommunityAlias</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -9595,7 +9615,7 @@ spec:
 <p>The following table describes parameters for the BFD profile CR:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 656. BFD profile custom resource</caption>
+<caption class="title">Table 669. BFD profile custom resource</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -10189,7 +10209,7 @@ spec:
 <p>The parameters for the <code>FRRConfiguration</code> custom resource are described in the following table:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 657. MetalLB FRRConfiguration custom resource</caption>
+<caption class="title">Table 670. MetalLB FRRConfiguration custom resource</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -11990,7 +12010,7 @@ You can determine the node name for the FRR-K8s pod with a command such as <code
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-08 15:28:17 -0400
+Last updated 2026-10-08 16:37:29 -0400
 </div>
 </div>
 <style>

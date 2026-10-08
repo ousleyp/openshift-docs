@@ -1060,29 +1060,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="configure-rhacm-for-telco-deployments-con_configure-rhacm-for-telco-deployments.html">Configure Red&#160;Hat Advanced Cluster Management (RHACM) for telco deployments</a>
 </li>
-<li><a href="oadp-intro_understand-oadp-capabilities.html">Protect application data with OADP</a>
+<li><a href="oadp-intro_learn-about-oadp-capabilities.html">Protect application data with OADP</a>
+</li>
+<li><a href="oadp-release-notes-intro_review-oadp-release-notes.html">OADP release notes</a>
 </li>
 <li><a href="oadp-about-backup-snapshot-locations_plan-oadp-deployment.html">About backup and snapshot locations and their secrets</a>
 </li>
-<li><a href="oadp-install-and-configure-intro_install-and-configure-oadp.html">Install and configure OADP</a>
+<li><a href="oadp-install-and-configure-intro_install-oadp.html">Install and configure OADP</a>
+</li>
+<li><a href="oadp-connect-to-backup-storage-intro_connect-oadp-to-backup-storage.html">Connect OADP to backup storage</a>
+</li>
+<li><a href="oadp-configure-security-performance-intro_configure-oadp-security-and-performance.html">Configure OADP security and performance</a>
+</li>
+<li><a href="oadp-cli-setup_manage-oadp-with-cli-plugin.html">Set up the OADP CLI plugin</a>
 </li>
 <li><a href="oadp-back-up-applications-intro_back-up-applications.html"><span class="toc-current">Back up applications</span></a>
 </li>
 <li><a href="oadp-restore-applications-intro_restore-applications.html">Restore applications</a>
 </li>
-<li><a href="oadp-protect-virtual-machine-data-intro_protect-virtual-machine-data.html">Protect virtual machine data</a>
+<li><a href="oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management.html">Back up and restore 3scale API Management</a>
 </li>
-<li><a href="oadp-self-service-overview_delegate-backup-operations-with-oadp-self-service.html">About OADP Self-Service</a>
+<li><a href="oadp-rosa-sts-intro_back-up-and-restore-applications-on-rosa-with-sts.html">Back up and restore applications on ROSA with STS</a>
+</li>
+<li><a href="oadp-data-mover-support_configure-data-mover-and-tune-backup-performance.html">Data Mover support</a>
+</li>
+<li><a href="oadp-protect-virtual-machine-data-intro_back-up-and-restore-virtual-machines.html">Protect virtual machine data</a>
+</li>
+<li><a href="oadp-vmfr-overview_restore-vm-files-with-vmfr.html">What problem is OADP VMFR solving</a>
+</li>
+<li><a href="oadp-vmdp-overview_back-up-and-restore-vm-data-with-vmdp.html">About OADP virtual machine data protection</a>
+</li>
+<li><a href="oadp-self-service-overview_enable-oadp-self-service.html">About OADP Self-Service</a>
 </li>
 <li><a href="oadp-about-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters.html">About backing up data from one cluster and restoring it on another cluster</a>
-</li>
-<li><a href="oadp-data-mover-support_optimize-backup-performance.html">Data Mover support</a>
 </li>
 <li><a href="oadp-upgrade-intro_upgrade-oadp.html">Upgrade OADP</a>
 </li>
 <li><a href="oadp-monitor-and-validate-intro_monitor-and-validate-oadp.html">Monitor and validate OADP</a>
 </li>
-<li><a href="oadp-troubleshoot-intro_troubleshoot-oadp.html">Troubleshoot OADP</a>
+<li><a href="oadp-api-reference-intro_oadp-api-reference.html">OADP API reference</a>
+</li>
+<li><a href="oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures.html">Troubleshoot OADP</a>
+</li>
+<li><a href="oadp-uninstall-intro_uninstall-oadp.html">Uninstall OADP</a>
 </li>
 </ul>
 </li>
@@ -1875,7 +1895,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#oadp-review-backup-restore_back-up-applications">Preview resources before running backup and restore</a></li><li class="level-4"><a href="#backingup-persistent-volumes_back-up-applications">Back up persistent volumes with CSI snapshots</a></li><li class="level-4"><a href="#oadp-backingup-file-system-backup_back-up-applications">Back up applications with File System Backup</a></li><li class="level-4"><a href="#oadp-1-3-backing-csi-snapshots_back-up-applications">Back up persistent volumes with CSI snapshots</a></li><li class="level-4"><a href="#oadp-1-3-restoring-csi-snapshots_back-up-applications">Restore CSI volume snapshots</a></li><li class="level-4"><a href="#oadp-deletion-policy-1-3_back-up-applications">Deletion policy for OADP 1.3</a></li><li class="level-5"><a href="#oadp-deletion-policy-guidelines-1-3_back-up-applications">Deletion policy guidelines for OADP 1.3</a></li><li class="level-4"><a href="#oadp-about-kopia-repo-maintenance_back-up-applications">About Kopia repository maintenance</a></li><li class="level-5"><a href="#kopia-maint-in-oadp_back-up-applications">Kopia maintenance in OADP</a></li><li class="level-4"><a href="#oadp-deleting-backups-using-oc_back-up-applications">Delete a backup by creating a DeleteBackupRequest CR</a></li><li class="level-4"><a href="#oadp-deleting-backups-using-velero_back-up-applications">Delete a backup by using the OADP CLI</a></li><li class="level-4"><a href="#oadp-deleting-backup-repository_back-up-applications">Delete a backup repository</a></li><li class="level-4"><a href="#oadp-usecase-backup-odf_back-up-applications">Back up an application using OADP and ODF</a></li><li class="level-4"><a href="#preparing-aws-credentials-for-oadp_back-up-applications">Prepare AWS credentials for OADP</a></li><li class="level-5"><a href="#installing-oadp-rosa-sts_back-up-applications">Install the OADP Operator and providing the IAM role</a></li><li class="level-5"><a href="#updating-role-arn-oadp-rosa-sts_back-up-applications">Update the IAM role ARN in the OADP Operator subscription</a></li><li class="level-5"><a href="#performing-a-backup-oadp-rosa-sts_back-up-applications">Example: Performing a backup with OADP and Red Hat OpenShift Container Platform</a></li><li class="level-5"><a href="#cleanup-a-backup-oadp-rosa-sts_back-up-applications">Clean up a cluster after a backup with OADP and ROSA STS</a></li><li class="level-4"><a href="#creating-the-data-protection-application_back-up-applications">Create the Data Protection Application</a></li><li class="level-5"><a href="#backing-up-the-3scale-operator-secret-apimanager_back-up-applications">Back up the 3scale API Management operator, secret, and APIManager</a></li><li class="level-5"><a href="#backing-up-the-backend-redis-database_back-up-applications">Back up the back-end Redis database</a></li><li class="level-5"><a href="#backing-up-the-mysql-database_back-up-applications">Back up a MySQL database</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#oadp-review-backup-restore_back-up-applications">Preview resources before running backup and restore</a></li><li class="level-4"><a href="#backingup-persistent-volumes_back-up-applications">Back up persistent volumes with CSI snapshots</a></li><li class="level-4"><a href="#oadp-backingup-file-system-backup_back-up-applications">Back up applications with File System Backup</a></li><li class="level-4"><a href="#oadp-1-3-backing-csi-snapshots_back-up-applications">Back up persistent volumes with CSI snapshots</a></li><li class="level-4"><a href="#oadp-deletion-policy-1-3_back-up-applications">Deletion policy for OADP 1.3</a></li><li class="level-5"><a href="#oadp-deletion-policy-guidelines-1-3_back-up-applications">Deletion policy guidelines for OADP 1.3</a></li><li class="level-4"><a href="#oadp-about-kopia-repo-maintenance_back-up-applications">About Kopia repository maintenance</a></li><li class="level-5"><a href="#kopia-maint-in-oadp_back-up-applications">Kopia maintenance in OADP</a></li><li class="level-4"><a href="#oadp-deleting-backups-using-oc_back-up-applications">Delete a backup by creating a DeleteBackupRequest CR</a></li><li class="level-4"><a href="#oadp-deleting-backups-using-velero_back-up-applications">Delete a backup by using the OADP CLI</a></li><li class="level-4"><a href="#oadp-deleting-backup-repository_back-up-applications">Delete a backup repository</a></li><li class="level-4"><a href="#oadp-usecase-backup-odf_back-up-applications">Back up an application using OADP and ODF</a></li><li class="level-4"><a href="#oadp-usecase-include-ca-cert-backup_back-up-applications">Back up an application and its self-signed CA certificate</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="oadp-back-up-applications-intro_back-up-applications">Back up applications</h3>
@@ -2258,142 +2278,6 @@ status:
 <dt class="hdlist1"><code>phase: Completed</code></dt>
 <dd>
 <p>Indicates that snapshot data is successfully transferred to the remote object store.</p>
-</dd>
-</dl>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="oadp-1-3-restoring-csi-snapshots_back-up-applications">Restore CSI volume snapshots</h4>
-<div class="paragraph _abstract">
-<p>You can restore a volume snapshot by creating a <code>Restore</code> CR.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You cannot restore Volsync backups from OADP 1.2 with the OAPD 1.3 built-in Data Mover. It is recommended to do a file system backup of all of your workloads with Restic before upgrading to OADP 1.3.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You have access to the cluster with the <code>cluster-admin</code> role.</p>
-</li>
-<li>
-<p>You have an OADP <code>Backup</code> CR from which to restore the data.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Create a YAML file for the <code>Restore</code>  CR, as in the following example:</p>
-<div class="listingblock">
-<div class="title">Example <code>Restore</code> CR</div>
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Restore
-metadata:
-  name: restore
-  namespace: openshift-adp
-spec:
-  backupName: &lt;backup&gt;
-# ...</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Apply the manifest:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f restore.yaml</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>A <code>DataDownload</code> CR is created when the restore starts.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="ulist">
-<div class="title">Verification</div>
-<ul>
-<li>
-<p>You can monitor the status of the restore process by checking the <code>status.phase</code> field of the <code>DataDownload</code> CR. Possible values are <code>In Progress</code>, <code>Completed</code>, <code>Failed</code>, or <code>Canceled</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>To get a list of all <code>DataDownload</code> objects, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get datadownloads -A</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAMESPACE       NAME                   STATUS      STARTED   BYTES DONE   TOTAL BYTES   STORAGE LOCATION   AGE     NODE
-openshift-adp   restore-test-1-sk7lg   Completed   7m11s     108104082    108104082     dpa-sample-1       7m11s   ip-10-0-150-57.us-west-2.compute.internal</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Enter the following command to check the value of the <code>status.phase</code> field of the specific <code>DataDownload</code> object:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get datadownloads &lt;datadownload_name&gt; -o yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v2alpha1
-kind: DataDownload
-metadata:
-  name: restore-test-1-sk7lg
-  namespace: openshift-adp
-spec:
-  backupStorageLocation: dpa-sample-1
-  operationTimeout: 10m0s
-  snapshotID: 8da1c5febf25225f4577ada2aeb9f899
-  sourceNamespace: mysql-persistent
-  targetVolume:
-    namespace: mysql-persistent
-    pv: ""
-    pvc: mysql
-status:
-  completionTimestamp: "2023-11-02T17:01:24Z"
-  node: ip-10-0-150-57.us-west-2.compute.internal
-  phase: Completed
-  progress:
-    bytesDone: 108104082
-    totalBytes: 108104082
-  startTimestamp: "2023-11-02T17:00:52Z"</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>phase: Completed</code></dt>
-<dd>
-<p>Indicates that the CSI snapshot data is successfully restored.</p>
 </dd>
 </dl>
 </div>
@@ -2969,315 +2853,40 @@ Events:               &lt;none&gt;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="preparing-aws-credentials-for-oadp_back-up-applications">Prepare AWS credentials for OADP</h4>
+<h4 id="oadp-usecase-include-ca-cert-backup_back-up-applications">Back up an application and its self-signed CA certificate</h4>
 <div class="paragraph _abstract">
-<p>Prepare and configure an Amazon Web Services account to install OpenShift API for Data Protection (OADP).</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Create the following environment variables by running the following commands:</p>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Important">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Change the cluster name to match your cluster, and ensure you are logged into the cluster as an administrator. Ensure that all fields are outputted correctly before continuing.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ export CLUSTER_NAME=&lt;my_cluster&gt;</code></pre>
-</div>
+<p>The <code>s3.openshift-storage.svc</code> service, provided by ODF, uses a Transport Layer Security protocol (TLS) certificate that is signed with the self-signed service CA.</p>
 </div>
 <div class="paragraph">
-<p>Replace <code>&lt;my_cluster&gt;</code> with your cluster name.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ export ROSA_CLUSTER_ID=$(rosa describe cluster -c ${CLUSTER_NAME} --output json | jq -r .id)</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ export REGION=$(rosa describe cluster -c ${CLUSTER_NAME} --output json | jq -r .region.id)</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ export OIDC_ENDPOINT=$(oc get authentication.config.openshift.io cluster -o jsonpath='{.spec.serviceAccountIssuer}' | sed 's|^https://||')</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ export CLUSTER_VERSION=$(rosa describe cluster -c ${CLUSTER_NAME} -o json | jq -r .version.raw_id | cut -f -2 -d '.')</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ export ROLE_NAME="${CLUSTER_NAME}-openshift-oadp-aws-cloud-credentials"</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ export SCRATCH="/tmp/${CLUSTER_NAME}/oadp"</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ mkdir -p ${SCRATCH}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ echo "Cluster ID: ${ROSA_CLUSTER_ID}, Region: ${REGION}, OIDC Endpoint:
-  ${OIDC_ENDPOINT}, AWS Account ID: ${AWS_ACCOUNT_ID}"</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>On the AWS account, create an IAM policy to allow access to AWS S3:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Check to see if the policy exists by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ POLICY_ARN=$(aws iam list-policies --query "Policies[?PolicyName=='RosaOadpVer1'].{ARN:Arn}" --output text)</code></pre>
-</div>
-</div>
-<div class="openblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>RosaOadp</code>: Replace <code>RosaOadp</code> with your policy name.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>Enter the following command to create the policy JSON file and then create the policy:</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If the policy ARN is not found, the command creates the policy. If the policy ARN already exists, the <code>if</code> statement intentionally skips the policy creation.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ if [[ -z "${POLICY_ARN}" ]]; then
-  cat &lt;&lt; EOF &gt; ${SCRATCH}/policy.json
-  {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:CreateBucket",
-        "s3:DeleteBucket",
-        "s3:PutBucketTagging",
-        "s3:GetBucketTagging",
-        "s3:PutEncryptionConfiguration",
-        "s3:GetEncryptionConfiguration",
-        "s3:PutLifecycleConfiguration",
-        "s3:GetLifecycleConfiguration",
-        "s3:GetBucketLocation",
-        "s3:ListBucket",
-        "s3:GetObject",
-        "s3:PutObject",
-        "s3:DeleteObject",
-        "s3:ListBucketMultipartUploads",
-        "s3:AbortMultipartUpload",
-        "s3:ListMultipartUploadParts",
-        "ec2:DescribeSnapshots",
-        "ec2:DescribeVolumes",
-        "ec2:DescribeVolumeAttribute",
-        "ec2:DescribeVolumesModifications",
-        "ec2:DescribeVolumeStatus",
-        "ec2:CreateTags",
-        "ec2:CreateVolume",
-        "ec2:CreateSnapshot",
-        "ec2:DeleteSnapshot"
-      ],
-      "Resource": "*"
-    }
-  ]}
-EOF
-
-  POLICY_ARN=$(aws iam create-policy --policy-name "RosaOadpVer1" \
-  --policy-document file:///${SCRATCH}/policy.json --query Policy.Arn \
-  --tags Key=rosa_openshift_version,Value=${CLUSTER_VERSION} Key=rosa_role_prefix,Value=ManagedOpenShift Key=operator_namespace,Value=openshift-oadp Key=operator_name,Value=openshift-oadp \
-  --output text)
-  fi</code></pre>
-</div>
-</div>
-<div class="openblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>SCRATCH</code>: <code>SCRATCH</code> is a name for a temporary directory created for the environment variables.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>View the policy ARN by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ echo ${POLICY_ARN}</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Create an IAM role trust policy for the cluster:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Create the trust policy file by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ cat &lt;&lt;EOF &gt; ${SCRATCH}/trust-policy.json
-  {
-      "Version": "2012-10-17",
-      "Statement": [{
-        "Effect": "Allow",
-        "Principal": {
-          "Federated": "arn:aws:iam::${AWS_ACCOUNT_ID}:oidc-provider/${OIDC_ENDPOINT}"
-        },
-        "Action": "sts:AssumeRoleWithWebIdentity",
-        "Condition": {
-          "StringEquals": {
-            "${OIDC_ENDPOINT}:sub": [
-              "system:serviceaccount:openshift-adp:openshift-adp-controller-manager",
-              "system:serviceaccount:openshift-adp:velero"]
-          }
-        }
-      }]
-  }
-EOF</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create the role by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ ROLE_ARN=$(aws iam create-role --role-name \
-  "${ROLE_NAME}" \
-  --assume-role-policy-document file://${SCRATCH}/trust-policy.json \
-  --tags Key=rosa_cluster_id,Value=${ROSA_CLUSTER_ID} \
-         Key=rosa_openshift_version,Value=${CLUSTER_VERSION} \
-         Key=rosa_role_prefix,Value=ManagedOpenShift \
-         Key=operator_namespace,Value=openshift-adp \
-         Key=operator_name,Value=openshift-oadp \
-  --query Role.Arn --output text)</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>View the role ARN by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ echo ${ROLE_ARN}</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Attach the IAM policy to the IAM role by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ aws iam attach-role-policy --role-name "${ROLE_NAME}" \
-  --policy-arn ${POLICY_ARN}</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="sect4">
-<h5 id="installing-oadp-rosa-sts_back-up-applications">Install the OADP Operator and providing the IAM role</h5>
-<div class="paragraph _abstract">
-<p>Install OpenShift API for Data Protection (OADP) on clusters with AWS STS. AWS Security Token Service (AWS STS) is a global web service that provides short-term credentials for IAM or federated users. Red&#160;Hat OpenShift Container Platform with STS is the recommended credential mode.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Important">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Restic is unsupported.</p>
-</div>
-<div class="paragraph">
-<p>Kopia file system backup (FSB) is supported when backing up file systems that do not support Container Storage Interface (CSI) snapshots.</p>
-</div>
-<div class="paragraph">
-<p>Example file systems include the following:</p>
+<p>To prevent a <code>certificate signed by unknown authority</code> error, you must include a self-signed CA certificate in the backup storage location (BSL) section of <code>DataProtectionApplication</code> custom resource (CR). For this situation, you must complete the following tasks:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Amazon Elastic File System (EFS)</p>
+<p>Request a NooBaa bucket by creating an object bucket claim (OBC).</p>
 </li>
 <li>
-<p>Network File System (NFS)</p>
+<p>Extract the bucket details.</p>
 </li>
 <li>
-<p><code>emptyDir</code> volumes</p>
+<p>Include a self-signed CA certificate in the <code>DataProtectionApplication</code> CR.</p>
 </li>
 <li>
-<p>Local volumes</p>
+<p>Back up an application.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>For backing up volumes, OADP on ROSA with AWS STS recommends native snapshots and Container Storage Interface (CSI) snapshots. Data Mover backups are supported, but can be slower than native snapshots.</p>
-</div>
-<div class="paragraph">
-<p>In an Amazon ROSA cluster that uses STS authentication, restoring backed-up data in a different AWS region is not supported.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>An Red&#160;Hat OpenShift Container Platform
-cluster with the required access and tokens. For instructions, see the previous procedure <em>Preparing AWS credentials for OADP</em>. If you plan to use two different clusters for backing up and restoring, you must prepare AWS credentials, including <code>ROLE_ARN</code>, for each cluster.</p>
+<p>You installed the OADP Operator.</p>
+</li>
+<li>
+<p>You installed the ODF Operator.</p>
+</li>
+<li>
+<p>You have an application with a database running in a separate namespace.</p>
 </li>
 </ul>
 </div>
@@ -3285,396 +2894,17 @@ cluster with the required access and tokens. For instructions, see the previous 
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Create
-an Red&#160;Hat OpenShift Container Platform
-secret from your AWS token file by entering the following commands:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Create the credentials file:</p>
+<p>Create an OBC manifest to request a NooBaa bucket as shown in the following example:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ cat &lt;&lt;EOF &gt; ${SCRATCH}/credentials
-  [default]
-  role_arn = ${ROLE_ARN}
-  web_identity_token_file = /var/run/secrets/openshift/serviceaccount/token
-  region = &lt;aws_region&gt;
-EOF</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Replace <code>&lt;aws_region&gt;</code> with the AWS region to use for the STS endpoint.</p>
-</div>
-</li>
-<li>
-<p>Create a namespace for OADP:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create namespace openshift-adp</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create the Red&#160;Hat OpenShift Container Platform secret:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc -n openshift-adp create secret generic cloud-credentials \
-  --from-file=${SCRATCH}/credentials</code></pre>
-</div>
-</div>
-<div class="openblock">
-<div class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>In Red&#160;Hat OpenShift Container Platform versions 4.15 and later, the OADP Operator supports a new standardized STS workflow through the Operator Lifecycle Manager (OLM) and Cloud Credentials Operator (CCO). In this workflow, you do not need to create the above secret, you only need to supply the role ARN during the installation of OLM-managed operators using the Red&#160;Hat OpenShift Container Platform web console, for more information see <em>Installing from software catalog using the web console</em>.</p>
-</div>
-<div class="paragraph">
-<p>The preceding secret is created automatically by CCO.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Install the OADP Operator:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>In the Red&#160;Hat OpenShift Container Platform web console, browse to <strong>Ecosystem</strong> &#8594; <strong>Software Catalog</strong>.</p>
-</li>
-<li>
-<p>Search for the <strong>OADP Operator</strong>.</p>
-</li>
-<li>
-<p>In the <strong>role_ARN</strong> field, paste the role_arn that you created previously and click <strong>Install</strong>.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Create AWS cloud storage using your AWS credentials by entering the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ cat &lt;&lt; EOF | oc create -f -
-  apiVersion: oadp.openshift.io/v1alpha1
-  kind: CloudStorage
-  metadata:
-    name: ${CLUSTER_NAME}-oadp
-    namespace: openshift-adp
-  spec:
-    creationSecret:
-      key: credentials
-      name: cloud-credentials
-    enableSharedConfig: true
-    name: ${CLUSTER_NAME}-oadp
-    provider: aws
-    region: $REGION
-EOF</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Check your application&#8217;s storage default storage class by entering the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pvc -n &lt;namespace&gt;</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-applog   Bound    pvc-351791ae-b6ab-4e8b-88a4-30f73caf5ef8   1Gi        RWO            gp3-csi        4d19h
-mysql    Bound    pvc-16b8e009-a20a-4379-accc-bc81fedd0621   1Gi        RWO            gp3-csi        4d19h</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Get the storage class by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get storageclass</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
-gp2                 kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   true                   4d21h
-gp2-csi             ebs.csi.aws.com         Delete          WaitForFirstConsumer   true                   4d21h
-gp3                 ebs.csi.aws.com         Delete          WaitForFirstConsumer   true                   4d21h
-gp3-csi (default)   ebs.csi.aws.com         Delete          WaitForFirstConsumer   true                   4d21h</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The following storage classes will work:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>gp3-csi</p>
-</li>
-<li>
-<p>gp2-csi</p>
-</li>
-<li>
-<p>gp3</p>
-</li>
-<li>
-<p>gp2</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>If the application or applications that are being backed up are all using persistent volumes (PVs) with Container Storage Interface (CSI), it is advisable to include the CSI plugin in the OADP DPA configuration.</p>
-</div>
-</li>
-<li>
-<p>Create the <code>DataProtectionApplication</code> resource to configure the connection to the storage where the backups and volume snapshots are stored:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>If you are using only CSI volumes, deploy a Data Protection Application by entering the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ cat &lt;&lt; EOF | oc create -f -
-  apiVersion: oadp.openshift.io/v1alpha1
-  kind: DataProtectionApplication
-  metadata:
-    name: ${CLUSTER_NAME}-dpa
-    namespace: openshift-adp
-  spec:
-    backupImages: true
-    features:
-      dataMover:
-        enable: false
-    backupLocations:
-    - bucket:
-        cloudStorageRef:
-          name: ${CLUSTER_NAME}-oadp
-        credential:
-          key: credentials
-          name: cloud-credentials
-        prefix: velero
-        default: true
-        config:
-          region: ${REGION}
-    configuration:
-      velero:
-        defaultPlugins:
-        - openshift
-        - aws
-        - csi
-      nodeAgent:
-        enable: false
-        uploaderType: kopia
-EOF</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>backupImages</code></dt>
-<dd>
-<p>ROSA supports internal image backup. Set this field to <code>false</code> if you do not want to use image backup.</p>
-</dd>
-<dt class="hdlist1"><code>nodeAgent</code></dt>
-<dd>
-<p>See the important note regarding the <code>nodeAgent</code> attribute at the end of this procedure.</p>
-</dd>
-<dt class="hdlist1"><code>uploaderType</code></dt>
-<dd>
-<p>Specifies the type of uploader. The built-in Data Mover uses Kopia as the default uploader mechanism regardless of the value of the <code>uploaderType</code> field.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>If you are using CSI or non-CSI volumes, deploy a Data Protection Application by entering the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ cat &lt;&lt; EOF | oc create -f -
-  apiVersion: oadp.openshift.io/v1alpha1
-  kind: DataProtectionApplication
-  metadata:
-    name: ${CLUSTER_NAME}-dpa
-    namespace: openshift-adp
-  spec:
-    backupImages: true
-    backupLocations:
-    - bucket:
-        cloudStorageRef:
-          name: ${CLUSTER_NAME}-oadp
-        credential:
-          key: credentials
-          name: cloud-credentials
-        prefix: velero
-        default: true
-        config:
-          region: ${REGION}
-    configuration:
-      velero:
-        defaultPlugins:
-        - openshift
-        - aws
-      nodeAgent:
-        enable: false
-        uploaderType: restic
-    snapshotLocations:
-      - velero:
-          config:
-            credentialsFile: /tmp/credentials/openshift-adp/cloud-credentials-credentials
-            enableSharedConfig: "true"
-            profile: default
-            region: ${REGION}
-          provider: aws
-EOF</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>backupImages</code></dt>
-<dd>
-<p>ROSA supports internal image backup. Set this field to <code>false</code> if you do not want to use image backup.</p>
-</dd>
-<dt class="hdlist1"><code>nodeAgent</code></dt>
-<dd>
-<p>See the important note regarding the <code>nodeAgent</code> attribute at the end of this procedure.</p>
-</dd>
-<dt class="hdlist1"><code>credentialsFile</code></dt>
-<dd>
-<p>Specifies the mounted location of the bucket credential on the pod.</p>
-</dd>
-<dt class="hdlist1"><code>enableSharedConfig</code></dt>
-<dd>
-<p>Specifies whether the <code>snapshotLocations</code> can share or reuse the credential defined for the bucket.</p>
-</dd>
-<dt class="hdlist1"><code>profile</code></dt>
-<dd>
-<p>Specifies the profile name set in the AWS credentials file.</p>
-</dd>
-<dt class="hdlist1"><code>region</code></dt>
-<dd>
-<p>Specifies your AWS region. This must be the same as the cluster region.</p>
-<div class="paragraph">
-<p>You are now ready to back up and restore Red&#160;Hat OpenShift Container Platform applications, as described in <em>Backing up applications</em>.</p>
-</div>
-</dd>
-</dl>
-</div>
-<div class="openblock">
-<div class="content">
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Important">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The <code>enable</code> parameter of <code>restic</code> is set to <code>false</code> in this configuration, because OADP does not support Restic in
-ROSA
-environments.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>If you want to use two different clusters for backing up and restoring, the two clusters must have the same AWS S3 storage names in both the cloud storage CR and the OADP <code>DataProtectionApplication</code> configuration.</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="updating-role-arn-oadp-rosa-sts_back-up-applications">Update the IAM role ARN in the OADP Operator subscription</h5>
-<div class="paragraph _abstract">
-<p>Update the OADP Operator subscription to fix an installation error due to incorrect IAM role Amazon Resource Name (ARN).</p>
-</div>
-<div class="paragraph">
-<p>While installing the OADP Operator on a
-ROSA Security Token Service (STS)
-cluster, if you provide an incorrect IAM role Amazon Resource Name (ARN), the <code>openshift-adp-controller</code> pod gives an error. The credential requests that are generated contain the wrong IAM role ARN. To update the credential requests object with the correct IAM role ARN, you can edit the OADP Operator subscription and patch the IAM role ARN with the correct value. By editing the OADP Operator subscription, you do not have to uninstall and reinstall OADP to update the IAM role ARN.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You have a Red&#160;Hat OpenShift Service on AWS STS cluster with the required access and tokens.</p>
-</li>
-<li>
-<p>You have installed OADP on the ROSA STS cluster.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>To verify that the OADP subscription has the wrong IAM role ARN environment variable set, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get sub -o yaml redhat-oadp-operator</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example subscription</div>
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: objectbucket.io/v1alpha1
+kind: ObjectBucketClaim
 metadata:
-  annotations:
-  creationTimestamp: "2025-01-15T07:18:31Z"
-  generation: 1
-  labels:
-    operators.coreos.com/redhat-oadp-operator.openshift-adp: ""
-  name: redhat-oadp-operator
+  name: test-obc
   namespace: openshift-adp
-  resourceVersion: "77363"
-  uid: 5ba00906-5ad2-4476-ae7b-ffa90986283d
 spec:
-  channel: stable-1.4
-  config:
-    env:
-    - name: ROLEARN
-      value: arn:aws:iam::11111111:role/wrong-role-arn
-  installPlanApproval: Manual
-  name: redhat-oadp-operator
-  source: prestage-operators
-  sourceNamespace: openshift-marketplace
-  startingCSV: oadp-operator.v1.4.2</code></pre>
+  storageClassName: openshift-storage.noobaa.io
+  generateBucketName: test-backup-bucket</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3682,75 +2912,142 @@ spec:
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>ROLEARN</code></dt>
+<dt class="hdlist1"><code>test-obc</code></dt>
 <dd>
-<p>Verify the value of <code>ROLEARN</code> you want to update.</p>
+<p>Specifies the name of the object bucket claim.</p>
+</dd>
+<dt class="hdlist1"><code>test-backup-bucket</code></dt>
+<dd>
+<p>Specifies the name of the bucket.</p>
 </dd>
 </dl>
 </div>
 </li>
 <li>
-<p>Update the <code>ROLEARN</code> field of the subscription with the correct role ARN by running the following command:</p>
+<p>Create the OBC by running the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch subscription redhat-oadp-operator -p '{"spec": {"config": {"env": [{"name": "ROLEARN", "value": "&lt;role_arn&gt;"}]}}}' --type='merge'</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f &lt;obc_file_name&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>When you create an OBC, ODF creates a <code>secret</code> and a <code>ConfigMap</code> with the same name as the object bucket claim. The <code>secret</code> object contains the bucket credentials, and the <code>ConfigMap</code> object contains information to access the bucket. To get the bucket name and bucket host from the generated config map, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc extract --to=- cm/test-obc</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>where:</p>
+<p><code>test-obc</code> is the name of the OBC.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>&lt;role_arn&gt;</code></dt>
-<dd>
-<p>Specifies the IAM role ARN to be updated. For example, <code>arn:aws:iam::160&#8230;&#8203;..6956:role/oadprosa&#8230;&#8203;..8wlf</code>.</p>
-</dd>
-</dl>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal"># BUCKET_NAME
+backup-c20...41fd
+# BUCKET_PORT
+443
+# BUCKET_REGION
+
+# BUCKET_SUBREGION
+
+# BUCKET_HOST
+s3.openshift-storage.svc</code></pre>
+</div>
 </div>
 </li>
 <li>
-<p>Verify that the <code>secret</code> object is updated with correct role ARN value by running the following command:</p>
+<p>To get the bucket credentials from the <code>secret</code> object, run the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get secret cloud-credentials -o jsonpath='{.data.credentials}' | base64 -d</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc extract --to=- secret/test-obc</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Example output</div>
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">[default]
-sts_regional_endpoints = regional
-role_arn = arn:aws:iam::160.....6956:role/oadprosa.....8wlf
-web_identity_token_file = /var/run/secrets/openshift/serviceaccount/token</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal"># AWS_ACCESS_KEY_ID
+ebYR....xLNMc
+# AWS_SECRET_ACCESS_KEY
+YXf...+NaCkdyC3QPym</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Configure the <code>DataProtectionApplication</code> custom resource (CR) manifest file as shown in the following example:</p>
+<p>Create a <code>cloud-credentials</code> file with the object bucket credentials by using the following example configuration:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">[default]
+aws_access_key_id=&lt;AWS_ACCESS_KEY_ID&gt;
+aws_secret_access_key=&lt;AWS_SECRET_ACCESS_KEY&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create the <code>cloud-credentials</code> secret with the <code>cloud-credentials</code> file content by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create secret generic \
+  cloud-credentials \
+  -n openshift-adp \
+  --from-file cloud=cloud-credentials</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Extract the service CA certificate from the <code>openshift-service-ca.crt</code> config map by running the following command. Ensure that you encode the certificate in <code>Base64</code> format and note the value to use in the next step.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get cm/openshift-service-ca.crt \
+  -o jsonpath='{.data.service-ca\.crt}' | base64 -w0; echo</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0...
+....gpwOHMwaG9CRmk5a3....FLS0tLS0K</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Configure the <code>DataProtectionApplication</code> CR manifest file with the bucket name and CA certificate as shown in the following example:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: oadp.openshift.io/v1alpha1
 kind: DataProtectionApplication
 metadata:
-  name: test-rosa-dpa
+  name: oadp-backup
   namespace: openshift-adp
 spec:
-  backupLocations:
-  - bucket:
-      config:
-        region: us-east-1
-      cloudStorageRef:
-        name: &lt;cloud_storage&gt;
-      credential:
-        name: cloud-credentials
-        key: credentials
-      prefix: velero
-      default: true
   configuration:
+    nodeAgent:
+      enable: true
+      uploaderType: kopia
     velero:
       defaultPlugins:
-      - aws
-      - openshift</code></pre>
+        - aws
+        - openshift
+        - csi
+      defaultSnapshotMoveData: true
+  backupLocations:
+    - velero:
+        config:
+          profile: "default"
+          region: noobaa
+          s3Url: https://s3.openshift-storage.svc
+          s3ForcePathStyle: "true"
+          insecureSkipTLSVerify: "false"
+        provider: aws
+        default: true
+        credential:
+          key: cloud
+          name:  cloud-credentials
+        objectStorage:
+          bucket: &lt;bucket_name&gt;
+          prefix: oadp
+          caCert: &lt;ca_cert&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3758,9 +3055,17 @@ spec:
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>&lt;cloud_storage&gt;</code></dt>
+<dt class="hdlist1"><code>insecureSkipTLSVerify</code></dt>
 <dd>
-<p>Specifies the <code>CloudStorage</code> CR.</p>
+<p>Specifies whether SSL/TLS security is enabled. If set to <code>true</code>, SSL/TLS security is disabled. If set to <code>false</code>, SSL/TLS security is enabled.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;bucket_name&gt;</code></dt>
+<dd>
+<p>Specifies the name of the bucket extracted in an earlier step.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;ca_cert&gt;</code></dt>
+<dd>
+<p>Specifies the <code>Base64</code> encoded certificate from the previous step.</p>
 </dd>
 </dl>
 </div>
@@ -3769,412 +3074,72 @@ spec:
 <p>Create the <code>DataProtectionApplication</code> CR by running the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f &lt;dpa_manifest_file&gt;</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc apply -f &lt;dpa_filename&gt;</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Verify that the <code>DataProtectionApplication</code> CR is reconciled and the <code>status</code> is set to <code>"True"</code> by running the following command:</p>
+<p>Verify that the <code>DataProtectionApplication</code> CR is created successfully by running the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$  oc get dpa -n openshift-adp -o yaml</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get dpa -o yaml</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Example <code>DataProtectionApplication</code></div>
+<div class="title">Example output</div>
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: oadp.openshift.io/v1alpha1
-kind: DataProtectionApplication
-...
-status:
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+items:
+- apiVersion: oadp.openshift.io/v1alpha1
+  kind: DataProtectionApplication
+  metadata:
+    namespace: openshift-adp
+    #...#
+  spec:
+    backupLocations:
+    - velero:
+        config:
+          #...#
+  status:
     conditions:
-    - lastTransitionTime: "2023-07-31T04:48:12Z"
+    - lastTransitionTime: "20....9:54:02Z"
       message: Reconcile complete
       reason: Complete
       status: "True"
-      type: Reconciled</code></pre>
+      type: Reconciled
+kind: List
+metadata:
+  resourceVersion: ""</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Verify that the <code>BackupStorageLocation</code> CR is in an available state by running the following command:</p>
+<p>Verify that the backup storage location (BSL) is available by running the following command:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get backupstoragelocations.velero.io -n openshift-adp</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Example <code>BackupStorageLocation</code></div>
+<div class="title">Example output</div>
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME       PHASE       LAST VALIDATED   AGE   DEFAULT
-ts-dpa-1   Available   3s               6s    true</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="performing-a-backup-oadp-rosa-sts_back-up-applications">Example: Performing a backup with OADP and Red&#160;Hat OpenShift Container Platform</h5>
-<div class="paragraph _abstract">
-<p>Perform a backup by using OpenShift API for Data Protection (OADP) with Red&#160;Hat OpenShift Container Platform. The following example <code>hello-world</code> application has no persistent volumes (PVs) attached.</p>
-</div>
-<div class="paragraph">
-<p>Either Data Protection Application (DPA) configuration will work.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Create a workload to back up by running the following commands:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create namespace hello-world</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc new-app -n hello-world --image=docker.io/openshift/hello-openshift</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME           PHASE       LAST VALIDATED   AGE   DEFAULT
+dpa-sample-1   Available   3s               15s   true</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Expose the route by running the following command:</p>
+<p>Configure the <code>Backup</code> CR by using the following example:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc expose service/hello-openshift -n hello-world</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Check that the application is working by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ curl `oc get route/hello-openshift -n hello-world -o jsonpath='{.spec.host}'`</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You should see an output similar to the following example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">Hello OpenShift!</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Back up the workload by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ cat &lt;&lt; EOF | oc create -f -
-  apiVersion: velero.io/v1
-  kind: Backup
-  metadata:
-    name: hello-world
-    namespace: openshift-adp
-  spec:
-    includedNamespaces:
-    - hello-world
-    storageLocation: ${CLUSTER_NAME}-dpa-1
-    ttl: 720h0m0s
-EOF</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Wait until the backup is complete, and then run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ watch "oc -n openshift-adp get backup hello-world -o json | jq .status"</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You should see an output similar to the following example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{
-  "completionTimestamp": "2022-09-07T22:20:44Z",
-  "expiration": "2022-10-07T22:20:22Z",
-  "formatVersion": "1.1.0",
-  "phase": "Completed",
-  "progress": {
-    "itemsBackedUp": 58,
-    "totalItems": 58
-  },
-  "startTimestamp": "2022-09-07T22:20:22Z",
-  "version": 1
-}</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Delete the demo workload by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc delete ns hello-world</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Restore the workload from the backup by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ cat &lt;&lt; EOF | oc create -f -
-  apiVersion: velero.io/v1
-  kind: Restore
-  metadata:
-    name: hello-world
-    namespace: openshift-adp
-  spec:
-    backupName: hello-world
-EOF</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Wait for the Restore to finish by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ watch "oc -n openshift-adp get restore hello-world -o json | jq .status"</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You should see an output similar to the following example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{
-  "completionTimestamp": "2022-09-07T22:25:47Z",
-  "phase": "Completed",
-  "progress": {
-    "itemsRestored": 38,
-    "totalItems": 38
-  },
-  "startTimestamp": "2022-09-07T22:25:28Z",
-  "warnings": 9
-}</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Check that the workload is restored by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc -n hello-world get pods</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You should see an output similar to the following example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                              READY   STATUS    RESTARTS   AGE
-hello-openshift-9f885f7c6-kdjpj   1/1     Running   0          90s</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Check the JSONPath by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ curl `oc get route/hello-openshift -n hello-world -o jsonpath='{.spec.host}'`</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You should see an output similar to the following example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">Hello OpenShift!</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>For troubleshooting tips, see the <a href="https://access.redhat.com/articles/5456281">troubleshooting documentation</a>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="cleanup-a-backup-oadp-rosa-sts_back-up-applications">Clean up a cluster after a backup with OADP and ROSA STS</h5>
-<div class="paragraph _abstract">
-<p>Uninstall the OpenShift API for Data Protection (OADP) Operator together with the backups and the S3 bucket from the hello-world example.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Delete the workload by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc delete ns hello-world</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Delete the Data Protection Application (DPA) by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc -n openshift-adp delete dpa ${CLUSTER_NAME}-dpa</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Delete the cloud storage by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc -n openshift-adp delete cloudstorage ${CLUSTER_NAME}-oadp</code></pre>
-</div>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Warning">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If this command hangs, you might need to delete the finalizer by running the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc -n openshift-adp patch cloudstorage ${CLUSTER_NAME}-oadp -p '{"metadata":{"finalizers":null}}' --type=merge</code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>If the Operator is no longer required, remove it by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc -n openshift-adp delete subscription oadp-operator</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Remove the namespace from the Operator:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc delete ns openshift-adp</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>If the backup and restore resources are no longer required, remove them from the cluster by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc delete backups.velero.io hello-world</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>To delete backup, restore and remote objects in AWS S3 run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ velero backup delete hello-world</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>If you no longer need the Custom Resource Definitions (CRD), remove them from the cluster by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ for CRD in `oc get crds | grep velero | awk '{print $1}'`; do oc delete crd $CRD; done</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Delete the AWS S3 bucket by running the following commands:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ aws s3 rm s3://${CLUSTER_NAME}-oadp --recursive</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ aws s3api delete-bucket --bucket ${CLUSTER_NAME}-oadp</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Detach the policy from the role by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ aws iam detach-role-policy --role-name "${ROLE_NAME}"  --policy-arn "${POLICY_ARN}"</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Delete the role by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ aws iam delete-role --role-name "${ROLE_NAME}"</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="creating-the-data-protection-application_back-up-applications">Create the Data Protection Application</h4>
-<div class="paragraph _abstract">
-<p>Create a Data Protection Application (DPA) custom resource (CR) to configure backup storage and Velero settings for Red&#160;Hat 3scale API Management. This helps you set up the backup infrastructure required for protecting your 3scale components.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Create a YAML file with the following configuration:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: oadp.openshift.io/v1alpha1
-kind: DataProtectionApplication
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
+kind: Backup
 metadata:
-  name: dpa-sample
+  name: test-backup
   namespace: openshift-adp
 spec:
-  configuration:
-    velero:
-      defaultPlugins:
-        - openshift
-        - aws
-        - csi
-      resourceTimeout: 10m
-    nodeAgent:
-      enable: true
-      uploaderType: kopia
-  backupLocations:
-    - name: default
-      velero:
-        provider: aws
-        default: true
-        objectStorage:
-          bucket: &lt;bucket_name&gt;
-          prefix: &lt;prefix&gt;
-        config:
-          region: &lt;region&gt;
-          profile: "default"
-          s3ForcePathStyle: "true"
-          s3Url: &lt;s3_url&gt;
-        credential:
-          key: cloud
-          name: cloud-credentials</code></pre>
+  includedNamespaces:
+  - &lt;application_namespace&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4182,309 +3147,18 @@ spec:
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>&lt;bucket_name&gt;</code></dt>
+<dt class="hdlist1"><code>&lt;application_namespace&gt;</code></dt>
 <dd>
-<p>Specifies a bucket as the backup storage location. If the bucket is not a dedicated bucket for Velero backups, you must specify a prefix.</p>
-</dd>
-<dt class="hdlist1"><code>&lt;prefix&gt;</code></dt>
-<dd>
-<p>Specifies a prefix for Velero backups, for example, <code>velero</code>, if the bucket is used for multiple purposes.</p>
-</dd>
-<dt class="hdlist1"><code>&lt;region&gt;</code></dt>
-<dd>
-<p>Specifies a region for backup storage location.</p>
-</dd>
-<dt class="hdlist1"><code>&lt;s3_url&gt;</code></dt>
-<dd>
-<p>Specifies the URL of the object store that you are using to store backups.</p>
+<p>Specifies the namespace for the application to back up.</p>
 </dd>
 </dl>
 </div>
 </li>
 <li>
-<p>Create the DPA CR by running the following command:</p>
+<p>Create the <code>Backup</code> CR by running the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f dpa.yaml</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="sect4">
-<h5 id="backing-up-the-3scale-operator-secret-apimanager_back-up-applications">Back up the 3scale API Management operator, secret, and APIManager</h5>
-<div class="paragraph _abstract">
-<p>Back up the Red&#160;Hat 3scale API Management operator resources, including the <code>Secret</code> and APIManager custom resources (CRs), by creating backup CRs. This helps you preserve your 3scale operator configuration for recovery scenarios.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You created the Data Protection Application (DPA).</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Back up your 3scale operator CRs, such as <code>operatorgroup</code>, <code>namespaces</code>, and <code>subscriptions</code>, by creating a YAML file with the following configuration:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Backup
-metadata:
-  name: operator-install-backup
-  namespace: openshift-adp
-spec:
-  csiSnapshotTimeout: 10m0s
-  defaultVolumesToFsBackup: false
-  includedNamespaces:
-  - threescale
-  includedResources:
-  - operatorgroups
-  - subscriptions
-  - namespaces
-  itemOperationTimeout: 1h0m0s
-  snapshotMoveData: false
-  ttl: 720h0m0s</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>operator-install-backup</code></dt>
-<dd>
-<p>Specifies the value of the <code>metadata.name</code> parameter in the backup. This is the same value used in the <code>metadata.backupName</code> parameter used when restoring the 3scale operator.</p>
-</dd>
-<dt class="hdlist1"><code>threescale</code></dt>
-<dd>
-<p>Specifies the namespace where the 3scale operator is installed.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You can also back up and restore <code>ReplicationControllers</code>, <code>Deployment</code>, and <code>Pod</code> objects to ensure that all manually set environments are backed up and restored. This does not affect the flow of restoration.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Create a backup CR by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f backup.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">backup.velero.io/operator-install-backup created</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Back up the <code>Secret</code> CR by creating a YAML file with the following configuration:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Backup
-metadata:
-  name: operator-resources-secrets
-  namespace: openshift-adp
-spec:
-  csiSnapshotTimeout: 10m0s
-  defaultVolumesToFsBackup: false
-  includedNamespaces:
-  - threescale
-  includedResources:
-  - secrets
-  itemOperationTimeout: 1h0m0s
-  labelSelector:
-    matchLabels:
-      app: 3scale-api-management
-  snapshotMoveData: false
-  snapshotVolumes: false
-  ttl: 720h0m0s</code></pre>
-</div>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>name</code></dt>
-<dd>
-<p>Specifies the value of the <code>metadata.name</code> parameter in the backup. Use this value in the <code>metadata.backupName</code> parameter when restoring the <code>Secret</code>.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Create the <code>Secret</code> backup CR by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f backup-secret.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">backup.velero.io/operator-resources-secrets created</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Back up the APIManager CR by creating a YAML file with the following configuration:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Backup
-metadata:
-  name: operator-resources-apim
-  namespace: openshift-adp
-spec:
-  csiSnapshotTimeout: 10m0s
-  defaultVolumesToFsBackup: false
-  includedNamespaces:
-  - threescale
-  includedResources:
-  - apimanagers
-  itemOperationTimeout: 1h0m0s
-  snapshotMoveData: false
-  snapshotVolumes: false
-  storageLocation: ts-dpa-1
-  ttl: 720h0m0s
-  volumeSnapshotLocations:
-  - ts-dpa-1</code></pre>
-</div>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>name</code></dt>
-<dd>
-<p>Specifies the value of the <code>metadata.name</code> parameter in the backup. Use this value in the <code>metadata.backupName</code> parameter when restoring the APIManager.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Create the APIManager CR by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f backup-apimanager.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">backup.velero.io/operator-resources-apim created</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="backing-up-the-backend-redis-database_back-up-applications">Back up the back-end Redis database</h5>
-<div class="paragraph _abstract">
-<p>Back up the back-end Redis database by configuring Velero annotations and creating a backup CR with the required resources. This helps you preserve your 3scale back-end Redis data for recovery scenarios.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You backed up the Red&#160;Hat 3scale API Management operator.</p>
-</li>
-<li>
-<p>You backed up your MySQL database.</p>
-</li>
-<li>
-<p>The Redis queues have been drained before performing the backup.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Edit the annotations on the <code>backend-redis</code> deployment by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit deployment backend-redis -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">annotations:
-post.hook.backup.velero.io/command: &gt;-
-         ["/bin/bash", "-c", "redis-cli CONFIG SET auto-aof-rewrite-percentage
-         100"]
-       pre.hook.backup.velero.io/command: &gt;-
-         ["/bin/bash", "-c", "redis-cli CONFIG SET auto-aof-rewrite-percentage
-         0"]</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create a YAML file with the following configuration to back up the Redis database:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Backup
-metadata:
-  name: redis-backup
-  namespace: openshift-adp
-spec:
-  csiSnapshotTimeout: 10m0s
-  defaultVolumesToFsBackup: true
-  includedNamespaces:
-  - threescale
-  includedResources:
-  - deployment
-  - pods
-  - replicationcontrollers
-  - persistentvolumes
-  - persistentvolumeclaims
-  itemOperationTimeout: 1h0m0s
-  labelSelector:
-    matchLabels:
-      app: 3scale-api-management
-      threescale_component: backend
-      threescale_component_element: redis
-  snapshotMoveData: false
-  snapshotVolumes: false
-  ttl: 720h0m0s</code></pre>
-</div>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>name</code></dt>
-<dd>
-<p>Specifies the value of the <code>metadata.name</code> parameter in the backup. Use this value in the <code>metadata.backupName</code> parameter when restoring the Redis database.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Back up the Redis database by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f redis-backup.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">backup.velero.io/redis-backup created</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc apply -f &lt;backup_cr_filename&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -4494,227 +3168,46 @@ spec:
 <div class="title">Verification</div>
 <ul>
 <li>
-<p>Verify that the Redis backup is completed by running the following command:</p>
+<p>Verify that the <code>Backup</code> object is in the <code>Completed</code> phase by running the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get backups.velero.io redis-backup -o yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">status:
-completionTimestamp: "2025-04-17T13:25:19Z"
-errors: 1
-expiration: "2025-05-17T13:25:16Z"
-formatVersion: 1.1.0
-hookStatus: {}
-phase: Completed
-progress: {}
-startTimestamp: "2025-04-17T13:25:16Z"
-version: 1</code></pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="backing-up-the-mysql-database_back-up-applications">Back up a MySQL database</h5>
-<div class="paragraph _abstract">
-<p>Back up a MySQL database by creating a persistent volume claim (PVC) to store the database dump. This helps you preserve your 3scale system database data for recovery scenarios.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You have backed up the Red&#160;Hat 3scale API Management operator.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Create a YAML file with the following configuration for adding an additional PVC:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: example-claim
-  namespace: threescale
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
-  storageClassName: gp3-csi
-  volumeMode: Filesystem</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create the additional PVC by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f ts_pvc.yml</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Attach the PVC to the system database pod by editing the <code>system-mysql</code> deployment to use the MySQL dump:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit deployment system-mysql -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">  volumeMounts:
-    - name: example-claim
-      mountPath: /var/lib/mysqldump/data
-    - name: mysql-storage
-      mountPath: /var/lib/mysql/data
-    - name: mysql-extra-conf
-      mountPath: /etc/my-extra.d
-    - name: mysql-main-conf
-      mountPath: /etc/my-extra
-    ...
-      serviceAccount: amp
-  volumes:
-        - name: example-claim
-          persistentVolumeClaim:
-            claimName: example-claim
-    ...</code></pre>
-</div>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>claimName</code></dt>
-<dd>
-<p>Specifies the PVC that contains the dumped data.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Create a YAML file with following configuration to back up the MySQL database:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Backup
-metadata:
-  name: mysql-backup
-  namespace: openshift-adp
-spec:
-  csiSnapshotTimeout: 10m0s
-  defaultVolumesToFsBackup: true
-  hooks:
-    resources:
-    - name: dumpdb
-      pre:
-      - exec:
-          command:
-          - /bin/sh
-          - -c
-          - mysqldump -u $MYSQL_USER --password=$MYSQL_PASSWORD system --no-tablespaces
-            &gt; /var/lib/mysqldump/data/dump.sql
-          container: system-mysql
-          onError: Fail
-          timeout: 5m
-  includedNamespaces:
-  - threescale
-  includedResources:
-  - deployment
-  - pods
-  - replicationControllers
-  - persistentvolumeclaims
-  - persistentvolumes
-  itemOperationTimeout: 1h0m0s
-  labelSelector:
-    matchLabels:
-      app: 3scale-api-management
-      threescale_component_element: mysql
-  snapshotMoveData: false
-  ttl: 720h0m0s</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>mysql-backup</code></dt>
-<dd>
-<p>Specifies the value of the <code>metadata.name</code> parameter in the backup. Use this value in the <code>metadata.backupName</code> parameter when restoring the MySQL database.</p>
-</dd>
-<dt class="hdlist1"><code>/var/lib/mysqldump/data/dump.sql</code></dt>
-<dd>
-<p>Specifies the directory where the data is backed up.</p>
-</dd>
-<dt class="hdlist1"><code>includedResources</code></dt>
-<dd>
-<p>Specifies the resources to back up.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Back up the MySQL database by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f mysql.yaml</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc describe backup test-backup -n openshift-adp</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Example output</div>
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">backup.velero.io/mysql-backup created</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="ulist">
-<div class="title">Verification</div>
-<ul>
-<li>
-<p>Verify that the MySQL backup is completed by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get backups.velero.io mysql-backup -o yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">status:
-completionTimestamp: "2025-04-17T13:25:19Z"
-errors: 1
-expiration: "2025-05-17T13:25:16Z"
-formatVersion: 1.1.0
-hookStatus: {}
-phase: Completed
-progress: {}
-startTimestamp: "2025-04-17T13:25:16Z"
-version: 1</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Name:         test-backup
+Namespace:    openshift-adp
+# ....#
+Status:
+  Backup Item Operations Attempted:  1
+  Backup Item Operations Completed:  1
+  Completion Timestamp:              2024-09-25T10:17:01Z
+  Expiration:                        2024-10-25T10:16:31Z
+  Format Version:                    1.1.0
+  Hook Status:
+  Phase:  Completed
+  Progress:
+    Items Backed Up:  34
+    Total Items:      34
+  Start Timestamp:    2024-09-25T10:16:31Z
+  Version:            1
+Events:               &lt;none&gt;</code></pre>
 </div>
 </div>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="oadp-install-and-configure-intro_install-and-configure-oadp.html">Install and configure OADP</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="oadp-restore-applications-intro_restore-applications.html">Restore applications</a> →</p>
+<p>← Previous: <a href="oadp-cli-setup_manage-oadp-with-cli-plugin.html">Set up the OADP CLI plugin</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="oadp-restore-applications-intro_restore-applications.html">Restore applications</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-08 15:28:17 -0400
+Last updated 2026-10-08 16:37:29 -0400
 </div>
 </div>
 <style>

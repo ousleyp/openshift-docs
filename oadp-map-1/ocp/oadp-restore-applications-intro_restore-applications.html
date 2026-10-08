@@ -1060,29 +1060,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="configure-rhacm-for-telco-deployments-con_configure-rhacm-for-telco-deployments.html">Configure Red&#160;Hat Advanced Cluster Management (RHACM) for telco deployments</a>
 </li>
-<li><a href="oadp-intro_understand-oadp-capabilities.html">Protect application data with OADP</a>
+<li><a href="oadp-intro_learn-about-oadp-capabilities.html">Protect application data with OADP</a>
+</li>
+<li><a href="oadp-release-notes-intro_review-oadp-release-notes.html">OADP release notes</a>
 </li>
 <li><a href="oadp-about-backup-snapshot-locations_plan-oadp-deployment.html">About backup and snapshot locations and their secrets</a>
 </li>
-<li><a href="oadp-install-and-configure-intro_install-and-configure-oadp.html">Install and configure OADP</a>
+<li><a href="oadp-install-and-configure-intro_install-oadp.html">Install and configure OADP</a>
+</li>
+<li><a href="oadp-connect-to-backup-storage-intro_connect-oadp-to-backup-storage.html">Connect OADP to backup storage</a>
+</li>
+<li><a href="oadp-configure-security-performance-intro_configure-oadp-security-and-performance.html">Configure OADP security and performance</a>
+</li>
+<li><a href="oadp-cli-setup_manage-oadp-with-cli-plugin.html">Set up the OADP CLI plugin</a>
 </li>
 <li><a href="oadp-back-up-applications-intro_back-up-applications.html">Back up applications</a>
 </li>
 <li><a href="oadp-restore-applications-intro_restore-applications.html"><span class="toc-current">Restore applications</span></a>
 </li>
-<li><a href="oadp-protect-virtual-machine-data-intro_protect-virtual-machine-data.html">Protect virtual machine data</a>
+<li><a href="oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management.html">Back up and restore 3scale API Management</a>
 </li>
-<li><a href="oadp-self-service-overview_delegate-backup-operations-with-oadp-self-service.html">About OADP Self-Service</a>
+<li><a href="oadp-rosa-sts-intro_back-up-and-restore-applications-on-rosa-with-sts.html">Back up and restore applications on ROSA with STS</a>
+</li>
+<li><a href="oadp-data-mover-support_configure-data-mover-and-tune-backup-performance.html">Data Mover support</a>
+</li>
+<li><a href="oadp-protect-virtual-machine-data-intro_back-up-and-restore-virtual-machines.html">Protect virtual machine data</a>
+</li>
+<li><a href="oadp-vmfr-overview_restore-vm-files-with-vmfr.html">What problem is OADP VMFR solving</a>
+</li>
+<li><a href="oadp-vmdp-overview_back-up-and-restore-vm-data-with-vmdp.html">About OADP virtual machine data protection</a>
+</li>
+<li><a href="oadp-self-service-overview_enable-oadp-self-service.html">About OADP Self-Service</a>
 </li>
 <li><a href="oadp-about-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters.html">About backing up data from one cluster and restoring it on another cluster</a>
-</li>
-<li><a href="oadp-data-mover-support_optimize-backup-performance.html">Data Mover support</a>
 </li>
 <li><a href="oadp-upgrade-intro_upgrade-oadp.html">Upgrade OADP</a>
 </li>
 <li><a href="oadp-monitor-and-validate-intro_monitor-and-validate-oadp.html">Monitor and validate OADP</a>
 </li>
-<li><a href="oadp-troubleshoot-intro_troubleshoot-oadp.html">Troubleshoot OADP</a>
+<li><a href="oadp-api-reference-intro_oadp-api-reference.html">OADP API reference</a>
+</li>
+<li><a href="oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures.html">Troubleshoot OADP</a>
+</li>
+<li><a href="oadp-uninstall-intro_uninstall-oadp.html">Uninstall OADP</a>
 </li>
 </ul>
 </li>
@@ -1875,7 +1895,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#oadp-review-backup-restore_restore-applications">Preview resources before running backup and restore</a></li><li class="level-4"><a href="#oadp-creating-restore-cr_restore-applications">Create a Restore CR</a></li><li class="level-4"><a href="#oadp-creating-restore-hooks_restore-applications">Create restore hooks</a></li><li class="level-4"><a href="#oadp-storage-class-mapping_restore-applications">Storage class mapping</a></li><li class="level-5"><a href="#oadp-storage-class-mapping-oadp_restore-applications">Map storage classes with OADP</a></li><li class="level-4"><a href="#oadp-usecase-restore_restore-applications">Restore an application to a different namespace using OADP</a></li><li class="level-4"><a href="#oadp-about-enable-api-group-versions_restore-applications">About Enable API Group Versions</a></li><li class="level-5"><a href="#oadp-using-enable-api-group-versions_restore-applications">Use Enable API Group Versions</a></li><li class="level-5"><a href="#oadp-checking-api-group-versions_restore-applications">List the Kubernetes API group versions on a cluster</a></li><li class="level-4"><a href="#restoring-the-3scale-api-management-operator-secrets-and-apimanager_restore-applications">Restore the 3scale API Management operator, secrets, and APIManager</a></li><li class="level-5"><a href="#restoring-the-backend-redis-database_restore-applications">Restore the back-end Redis database</a></li><li class="level-5"><a href="#restoring-the-mysql-database_restore-applications">Restore a MySQL database</a></li><li class="level-5"><a href="#scaling-up-the-3scale-api-management-operator-and-deployment_restore-applications">Scale up the 3scale API Management operator and deployment</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#oadp-review-backup-restore_restore-applications">Preview resources before running backup and restore</a></li><li class="level-4"><a href="#oadp-creating-restore-cr_restore-applications">Create a Restore CR</a></li><li class="level-4"><a href="#oadp-creating-restore-hooks_restore-applications">Create restore hooks</a></li><li class="level-4"><a href="#oadp-1-3-restoring-csi-snapshots_restore-applications">Restore CSI volume snapshots</a></li><li class="level-4"><a href="#oadp-storage-class-mapping_restore-applications">Storage class mapping</a></li><li class="level-5"><a href="#oadp-storage-class-mapping-oadp_restore-applications">Map storage classes with OADP</a></li><li class="level-4"><a href="#oadp-usecase-restore_restore-applications">Restore an application to a different namespace using OADP</a></li><li class="level-4"><a href="#oadp-about-enable-api-group-versions_restore-applications">About Enable API Group Versions</a></li><li class="level-5"><a href="#oadp-using-enable-api-group-versions_restore-applications">Use Enable API Group Versions</a></li><li class="level-5"><a href="#oadp-checking-api-group-versions_restore-applications">List the Kubernetes API group versions on a cluster</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="oadp-restore-applications-intro_restore-applications">Restore applications</h3>
@@ -2261,6 +2281,142 @@ spec:
 </div>
 </div>
 <div class="sect3">
+<h4 id="oadp-1-3-restoring-csi-snapshots_restore-applications">Restore CSI volume snapshots</h4>
+<div class="paragraph _abstract">
+<p>You can restore a volume snapshot by creating a <code>Restore</code> CR.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot restore Volsync backups from OADP 1.2 with the OAPD 1.3 built-in Data Mover. It is recommended to do a file system backup of all of your workloads with Restic before upgrading to OADP 1.3.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have access to the cluster with the <code>cluster-admin</code> role.</p>
+</li>
+<li>
+<p>You have an OADP <code>Backup</code> CR from which to restore the data.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create a YAML file for the <code>Restore</code>  CR, as in the following example:</p>
+<div class="listingblock">
+<div class="title">Example <code>Restore</code> CR</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
+kind: Restore
+metadata:
+  name: restore
+  namespace: openshift-adp
+spec:
+  backupName: &lt;backup&gt;
+# ...</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the manifest:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f restore.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <code>DataDownload</code> CR is created when the restore starts.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>You can monitor the status of the restore process by checking the <code>status.phase</code> field of the <code>DataDownload</code> CR. Possible values are <code>In Progress</code>, <code>Completed</code>, <code>Failed</code>, or <code>Canceled</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To get a list of all <code>DataDownload</code> objects, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get datadownloads -A</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAMESPACE       NAME                   STATUS      STARTED   BYTES DONE   TOTAL BYTES   STORAGE LOCATION   AGE     NODE
+openshift-adp   restore-test-1-sk7lg   Completed   7m11s     108104082    108104082     dpa-sample-1       7m11s   ip-10-0-150-57.us-west-2.compute.internal</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Enter the following command to check the value of the <code>status.phase</code> field of the specific <code>DataDownload</code> object:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get datadownloads &lt;datadownload_name&gt; -o yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v2alpha1
+kind: DataDownload
+metadata:
+  name: restore-test-1-sk7lg
+  namespace: openshift-adp
+spec:
+  backupStorageLocation: dpa-sample-1
+  operationTimeout: 10m0s
+  snapshotID: 8da1c5febf25225f4577ada2aeb9f899
+  sourceNamespace: mysql-persistent
+  targetVolume:
+    namespace: mysql-persistent
+    pv: ""
+    pvc: mysql
+status:
+  completionTimestamp: "2023-11-02T17:01:24Z"
+  node: ip-10-0-150-57.us-west-2.compute.internal
+  phase: Completed
+  progress:
+    bytesDone: 108104082
+    totalBytes: 108104082
+  startTimestamp: "2023-11-02T17:00:52Z"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>phase: Completed</code></dt>
+<dd>
+<p>Indicates that the CSI snapshot data is successfully restored.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
 <h4 id="oadp-storage-class-mapping_restore-applications">Storage class mapping</h4>
 <div class="paragraph _abstract">
 <p>Define rules for your storage classes to automate how different data types are stored. Mapping your storage classes helps optimize your storage efficiency and lower costs based on access frequency and data importance.</p>
@@ -2574,728 +2730,14 @@ spec:
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="restoring-the-3scale-api-management-operator-secrets-and-apimanager_restore-applications">Restore the 3scale API Management operator, secrets, and APIManager</h4>
-<div class="paragraph _abstract">
-<p>Restore the Red&#160;Hat 3scale API Management operator resources, including the <code>Secret</code> and APIManager custom resources (CRs). This helps you to recover your 3scale operator configuration on the same or a different cluster.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You backed up the 3scale operator.</p>
-</li>
-<li>
-<p>You backed up the MySQL and Redis databases.</p>
-</li>
-<li>
-<p>You are restoring the database on the same cluster, where it was backed up.</p>
-<div class="paragraph">
-<p>If you are restoring the operator to a different cluster that you backed up from, install and configure OADP with <code>nodeAgent</code> enabled on the destination cluster. Ensure that the OADP configuration is same as it was on the source cluster.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Delete the 3scale operator custom resource definitions (CRDs) along with the <code>threescale</code> namespace by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc delete project threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">"threescale" project deleted successfully</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create a YAML file with the following configuration to restore the 3scale operator:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Restore
-metadata:
-  name: operator-installation-restore
-  namespace: openshift-adp
-spec:
-  backupName: operator-install-backup
-  excludedResources:
-  - nodes
-  - events
-  - events.events.k8s.io
-  - backups.velero.io
-  - restores.velero.io
-  - resticrepositories.velero.io
-  - csinodes.storage.k8s.io
-  - volumeattachments.storage.k8s.io
-  - backuprepositories.velero.io
-  itemOperationTimeout: 4h0m0s</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>operator-install-backup</code></dt>
-<dd>
-<p>Specifies the name of the backup to restore the 3scale operator.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Restore the 3scale operator by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f restore.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">restore.velerio.io/operator-installation-restore created</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Manually create the <code>s3-credentials</code> <code>Secret</code> object by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc apply -f - &lt;&lt;EOF
----
-apiVersion: v1
-kind: Secret
-metadata:
-      name: s3-credentials
-      namespace: threescale
-stringData:
-  AWS_ACCESS_KEY_ID: &lt;ID_123456&gt;
-  AWS_SECRET_ACCESS_KEY: &lt;ID_98765544&gt;
-  AWS_BUCKET: &lt;mybucket.example.com&gt;
-  AWS_REGION: &lt;us-east-1&gt;
-type: Opaque
-EOF</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>&lt;AWS_ACCESS_KEY_ID&gt;</code></dt>
-<dd>
-<p>Specifies your AWS credentials ID.</p>
-</dd>
-<dt class="hdlist1"><code>&lt;AWS_SECRET_ACCESS_KEY&gt;</code></dt>
-<dd>
-<p>Specifies your AWS credentials KEY.</p>
-</dd>
-<dt class="hdlist1"><code>&lt;mybucket.example.com&gt;</code></dt>
-<dd>
-<p>Specifies your target bucket name.</p>
-</dd>
-<dt class="hdlist1"><code>&lt;us-east-1&gt;</code></dt>
-<dd>
-<p>Specifies the AWS region of your bucket.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Scale down the 3scale operator by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc scale deployment threescale-operator-controller-manager-v2 --replicas=0 -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">deployment.apps/threescale-operator-controller-manager-v2 scaled</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create a YAML file with the following configuration to restore the <code>Secret</code>:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Restore
-metadata:
-  name: operator-resources-secrets
-  namespace: openshift-adp
-spec:
-  backupName: operator-resources-secrets
-  excludedResources:
-  - nodes
-  - events
-  - events.events.k8s.io
-  - backups.velero.io
-  - restores.velero.io
-  - resticrepositories.velero.io
-  - csinodes.storage.k8s.io
-  - volumeattachments.storage.k8s.io
-  - backuprepositories.velero.io
-  itemOperationTimeout: 4h0m0s</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>operator-resources-secrets</code></dt>
-<dd>
-<p>Specifies the name of the backup to restore the <code>Secret</code>.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Restore the <code>Secret</code> by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f restore-secrets.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">restore.velerio.io/operator-resources-secrets created</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create a YAML file with the following configuration to restore APIManager:</p>
-<div class="listingblock">
-<div class="title">Example <code>restore-apimanager.yaml</code> file</div>
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Restore
-metadata:
-  name: operator-resources-apim
-  namespace: openshift-adp
-spec:
-  backupName: operator-resources-apim
-  excludedResources:
-  - nodes
-  - events
-  - events.events.k8s.io
-  - backups.velero.io
-  - restores.velero.io
-  - resticrepositories.velero.io
-  - csinodes.storage.k8s.io
-  - volumeattachments.storage.k8s.io
-  - backuprepositories.velero.io
-  itemOperationTimeout: 4h0m0s</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>operator-resources-apim</code></dt>
-<dd>
-<p>Specifies the name of the backup to restore the APIManager.</p>
-</dd>
-<dt class="hdlist1"><code>excludedResources</code></dt>
-<dd>
-<p>Specifies the resources that you do not want to restore.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Restore the APIManager by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f restore-apimanager.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">restore.velerio.io/operator-resources-apim created</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Scale up the 3scale operator by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc scale deployment threescale-operator-controller-manager-v2 --replicas=1 -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">deployment.apps/threescale-operator-controller-manager-v2 scaled</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="sect4">
-<h5 id="restoring-the-backend-redis-database_restore-applications">Restore the back-end Redis database</h5>
-<div class="paragraph _abstract">
-<p>Restore the back-end Redis database by creating a <code>Restore</code> custom resource (CR) that excludes non-essential cluster resources. This helps you to recover the Redis data store as part of the Red&#160;Hat 3scale API Management restoration process.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You restored the Red&#160;Hat 3scale API Management operator resources, <code>Secret</code>, and APIManager custom resources.</p>
-</li>
-<li>
-<p>You restored the MySQL database.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Delete the <code>backend-redis</code> deployment by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc delete deployment backend-redis -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">Warning: apps.openshift.io/v1 deployment is deprecated in v4.14+, unavailable in v4.10000+
-
-deployment.apps.openshift.io "backend-redis" deleted</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create a YAML file with the following configuration to restore the Redis database:</p>
-<div class="listingblock">
-<div class="title">Example <code>restore-backend.yaml</code> file</div>
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Restore
-metadata:
-  name: restore-backend
-  namespace: openshift-adp
-spec:
-  backupName: redis-backup
-  excludedResources:
-    - nodes
-    - events
-    - events.events.k8s.io
-    - backups.velero.io
-    - restores.velero.io
-    - resticrepositories.velero.io
-    - csinodes.storage.k8s.io
-    - volumeattachments.storage.k8s.io
-    - backuprepositories.velero.io
-  itemOperationTimeout: 1h0m0s
-  restorePVs: true</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>redis-backup</code></dt>
-<dd>
-<p>Specifies the name of the Redis backup to restore.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Restore the Redis database by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f restore-backend.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">restore.velerio.io/restore-backend created</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="ulist">
-<div class="title">Verification</div>
-<ul>
-<li>
-<p>Verify that the <code>PodVolumeRestore</code> restore is completed by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get podvolumerestores.velero.io -n openshift-adp</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                    NAMESPACE    POD                     UPLOADER TYPE   VOLUME                  STATUS      TOTALBYTES   BYTESDONE   AGE
-restore-backend-jmrwx   threescale   backend-redis-1-bsfmv   kopia           backend-redis-storage   Completed   76123        76123       21m</code></pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="restoring-the-mysql-database_restore-applications">Restore a MySQL database</h5>
-<div class="paragraph _abstract">
-<p>Restore a MySQL database by scaling down Red&#160;Hat 3scale API Management components and creating a Velero <code>Restore</code> custom resource (CR). This helps you to recover your 3scale MySQL data, persistent volumes, and associated resources.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<img src="data:image/png;base64," alt="Warning">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Do not delete the default PV and PVC associated with the database. If you do, your backups are deleted.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You restored the <code>Secret</code> and APIManager custom resources (CRs).</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Scale down the Red&#160;Hat 3scale API Management operator by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc scale deployment threescale-operator-controller-manager-v2 --replicas=0 -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">deployment.apps/threescale-operator-controller-manager-v2 scaled</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create the following script to scale down the 3scale operator:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ vi ./scaledowndeployment.sh</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example script:</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">for deployment in apicast-production apicast-staging backend-cron backend-listener backend-redis backend-worker system-app system-memcache system-mysql system-redis system-searchd system-sidekiq zync zync-database zync-que; do
-    oc scale deployment/$deployment --replicas=0 -n threescale
-done</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Scale down all the deployment 3scale components by running the following script:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ ./scaledowndeployment.sh</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">deployment.apps.openshift.io/apicast-production scaled
-deployment.apps.openshift.io/apicast-staging scaled
-deployment.apps.openshift.io/backend-cron scaled
-deployment.apps.openshift.io/backend-listener scaled
-deployment.apps.openshift.io/backend-redis scaled
-deployment.apps.openshift.io/backend-worker scaled
-deployment.apps.openshift.io/system-app scaled
-deployment.apps.openshift.io/system-memcache scaled
-deployment.apps.openshift.io/system-mysql scaled
-deployment.apps.openshift.io/system-redis scaled
-deployment.apps.openshift.io/system-searchd scaled
-deployment.apps.openshift.io/system-sidekiq scaled
-deployment.apps.openshift.io/zync scaled
-deployment.apps.openshift.io/zync-database scaled
-deployment.apps.openshift.io/zync-que scaled</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Delete the <code>system-mysql</code> <code>Deployment</code> object by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc delete deployment system-mysql -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">Warning: apps.openshift.io/v1 deployment is deprecated in v4.14+, unavailable in v4.10000+
-deployment.apps.openshift.io "system-mysql" deleted</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create the following YAML file to restore the MySQL database:</p>
-<div class="listingblock">
-<div class="title">Example <code>restore-mysql.yaml</code> file</div>
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
-kind: Restore
-metadata:
-  name: restore-mysql
-  namespace: openshift-adp
-spec:
-  backupName: mysql-backup
-  excludedResources:
-    - nodes
-    - events
-    - events.events.k8s.io
-    - backups.velero.io
-    - restores.velero.io
-    - csinodes.storage.k8s.io
-    - volumeattachments.storage.k8s.io
-    - backuprepositories.velero.io
-    - resticrepositories.velero.io
-  hooks:
-    resources:
-      - name: restoreDB
-        postHooks:
-          - exec:
-              command:
-                - /bin/sh
-                - '-c'
-                - &gt;
-                  sleep 30
-
-                  mysql -h 127.0.0.1 -D system -u root
-                  --password=$MYSQL_ROOT_PASSWORD &lt;
-                  /var/lib/mysqldump/data/dump.sql
-              container: system-mysql
-              execTimeout: 80s
-              onError: Fail
-              waitTimeout: 5m
-  itemOperationTimeout: 1h0m0s
-  restorePVs: true</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>mysql-backup</code></dt>
-<dd>
-<p>Specifies the name of the MySQL backup to restore.</p>
-</dd>
-<dt class="hdlist1"><code>/var/lib/mysqldump/data/dump.sql</code></dt>
-<dd>
-<p>Specifies the path where the data is restored from.</p>
-</dd>
-</dl>
-</div>
-</li>
-<li>
-<p>Restore the MySQL database by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f restore-mysql.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">restore.velerio.io/restore-mysql created</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="olist arabic">
-<div class="title">Verification</div>
-<ol class="arabic">
-<li>
-<p>Verify that the <code>PodVolumeRestore</code> restore is completed by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get podvolumerestores.velero.io -n openshift-adp</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                    NAMESPACE    POD                     UPLOADER TYPE   VOLUME                  STATUS      TOTALBYTES   BYTESDONE   AGE
-restore-mysql-rbzvm     threescale   system-mysql-2-kjkhl    kopia           mysql-storage           Completed   771879108    771879108   40m
-restore-mysql-z7x7l     threescale   system-mysql-2-kjkhl    kopia           example-claim           Completed   380415       380415      40m</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Verify that the additional PVC has been restored by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pvc -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                    STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
-backend-redis-storage   Bound    pvc-3dca410d-3b9f-49d4-aebf-75f47152e09d   1Gi        RWO            gp3-csi        &lt;unset&gt;                 68m
-example-claim           Bound    pvc-cbaa49b0-06cd-4b1a-9e90-0ef755c67a54   1Gi        RWO            gp3-csi        &lt;unset&gt;                 57m
-mysql-storage           Bound    pvc-4549649f-b9ad-44f7-8f67-dd6b9dbb3896   1Gi        RWO            gp3-csi        &lt;unset&gt;                 68m
-system-redis-storage    Bound    pvc-04dadafd-8a3e-4d00-8381-6041800a24fc   1Gi        RWO            gp3-csi        &lt;unset&gt;                 68m
-system-searchd          Bound    pvc-afbf606c-d4a8-4041-8ec6-54c5baf1a3b9   1Gi        RWO            gp3-csi        &lt;unset&gt;                 68m</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="scaling-up-the-3scale-api-management-operator-and-deployment_restore-applications">Scale up the 3scale API Management operator and deployment</h5>
-<div class="paragraph _abstract">
-<p>Scale up the Red&#160;Hat 3scale API Management operator and any deployment that was manually scaled down during the restore process. This helps you to bring your 3scale installation back to a fully functional state matching the backed-up configuration.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You restored the 3scale operator resources, and both the <code>Secret</code> and APIManager custom resources (CRs).</p>
-</li>
-<li>
-<p>You restored the MySQL and back-end Redis databases.</p>
-</li>
-<li>
-<p>Ensure that there are no scaled up deployments or no extra pods running.
-There might be some <code>system-mysql</code> or <code>backend-redis</code> pods running detached from deployments after restoration, which can be removed after the restoration is successful.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Scale up the 3scale operator by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc scale deployment threescale-operator-controller-manager-v2 --replicas=1 -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">deployment.apps/threescale-operator-controller-manager-v2 scaled</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Ensure that the 3scale pod is running to verify if the 3scale operator was deployed by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pods -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME									                    READY        STATUS	  RESTARTS	 AGE
-threescale-operator-controller-manager-v2-79546bd8c-b4qbh	1/1	         Running  0          2m5s</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create the following script to scale up the deployments:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ vi ./scaledeployment.sh</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example script file:</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">for deployment in apicast-production apicast-staging backend-cron backend-listener backend-redis backend-worker system-app system-memcache system-mysql system-redis system-searchd system-sidekiq zync zync-database zync-que; do
-    oc scale deployment/$deployment --replicas=1 -n threescale
-done</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Scale up the deployments by running the following script:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ ./scaledeployment.sh</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">deployment.apps.openshift.io/apicast-production scaled
-deployment.apps.openshift.io/apicast-staging scaled
-deployment.apps.openshift.io/backend-cron scaled
-deployment.apps.openshift.io/backend-listener scaled
-deployment.apps.openshift.io/backend-redis scaled
-deployment.apps.openshift.io/backend-worker scaled
-deployment.apps.openshift.io/system-app scaled
-deployment.apps.openshift.io/system-memcache scaled
-deployment.apps.openshift.io/system-mysql scaled
-deployment.apps.openshift.io/system-redis scaled
-deployment.apps.openshift.io/system-searchd scaled
-deployment.apps.openshift.io/system-sidekiq scaled
-deployment.apps.openshift.io/zync scaled
-deployment.apps.openshift.io/zync-database scaled
-deployment.apps.openshift.io/zync-que scaled</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Get the <code>3scale-admin</code> route to log in to the 3scale UI by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get routes -n threescale</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                         HOST/PORT                                                                   PATH   SERVICES             PORT      TERMINATION     WILDCARD
-backend                      backend-3scale.apps.custom-cluster-name.openshift.com                         backend-listener     http      edge/Allow      None
-zync-3scale-api-b4l4d        api-3scale-apicast-production.apps.custom-cluster-name.openshift.com          apicast-production   gateway   edge/Redirect   None
-zync-3scale-api-b6sns        api-3scale-apicast-staging.apps.custom-cluster-name.openshift.com             apicast-staging      gateway   edge/Redirect   None
-zync-3scale-master-7sc4j     master.apps.custom-cluster-name.openshift.com                                 system-master        http      edge/Redirect   None
-zync-3scale-provider-7r2nm   3scale-admin.apps.custom-cluster-name.openshift.com                           system-provider      http      edge/Redirect   None
-zync-3scale-provider-mjxlb   3scale.apps.custom-cluster-name.openshift.com                                 system-developer     http      edge/Redirect   None</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In this example, <code>3scale-admin.apps.custom-cluster-name.openshift.com</code> is the 3scale-admin URL.</p>
-</div>
-</li>
-<li>
-<p>Use the URL from this output to log in to the 3scale operator as an administrator. You can verify that the data, when you took backup, is available.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="oadp-back-up-applications-intro_back-up-applications.html">Back up applications</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="oadp-protect-virtual-machine-data-intro_protect-virtual-machine-data.html">Protect virtual machine data</a> →</p>
+<p>← Previous: <a href="oadp-back-up-applications-intro_back-up-applications.html">Back up applications</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management.html">Back up and restore 3scale API Management</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-08 15:28:17 -0400
+Last updated 2026-10-08 16:37:29 -0400
 </div>
 </div>
 <style>

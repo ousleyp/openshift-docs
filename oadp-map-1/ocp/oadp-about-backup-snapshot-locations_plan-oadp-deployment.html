@@ -1060,29 +1060,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="configure-rhacm-for-telco-deployments-con_configure-rhacm-for-telco-deployments.html">Configure Red&#160;Hat Advanced Cluster Management (RHACM) for telco deployments</a>
 </li>
-<li><a href="oadp-intro_understand-oadp-capabilities.html">Protect application data with OADP</a>
+<li><a href="oadp-intro_learn-about-oadp-capabilities.html">Protect application data with OADP</a>
+</li>
+<li><a href="oadp-release-notes-intro_review-oadp-release-notes.html">OADP release notes</a>
 </li>
 <li><a href="oadp-about-backup-snapshot-locations_plan-oadp-deployment.html"><span class="toc-current">About backup and snapshot locations and their secrets</span></a>
 </li>
-<li><a href="oadp-install-and-configure-intro_install-and-configure-oadp.html">Install and configure OADP</a>
+<li><a href="oadp-install-and-configure-intro_install-oadp.html">Install and configure OADP</a>
+</li>
+<li><a href="oadp-connect-to-backup-storage-intro_connect-oadp-to-backup-storage.html">Connect OADP to backup storage</a>
+</li>
+<li><a href="oadp-configure-security-performance-intro_configure-oadp-security-and-performance.html">Configure OADP security and performance</a>
+</li>
+<li><a href="oadp-cli-setup_manage-oadp-with-cli-plugin.html">Set up the OADP CLI plugin</a>
 </li>
 <li><a href="oadp-back-up-applications-intro_back-up-applications.html">Back up applications</a>
 </li>
 <li><a href="oadp-restore-applications-intro_restore-applications.html">Restore applications</a>
 </li>
-<li><a href="oadp-protect-virtual-machine-data-intro_protect-virtual-machine-data.html">Protect virtual machine data</a>
+<li><a href="oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management.html">Back up and restore 3scale API Management</a>
 </li>
-<li><a href="oadp-self-service-overview_delegate-backup-operations-with-oadp-self-service.html">About OADP Self-Service</a>
+<li><a href="oadp-rosa-sts-intro_back-up-and-restore-applications-on-rosa-with-sts.html">Back up and restore applications on ROSA with STS</a>
+</li>
+<li><a href="oadp-data-mover-support_configure-data-mover-and-tune-backup-performance.html">Data Mover support</a>
+</li>
+<li><a href="oadp-protect-virtual-machine-data-intro_back-up-and-restore-virtual-machines.html">Protect virtual machine data</a>
+</li>
+<li><a href="oadp-vmfr-overview_restore-vm-files-with-vmfr.html">What problem is OADP VMFR solving</a>
+</li>
+<li><a href="oadp-vmdp-overview_back-up-and-restore-vm-data-with-vmdp.html">About OADP virtual machine data protection</a>
+</li>
+<li><a href="oadp-self-service-overview_enable-oadp-self-service.html">About OADP Self-Service</a>
 </li>
 <li><a href="oadp-about-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters.html">About backing up data from one cluster and restoring it on another cluster</a>
-</li>
-<li><a href="oadp-data-mover-support_optimize-backup-performance.html">Data Mover support</a>
 </li>
 <li><a href="oadp-upgrade-intro_upgrade-oadp.html">Upgrade OADP</a>
 </li>
 <li><a href="oadp-monitor-and-validate-intro_monitor-and-validate-oadp.html">Monitor and validate OADP</a>
 </li>
-<li><a href="oadp-troubleshoot-intro_troubleshoot-oadp.html">Troubleshoot OADP</a>
+<li><a href="oadp-api-reference-intro_oadp-api-reference.html">OADP API reference</a>
+</li>
+<li><a href="oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures.html">Troubleshoot OADP</a>
+</li>
+<li><a href="oadp-uninstall-intro_uninstall-oadp.html">Uninstall OADP</a>
 </li>
 </ul>
 </li>
@@ -1875,7 +1895,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#backup-locations_plan-oadp-deployment">Backup locations</a></li><li class="level-4"><a href="#snapshot-locations_plan-oadp-deployment">Snapshot locations</a></li><li class="level-4"><a href="#secrets_plan-oadp-deployment">Secrets</a></li><li class="level-4"><a href="#about-oadp-update-channels_plan-oadp-deployment">About OADP update channels</a></li><li class="level-4"><a href="#about-installing-oadp-on-multiple-namespaces_plan-oadp-deployment">Installation of OADP on multiple namespaces</a></li><li class="level-4"><a href="#oadp-s3-compatible-backup-storage-providers_plan-oadp-deployment">AWS S3 compatible backup storage providers</a></li><li class="level-5"><a href="#oadp-certified-backup-storage-providers_plan-oadp-deployment">Certified backup storage providers</a></li><li class="level-5"><a href="#oadp-s3-compatible-backup-storage-providers-unsupported">Unsupported backup storage providers</a></li><li class="level-5"><a href="#oadp-s3-compatible-backup-storage-providers-known-limitations">Backup storage providers with known limitations</a></li><li class="level-5"><a href="#_additional_resources_5">Additional resources</a></li><li class="level-4"><a href="#oadp-support-backup-data-immutability_plan-oadp-deployment">OADP support for backup data immutability</a></li><li class="level-4"><a href="#oadp-configuring-noobaa-for-dr_plan-oadp-deployment">Configure Multicloud Object Gateway (MCG) for disaster recovery on OpenShift Data Foundation</a></li><li class="level-4"><a href="#oadp-velero-cpu-memory-requirements_plan-oadp-deployment">Velero CPU and memory requirements based on collected data</a></li><li class="level-5"><a href="#_cpu_and_memory_requirement_for_configurations">CPU and memory requirement for configurations</a></li><li class="level-5"><a href="#_additional_resources_6">Additional resources</a></li><li class="level-4"><a href="#oadp-performance-network-requirements_plan-oadp-deployment">OADP network requirements</a></li><li class="level-4"><a href="#oadp-backup-restore-for-large-usage_plan-oadp-deployment">NodeAgent CPU for large usage</a></li><li class="level-5"><a href="#_additional_resources_7">Additional resources</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#backup-locations_plan-oadp-deployment">Backup locations</a></li><li class="level-4"><a href="#snapshot-locations_plan-oadp-deployment">Snapshot locations</a></li><li class="level-4"><a href="#secrets_plan-oadp-deployment">Secrets</a></li><li class="level-4"><a href="#about-oadp-update-channels_plan-oadp-deployment">About OADP update channels</a></li><li class="level-4"><a href="#about-installing-oadp-on-multiple-namespaces_plan-oadp-deployment">Installation of OADP on multiple namespaces</a></li><li class="level-4"><a href="#oadp-s3-compatible-backup-storage-providers_plan-oadp-deployment">AWS S3 compatible backup storage providers</a></li><li class="level-5"><a href="#oadp-certified-backup-storage-providers_plan-oadp-deployment">Certified backup storage providers</a></li><li class="level-5"><a href="#oadp-s3-compatible-backup-storage-providers-unsupported">Unsupported backup storage providers</a></li><li class="level-5"><a href="#oadp-s3-compatible-backup-storage-providers-known-limitations">Backup storage providers with known limitations</a></li><li class="level-5"><a href="#_additional_resources_5">Additional resources</a></li><li class="level-4"><a href="#oadp-support-backup-data-immutability_plan-oadp-deployment">OADP support for backup data immutability</a></li><li class="level-4"><a href="#oadp-configuring-noobaa-for-dr_plan-oadp-deployment">Configure Multicloud Object Gateway (MCG) for disaster recovery on OpenShift Data Foundation</a></li><li class="level-4"><a href="#oadp-velero-cpu-memory-requirements_plan-oadp-deployment">Velero CPU and memory requirements based on collected data</a></li><li class="level-5"><a href="#_cpu_and_memory_requirement_for_configurations">CPU and memory requirement for configurations</a></li><li class="level-5"><a href="#_additional_resources_6">Additional resources</a></li><li class="level-4"><a href="#oadp-odf-cpu-memory-requirements_plan-oadp-deployment">Adjust Ceph CPU and memory requirements based on collected data</a></li><li class="level-5"><a href="#oadp-odf-config-cpu-memory-requirements_plan-oadp-deployment">CPU and memory requirement for configurations</a></li><li class="level-4"><a href="#oadp-performance-network-requirements_plan-oadp-deployment">OADP network requirements</a></li><li class="level-4"><a href="#oadp-backup-restore-for-large-usage_plan-oadp-deployment">NodeAgent CPU for large usage</a></li><li class="level-5"><a href="#_additional_resources_7">Additional resources</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="oadp-about-backup-snapshot-locations_plan-oadp-deployment">About backup and snapshot locations and their secrets</h3>
@@ -2396,6 +2416,44 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
+<h4 id="oadp-odf-cpu-memory-requirements_plan-oadp-deployment">Adjust Ceph CPU and memory requirements based on collected data</h4>
+<div class="paragraph _abstract">
+<p>The following recommendations are based on observations of performance made in the scale and performance lab. The changes are specifically related to Red&#160;Hat OpenShift Data Foundation (ODF). If working with ODF, consult the appropriate tuning guides for official recommendations.</p>
+</div>
+<div class="sect4">
+<h5 id="oadp-odf-config-cpu-memory-requirements_plan-oadp-deployment">CPU and memory requirement for configurations</h5>
+<div class="paragraph">
+<p>Backup and restore operations require large amounts of CephFS <code>PersistentVolumes</code> (PVs). To avoid Ceph MDS pods restarting with an <code>out-of-memory</code> (OOM) error, the following configuration is suggested:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration types</th>
+<th class="tableblock halign-left valign-top">Request</th>
+<th class="tableblock halign-left valign-top">Max limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request changed to 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max limit to 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request changed to 8 Gi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max limit to 128 Gi</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
 <h4 id="oadp-performance-network-requirements_plan-oadp-deployment">OADP network requirements</h4>
 <div class="paragraph _abstract">
 <p>For a supported experience with OpenShift API for Data Protection (OADP), you should have a stable and resilient network across OpenShift nodes, AWS Simple Storage Service (S3)-compatible object storage, and in supported cloud environments that meet OpenShift network requirements.</p>
@@ -2481,12 +2539,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="oadp-intro_understand-oadp-capabilities.html">Protect application data with OADP</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="oadp-install-and-configure-intro_install-and-configure-oadp.html">Install and configure OADP</a> →</p>
+<p>← Previous: <a href="oadp-release-notes-intro_review-oadp-release-notes.html">OADP release notes</a> | ↑ Up: <a href="_administer.html">Administer</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="oadp-install-and-configure-intro_install-oadp.html">Install and configure OADP</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-08 15:28:17 -0400
+Last updated 2026-10-08 16:37:29 -0400
 </div>
 </div>
 <style>
