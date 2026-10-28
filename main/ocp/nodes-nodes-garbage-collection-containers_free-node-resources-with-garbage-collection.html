@@ -526,6 +526,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="how-etcd-works_how-etcd-works.html">How etcd works</a>
 </li>
+<li><a href="security-rhcos-overview_understand-host-security-controls.html">Red Hat Enterprise Linux CoreOS (RHCOS)</a>
+</li>
 </ul>
 </li>
 <li><a href="_get_started.html">Get started</a>
@@ -597,6 +599,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="images-imagestream-use_manage-image-streams-and-imports.html">Use image streams</a>
 </li>
+<li><a href="ocloud-manage-cluster-lifecycle-intro_ocloud-manage-cluster-lifecycle.html">Manage infrastructure and cluster lifecycle with the O-Cloud Manager</a>
+</li>
 </ul>
 </li>
 <li><a href="_install.html">Install</a>
@@ -645,6 +649,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="rhcos-validate-live-media_validate-boot-artifacts.html">Validating RHCOS live media</a>
 </li>
 <li><a href="prepare-your-cluster-for-workloads-con_prepare-your-cluster-for-workloads.html">Prepare your cluster for workloads</a>
+</li>
+<li><a href="apply-a-layered-image-during-installation-con_apply-a-layered-image-during-installation.html">Add software or drivers not available as extensions in the base RHCOS image during cluster installation</a>
 </li>
 <li><a href="deploying-hosted-control-planes-on-aws-intro_deploying-hosted-control-planes-on-aws.html">Deploying hosted control planes on AWS</a>
 </li>
@@ -977,6 +983,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="_configure.html">Configure</a>
+
 <ul class="sectlevel2">
 <li><a href="configuring-alert-notifications-intro_configuring-alert-notifications.html">Configuring alert notifications</a>
 </li>
@@ -1034,8 +1041,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="create-crio-default-capabilities_remove-the-net-raw-and-sys-chroot-cri-o-capabilities.html">Creating a drop-in file for the default CRI-O capabilities</a>
 </li>
-<li><a href="nodes-nodes-garbage-collection-containers_free-node-resources-with-garbage-collection.html"><span class="toc-current">Understanding how terminated containers are removed through garbage collection</span></a>
-</li>
 <li><a href="change-kernel-type-in-a-nodepool-con_change-kernel-type-in-a-nodepool.html">Change the kernel type in a node pool</a>
 </li>
 <li><a href="use-feature-gates-in-a-hosted-cluster-con_use-feature-gates-in-a-hosted-cluster.html">Use feature gates in a hosted cluster</a>
@@ -1056,15 +1061,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="about-kmm_manage-kernel-modules-across-cluster-nodes.html">About the Kernel Module Management Operator</a>
 </li>
-<li><a href="kmm-day0-day2-installation_manage-kmm-day0-day2-lifecycle.html">Day 0 through Day 2 kmod installation</a>
-</li>
 <li><a href="manage-kernel-modules-across-cluster-nodes-load-kernel-modules-at-day-1-with-machine-config-con_manage-kernel-modules-across-cluster-nodes-load-kernel-modules-at-day-1-with-machine-config.html">Load kernel modules at Day 1 with Machine Config</a>
-</li>
-<li><a href="kmm-hub-kmm-hub_install-and-use-kmm-hub.html">KMM-Hub</a>
-</li>
-<li><a href="kmm-defining-full-paths_use-wildcard-and-glob-patterns-to-sign-kernel-module-files.html">Defining full paths</a>
-</li>
-<li><a href="kmm-must-gather-tool_gather-diagnostic-data-for-kmm.html">Using the must-gather tool</a>
 </li>
 <li><a href="installation-oc-mirror-v2-about_mirror-container-images-to-a-local-registry.html">oc-mirror plugin v2</a>
 </li>
@@ -1084,8 +1081,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="revert-an-out-of-cluster-layered-image-con_revert-an-out-of-cluster-layered-image.html">Revert any changes I made by using the out-of-cluster mode of image mode for OpenShift</a>
 </li>
-<li><a href="apply-a-layered-image-during-installation-con_apply-a-layered-image-during-installation.html">Add software or drivers not available as extensions in the base RHCOS image during cluster installation</a>
-</li>
 <li><a href="update-the-control-plane-machine-set-con_update-the-control-plane-machine-set.html">Change the configuration of control plane machines by updating the control plane machine set</a>
 </li>
 <li><a href="change-the-control-plane-instance-type-con_change-the-control-plane-instance-type.html">Change the control plane instance type</a>
@@ -1100,35 +1095,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="change-the-authoritative-api-for-machine-management-resources-con_change-the-authoritative-api-for-machine-management-resources.html">Change the authoritative API for machine management resources</a>
 </li>
-<li><a href="private-clusters-about_configure-a-private-cluster.html">About private clusters</a>
-</li>
-<li><a href="configure-dns-records-in-a-private-zone-con_configure-dns-records-in-a-private-zone.html">Configure DNS records in a private zone</a>
-</li>
-<li><a href="set-the-ingress-controller-to-private-con_set-the-ingress-controller-to-private.html">Set the Ingress Controller to private</a>
-</li>
-<li><a href="restrict-the-api-server-to-private-for-aws-con_restrict-the-api-server-to-private-for-aws.html">Restrict the API server to private for AWS</a>
-</li>
-<li><a href="restrict-the-api-server-to-private-for-azure-con_restrict-the-api-server-to-private-for-azure.html">Restrict the API server to private for Azure</a>
-</li>
-<li><a href="security-rhcos-overview_understand-host-security-controls.html">Red Hat Enterprise Linux CoreOS (RHCOS)</a>
-</li>
 <li><a href="coreos-layering-updating_understand-how-to-update-a-cluster-that-uses-the-image-mode-for-openshift.html">Update with a RHCOS custom layered image</a>
 </li>
 <li><a href="post-install-configuration-overview-intro_post-installation-configuration-overview.html">Postinstallation configuration overview</a>
 </li>
-<li><a href="identity-provider-overview_prepare-a-cluster-for-user-access.html">Identity providers in Red&#160;Hat OpenShift Container Platform</a>
-</li>
 <li><a href="manage-workloads-using-taints-and-tolerations-con_manage-workloads-using-taints-and-tolerations.html">Manage workloads using taints and tolerations</a>
 </li>
 <li><a href="nodes-nodes-working-master-schedulable_schedule-pods-on-control-plane-nodes.html">Configuring control plane nodes as schedulable</a>
-</li>
-<li><a href="infrastructure-components_move-workloads-to-infrastructure-nodes.html">Red&#160;Hat OpenShift Container Platform infrastructure components</a>
-</li>
-<li><a href="registry-configuring-private-storage-endpoint-azure_configure-a-private-storage-endpoint-on-azure.html">Configure a private storage endpoint on Azure</a>
-</li>
-<li><a href="configure-private-storage-endpoint-with-iro-discovery-con_configure-private-storage-endpoint-with-iro-discovery.html">Configure a private storage endpoint by using Image Registry Operator discovery</a>
-</li>
-<li><a href="configure-private-storage-endpoint-with-user-provided-vnet-con_configure-private-storage-endpoint-with-user-provided-vnet.html">Configure a private storage endpoint with a user-provided VNet</a>
 </li>
 <li><a href="postinstallation-storage-configuration-intro_post-install-storage-configuration.html">Postinstallation storage configuration</a>
 </li>
@@ -1162,8 +1135,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="uninstall-multiarch-tuning-operator-intro_multiarch-tuning-operator.html">Uninstalling the Multiarch Tuning Operator</a>
 </li>
-<li><a href="configure-node-resource-limits-con_configure-node-resource-limits.html">Configure node resource limits</a>
-</li>
 <li><a href="create-kubeletconfig-cr-to-edit-kubelet-parameters-con_create-kubeletconfig-cr-to-edit-kubelet-parameters.html">Create a KubeletConfig CR to edit kubelet parameters</a>
 </li>
 <li><a href="delete-kubeletconfig-objects-from-my-cluster-con_delete-kubeletconfig-objects-from-my-cluster.html">Delete <code>KubeletConfig</code> objects from your cluster</a>
@@ -1191,10 +1162,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="configure-web-terminal-timeout-and-image-settings-con_configure-web-terminal-timeout-and-image-settings.html">Configure web terminal timeout and image settings</a>
 </li>
 <li><a href="disable-the-web-console-con_disable-the-web-console.html">Disable the web console</a>
-</li>
-<li><a href="fencing-credential-management_manage-fencing-credentials-for-a-two-node-cluster.html">Fencing credential management</a>
-</li>
-<li><a href="tnf-tuning-fencing-parameters-overview_tune-fencing-parameters-for-a-two-node-cluster.html">Overview of tuning fencing parameters</a>
 </li>
 <li><a href="configure-nvidia-gpu-accelerators-intro_configure-nvidia-gpu-accelerators.html">Configure NVIDIA GPU accelerators</a>
 </li>
@@ -1268,6 +1235,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="configure-high-performance-networking-con_configure-high-performance-networking.html">Configure high-performance networking</a>
 </li>
 <li><a href="network-observability-operator_understand-network-observability-netobserv.html">Network Observability Operator</a>
+</li>
+<li><a href="private-clusters-about_configure-a-private-cluster.html">About private clusters</a>
+</li>
+<li><a href="configure-dns-records-in-a-private-zone-con_configure-dns-records-in-a-private-zone.html">Configure DNS records in a private zone</a>
+</li>
+<li><a href="set-the-ingress-controller-to-private-con_set-the-ingress-controller-to-private.html">Set the Ingress Controller to private</a>
+</li>
+<li><a href="restrict-the-api-server-to-private-for-aws-con_restrict-the-api-server-to-private-for-aws.html">Restrict the API server to private for AWS</a>
 </li>
 <li><a href="configure-ptp-clock-synchronization-intro_configure-ptp-clock-synchronization.html">Configure PTP clock synchronization</a>
 </li>
@@ -1443,6 +1418,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="content-security-policy-overview_configure-content-security-policy-for-plugins.html">Key features of Content Security Policy (CSP)</a>
 </li>
+<li><a href="restrict-the-api-server-to-private-for-azure-con_restrict-the-api-server-to-private-for-azure.html">Restrict the API server to private for Azure</a>
+</li>
+<li><a href="identity-provider-overview_prepare-a-cluster-for-user-access.html">Identity providers in Red&#160;Hat OpenShift Container Platform</a>
+</li>
+<li><a href="registry-configuring-private-storage-endpoint-azure_configure-a-private-storage-endpoint-on-azure.html">Configure a private storage endpoint on Azure</a>
+</li>
+<li><a href="configure-private-storage-endpoint-with-iro-discovery-con_configure-private-storage-endpoint-with-iro-discovery.html">Configure a private storage endpoint by using Image Registry Operator discovery</a>
+</li>
+<li><a href="configure-private-storage-endpoint-with-user-provided-vnet-con_configure-private-storage-endpoint-with-user-provided-vnet.html">Configure a private storage endpoint with a user-provided VNet</a>
+</li>
 <li><a href="compliance-operator-release-notes_review-compliance-operator-release-notes.html">Compliance Operator release notes</a>
 </li>
 <li><a href="file-integrity-operator-release-notes_review-file-integrity-operator-release-notes.html">File Integrity Operator release notes</a>
@@ -1500,7 +1485,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="_optimize.html">Optimize</a>
-
 <ul class="sectlevel2">
 <li><a href="about-node-tuning-operator_node-tuning-operator.html">Node Tuning Operator</a>
 </li>
@@ -1522,7 +1506,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="understand-etcd-performance_understand-etcd-performance-factors.html">Factors that affect etcd performance</a>
 </li>
-<li><a href="infrastructure-components_create-infrastructure-nodes.html">Red&#160;Hat OpenShift Container Platform infrastructure components</a>
+<li><a href="infrastructure-components_create-infrastructure-nodes.html">Move components to infrastructure nodes to reduce costs</a>
 </li>
 <li><a href="make-changes-to-the-kubelet-settings-on-my-nodes-overview_make-changes-to-the-kubelet-settings-on-my-nodes.html">Allocate resources to nodes</a>
 </li>
@@ -1600,6 +1584,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="manage-large-scale-ai-training-workloads-with-jobset-operator-intro_manage-large-scale-ai-training-workloads-with-jobset-operator.html">Manage large-scale AI training workloads with the JobSet Operator</a>
 </li>
+<li><a href="nodes-nodes-garbage-collection-containers_free-node-resources-with-garbage-collection.html"><span class="toc-current">Understanding how terminated containers are removed through garbage collection</span></a>
+</li>
+<li><a href="configure-node-resource-limits-con_configure-node-resource-limits.html">Configure node resource limits</a>
+</li>
 <li><a href="reserve-cpus-for-ovs-dpdk-workloads-intro_reserve-cpus-for-ovs-dpdk-workloads.html">Reserve CPUs for OVS-DPDK workloads</a>
 </li>
 </ul>
@@ -1613,13 +1601,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="nodes-containers-port-forwarding-about_configure-port-forwarding-to-pods.html">Understand port forwarding</a>
 </li>
-<li><a href="infrastructure-components_create-infrastructure-nodes-to-host-infrastructure-workloads.html">Red&#160;Hat OpenShift Container Platform infrastructure components</a>
+<li><a href="infrastructure-components_create-infrastructure-nodes-to-host-infrastructure-workloads.html">Move components to infrastructure nodes to reduce costs</a>
 </li>
 <li><a href="select-cluster-capabilities-con_select-cluster-capabilities.html">Select cluster capabilities</a>
 </li>
-<li><a href="understanding-quick-starts_create-quick-start-tutorials.html">Understand quick starts</a>
-</li>
 <li><a href="customize-the-web-console-con_customize-the-web-console.html">Customize the web console</a>
+</li>
+<li><a href="understanding-quick-starts_create-quick-start-tutorials.html">Understand quick starts</a>
 </li>
 <li><a href="deploy-a-plugin-on-a-cluster-con_deploy-a-plugin-on-a-cluster.html">Deploy a plugin on a cluster</a>
 </li>
@@ -1885,7 +1873,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#nodes-nodes-garbage-collection-images_free-node-resources-with-garbage-collection">Understanding how images are removed through garbage collection</a></li><li class="level-4"><a href="#nodes-nodes-garbage-collection-configuring_free-node-resources-with-garbage-collection">Configure garbage collection for containers and images</a></li><li class="level-4"><a href="#post-install-garbage-collection_free-node-resources-with-garbage-collection">Freeing node resources using garbage collection</a></li><li class="level-4"><a href="#machineconfig-garbage-collect-viewing_free-node-resources-with-garbage-collection">View rendered machine configs</a></li><li class="level-4"><a href="#machineconfig-garbage-collect-removing_free-node-resources-with-garbage-collection">Remove unused rendered machine configs</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#nodes-nodes-garbage-collection-images_free-node-resources-with-garbage-collection">Understanding how images are removed through garbage collection</a></li><li class="level-4"><a href="#nodes-nodes-garbage-collection-configuring_free-node-resources-with-garbage-collection">Configure garbage collection for containers and images</a></li><li class="level-4"><a href="#post-install-garbage-collection_free-node-resources-with-garbage-collection">Freeing node resources using garbage collection</a></li><li class="level-4"><a href="#machineconfig-garbage-collect-viewing_free-node-resources-with-garbage-collection">View rendered machine configs</a></li><li class="level-4"><a href="#machineconfig-garbage-collect-removing_free-node-resources-with-garbage-collection">Remove unused rendered machine configs</a></li><li class="level-4"><a href="#infrastructure-components_move-workloads-to-infrastructure-nodes">Move components to infrastructure nodes to reduce costs</a></li><li class="level-5"><a href="#post-install-creating-infrastructure-machinesets-production_move-workloads-to-infrastructure-nodes">Creating infrastructure machine sets for production environments</a></li><li class="level-6"><a href="#creating-an-infra-node_move-workloads-to-infrastructure-nodes">Create an infrastructure node</a></li><li class="level-6"><a href="#creating-infra-machines_move-workloads-to-infrastructure-nodes">Create a machine config pool for infrastructure machines</a></li><li class="level-5"><a href="#assigning-machine-set-resources-to-infra-nodes_move-workloads-to-infrastructure-nodes">Assigning machine set resources to infrastructure nodes</a></li><li class="level-6"><a href="#binding-infra-node-workloads-using-taints-tolerations_move-workloads-to-infrastructure-nodes">Bind infrastructure node workloads using taints and tolerations</a></li><li class="level-4"><a href="#moving-resources-to-infrastructure-machinesets_move-workloads-to-infrastructure-nodes">Move resources to infrastructure machine sets</a></li><li class="level-5"><a href="#infrastructure-moving-router_move-workloads-to-infrastructure-nodes">Move the router</a></li><li class="level-5"><a href="#infrastructure-moving-registry_move-workloads-to-infrastructure-nodes">Move the default registry</a></li><li class="level-5"><a href="#infrastructure-moving-monitoring_move-workloads-to-infrastructure-nodes">Move the monitoring solution</a></li><li class="level-5"><a href="#infrastructure-moving-vpa_creating-infrastructure-machinesets">Move the Vertical Pod Autoscaler Operator components</a></li><li class="level-5"><a href="#nodes-cluster-resource-override-move-infra_move-workloads-to-infrastructure-nodes">Move the Cluster Resource Override Operator pods</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="nodes-nodes-garbage-collection-containers_free-node-resources-with-garbage-collection">Understanding how terminated containers are removed through garbage collection</h3>
@@ -1909,7 +1897,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The following table lists the eviction thresholds:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 742. Variables for configuring container garbage collection</caption>
+<caption class="title">Table 1093. Variables for configuring container garbage collection</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2019,7 +2007,7 @@ collection attempts to free. Default is <strong>80</strong>.</p>
 a custom resource.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 743. Variables for configuring image garbage collection</caption>
+<caption class="title">Table 1094. Variables for configuring image garbage collection</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2506,9 +2494,1550 @@ Skip deleting rendered MachineConfig rendered-worker-708c652868f7597eaa1e2622edc
 </ol>
 </div>
 </div>
+<div class="sect3">
+<h4 id="infrastructure-components_move-workloads-to-infrastructure-nodes">Move components to infrastructure nodes to reduce costs</h4>
+<div class="paragraph _abstract">
+<p>To reduce subscription costs, you can review the following information to understand which components you can move to an infrastructure node. Components that you move to an infrastructure node do not need to be accounted for during sizing.</p>
+</div>
+<div class="paragraph">
+<p>Each self-managed Red&#160;Hat OpenShift subscription includes entitlements for Red&#160;Hat OpenShift Container Platform and other OpenShift-related components. These entitlements are included for running Red&#160;Hat OpenShift Container Platform control plane and infrastructure workloads and do not need to be accounted for during sizing.</p>
+</div>
+<div class="paragraph">
+<p>To qualify as an infrastructure node and use the included entitlement, only components that are supporting the cluster, and not part of an end-user application, can run on those instances. Examples include the following components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kubernetes and Red&#160;Hat OpenShift Container Platform control plane services</p>
+</li>
+<li>
+<p>The default router</p>
+</li>
+<li>
+<p>The integrated container image registry</p>
+</li>
+<li>
+<p>The HAProxy-based Ingress Controller</p>
+</li>
+<li>
+<p>The cluster metrics collection, or monitoring service, including components for monitoring user-defined projects</p>
+</li>
+<li>
+<p>Cluster aggregated logging</p>
+</li>
+<li>
+<p>Red&#160;Hat Quay</p>
+</li>
+<li>
+<p>Red Hat OpenShift Data Foundation</p>
+</li>
+<li>
+<p>Red Hat Advanced Cluster Management for Kubernetes</p>
+</li>
+<li>
+<p>Red Hat Advanced Cluster Security for Kubernetes</p>
+</li>
+<li>
+<p>Red Hat OpenShift GitOps</p>
+</li>
+<li>
+<p>Red Hat OpenShift Pipelines</p>
+</li>
+<li>
+<p>Red Hat OpenShift Service Mesh</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Any node that runs any other container, pod, or component is a worker node that your subscription must cover.</p>
+</div>
+<div class="paragraph">
+<p>For information about infrastructure nodes and which components can run on infrastructure nodes, see the "Red Hat OpenShift control plane and infrastructure nodes" section in the OpenShift sizing and subscription guide for enterprise Kubernetes document.</p>
+</div>
+<div class="sect4">
+<h5 id="post-install-creating-infrastructure-machinesets-production_move-workloads-to-infrastructure-nodes">Creating infrastructure machine sets for production environments</h5>
+<div class="paragraph _abstract">
+<p>Create infrastructure machine sets to host cluster infrastructure components without counting those machines toward subscription limits.</p>
+</div>
+<div class="paragraph">
+<p>You can create a compute machine set to create machines that host only infrastructure components, such as the default router, the integrated container image registry, and components for cluster metrics and monitoring. These infrastructure machines are not counted toward the total number of subscriptions that are required to run the environment.</p>
+</div>
+<div class="paragraph">
+<p>For information on infrastructure nodes and which components can run on infrastructure nodes, see "Creating infrastructure machine sets".</p>
+</div>
+<div class="paragraph">
+<p>To create an infrastructure node, see "Use a machine set to create an infrastructure node", "Assign a label to infrastructure nodes", or "Use a machine config pool for infrastructure nodes".</p>
+</div>
+<div class="paragraph">
+<p>For sample machine sets that you can use with these procedures, see "Creating machine sets for different clouds".</p>
+</div>
+<div class="paragraph">
+<p>Applying a specific node selector to all infrastructure components causes Red&#160;Hat OpenShift Container Platform to schedule those workloads on nodes with that label; see "Schedule infrastructure workloads using node selectors".</p>
+</div>
+<div class="sect5">
+<h6 id="creating-an-infra-node_move-workloads-to-infrastructure-nodes">Create an infrastructure node</h6>
+<div class="paragraph _abstract">
+<p>To reduce subscription costs, you can use labels to configure compute nodes as infrastructure nodes, where you can move infrastructure resources.</p>
+</div>
+<div class="paragraph">
+<p>After you create the infrastructure nodes, you can move appropriate workloads to those nodes by using taints and tolerations.</p>
+</div>
+<div class="paragraph">
+<p>You can optionally create a default cluster-wide node selector. The default node selector is applied to pods created in all namespaces and creates an intersection with any existing node selectors on a pod, which additionally constrains the pod&#8217;s selector.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Important">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>See "Creating infrastructure machine sets" for installer-provisioned infrastructure environments or for any cluster where the control plane nodes are managed by the Machine API.</p>
+</li>
+<li>
+<p>If the default node selector key conflicts with the key of a pod&#8217;s label, then the default node selector is not applied.</p>
+<div class="paragraph">
+<p>However, do not set a default node selector that might cause a pod to become unschedulable. For example, setting the default node selector to a specific node role, such as <code>node-role.kubernetes.io/infra=""</code>, when a pod&#8217;s label is set to a different node role, such as <code>node-role.kubernetes.io/master=""</code>, can cause the pod to become unschedulable. For this reason, use caution when setting the default node selector to specific node roles.</p>
+</div>
+<div class="paragraph">
+<p>You can alternatively use a project node selector to avoid cluster-wide node selector key conflicts.</p>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Add a label to the compute nodes that you want to act as infrastructure nodes by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc label node &lt;node-name&gt; node-role.kubernetes.io/infra=""</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check to see if applicable nodes now have the <code>infra</code> role by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get nodes</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optional: Create a default cluster-wide node selector.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Edit the <code>Scheduler</code> object by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit scheduler cluster</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add the <code>defaultNodeSelector</code> field with the appropriate node selector by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: config.openshift.io/v1
+kind: Scheduler
+metadata:
+  name: cluster
+spec:
+  defaultNodeSelector: node-role.kubernetes.io/infra=""
+# ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example node selector deploys pods on infrastructure nodes by default.</p>
+</div>
+</li>
+<li>
+<p>Save the file to apply the changes.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can now move infrastructure resources to the new infrastructure nodes and remove any workloads that you do not want, or that do not belong, on the new infrastructure node. See the list of workloads supported for use on infrastructure nodes in "Red&#160;Hat OpenShift Container Platform infrastructure components".</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect5">
+<h6 id="creating-infra-machines_move-workloads-to-infrastructure-nodes">Create a machine config pool for infrastructure machines</h6>
+<div class="paragraph _abstract">
+<p>You can create a machine configuration pool for infrastructure machines to apply dedicated configuration to infra machines. You might want to apply dedicated configuration to infra machines because they run distinct workloads from other nodes in the cluster.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Important">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Creating a custom machine configuration pool overrides default worker pool configurations if they refer to the same file or unit.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Add a label to the node you want to assign as the infra node by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc label node &lt;node_name&gt; node-role.kubernetes.io/infra=</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;node_name&gt;</code></dt>
+<dd>
+<p>Specifies the name of the node you want to assign as an infra node.</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Create a YAML file that defines the machine config pool, as in the following example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfigPool
+metadata:
+  name: infra
+spec:
+  machineConfigSelector:
+    matchExpressions:
+      - {key: machineconfiguration.openshift.io/role, operator: In, values: [worker,infra]}
+  nodeSelector:
+    matchLabels:
+      node-role.kubernetes.io/infra: ""</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add the worker role and your custom role in the <code>spec.machineConfigSelector.matchExpressions[]</code> field.</p>
+</li>
+<li>
+<p>Add the label you added to the node in the <code>spec.nodeSelector.matchLabels</code> field.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Custom machine config pools inherit machine configs from the worker pool. Custom pools use any machine config targeted for the worker pool, but add the ability to also deploy changes that are targeted at only the custom pool. Because a custom pool inherits resources from the worker pool, any change to the worker pool also affects the custom pool.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>After you have the YAML file, you can create the machine config pool by specifying the file you created in the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f &lt;filename&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the machine configs to ensure that the infrastructure configuration rendered successfully by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get machineconfig</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                                                        GENERATEDBYCONTROLLER                      IGNITIONVERSION   CREATED
+00-master                                                   365c1cfd14de5b0e3b85e0fc815b0060f36ab955   3.5.0             31d
+00-worker                                                   365c1cfd14de5b0e3b85e0fc815b0060f36ab955   3.5.0             31d
+# ...
+rendered-infra-4e48906dca84ee702959c71a53ee80e7             365c1cfd14de5b0e3b85e0fc815b0060f36ab955   3.5.0             23m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see a new machine config, with the <code>rendered-infra-*</code> prefix.</p>
+</div>
+</li>
+<li>
+<p>Optional: To deploy changes to a custom pool, create a machine config that uses the custom pool name as the label, such as <code>infra</code>. Note that this is not required and only shown for instructional purposes. In this manner, you can apply any custom configurations specific to only your infra nodes.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>After you create the new machine config pool, the MCO generates a new rendered config for that pool, and associated nodes of that pool reboot to apply the new configuration.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Create a YAML file that defines the machine config pool, as in the following example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ cat infra.mc.yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfig
+metadata:
+  name: 51-infra
+  labels:
+    machineconfiguration.openshift.io/role: &lt;role&gt;
+spec:
+  config:
+    ignition:
+      version: 3.5.0
+    storage:
+      files:
+      - path: /etc/infratest
+        mode: 0644
+        contents:
+          source: data:,infra</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>role</code></dt>
+<dd>
+<p>Specifies the label you added to the node as a <code>nodeSelector</code>.</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Apply the machine config to the infra-labeled nodes by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc create -f infra.mc.yaml</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Confirm that your new machine config pool is available by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get mcp</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME     CONFIG                                             UPDATED   UPDATING   DEGRADED   MACHINECOUNT   READYMACHINECOUNT   UPDATEDMACHINECOUNT   DEGRADEDMACHINECOUNT   AGE
+infra    rendered-infra-60e35c2e99f42d976e084fa94da4d0fc    True      False      False      1              1                   1                     0                      4m20s
+master   rendered-master-9360fdb895d4c131c7c4bebbae099c90   True      False      False      3              3                   3                     0                      91m
+worker   rendered-worker-60e35c2e99f42d976e084fa94da4d0fc   True      False      False      2              2                   2                     0                      91m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the role of the node was changes from <code>worker</code> to <code>infra</code>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="assigning-machine-set-resources-to-infra-nodes_move-workloads-to-infrastructure-nodes">Assigning machine set resources to infrastructure nodes</h5>
+<div class="paragraph _abstract">
+<p>Apply taints and tolerations to infrastructure nodes so user workloads are not scheduled inadvertently to those nodes.</p>
+</div>
+<div class="paragraph">
+<p>After creating an infrastructure machine set, the <code>worker</code> and <code>infra</code> roles are applied to new infra nodes. Nodes with the <code>infra</code> role are not counted toward the total number of subscriptions that are required to run the environment, even when the <code>worker</code> role is also applied.</p>
+</div>
+<div class="paragraph">
+<p>However, when an infra node is assigned the worker role, there is a chance that user workloads can get assigned inadvertently to the infra node. To avoid this, you can apply a taint to the infra node and tolerations for the pods that you want to control.</p>
+</div>
+<div class="sect5">
+<h6 id="binding-infra-node-workloads-using-taints-tolerations_move-workloads-to-infrastructure-nodes">Bind infrastructure node workloads using taints and tolerations</h6>
+<div class="paragraph _abstract">
+<p>To avoid user workloads being inadvertently assigned to an infra node, you can apply a taint to the infra node and tolerations for the pods you want to control. After creating an infrastructure machine set, the <code>worker</code> and <code>infra</code> roles are applied to new infra nodes.</p>
+</div>
+<div class="paragraph">
+<p>Nodes with the <code>infra</code> role applied are not counted toward the total number of subscriptions that are required to run the environment, even when the <code>worker</code> role is also applied.
+If you have an infrastructure node that has the <code>infra</code> and <code>worker</code> roles assigned, you must configure the node so that user workloads are not assigned to it.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Important">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is recommended that you preserve the dual <code>infra,worker</code> label that is created for infrastructure nodes and use taints and tolerations to manage nodes that user workloads are scheduled on. If you remove the <code>worker</code> label from the node, you must create a custom pool to manage it. A node with a label other than <code>master</code> or <code>worker</code> is not recognized by the MCO without a custom pool. Maintaining the <code>worker</code> label allows the node to be managed by the default worker machine config pool, if no custom pools that select the custom label exists. The <code>infra</code> label communicates to the cluster that it does not count toward the total number of subscriptions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Configure additional <code>MachineSet</code> objects in your Red&#160;Hat OpenShift Container Platform cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Add a taint to the infrastructure node to prevent scheduling user workloads on it:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Determine if the node has the taint by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc describe nodes &lt;node_name&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Sample output</div>
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">oc describe node ci-ln-iyhx092-f76d1-nvdfm-worker-b-wln2l
+Name:               ci-ln-iyhx092-f76d1-nvdfm-worker-b-wln2l
+Roles:              worker
+ ...
+Taints:             node-role.kubernetes.io/infra=reserved:NoSchedule
+ ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example shows that the node has a taint. You can proceed with adding a toleration to your pod in the next step.</p>
+</div>
+</li>
+<li>
+<p>If you have not configured a taint to prevent scheduling user workloads on it, configure a taint by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc adm taint nodes &lt;node_name&gt; &lt;key&gt;=&lt;value&gt;:&lt;effect&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc adm taint nodes node1 node-role.kubernetes.io/infra=reserved:NoSchedule</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can alternatively edit the pod specification to add the taint:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Node
+metadata:
+  name: node1
+# ...
+spec:
+  taints:
+    - key: node-role.kubernetes.io/infra
+      value: reserved
+      effect: NoSchedule
+# ...</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>These examples place a taint on <code>node1</code> that has the <code>node-role.kubernetes.io/infra</code> key and the <code>NoSchedule</code> taint effect. Nodes with the <code>NoSchedule</code> effect schedule only pods that tolerate the taint, but allow existing pods to remain scheduled on the node.
+If you added a <code>NoSchedule</code> taint to the infrastructure node, any pods that are controlled by a daemon set on that node are marked as <code>misscheduled</code>. You must either delete the pods or add a toleration to the pods as shown in the Red Hat Knowledgebase solution <a href="https://access.redhat.com/solutions/6592171">add toleration on <code>misscheduled</code> DNS pods</a>. Note that you cannot add a toleration to a daemon set object that is managed by an operator.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If a descheduler is used, pods violating node taints could be evicted from the cluster.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Add tolerations to the pods that you want to schedule on the infrastructure node, such as the router, registry, and monitoring workloads. Referencing the previous examples, add the following tolerations to the <code>Pod</code> object specification:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+
+# ...
+spec:
+# ...
+  tolerations:
+    - key: &lt;node_taint_key&gt;
+      value: &lt;node_taint_value&gt;
+      effect: &lt;taint_effect&gt;
+      operator: Equal</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;node_taint_key&gt;</code></dt>
+<dd>
+<p>Specifies the key that you added to the taint on the node.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;node_taint_value&gt;</code></dt>
+<dd>
+<p>Specifies the value of the key-value pair taint that you added to the node.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;taint_effect&gt;</code></dt>
+<dd>
+<p>Specifies the effect that you added to the node.</p>
+</dd>
+<dt class="hdlist1"><code>Equal</code></dt>
+<dd>
+<p>Specifies that a taint with a key matching <code>&lt;node_taint_key&gt;</code> is required to be present on the node.</p>
+<div class="paragraph">
+<p>This toleration matches the taint created by the <code>oc adm taint</code> command. A pod with this toleration can be scheduled onto the infrastructure node.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Moving pods for an Operator installed via OLM to an infrastructure node is not always possible. The capability to move Operator pods depends on the configuration of each Operator.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Schedule the pod to the infrastructure node by using a scheduler. See the documentation for "Controlling pod placement using the scheduler" for details.</p>
+</li>
+<li>
+<p>Remove any workloads that you do not want, or that do not belong, on the new infrastructure node. See the list of workloads supported for use on infrastructure nodes in "Red&#160;Hat OpenShift Container Platform infrastructure components".</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="moving-resources-to-infrastructure-machinesets_move-workloads-to-infrastructure-nodes">Move resources to infrastructure machine sets</h4>
+<div class="paragraph _abstract">
+<p>Some of the infrastructure resources are deployed in your cluster by default. You can move them to the infrastructure machine sets that you created by adding the infrastructure node selector.</p>
+</div>
+<div class="paragraph">
+<p>Applying a specific node selector to all infrastructure components causes Red&#160;Hat OpenShift Container Platform to schedule those workloads on nodes with that label.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Add a <code>nodeSelector</code> parameter with the appropriate value to the component you want to move. You can use a <code>nodeSelector</code> in the format shown or use <code>&lt;key&gt;: &lt;value&gt;</code> pairs, based on the value specified for the node. See the following example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: imageregistry.operator.openshift.io/v1
+kind: Config
+metadata:
+  name: cluster
+# ...
+spec:
+  nodePlacement:
+    nodeSelector:
+      matchLabels:
+        node-role.kubernetes.io/infra: ""
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/infra
+      value: reserved
+    - effect: NoExecute
+      key: node-role.kubernetes.io/infra
+      value: reserved</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>If you added a taint to the infrastructure node, also add a matching toleration.</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="infrastructure-moving-router_move-workloads-to-infrastructure-nodes">Move the router</h5>
+<div class="paragraph _abstract">
+<p>Deploying the router pod on an infrastructure node can reduce your Red&#160;Hat OpenShift Container Platform subscription size. Move the router pod by editing the <code>IngressController</code> object in the <code>openshift-ingress-operator</code> namespace. By default, the pod is deployed to a worker node.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Configure additional compute machine sets in your Red&#160;Hat OpenShift Container Platform cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>View the <code>IngressController</code> custom resource for the router Operator by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get ingresscontroller default -n openshift-ingress-operator -o yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: operator.openshift.io/v1
+kind: IngressController
+metadata:
+  creationTimestamp: 2019-04-18T12:35:39Z
+  finalizers:
+  - ingresscontroller.operator.openshift.io/finalizer-ingresscontroller
+  generation: 1
+  name: default
+  namespace: openshift-ingress-operator
+  resourceVersion: "11341"
+  selfLink: /apis/operator.openshift.io/v1/namespaces/openshift-ingress-operator/ingresscontrollers/default
+  uid: 79509e05-61d6-11e9-bc55-02ce4781844a
+spec: {}
+status:
+  availableReplicas: 2
+  conditions:
+  - lastTransitionTime: 2019-04-18T12:36:15Z
+    status: "True"
+    type: Available
+  domain: apps.&lt;cluster&gt;.example.com
+  endpointPublishingStrategy:
+    type: LoadBalancerService
+  selector: ingresscontroller.operator.openshift.io/deployment-ingresscontroller=default</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Edit the <code>ingresscontroller</code> resource and change the <code>nodeSelector</code> to use the <code>infra</code> label by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit ingresscontroller default -n openshift-ingress-operator</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: operator.openshift.io/v1
+kind: IngressController
+metadata:
+  creationTimestamp: "2025-03-26T21:15:43Z"
+  finalizers:
+  - ingresscontroller.operator.openshift.io/finalizer-ingresscontroller
+  generation: 1
+  name: default
+# ...
+spec:
+  nodePlacement:
+    nodeSelector:
+      matchLabels:
+        node-role.kubernetes.io/infra: ""
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/infra
+      value: reserved
+# ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add a <code>nodeSelector</code> parameter with the appropriate value to the component you want to move. You can use a <code>nodeSelector</code> parameter in the format shown or use <code>&lt;key&gt;: &lt;value&gt;</code> pairs, based on the value specified for the node. If you added a taint to the infrastructure node, also add a matching toleration.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Confirm that the router pod is running on the <code>infra</code> node.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>View the list of router pods and note the node name of the running pod by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pod -n openshift-ingress -o wide</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                              READY     STATUS        RESTARTS   AGE       IP           NODE                           NOMINATED NODE   READINESS GATES
+router-default-86798b4b5d-bdlvd   1/1      Running       0          28s       10.130.2.4   ip-10-0-217-226.ec2.internal   &lt;none&gt;           &lt;none&gt;
+router-default-955d875f4-255g8    0/1      Terminating   0          19h       10.129.2.4   ip-10-0-148-172.ec2.internal   &lt;none&gt;           &lt;none&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the running pod is on the <code>ip-10-0-217-226.ec2.internal</code> node.</p>
+</div>
+</li>
+<li>
+<p>View the node status of the running pod by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get node &lt;node_name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Specify the <code>&lt;node_name&gt;</code> that you obtained from the pod list.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                          STATUS  ROLES         AGE   VERSION
+ip-10-0-217-226.ec2.internal  Ready   infra,worker  17h   v1.36.3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because the role list includes <code>infra</code>, the pod is running on the correct node.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="infrastructure-moving-registry_move-workloads-to-infrastructure-nodes">Move the default registry</h5>
+<div class="paragraph _abstract">
+<p>Deploying the registry pod on an infrastructure node can reduce your Red&#160;Hat OpenShift Container Platform subscription size. Move the registry pod by editing the <code>configs.imageregistry.operator.openshift.io/cluster</code> config object.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Configure additional compute machine sets in your Red&#160;Hat OpenShift Container Platform cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Edit the <code>configs.imageregistry.operator.openshift.io/cluster</code> object by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit configs.imageregistry.operator.openshift.io/cluster</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add a <code>nodeSelector</code> parameter with the appropriate value to the component you want to move, as shown in the following example.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: imageregistry.operator.openshift.io/v1
+kind: Config
+metadata:
+  name: cluster
+# ...
+spec:
+  logLevel: Normal
+  managementState: Managed
+  nodeSelector:
+    node-role.kubernetes.io/infra: ""
+  tolerations:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/infra
+    value: reserved</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use a <code>nodeSelector</code> parameter in the format shown or use <code>&lt;key&gt;: &lt;value&gt;</code> pairs, based on the value specified for the node. If you added a taint to the infrastructure node, also add a matching toleration.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the registry pod has been moved to the infrastructure node.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Identify the node where the registry pod is located by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pods -o wide -n openshift-image-registry</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Confirm the node has the label you specified:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc describe node &lt;node_name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;node_name&gt;</code></dt>
+<dd>
+<p>Specifies the name of the node that you modified. Review the command output and confirm that <code>node-role.kubernetes.io/infra</code> is in the <code>LABELS</code> list.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="infrastructure-moving-monitoring_move-workloads-to-infrastructure-nodes">Move the monitoring solution</h5>
+<div class="paragraph _abstract">
+<p>Redeploy the monitoring stack to infrastructure nodes to reduce your subscription requirements. Create and apply a custom config map to move the monitoring stack to infrastructure nodes.</p>
+</div>
+<div class="paragraph">
+<p>The monitoring stack includes Prometheus, Thanos Querier, and Alertmanager, and is managed by the Cluster Monitoring Operator (CMO).</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have access to the cluster as a user with the <code>cluster-admin</code> cluster role.</p>
+</li>
+<li>
+<p>You have created the <code>cluster-monitoring-config</code> <code>ConfigMap</code> object.</p>
+</li>
+<li>
+<p>You have installed the OpenShift CLI (<code>oc</code>).</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Edit the <code>cluster-monitoring-config</code> config map and change the <code>nodeSelector</code> to use the <code>infra</code> label by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit configmap cluster-monitoring-config -n openshift-monitoring</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-monitoring-config
+  namespace: openshift-monitoring
+data:
+  config.yaml: |+
+    alertmanagerMain:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        value: reserved
+        effect: NoSchedule
+    prometheusK8s:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        value: reserved
+        effect: NoSchedule
+    prometheusOperator:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        value: reserved
+        effect: NoSchedule
+    metricsServer:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        value: reserved
+        effect: NoSchedule
+    kubeStateMetrics:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        value: reserved
+        effect: NoSchedule
+    telemeterClient:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        value: reserved
+        effect: NoSchedule
+    openshiftStateMetrics:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        value: reserved
+        effect: NoSchedule
+    thanosQuerier:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        value: reserved
+        effect: NoSchedule
+    monitoringPlugin:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        value: reserved
+        effect: NoSchedule</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add a <code>nodeSelector</code> parameter with the appropriate value to the component you want to move. You can use a <code>nodeSelector</code> parameter in the format shown or use <code>&lt;key&gt;: &lt;value&gt;</code> pairs, based on the value specified for the node. If you added a taint to the infrastructure node, also add a matching toleration.</p>
+</div>
+</li>
+<li>
+<p>Watch the monitoring pods move to the new machines by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ watch 'oc get pod -n openshift-monitoring -o wide'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>If a component has not moved to the <code>infra</code> node, delete the pod with this component by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc delete pod -n openshift-monitoring &lt;pod&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The component from the deleted pod is re-created on the <code>infra</code> node.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="infrastructure-moving-vpa_creating-infrastructure-machinesets">Move the Vertical Pod Autoscaler Operator components</h5>
+<div class="paragraph _abstract">
+<p>You can move the VPA Operator and component pods to infrastructure nodes by adding a node selector to the VPA subscription and the <code>VerticalPodAutoscalerController</code> CR.</p>
+</div>
+<div class="paragraph">
+<p>The Vertical Pod Autoscaler Operator (VPA) consists of three components: the recommender, updater, and admission controller. The Operator and each component has its own pod in the VPA namespace on the control plane nodes.</p>
+</div>
+<div class="paragraph">
+<p>The following example shows the default deployment of the VPA pods to the control plane nodes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                                                READY   STATUS    RESTARTS   AGE     IP            NODE                  NOMINATED NODE   READINESS GATES
+vertical-pod-autoscaler-operator-6c75fcc9cd-5pb6z   1/1     Running   0          7m59s   10.128.2.24   c416-tfsbj-master-1   &lt;none&gt;           &lt;none&gt;
+vpa-admission-plugin-default-6cb78d6f8b-rpcrj       1/1     Running   0          5m37s   10.129.2.22   c416-tfsbj-master-1   &lt;none&gt;           &lt;none&gt;
+vpa-recommender-default-66846bd94c-dsmpp            1/1     Running   0          5m37s   10.129.2.20   c416-tfsbj-master-0   &lt;none&gt;           &lt;none&gt;
+vpa-updater-default-db8b58df-2nkvf                  1/1     Running   0          5m37s   10.129.2.21   c416-tfsbj-master-1   &lt;none&gt;           &lt;none&gt;</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Move the VPA Operator pod by adding a node selector to the <code>Subscription</code> custom resource (CR) for the VPA Operator:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Edit the CR:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit Subscription vertical-pod-autoscaler -n openshift-vertical-pod-autoscaler</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add a node selector to match the node role label on the infra node:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  labels:
+    operators.coreos.com/vertical-pod-autoscaler.openshift-vertical-pod-autoscaler: ""
+  name: vertical-pod-autoscaler
+# ...
+spec:
+  config:
+    nodeSelector:
+      node-role.kubernetes.io/infra: ""</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.config.nodeSelector.node-role.kubernetes.io/infra</code></dt>
+<dd>
+<p>Specifies the node role of an infra node.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the infra node uses taints, you need to add a toleration to the <code>Subscription</code> CR.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  labels:
+    operators.coreos.com/vertical-pod-autoscaler.openshift-vertical-pod-autoscaler: ""
+  name: vertical-pod-autoscaler
+# ...
+spec:
+  config:
+    nodeSelector:
+      node-role.kubernetes.io/infra: ""
+    tolerations:
+    - key: "node-role.kubernetes.io/infra"
+      operator: "Exists"
+      effect: "NoSchedule"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.config.tolerations</code></dt>
+<dd>
+<p>Specifies a toleration for a taint on the infra node.</p>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Move each VPA component by adding node selectors to the <code>VerticalPodAutoscaler</code> custom resource (CR):</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Edit the CR:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit VerticalPodAutoscalerController default -n openshift-vertical-pod-autoscaler</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add node selectors to match the node role label on the infra node:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: autoscaling.openshift.io/v1
+kind: VerticalPodAutoscalerController
+metadata:
+  name: default
+  namespace: openshift-vertical-pod-autoscaler
+# ...
+spec:
+  deploymentOverrides:
+    admission:
+      container:
+        resources: {}
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+    recommender:
+      container:
+        resources: {}
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+    updater:
+      container:
+        resources: {}
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.deploymentOverrides.admission.nodeselector</code></dt>
+<dd>
+<p>Optional: Specifies the node role for the VPA admission pod.</p>
+</dd>
+<dt class="hdlist1"><code>spec.deploymentOverrides.recommender.nodeselector</code></dt>
+<dd>
+<p>Optional: Specifies the node role for the VPA recommender pod.</p>
+</dd>
+<dt class="hdlist1"><code>spec.deploymentOverrides.updater.nodeselector</code></dt>
+<dd>
+<p>Optional: Specifies the node role for the VPA updater pod.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If a target node uses taints, you need to add a toleration to the <code>VerticalPodAutoscalerController</code> CR.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: autoscaling.openshift.io/v1
+kind: VerticalPodAutoscalerController
+metadata:
+  name: default
+  namespace: openshift-vertical-pod-autoscaler
+# ...
+spec:
+  deploymentOverrides:
+    admission:
+      container:
+        resources: {}
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: "my-example-node-taint-key"
+        operator: "Exists"
+        effect: "NoSchedule"
+    recommender:
+      container:
+        resources: {}
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: "my-example-node-taint-key"
+        operator: "Exists"
+        effect: "NoSchedule"
+    updater:
+      container:
+        resources: {}
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: "my-example-node-taint-key"
+        operator: "Exists"
+        effect: "NoSchedule"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.deploymentOverrides.admission.tolerations</code></dt>
+<dd>
+<p>Specifies a toleration for the admission controller pod for a taint on the infra node.</p>
+</dd>
+<dt class="hdlist1"><code>spec.deploymentOverrides.recommender.tolerations</code></dt>
+<dd>
+<p>Specifies a toleration for the recommender pod for a taint on the infra node.</p>
+</dd>
+<dt class="hdlist1"><code>spec.deploymentOverrides.updater.tolerations</code></dt>
+<dd>
+<p>Specifies a toleration for the updater pod for a taint on the infra node.</p>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>You can verify the pods have moved by using the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pods -n openshift-vertical-pod-autoscaler -o wide</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The pods are no longer deployed to the control plane nodes. In the following example output, the node is now an infra node, not a control plane node.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                                                READY   STATUS    RESTARTS   AGE     IP            NODE                              NOMINATED NODE   READINESS GATES
+vertical-pod-autoscaler-operator-6c75fcc9cd-5pb6z   1/1     Running   0          7m59s   10.128.2.24   c416-tfsbj-infra-eastus3-2bndt   &lt;none&gt;           &lt;none&gt;
+vpa-admission-plugin-default-6cb78d6f8b-rpcrj       1/1     Running   0          5m37s   10.129.2.22   c416-tfsbj-infra-eastus1-lrgj8   &lt;none&gt;           &lt;none&gt;
+vpa-recommender-default-66846bd94c-dsmpp            1/1     Running   0          5m37s   10.129.2.20   c416-tfsbj-infra-eastus1-lrgj8   &lt;none&gt;           &lt;none&gt;
+vpa-updater-default-db8b58df-2nkvf                  1/1     Running   0          5m37s   10.129.2.21   c416-tfsbj-infra-eastus1-lrgj8   &lt;none&gt;           &lt;none&gt;</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="nodes-cluster-resource-override-move-infra_move-workloads-to-infrastructure-nodes">Move the Cluster Resource Override Operator pods</h5>
+<div class="paragraph _abstract">
+<p>By default, the Cluster Resource Override Operator installation process creates an Operator pod and two Cluster Resource Override pods on nodes in the <code>clusterresourceoverride-operator</code> namespace. You can move these pods to other nodes, such as infrastructure nodes, as needed.</p>
+</div>
+<div class="paragraph">
+<p>You can create and use infrastructure nodes to host only infrastructure components, such as the default router, the integrated container image registry, and the components for cluster metrics and monitoring. These infrastructure nodes are not counted toward the total number of subscriptions that are required to run the environment. For more information about infrastructure nodes, see "Creating infrastructure machine sets".</p>
+</div>
+<div class="paragraph">
+<p>The following example shows that the Cluster Resource Override pods are deployed to control plane nodes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                                                READY   STATUS    RESTARTS   AGE   IP            NODE                                        NOMINATED NODE   READINESS GATES
+clusterresourceoverride-786b8c898c-9wrdq            1/1     Running   0          23s   10.128.2.32   ip-10-0-14-183.us-west-2.compute.internal   &lt;none&gt;           &lt;none&gt;
+clusterresourceoverride-786b8c898c-vn2lf            1/1     Running   0          26s   10.130.2.10   ip-10-0-20-140.us-west-2.compute.internal   &lt;none&gt;           &lt;none&gt;
+clusterresourceoverride-operator-6b8b8b656b-lvr62   1/1     Running   0          56m   10.131.0.33   ip-10-0-2-39.us-west-2.compute.internal     &lt;none&gt;           &lt;none&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following example shows that the Cluster Resource Override Operator pod is deployed to a worker node.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                                        STATUS   ROLES                  AGE   VERSION
+ip-10-0-14-183.us-west-2.compute.internal   Ready    control-plane,master   65m   v1.36.3
+ip-10-0-2-39.us-west-2.compute.internal     Ready    worker                 58m   v1.36.3
+ip-10-0-20-140.us-west-2.compute.internal   Ready    control-plane,master   65m   v1.36.3
+ip-10-0-23-244.us-west-2.compute.internal   Ready    infra                  55m   v1.36.3
+ip-10-0-77-153.us-west-2.compute.internal   Ready    control-plane,master   65m   v1.36.3
+ip-10-0-99-108.us-west-2.compute.internal   Ready    worker                 24m   v1.36.3
+ip-10-0-24-233.us-west-2.compute.internal   Ready    infra                  55m   v1.36.3
+ip-10-0-88-109.us-west-2.compute.internal   Ready    worker                 24m   v1.36.3
+ip-10-0-67-453.us-west-2.compute.internal   Ready    infra                  55m   v1.36.3</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Move the Cluster Resource Override Operator pod by adding a node selector to the <code>Subscription</code> custom resource (CR) for the Cluster Resource Override Operator.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Edit the CR:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit -n clusterresourceoverride-operator subscriptions.operators.coreos.com clusterresourceoverride</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add a node selector to match the node role label on the node where you want to install the Cluster Resource Override Operator pod:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: clusterresourceoverride
+  namespace: clusterresourceoverride-operator
+# ...
+spec:
+  config:
+    nodeSelector:
+      node-role.kubernetes.io/infra: ""</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.config.nodeSelector</code></dt>
+<dd>
+<p>Specifies the role of the node where you want to deploy the Cluster Resource Override Operator pod.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the infra node uses taints, you need to add a toleration to the <code>Subscription</code> CR. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: clusterresourceoverride
+  namespace: clusterresourceoverride-operator
+# ...
+spec:
+  config:
+    nodeSelector:
+      node-role.kubernetes.io/infra: ""
+    tolerations:
+    - key: "node-role.kubernetes.io/infra"
+      operator: "Exists"
+      effect: "NoSchedule"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.config.tolerations</code></dt>
+<dd>
+<p>Specifies a toleration for a taint on the infra node.</p>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Move the Cluster Resource Override pods by adding a node selector to the <code>ClusterResourceOverride</code> custom resource (CR):</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Edit the CR:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc edit ClusterResourceOverride cluster -n clusterresourceoverride-operator</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add a node selector to match the node role label on the infra node:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: operator.autoscaling.openshift.io/v1
+kind: ClusterResourceOverride
+metadata:
+  name: cluster
+  resourceVersion: "37952"
+spec:
+  podResourceOverride:
+    spec:
+      cpuRequestToLimitPercent: 25
+      limitCPUToMemoryPercent: 200
+      memoryRequestToLimitPercent: 50
+  deploymentOverrides:
+    replicas: 1
+    nodeSelector:
+      node-role.kubernetes.io/infra: ""
+# ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.deploymentOverrides.replicas</code></dt>
+<dd>
+<p>Specifies the number of Cluster Resource Override pods to deploy. The default is <code>2</code>. Only one pod is allowed per node. This parameter is optional.</p>
+</dd>
+<dt class="hdlist1"><code>spec.deploymentOverrides.nodeSelector</code></dt>
+<dd>
+<p>Specifies the role of the node where you want to deploy the Cluster Resource Override pods. This parameter is optional.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the infra node uses taints, you need to add a toleration to the <code>ClusterResourceOverride</code> CR. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">apiVersion: operator.autoscaling.openshift.io/v1
+kind: ClusterResourceOverride
+metadata:
+  name: cluster
+# ...
+spec:
+  podResourceOverride:
+    spec:
+      memoryRequestToLimitPercent: 50
+      cpuRequestToLimitPercent: 25
+      limitCPUToMemoryPercent: 200
+  deploymentOverrides:
+    replicas: 3
+    nodeSelector:
+      node-role.kubernetes.io/worker: ""
+    tolerations:
+    - key: "key"
+      operator: "Equal"
+      value: "value"
+      effect: "NoSchedule"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>spec.deploymentOverrides.tolerations</code></dt>
+<dd>
+<p>Specifies a toleration for a taint on the infra node.</p>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>You can verify that the pods have moved by using the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pods -n clusterresourceoverride-operator -o wide</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Cluster Resource Override pods are now deployed to the infra nodes.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                                                READY   STATUS    RESTARTS   AGE   IP            NODE                                        NOMINATED NODE   READINESS GATES
+clusterresourceoverride-786b8c898c-9wrdq            1/1     Running   0          23s   10.127.2.25   ip-10-0-23-244.us-west-2.compute.internal   &lt;none&gt;           &lt;none&gt;
+clusterresourceoverride-786b8c898c-vn2lf            1/1     Running   0          26s   10.128.0.80   ip-10-0-24-233.us-west-2.compute.internal   &lt;none&gt;           &lt;none&gt;
+clusterresourceoverride-operator-6b8b8b656b-lvr62   1/1     Running   0          56m   10.129.0.71   ip-10-0-67-453.us-west-2.compute.internal   &lt;none&gt;           &lt;none&gt;</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="create-crio-default-capabilities_remove-the-net-raw-and-sys-chroot-cri-o-capabilities.html">Creating a drop-in file for the default CRI-O capabilities</a> | ↑ Up: <a href="_configure.html">Configure</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="change-kernel-type-in-a-nodepool-con_change-kernel-type-in-a-nodepool.html">Change the kernel type in a node pool</a> →</p>
+<p>← Previous: <a href="manage-large-scale-ai-training-workloads-with-jobset-operator-intro_manage-large-scale-ai-training-workloads-with-jobset-operator.html">Manage large-scale AI training workloads with the JobSet Operator</a> | ↑ Up: <a href="_optimize.html">Optimize</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="configure-node-resource-limits-con_configure-node-resource-limits.html">Configure node resource limits</a> →</p>
 </div>
 </div>
 <div id="footnotes">
@@ -2519,7 +4048,7 @@ Skip deleting rendered MachineConfig rendered-worker-708c652868f7597eaa1e2622edc
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-27 15:55:19 -0400
+Last updated 2026-10-28 12:31:09 -0400
 </div>
 </div>
 <style>
