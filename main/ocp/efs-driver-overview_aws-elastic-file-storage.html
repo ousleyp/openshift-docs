@@ -477,53 +477,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
-<!-- navmap-preview-warning-start -->
-<style>
-  .navmap-preview-warning {
-    background: #fff1f1;
-    border: 2px solid #c9190b;
-    border-radius: 4px;
-    color: #3b0a0a;
-    font-family: "Open Sans", "DejaVu Sans", sans-serif;
-    margin: 1em auto;
-    max-width: 70em;
-    padding: 1em 1.25em;
-  }
-  .navmap-preview-warning strong { color: #a30000; }
-  .navmap-preview-warning details { margin-top: .75em; }
-  .navmap-preview-warning pre {
-    background: #fff;
-    border: 1px solid #d7d7d7;
-    max-height: 20em;
-    overflow: auto;
-    padding: .75em;
-    white-space: pre-wrap;
-  }
-</style>
-<!-- navmap-preview-warning-end -->
 </head>
 <body id="efs-driver-overview_aws-elastic-file-storage" class="book toc2 toc-left navmap-has-right-toc">
-<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
-
-Missing include targets:
-  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
-    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
-    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
-  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
-    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
-    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
-  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
-    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
-    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
-  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
-    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
-    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
-
-How to fix these errors:
-  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
-  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
-  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
-</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -1920,7 +1875,7 @@ How to fix these errors:
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#csi-about_aws-elastic-file-storage">About CSI</a></li><li class="level-4"><a href="#persistent-storage-efs-csi-driver-operator-setup_aws-elastic-file-storage">Setting up the {FeatureName} CSI Driver Operator</a></li><li class="level-4"><a href="#efs-sts_aws-elastic-file-storage">Obtaining a role Amazon Resource Name for Security Token Service</a></li><li class="level-4"><a href="#persistent-storage-csi-olm-operator-install_aws-elastic-file-storage">Installing the {FeatureName} CSI Driver Operator</a></li><li class="level-4"><a href="#persistent-storage-csi-efs-driver-install_aws-elastic-file-storage">Installing the {FeatureName} CSI Driver</a></li><li class="level-4"><a href="#storage-create-storage-class_aws-elastic-file-storage">About the {StorageClass} storage class</a></li><li class="level-4"><a href="#storage-create-storage-class-console_aws-elastic-file-storage">Creating the {StorageClass} storage class using the console</a></li><li class="level-4"><a href="#storage-create-storage-class-cli_aws-elastic-file-storage">Creating the {StorageClass} storage class using the CLI</a></li><li class="level-4"><a href="#persistent-storage-csi-efs-cross-account_aws-elastic-file-storage">AWS EFS CSI cross account support</a></li><li class="level-4"><a href="#efs-one-zone-intro_aws-elastic-file-storage">One Zone file systems</a></li><li class="level-4"><a href="#efs-one-zone-overview_aws-elastic-file-storage">One Zone file systems overview</a></li><li class="level-4"><a href="#efs-one-zone-procedure_aws-elastic-file-storage">Setting up One Zone file systems with STS</a></li><li class="level-4"><a href="#csi-dynamic-provisioning-aws-efs_aws-elastic-file-storage">Dynamic provisioning for Amazon Elastic File Storage</a></li><li class="level-4"><a href="#efs-create-static-pv_aws-elastic-file-storage">Creating static PVs with Amazon Elastic File Storage</a></li><li class="level-4"><a href="#efs-security_aws-elastic-file-storage">Amazon Elastic File Storage security</a></li><li class="level-4"><a href="#efs-metrics-overview_aws-elastic-file-storage">AWS EFS storage CSI usage metrics</a></li><li class="level-4"><a href="#efs-metrics-procedure-gui_aws-elastic-file-storage">Enabling or disabling usage metrics using the web console</a></li><li class="level-4"><a href="#efs-metrics-procedure-cli_aws-elastic-file-storage">Enabling or disabling usage metrics using the CLI</a></li><li class="level-4"><a href="#efs-troubleshooting_aws-elastic-file-storage">Amazon Elastic File Storage troubleshooting</a></li><li class="level-4"><a href="#persistent-storage-csi-olm-operator-uninstall_aws-elastic-file-storage">Uninstalling the {FeatureName} CSI Driver Operator</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#csi-about_aws-elastic-file-storage">About CSI</a></li><li class="level-4"><a href="#persistent-storage-efs-csi-driver-operator-setup_aws-elastic-file-storage">Setting up the EUSC CSI Driver Operator</a></li><li class="level-4"><a href="#efs-sts_aws-elastic-file-storage">Obtaining a role Amazon Resource Name for Security Token Service</a></li><li class="level-4"><a href="#persistent-storage-csi-olm-operator-install_aws-elastic-file-storage">Installing the EUSC CSI Driver Operator</a></li><li class="level-4"><a href="#persistent-storage-csi-efs-driver-install_aws-elastic-file-storage">Installing the EUSC CSI Driver</a></li><li class="level-4"><a href="#storage-create-storage-class_aws-elastic-file-storage">About the {StorageClass} storage class</a></li><li class="level-4"><a href="#storage-create-storage-class-console_aws-elastic-file-storage">Creating the {StorageClass} storage class using the console</a></li><li class="level-4"><a href="#storage-create-storage-class-cli_aws-elastic-file-storage">Creating the {StorageClass} storage class using the CLI</a></li><li class="level-4"><a href="#persistent-storage-csi-efs-cross-account_aws-elastic-file-storage">AWS EFS CSI cross account support</a></li><li class="level-4"><a href="#efs-one-zone-intro_aws-elastic-file-storage">One Zone file systems</a></li><li class="level-4"><a href="#efs-one-zone-overview_aws-elastic-file-storage">One Zone file systems overview</a></li><li class="level-4"><a href="#efs-one-zone-procedure_aws-elastic-file-storage">Setting up One Zone file systems with STS</a></li><li class="level-4"><a href="#csi-dynamic-provisioning-aws-efs_aws-elastic-file-storage">Dynamic provisioning for Amazon Elastic File Storage</a></li><li class="level-4"><a href="#efs-create-static-pv_aws-elastic-file-storage">Creating static PVs with Amazon Elastic File Storage</a></li><li class="level-4"><a href="#efs-security_aws-elastic-file-storage">Amazon Elastic File Storage security</a></li><li class="level-4"><a href="#efs-metrics-overview_aws-elastic-file-storage">AWS EFS storage CSI usage metrics</a></li><li class="level-4"><a href="#efs-metrics-procedure-gui_aws-elastic-file-storage">Enabling or disabling usage metrics using the web console</a></li><li class="level-4"><a href="#efs-metrics-procedure-cli_aws-elastic-file-storage">Enabling or disabling usage metrics using the CLI</a></li><li class="level-4"><a href="#efs-troubleshooting_aws-elastic-file-storage">Amazon Elastic File Storage troubleshooting</a></li><li class="level-4"><a href="#persistent-storage-csi-olm-operator-uninstall_aws-elastic-file-storage">Uninstalling the EUSC CSI Driver Operator</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="efs-driver-overview_aws-elastic-file-storage">Overview</h3>
@@ -1955,7 +1910,7 @@ This eliminates the need for cluster administrators to pre-provision storage.</p
 </div>
 </div>
 <div class="sect3">
-<h4 id="persistent-storage-efs-csi-driver-operator-setup_aws-elastic-file-storage">Setting up the {FeatureName} CSI Driver Operator</h4>
+<h4 id="persistent-storage-efs-csi-driver-operator-setup_aws-elastic-file-storage">Setting up the EUSC CSI Driver Operator</h4>
 <div class="paragraph _abstract">
 <p>To enable AWS Elastic File System (EFS) storage in your cluster, complete the setup process by obtaining necessary credentials, installing the operator, and installing the driver.</p>
 </div>
@@ -2107,7 +2062,7 @@ spec:
 </div>
 </div>
 <div class="sect3">
-<h4 id="persistent-storage-csi-olm-operator-install_aws-elastic-file-storage">Installing the {FeatureName} CSI Driver Operator</h4>
+<h4 id="persistent-storage-csi-olm-operator-install_aws-elastic-file-storage">Installing the EUSC CSI Driver Operator</h4>
 <div class="paragraph _abstract">
 <p>Install and configure the {FeatureName} Container Storage Interface (CSI) Driver Operator to enable {FeatureName} storage in your cluster. This Red&#160;Hat Operator is not installed by default and requires manual installation.</p>
 </div>
@@ -2171,7 +2126,7 @@ spec:
 </div>
 </div>
 <div class="sect3">
-<h4 id="persistent-storage-csi-efs-driver-install_aws-elastic-file-storage">Installing the {FeatureName} CSI Driver</h4>
+<h4 id="persistent-storage-csi-efs-driver-install_aws-elastic-file-storage">Installing the EUSC CSI Driver</h4>
 <div class="paragraph _abstract">
 <p>After installing the Container Storage Interface (CSI) Driver Operator (a Red Hat operator), you need to install the {FeatureName} CSI driver.</p>
 </div>
@@ -3516,7 +3471,7 @@ with administrator rights</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="persistent-storage-csi-olm-operator-uninstall_aws-elastic-file-storage">Uninstalling the {FeatureName} CSI Driver Operator</h4>
+<h4 id="persistent-storage-csi-olm-operator-uninstall_aws-elastic-file-storage">Uninstalling the EUSC CSI Driver Operator</h4>
 <div class="paragraph _abstract">
 <p>To remove the {FeatureName} Container Storage Interface (CSI) Driver Operator and free cluster resources, uninstall the operator after stopping applications and deleting persistent volumes (PVs).</p>
 </div>
@@ -3636,7 +3591,7 @@ An Red&#160;Hat OpenShift Container Platform cluster cannot be destroyed when th
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-29 11:11:59 -0400
+Last updated 2026-10-29 17:32:39 -0400
 </div>
 </div>
 <style>

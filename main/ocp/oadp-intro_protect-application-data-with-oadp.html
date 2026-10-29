@@ -477,53 +477,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
-<!-- navmap-preview-warning-start -->
-<style>
-  .navmap-preview-warning {
-    background: #fff1f1;
-    border: 2px solid #c9190b;
-    border-radius: 4px;
-    color: #3b0a0a;
-    font-family: "Open Sans", "DejaVu Sans", sans-serif;
-    margin: 1em auto;
-    max-width: 70em;
-    padding: 1em 1.25em;
-  }
-  .navmap-preview-warning strong { color: #a30000; }
-  .navmap-preview-warning details { margin-top: .75em; }
-  .navmap-preview-warning pre {
-    background: #fff;
-    border: 1px solid #d7d7d7;
-    max-height: 20em;
-    overflow: auto;
-    padding: .75em;
-    white-space: pre-wrap;
-  }
-</style>
-<!-- navmap-preview-warning-end -->
 </head>
 <body id="oadp-intro_protect-application-data-with-oadp" class="book toc2 toc-left navmap-has-right-toc">
-<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
-
-Missing include targets:
-  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
-    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
-    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
-  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
-    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
-    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
-  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
-    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
-    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
-  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
-    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
-    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
-
-How to fix these errors:
-  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
-  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
-  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
-</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -2142,7 +2097,7 @@ How to fix these errors:
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://velero.io/docs/v1.18/custom-plugins/">Custom plugins</a></p>
+<p><a href="https://velero.io/docs/latest/custom-plugins/">Custom plugins</a></p>
 </li>
 </ul>
 </div>
@@ -3395,8 +3350,11 @@ data:
 </div>
 <div class="sect4">
 <h5 id="oadp-s3-compatible-backup-storage-providers_plan-oadp-deployment">AWS S3 compatible backup storage providers</h5>
+<div class="paragraph _abstract">
+<p>OADP works with many S3-compatible object storage providers. Several object storage providers are certified and tested with every release of OADP.</p>
+</div>
 <div class="paragraph">
-<p>OADP works with many S3-compatible object storage providers. Several object storage providers are certified and tested with every release of OADP. Various S3 providers are known to work with OADP but are not specifically tested and certified. These providers will be supported on a best-effort basis. Additionally, there are a few S3 object storage providers with known issues and limitations that are listed in this documentation.</p>
+<p>Various S3 providers are known to work with OADP but are not specifically tested and certified. These providers will be supported on a best-effort basis. Additionally, there are a few S3 object storage providers with known issues and limitations that are listed in this documentation.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3510,9 +3468,6 @@ data:
 <div class="paragraph">
 <p>Unless specified otherwise, "NooBaa" refers to the open source project that provides lightweight object storage, while "Multicloud Object Gateway (MCG)" refers to the Red Hat distribution of NooBaa.</p>
 </div>
-<div class="paragraph">
-<p>For more information on the MCG, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openshift_data_foundation/4.13/html-single/managing_hybrid_and_multicloud_resources/index#accessing-the-multicloud-object-gateway-with-your-applications_rhodf">Accessing the Multicloud Object Gateway with your applications</a>.</p>
-</div>
 </td>
 </tr>
 </table>
@@ -3535,6 +3490,9 @@ data:
 <ul>
 <li>
 <p><a href="https://downloads.scality.com/artesca-ova/doc/general_introduction.html#">Scality ARTESCA S3 object storage (Scality documentation)</a></p>
+</li>
+<li>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_openshift_data_foundation/4.13/html-single/managing_hybrid_and_multicloud_resources/index#accessing-the-multicloud-object-gateway-with-your-applications_rhodf">Accessing the Multicloud Object Gateway with your applications</a></p>
 </li>
 </ul>
 </div>
@@ -3612,9 +3570,6 @@ data:
 <td class="content">
 <div class="paragraph">
 <p>Unless specified otherwise, "NooBaa" refers to the open source project that provides lightweight object storage, while "Multicloud Object Gateway (MCG)" refers to the Red Hat distribution of NooBaa.</p>
-</div>
-<div class="paragraph">
-<p>For more information on the MCG, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openshift_data_foundation/4.13/html-single/managing_hybrid_and_multicloud_resources/index#accessing-the-multicloud-object-gateway-with-your-applications_rhodf">Accessing the Multicloud Object Gateway with your applications</a>.</p>
 </div>
 </td>
 </tr>
@@ -3727,7 +3682,7 @@ data:
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://velero.io/docs/v1.11/customize-installation/#customize-resource-requests-and-limits/">Customize Velero Install (Velero documentation)</a></p>
+<p><a href="https://velero.io/docs/latest/customize-installation/#customize-resource-requests-and-limits/">Customize Velero Install (Velero documentation)</a></p>
 </li>
 </ul>
 </div>
@@ -3896,9 +3851,6 @@ data:
 <td class="content">
 <div class="paragraph">
 <p>Unless specified otherwise, "NooBaa" refers to the open source project that provides lightweight object storage, while "Multicloud Object Gateway (MCG)" refers to the Red Hat distribution of NooBaa.</p>
-</div>
-<div class="paragraph">
-<p>For more information on the MCG, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openshift_data_foundation/4.13/html-single/managing_hybrid_and_multicloud_resources/index#accessing-the-multicloud-object-gateway-with-your-applications_rhodf">Accessing the Multicloud Object Gateway with your applications</a>.</p>
 </div>
 </td>
 </tr>
@@ -4210,7 +4162,7 @@ data:
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://velero.io/docs/v1.18/">Velero 1.18 documentation</a></p>
+<p><a href="https://velero.io/docs/">Velero 1.18 documentation</a></p>
 </li>
 </ul>
 </div>
@@ -5307,7 +5259,10 @@ Events:               &lt;none&gt;</code></pre>
 <div class="sect4">
 <h5 id="oadp-about-aws-sts_connect-oadp-to-backup-storage">About installing OADP on AWS STS clusters</h5>
 <div class="paragraph _abstract">
-<p>You can install OADP on an AWS Security Token Service (STS) (AWS STS) cluster manually. Amazon AWS provides AWS STS as a web service that enables you to request temporary, limited-privilege credentials for users. You use STS to provide trusted users with temporary access to resources via API calls, your AWS console, or the AWS command-line interface (CLI).</p>
+<p>You can install OADP on an AWS Security Token Service (STS) (AWS STS) cluster manually.</p>
+</div>
+<div class="paragraph">
+<p>Amazon AWS provides AWS STS as a web service that enables you to request temporary, limited-privilege credentials for users. You use STS to provide trusted users with temporary access to resources via API calls, your AWS console, or the AWS command-line interface (CLI).</p>
 </div>
 <div class="paragraph">
 <p>Before installing OpenShift API for Data Protection (OADP), you must set up role and policy credentials for OADP so that it can use the Amazon Web Services API.</p>
@@ -7505,9 +7460,6 @@ EOF</code></pre>
 <td class="content">
 <div class="paragraph">
 <p>Unless specified otherwise, "NooBaa" refers to the open source project that provides lightweight object storage, while "Multicloud Object Gateway (MCG)" refers to the Red Hat distribution of NooBaa.</p>
-</div>
-<div class="paragraph">
-<p>For more information on the MCG, see <a href="https://access.redhat.com/documentation/en-us/red_hat_openshift_data_foundation/4.13/html-single/managing_hybrid_and_multicloud_resources/index#accessing-the-multicloud-object-gateway-with-your-applications_rhodf">Accessing the Multicloud Object Gateway with your applications</a>.</p>
 </div>
 </td>
 </tr>
@@ -10279,7 +10231,7 @@ spec:
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://velero.io/docs/v1.18/">Velero 1.18 documentation</a></p>
+<p><a href="https://velero.io/docs/">Velero 1.18 documentation</a></p>
 </li>
 </ul>
 </div>
@@ -15268,7 +15220,7 @@ configmap/openshift-service-ca.crt   1      2m57s</code></pre>
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://velero.io/docs/v1.9/enable-api-group-versions-feature/">Enable API Group Versions Feature</a></p>
+<p><a href="https://velero.io/docs/latest/enable-api-group-versions-feature/">Enable API Group Versions Feature</a></p>
 </li>
 </ul>
 </div>
@@ -15315,7 +15267,7 @@ spec:
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://velero.io/docs/v1.9/enable-api-group-versions-feature/">Enable API Group Versions Feature</a></p>
+<p><a href="https://velero.io/docs/latest/enable-api-group-versions-feature/">Enable API Group Versions Feature</a></p>
 </li>
 </ul>
 </div>
@@ -17895,13 +17847,13 @@ hello-openshift-9f885f7c6-kdjpj   1/1     Running   0          90s</code></pre>
 <div class="sect4">
 <h5 id="oadp-about-data-mover_optimize-backup-performance">About the OADP Data Mover</h5>
 <div class="paragraph _abstract">
-<p>Use the OpenShift API for Data Protection (OADP) built-in Data Mover to move Container Storage Interface (CSI) volume snapshots to remote object storage and restore stateful applications after cluster failures. This provides disaster recovery capabilities for both containerized and virtual machine workloads.</p>
+<p>Use the built-in Data Mover to move Container Storage Interface (CSI) volume snapshots to remote object storage and restore stateful applications after cluster failures. This provides disaster recovery capabilities for both containerized and virtual machine workloads.</p>
 </div>
 <div class="paragraph">
 <p>The Data Mover uses Kopia as the uploader mechanism to read the snapshot data and write to the unified repository.</p>
 </div>
 <div class="paragraph">
-<p>OADP supports CSI snapshots on the following:</p>
+<p>OpenShift API for Data Protection (OADP) supports CSI snapshots on the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -26514,7 +26466,7 @@ spec:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code>bucket</code> parameter is a Technology Preview feature only. Technology Preview features are not supported with Red&#160;Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+<p>Technology Preview features are not supported with Red&#160;Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
 </div>
 <div class="paragraph">
 <p>For more information about the support scope of Red Hat Technology Preview features, see <a href="https://access.redhat.com/support/offerings/techpreview/">Technology Preview Features Support Scope</a>.</p>
@@ -27072,7 +27024,7 @@ spec:
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Open a browser and navigate to <a href="https://velero.io/docs/v1.18/basic-install/#install-the-cli">"Install the CLI" on the Velero website</a>.</p>
+<p>Open a browser and navigate to <a href="https://velero.io/docs/basic-install/#install-the-cli">"Install the CLI" on the Velero website</a>.</p>
 </li>
 <li>
 <p>Follow the appropriate procedure for macOS, GitHub, or Windows.</p>
@@ -28404,7 +28356,10 @@ spec:
 <div class="sect4">
 <h5 id="oadp-about-velero-admission-webhooks_diagnose-and-resolve-oadp-failures">About Velero restore issues with admission webhooks</h5>
 <div class="paragraph _abstract">
-<p>Velero has limited abilities to resolve admission webhook issues during a restore. If you have workloads with admission webhooks, you might need to use an additional Velero plugin or make changes to how you restore the workload. Typically, workloads with admission webhooks require you to create a resource of a specific kind first. This is especially true if your workload has child resources because admission webhooks typically block child resources.</p>
+<p>Velero has limited abilities to resolve admission webhook issues during a restore. If you have workloads with admission webhooks, you might need to use an additional Velero plugin or make changes to how you restore the workload.</p>
+</div>
+<div class="paragraph">
+<p>Typically, workloads with admission webhooks require you to create a resource of a specific kind first. This is especially true if your workload has child resources because admission webhooks typically block child resources.</p>
 </div>
 <div class="paragraph">
 <p>For example, creating or restoring a top-level object such as <code>service.serving.knative.dev</code> typically creates child resources automatically. If you do this first, you will not need to use Velero to create and restore these resources. This avoids the problem of child resources being blocked by an admission webhook that Velero might use.</p>
@@ -28586,7 +28541,7 @@ runtime error: index out of range with length 1, stack trace: goroutine 94…</c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-29 11:11:59 -0400
+Last updated 2026-10-29 17:32:39 -0400
 </div>
 </div>
 <style>

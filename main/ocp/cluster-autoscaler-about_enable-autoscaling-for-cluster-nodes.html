@@ -477,53 +477,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
-<!-- navmap-preview-warning-start -->
-<style>
-  .navmap-preview-warning {
-    background: #fff1f1;
-    border: 2px solid #c9190b;
-    border-radius: 4px;
-    color: #3b0a0a;
-    font-family: "Open Sans", "DejaVu Sans", sans-serif;
-    margin: 1em auto;
-    max-width: 70em;
-    padding: 1em 1.25em;
-  }
-  .navmap-preview-warning strong { color: #a30000; }
-  .navmap-preview-warning details { margin-top: .75em; }
-  .navmap-preview-warning pre {
-    background: #fff;
-    border: 1px solid #d7d7d7;
-    max-height: 20em;
-    overflow: auto;
-    padding: .75em;
-    white-space: pre-wrap;
-  }
-</style>
-<!-- navmap-preview-warning-end -->
 </head>
 <body id="cluster-autoscaler-about_enable-autoscaling-for-cluster-nodes" class="book toc2 toc-left navmap-has-right-toc">
-<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
-
-Missing include targets:
-  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
-    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
-    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
-  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
-    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
-    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
-  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
-    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
-    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
-  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
-    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
-    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
-
-How to fix these errors:
-  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
-  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
-  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
-</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -1920,7 +1875,7 @@ How to fix these errors:
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#cluster-autoscaler-scale-down_enable-autoscaling-for-cluster-nodes">Automatic node removal</a></li><li class="level-4"><a href="#cluster-autoscaler-limitations_enable-autoscaling-for-cluster-nodes">Limitations</a></li><li class="level-4"><a href="#cluster-autoscaler-interaction_enable-autoscaling-for-cluster-nodes">Interaction with other scheduling features</a></li><li class="level-4"><a href="#cluster-autoscaler-cr_enable-autoscaling-for-cluster-nodes">Cluster autoscaler resource definition</a></li><li class="level-4"><a href="#cluster-autoscaler-config-priority-expander_enable-autoscaling-for-cluster-nodes">Configure a priority expander for the cluster autoscaler</a></li><li class="level-4"><a href="#machineset-label-gpu-autoscaler_enable-autoscaling-for-cluster-nodes">Label GPU machine sets for the cluster autoscaler</a></li><li class="level-4"><a href="#{FeatureResourceName}-deploying_enable-autoscaling-for-cluster-nodes">Deploy a {FeatureName}</a></li><li class="level-4"><a href="#machine-autoscaler-about_enable-autoscaling-for-cluster-nodes">About the machine autoscaler</a></li><li class="level-5"><a href="#configuring-machineautoscaler_enable-autoscaling-for-cluster-nodes">Configure machine autoscalers</a></li><li class="level-6"><a href="#machine-autoscaler-cr_enable-autoscaling-for-cluster-nodes">Machine autoscaler resource definition</a></li><li class="level-4"><a href="#deleting-machine-autoscaler_enable-autoscaling-for-cluster-nodes">Disable a machine autoscaler</a></li><li class="level-4"><a href="#deleting-cluster-autoscaler_enable-autoscaling-for-cluster-nodes">Disable the cluster autoscaler</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#cluster-autoscaler-scale-down_enable-autoscaling-for-cluster-nodes">Automatic node removal</a></li><li class="level-4"><a href="#cluster-autoscaler-limitations_enable-autoscaling-for-cluster-nodes">Limitations</a></li><li class="level-4"><a href="#cluster-autoscaler-interaction_enable-autoscaling-for-cluster-nodes">Interaction with other scheduling features</a></li><li class="level-4"><a href="#cluster-autoscaler-cr_enable-autoscaling-for-cluster-nodes">Cluster autoscaler resource definition</a></li><li class="level-4"><a href="#cluster-autoscaler-config-priority-expander_enable-autoscaling-for-cluster-nodes">Configure a priority expander for the cluster autoscaler</a></li><li class="level-4"><a href="#machineset-label-gpu-autoscaler_enable-autoscaling-for-cluster-nodes">Label GPU machine sets for the cluster autoscaler</a></li><li class="level-4"><a href="#{FeatureResourceName}-deploying_enable-autoscaling-for-cluster-nodes">Deploy a Configuring watch namespace for a cluster extension</a></li><li class="level-4"><a href="#machine-autoscaler-about_enable-autoscaling-for-cluster-nodes">About the machine autoscaler</a></li><li class="level-5"><a href="#configuring-machineautoscaler_enable-autoscaling-for-cluster-nodes">Configure machine autoscalers</a></li><li class="level-6"><a href="#machine-autoscaler-cr_enable-autoscaling-for-cluster-nodes">Machine autoscaler resource definition</a></li><li class="level-4"><a href="#deleting-machine-autoscaler_enable-autoscaling-for-cluster-nodes">Disable a machine autoscaler</a></li><li class="level-4"><a href="#deleting-cluster-autoscaler_enable-autoscaling-for-cluster-nodes">Disable the cluster autoscaler</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="cluster-autoscaler-about_enable-autoscaling-for-cluster-nodes">The cluster autoscaler</h3>
@@ -2535,7 +2490,7 @@ For more information, see "Cluster autoscaler resource definition".</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="{FeatureResourceName}-deploying_enable-autoscaling-for-cluster-nodes">Deploy a {FeatureName}</h4>
+<h4 id="{FeatureResourceName}-deploying_enable-autoscaling-for-cluster-nodes">Deploy a Configuring watch namespace for a cluster extension</h4>
 <div class="paragraph _abstract">
 <p>To deploy a {FeatureName}, you create an instance of the <code>{FeatureResourceName}</code> resource.</p>
 </div>
@@ -2911,7 +2866,7 @@ default   42m</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-29 11:11:59 -0400
+Last updated 2026-10-29 17:32:39 -0400
 </div>
 </div>
 <style>
