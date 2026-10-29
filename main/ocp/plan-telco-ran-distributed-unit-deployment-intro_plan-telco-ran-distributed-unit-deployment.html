@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="plan-telco-ran-distributed-unit-deployment-intro_plan-telco-ran-distributed-unit-deployment" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -841,6 +886,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -1873,7 +1920,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#telco-ref-design-overview_plan-telco-ran-distributed-unit-deployment">Reference design specifications for telco RAN DU 5G deployments</a></li><li class="level-5"><a href="#_supported_cpu_architectures_for_ran_du">Supported CPU architectures for RAN DU</a></li><li class="level-4"><a href="#telco-ran-engineering-considerations-for-the-ran-du-use-model_plan-telco-ran-distributed-unit-deployment">Engineering considerations for the RAN DU use model</a></li><li class="level-4"><a href="#telco-ran-du-application-workloads_plan-telco-ran-distributed-unit-deployment">Telco RAN DU application workloads</a></li><li class="level-4"><a href="#review-telco-ran-du-reference-design-specification-con_review-telco-ran-du-reference-design-specification">Review the telco RAN DU reference design specification</a></li><li class="level-5"><a href="#telco-ran-core-ref-design-spec_review-telco-ran-du-reference-design-specification">Reference design scope</a></li><li class="level-5"><a href="#telco-deviations-from-the-ref-design_review-telco-ran-du-reference-design-specification">Deviations from the reference design</a></li><li class="level-5"><a href="#ztp-telco-ran-software-versions_review-telco-ran-du-reference-design-specification">Telco RAN DU {product-version} validated software components</a></li><li class="level-5"><a href="#telco-ran-du-deployment-components_review-telco-ran-du-reference-design-specification">Telco RAN DU deployment components</a></li><li class="level-5"><a href="#telco-ran-du-reference-configuration-crs_review-telco-ran-du-reference-design-specification">Telco RAN DU reference configuration CRs</a></li><li class="level-5"><a href="#using-cluster-compare-telco-ran_review-telco-ran-du-reference-design-specification">Comparing a cluster with the {rds} reference configuration</a></li><li class="level-4"><a href="#plan-component-configuration-con_plan-component-configuration">Plan telco RAN DU component configuration</a></li><li class="level-5"><a href="#telco-ran-du-reference-design-components_plan-component-configuration">Telco RAN DU reference design components</a></li><li class="level-6"><a href="#telco-ran-bios-tuning_plan-component-configuration">Host firmware tuning</a></li><li class="level-6"><a href="#telco-ran-sysctls_plan-component-configuration">Kubelet settings</a></li><li class="level-6"><a href="#telco-ran-node-tuning-operator_plan-component-configuration">CPU partitioning and performance tuning</a></li><li class="level-6"><a href="#telco-ran-ptp-operator_plan-component-configuration">PTP Operator</a></li><li class="level-6"><a href="#telco-ran-sr-iov-operator_plan-component-configuration">SR-IOV Operator</a></li><li class="level-6"><a href="#telco-ran-logging_plan-component-configuration">Logging</a></li><li class="level-6"><a href="#telco-ran-sriov-fec-operator_plan-component-configuration">SRIOV-FEC Operator</a></li><li class="level-6"><a href="#telco-ran-lca-operator_plan-component-configuration">Lifecycle Agent</a></li><li class="level-6"><a href="#telco-ran-local-storage-operator_plan-component-configuration">Local Storage Operator</a></li><li class="level-6"><a href="#telco-ran-lvms-operator_plan-component-configuration">Logical Volume Manager Storage</a></li><li class="level-6"><a href="#telco-ran-workload-partitioning_plan-component-configuration">Workload partitioning</a></li><li class="level-6"><a href="#telco-ran-cluster-tuning_plan-component-configuration">Cluster tuning</a></li><li class="level-6"><a href="#telco-ran-machine-configuration_plan-component-configuration">Machine configuration</a></li><li class="level-6"><a href="#cluster-tuning-crs_plan-component-configuration">Cluster tuning reference CRs</a></li><li class="level-6"><a href="#day-2-operators-crs_plan-component-configuration">Day 2 Operators reference CRs</a></li><li class="level-6"><a href="#machine-configuration-crs_plan-component-configuration">Machine configuration reference CRs</a></li><li class="level-5"><a href="#telco-ran-agent-based-installer-abi_plan-component-configuration">Agent-based installer</a></li><li class="level-5"><a href="#telco-ran-siteconfig-operator_plan-component-configuration">SiteConfig Operator</a></li><li class="level-5"><a href="#telco-ran-red-hat-advanced-cluster-management-rhacm_plan-component-configuration">Red Hat Advanced Cluster Management</a></li><li class="level-5"><a href="#telco-ran-topology-aware-lifecycle-manager-talm_plan-component-configuration">Topology Aware Lifecycle Manager</a></li><li class="level-5"><a href="#telco-ran-gitops-operator-and-ztp-plugins_plan-component-configuration">GitOps Operator and GitOps ZTP</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#telco-ref-design-overview_plan-telco-ran-distributed-unit-deployment">Review the validated RAN DU reference design</a></li><li class="level-5"><a href="#_supported_cpu_architectures_for_ran_du">Supported CPU architectures for RAN DU</a></li><li class="level-4"><a href="#telco-ran-engineering-considerations-for-the-ran-du-use-model_plan-telco-ran-distributed-unit-deployment">Plan a RAN DU cluster within the validated limits</a></li><li class="level-4"><a href="#telco-ran-du-application-workloads_plan-telco-ran-distributed-unit-deployment">Review the application limits for a RAN DU workload</a></li><li class="level-4"><a href="#review-telco-ran-du-reference-design-specification-con_review-telco-ran-du-reference-design-specification">Review the telco RAN DU reference design specification</a></li><li class="level-5"><a href="#telco-ran-core-ref-design-spec_review-telco-ran-du-reference-design-specification">Reference design scope</a></li><li class="level-5"><a href="#telco-deviations-from-the-ref-design_review-telco-ran-du-reference-design-specification">Deviations from the reference design</a></li><li class="level-5"><a href="#ztp-telco-ran-software-versions_review-telco-ran-du-reference-design-specification">Telco RAN DU {product-version} validated software components</a></li><li class="level-4"><a href="#plan-component-configuration-con_plan-component-configuration">Plan telco RAN DU component configuration</a></li><li class="level-5"><a href="#telco-ran-du-reference-design-components_plan-component-configuration">Telco RAN DU reference design components</a></li><li class="level-6"><a href="#telco-ran-bios-tuning_plan-component-configuration">Host firmware tuning</a></li><li class="level-6"><a href="#telco-ran-sysctls_plan-component-configuration">Kubelet settings</a></li><li class="level-6"><a href="#telco-ran-node-tuning-operator_plan-component-configuration">CPU partitioning and performance tuning</a></li><li class="level-6"><a href="#telco-ran-ptp-operator_plan-component-configuration">PTP Operator</a></li><li class="level-6"><a href="#telco-ran-sr-iov-operator_plan-component-configuration">SR-IOV Operator</a></li><li class="level-6"><a href="#telco-ran-logging_plan-component-configuration">Logging</a></li><li class="level-6"><a href="#telco-ran-sriov-fec-operator_plan-component-configuration">SRIOV-FEC Operator</a></li><li class="level-6"><a href="#telco-ran-lca-operator_plan-component-configuration">Lifecycle Agent</a></li><li class="level-6"><a href="#telco-ran-local-storage-operator_plan-component-configuration">Local Storage Operator</a></li><li class="level-6"><a href="#telco-ran-lvms-operator_plan-component-configuration">Logical Volume Manager Storage</a></li><li class="level-6"><a href="#telco-ran-workload-partitioning_plan-component-configuration">Workload partitioning</a></li><li class="level-6"><a href="#telco-ran-cluster-tuning_plan-component-configuration">Cluster tuning</a></li><li class="level-6"><a href="#telco-ran-machine-configuration_plan-component-configuration">Machine configuration</a></li><li class="level-5"><a href="#telco-ran-du-reference-configuration-crs_plan-component-configuration">Telco RAN DU reference configuration CRs</a></li><li class="level-6"><a href="#using-cluster-compare-telco-ran_plan-component-configuration">Comparing a cluster with the telco RAN DU reference configuration</a></li><li class="level-6"><a href="#cluster-tuning-crs_plan-component-configuration">Cluster tuning reference CRs</a></li><li class="level-6"><a href="#day-2-operators-crs_plan-component-configuration">Day 2 Operators reference CRs</a></li><li class="level-6"><a href="#machine-configuration-crs_plan-component-configuration">Machine configuration reference CRs</a></li><li class="level-5"><a href="#telco-ran-du-deployment-components_plan-component-configuration">Telco RAN DU deployment components</a></li><li class="level-6"><a href="#telco-ran-agent-based-installer-abi_plan-component-configuration">Agent-based installer</a></li><li class="level-6"><a href="#telco-ran-siteconfig-operator_plan-component-configuration">SiteConfig Operator</a></li><li class="level-6"><a href="#telco-ran-red-hat-advanced-cluster-management-rhacm_plan-component-configuration">Red Hat Advanced Cluster Management</a></li><li class="level-6"><a href="#telco-ran-topology-aware-lifecycle-manager-talm_plan-component-configuration">Topology Aware Lifecycle Manager</a></li><li class="level-6"><a href="#telco-ran-gitops-operator-and-ztp-plugins_plan-component-configuration">GitOps Operator and GitOps ZTP</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="plan-telco-ran-distributed-unit-deployment-intro_plan-telco-ran-distributed-unit-deployment">Plan telco RAN distributed unit deployment</h3>
@@ -1881,7 +1928,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>You can plan your telco RAN distributed unit (DU) deployment by reviewing the reference design specifications and validated configurations for 5G workloads.</p>
 </div>
 <div class="sect3">
-<h4 id="telco-ref-design-overview_plan-telco-ran-distributed-unit-deployment">Reference design specifications for telco RAN DU 5G deployments</h4>
+<h4 id="telco-ref-design-overview_plan-telco-ran-distributed-unit-deployment">Review the validated RAN DU reference design</h4>
 <div class="paragraph _abstract">
 <p>Red Hat and certified partners offer deep technical expertise and support for networking and operational capabilities required to run telco applications on Red&#160;Hat OpenShift Container Platform {product-version} clusters.</p>
 </div>
@@ -1944,7 +1991,7 @@ Red Hat is committed to iterating over the telco core and RAN DU RDS to support 
 </div>
 </div>
 <div class="sect3">
-<h4 id="telco-ran-engineering-considerations-for-the-ran-du-use-model_plan-telco-ran-distributed-unit-deployment">Engineering considerations for the RAN DU use model</h4>
+<h4 id="telco-ran-engineering-considerations-for-the-ran-du-use-model_plan-telco-ran-distributed-unit-deployment">Plan a RAN DU cluster within the validated limits</h4>
 <div class="paragraph _abstract">
 <p>The RAN DU use model configures an Red&#160;Hat OpenShift Container Platform cluster running on commodity hardware for hosting RAN distributed unit (DU) workloads.</p>
 </div>
@@ -1971,8 +2018,8 @@ This information is only available to customers and partners.</p>
 <div class="content">
 <div class="paragraph">
 <p>The recommended topology for RAN DU workloads is single-node OpenShift.
-DU workloads may be run on other cluster topologies such as 3-node compact cluster, high availability (3 control plane + n worker nodes), or SNO+1 as needed.
-Multiple SNO clusters, or a highly-available 3-node compact cluster, are recommended over the SNO+1 topology.</p>
+DU workloads can be run on other cluster topologies such as 3-node compact cluster, high availability (3 control plane + n worker nodes), or SNO+1 as needed.
+Multiple single-node OpenShift clusters, or a highly-available 3-node compact cluster, are recommended over the SNO+1 topology.</p>
 </div>
 <div class="paragraph">
 <p>Under the standard cluster topology case (3+n), a mixed architecture cluster is allowed only if:</p>
@@ -2068,7 +2115,7 @@ For workloads with high service level agreement requirements such as RAN DU the 
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Architecture</th>
-<th class="tableblock halign-left valign-top">SNO</th>
+<th class="tableblock halign-left valign-top">single-node OpenShift</th>
 <th class="tableblock halign-left valign-top">SNO+1</th>
 <th class="tableblock halign-left valign-top">3-node</th>
 <th class="tableblock halign-left valign-top">Standard</th>
@@ -2115,7 +2162,7 @@ For workloads with high service level agreement requirements such as RAN DU the 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>DU workloads are described in <a href="../scalability_and_performance/telco-ran-du-rds.html#telco-ran-du-application-workloads_telco-ran-du">Telco RAN DU application workloads</a>.</p>
+<p>DU workloads are described in <a href="../scalability_and_performance/telco-ran-du-rds.html#telco-ran-du-application-workloads_telco-ran-du">Review the application limits for a RAN DU workload</a>.</p>
 </li>
 <li>
 <p>DU worker nodes are Intel 3rd Generation Xeon (Ice Lake) 2.20 GHz or newer with host firmware tuned for maximum performance.</p>
@@ -2269,7 +2316,7 @@ For example:</p>
 Use hub-side templating.</p>
 </li>
 <li>
-<p>Disable RHACM addons with the exception of the <code>policyController</code> and configure observability with the default configuration.</p>
+<p>Disable RHACM add-ons with the exception of the <code>policyController</code> and configure observability with the default configuration.</p>
 </li>
 </ol>
 </div>
@@ -2327,7 +2374,7 @@ Instead, use the <code>oc mirror</code> plugin v2 to ensure signatures are prope
 </div>
 </div>
 <div class="sect3">
-<h4 id="telco-ran-du-application-workloads_plan-telco-ran-distributed-unit-deployment">Telco RAN DU application workloads</h4>
+<h4 id="telco-ran-du-application-workloads_plan-telco-ran-distributed-unit-deployment">Review the application limits for a RAN DU workload</h4>
 <div class="paragraph _abstract">
 <p>Develop RAN DU applications that are subject to the following requirements and limitations.</p>
 </div>
@@ -2539,198 +2586,6 @@ This is critical for the supportability of the solution and ensuring alignment a
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect4">
-<h5 id="telco-ran-du-deployment-components_review-telco-ran-du-reference-design-specification">Telco RAN DU deployment components</h5>
-<div class="paragraph _abstract">
-<p>The following sections describe the various Red&#160;Hat OpenShift Container Platform components and configurations that you use to configure the hub cluster with RHACM.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="telco-ran-du-reference-configuration-crs_review-telco-ran-du-reference-design-specification">Telco RAN DU reference configuration CRs</h5>
-<div class="paragraph _abstract">
-<p>Use the following custom resources (CRs) to configure and deploy Red&#160;Hat OpenShift Container Platform clusters with the telco RAN DU profile.
-Use the CRs to form the common baseline used in all the specific use models unless otherwise indicated.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="using-cluster-compare-telco-ran_review-telco-ran-du-reference-design-specification">Comparing a cluster with the {rds} reference configuration</h5>
-<div class="paragraph _abstract">
-<p>After you deploy a {rds} cluster, you can use the <code>cluster-compare</code> plugin to assess the cluster&#8217;s compliance with the {rds} reference design specifications (RDS).</p>
-</div>
-<div class="paragraph">
-<p>The <code>cluster-compare</code> plugin is an OpenShift CLI (<code>oc</code>) plugin. The plugin uses a {rds} reference configuration to validate the cluster with the {rds} custom resources (CRs).</p>
-</div>
-<div class="paragraph">
-<p>The plugin-specific reference configuration for {rds} is packaged in a container image with the {rds} CRs.</p>
-</div>
-<div class="paragraph">
-<p>For further information about the <code>cluster-compare</code> plugin, see "Understanding the cluster-compare plugin".</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You have access to the cluster as a user with the <code>cluster-admin</code> role.</p>
-</li>
-<li>
-<p>You have credentials to access the <code>registry.redhat.io</code> container image registry.</p>
-</li>
-<li>
-<p>You installed the <code>cluster-compare</code> plugin.</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Log on to the container image registry with your credentials by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ podman login registry.redhat.io</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Extract the content from the <code>ztp-site-generate-rhel9</code> container image by running the following commands::</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ podman pull registry.redhat.io/openshift5/ztp-site-generate-rhel9:v{product-version}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ mkdir -p ./out</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ podman run --log-driver=none --rm registry.redhat.io/openshift5/ztp-site-generate-rhel9:v{product-version} extract /home/ztp --tar | tar x -C ./out</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Compare the configuration for your cluster to the reference configuration by running the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc cluster-compare -r out/reference/metadata.yaml</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example output</div>
-<div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">...
-
-**********************************
-
-Cluster CR: config.openshift.io/v1_OperatorHub_cluster
-Reference File: required/other/operator-hub.yaml
-Diff Output: diff -u -N /tmp/MERGED-2801470219/config-openshift-io-v1_operatorhub_cluster /tmp/LIVE-2569768241/config-openshift-io-v1_operatorhub_cluster
---- /tmp/MERGED-2801470219/config-openshift-io-v1_operatorhub_cluster	2024-12-12 14:13:22.898756462 +0000
-+++ /tmp/LIVE-2569768241/config-openshift-io-v1_operatorhub_cluster	2024-12-12 14:13:22.898756462 +0000
-@@ -1,6 +1,6 @@
- apiVersion: config.openshift.io/v1
- kind: OperatorHub
- metadata:
-+  annotations:
-+    include.release.openshift.io/hypershift: "true"
-   name: cluster
--spec:
--  disableAllDefaultSources: true
-
-**********************************
-
-Summary
-CRs with diffs: 11/12
-CRs in reference missing from the cluster: 40
-optional-image-registry:
-  image-registry:
-    Missing CRs:
-    - optional/image-registry/ImageRegistryPV.yaml
-optional-ptp-config:
-  ptp-config:
-    One of the following is required:
-    - optional/ptp-config/PtpConfigBoundary.yaml
-    - optional/ptp-config/PtpConfigGmWpc.yaml
-    - optional/ptp-config/PtpConfigDualCardGmWpc.yaml
-    - optional/ptp-config/PtpConfigForHA.yaml
-    - optional/ptp-config/PtpConfigMaster.yaml
-    - optional/ptp-config/PtpConfigSlave.yaml
-    - optional/ptp-config/PtpConfigSlaveForEvent.yaml
-    - optional/ptp-config/PtpConfigForHAForEvent.yaml
-    - optional/ptp-config/PtpConfigMasterForEvent.yaml
-    - optional/ptp-config/PtpConfigBoundaryForEvent.yaml
-  ptp-operator-config:
-    One of the following is required:
-    - optional/ptp-config/PtpOperatorConfig.yaml
-    - optional/ptp-config/PtpOperatorConfigForEvent.yaml
-optional-storage:
-  storage:
-    Missing CRs:
-    - optional/local-storage-operator/StorageLV.yaml
-
-...
-
-No CRs are unmatched to reference CRs
-Metadata Hash: 09650c31212be9a44b99315ec14d2e7715ee194a5d68fb6d24f65fd5ddbe3c3c
-No patched CRs</code></pre>
-</div>
-</div>
-<div class="openblock">
-<div class="content">
-<div class="paragraph">
-<p>Where:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Cluster CR</dt>
-<dd>
-<p>The CR under comparison. The plugin displays each CR with a difference from the corresponding template.</p>
-</dd>
-<dt class="hdlist1">Reference File</dt>
-<dd>
-<p>The template matching with the CR for comparison.</p>
-</dd>
-<dt class="hdlist1">Diff Output</dt>
-<dd>
-<p>The output in Linux diff format shows the difference between the template and the cluster CR.</p>
-</dd>
-<dt class="hdlist1">Summary</dt>
-<dd>
-<p>After the plugin reports the line diffs for each CR, the summary of differences are reported.</p>
-</dd>
-<dt class="hdlist1">CRs with diffs</dt>
-<dd>
-<p>The number of CRs in the comparison with differences from the corresponding templates.</p>
-</dd>
-<dt class="hdlist1">CRs in reference missing from the cluster</dt>
-<dd>
-<p>The number of CRs represented in the reference configuration, but missing from the live cluster.</p>
-</dd>
-<dt class="hdlist1">Missing CRs</dt>
-<dd>
-<p>The list of CRs represented in the reference configuration, but missing from the live cluster.</p>
-</dd>
-<dt class="hdlist1">No CRs are unmatched to reference CRs</dt>
-<dd>
-<p>The CRs that did not match to a corresponding template in the reference configuration.</p>
-</dd>
-<dt class="hdlist1">Metadata Hash</dt>
-<dd>
-<p>Identifies the reference configuration.</p>
-</dd>
-<dt class="hdlist1">No patched CRs</dt>
-<dd>
-<p>The list of patched CRs.</p>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-</li>
-</ol>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -3986,6 +3841,192 @@ The reference CRs that enable kdump have an increased memory reservation based o
 </tbody>
 </table>
 </div>
+</div>
+<div class="sect4">
+<h5 id="telco-ran-du-reference-configuration-crs_plan-component-configuration">Telco RAN DU reference configuration CRs</h5>
+<div class="paragraph _abstract">
+<p>Use the following custom resources (CRs) to configure and deploy Red&#160;Hat OpenShift Container Platform clusters with the telco RAN DU profile.
+Use the CRs to form the common baseline used in all the specific use models unless otherwise indicated.</p>
+</div>
+<div class="sect5">
+<h6 id="using-cluster-compare-telco-ran_plan-component-configuration">Comparing a cluster with the telco RAN DU reference configuration</h6>
+<div class="paragraph _abstract">
+<p>After you deploy a telco RAN DU cluster, you can use the <code>cluster-compare</code> plugin to assess the cluster&#8217;s compliance with the telco RAN DU reference design specifications (RDS).</p>
+</div>
+<div class="paragraph">
+<p>The <code>cluster-compare</code> plugin is an OpenShift CLI (<code>oc</code>) plugin. The plugin uses a telco RAN DU reference configuration to validate the cluster with the telco RAN DU custom resources (CRs).</p>
+</div>
+<div class="paragraph">
+<p>The plugin-specific reference configuration for telco RAN DU is packaged in a container image with the telco RAN DU CRs.</p>
+</div>
+<div class="paragraph">
+<p>For further information about the <code>cluster-compare</code> plugin, see "Understanding the cluster-compare plugin".</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have access to the cluster as a user with the <code>cluster-admin</code> role.</p>
+</li>
+<li>
+<p>You have credentials to access the <code>registry.redhat.io</code> container image registry.</p>
+</li>
+<li>
+<p>You installed the <code>cluster-compare</code> plugin.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log on to the container image registry with your credentials by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ podman login registry.redhat.io</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Extract the content from the <code>ztp-site-generate-rhel9</code> container image by running the following commands::</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ podman pull registry.redhat.io/openshift5/ztp-site-generate-rhel9:v{product-version}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ mkdir -p ./out</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ podman run --log-driver=none --rm registry.redhat.io/openshift5/ztp-site-generate-rhel9:v{product-version} extract /home/ztp --tar | tar x -C ./out</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Compare the configuration for your cluster to the reference configuration by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc cluster-compare -r out/reference/metadata.yaml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example output</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">...
+
+**********************************
+
+Cluster CR: config.openshift.io/v1_OperatorHub_cluster
+Reference File: required/other/operator-hub.yaml
+Diff Output: diff -u -N /tmp/MERGED-2801470219/config-openshift-io-v1_operatorhub_cluster /tmp/LIVE-2569768241/config-openshift-io-v1_operatorhub_cluster
+--- /tmp/MERGED-2801470219/config-openshift-io-v1_operatorhub_cluster	2024-12-12 14:13:22.898756462 +0000
++++ /tmp/LIVE-2569768241/config-openshift-io-v1_operatorhub_cluster	2024-12-12 14:13:22.898756462 +0000
+@@ -1,6 +1,6 @@
+ apiVersion: config.openshift.io/v1
+ kind: OperatorHub
+ metadata:
++  annotations:
++    include.release.openshift.io/hypershift: "true"
+   name: cluster
+-spec:
+-  disableAllDefaultSources: true
+
+**********************************
+
+Summary
+CRs with diffs: 11/12
+CRs in reference missing from the cluster: 40
+optional-image-registry:
+  image-registry:
+    Missing CRs:
+    - optional/image-registry/ImageRegistryPV.yaml
+optional-ptp-config:
+  ptp-config:
+    One of the following is required:
+    - optional/ptp-config/PtpConfigBoundary.yaml
+    - optional/ptp-config/PtpConfigGmWpc.yaml
+    - optional/ptp-config/PtpConfigDualCardGmWpc.yaml
+    - optional/ptp-config/PtpConfigForHA.yaml
+    - optional/ptp-config/PtpConfigMaster.yaml
+    - optional/ptp-config/PtpConfigSlave.yaml
+    - optional/ptp-config/PtpConfigSlaveForEvent.yaml
+    - optional/ptp-config/PtpConfigForHAForEvent.yaml
+    - optional/ptp-config/PtpConfigMasterForEvent.yaml
+    - optional/ptp-config/PtpConfigBoundaryForEvent.yaml
+  ptp-operator-config:
+    One of the following is required:
+    - optional/ptp-config/PtpOperatorConfig.yaml
+    - optional/ptp-config/PtpOperatorConfigForEvent.yaml
+optional-storage:
+  storage:
+    Missing CRs:
+    - optional/local-storage-operator/StorageLV.yaml
+
+...
+
+No CRs are unmatched to reference CRs
+Metadata Hash: 09650c31212be9a44b99315ec14d2e7715ee194a5d68fb6d24f65fd5ddbe3c3c
+No patched CRs</code></pre>
+</div>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Cluster CR</dt>
+<dd>
+<p>The CR under comparison. The plugin displays each CR with a difference from the corresponding template.</p>
+</dd>
+<dt class="hdlist1">Reference File</dt>
+<dd>
+<p>The template matching with the CR for comparison.</p>
+</dd>
+<dt class="hdlist1">Diff Output</dt>
+<dd>
+<p>The output in Linux diff format shows the difference between the template and the cluster CR.</p>
+</dd>
+<dt class="hdlist1">Summary</dt>
+<dd>
+<p>After the plugin reports the line diffs for each CR, the summary of differences are reported.</p>
+</dd>
+<dt class="hdlist1">CRs with diffs</dt>
+<dd>
+<p>The number of CRs in the comparison with differences from the corresponding templates.</p>
+</dd>
+<dt class="hdlist1">CRs in reference missing from the cluster</dt>
+<dd>
+<p>The number of CRs represented in the reference configuration, but missing from the live cluster.</p>
+</dd>
+<dt class="hdlist1">Missing CRs</dt>
+<dd>
+<p>The list of CRs represented in the reference configuration, but missing from the live cluster.</p>
+</dd>
+<dt class="hdlist1">No CRs are unmatched to reference CRs</dt>
+<dd>
+<p>The CRs that did not match to a corresponding template in the reference configuration.</p>
+</dd>
+<dt class="hdlist1">Metadata Hash</dt>
+<dd>
+<p>Identifies the reference configuration.</p>
+</dd>
+<dt class="hdlist1">No patched CRs</dt>
+<dd>
+<p>The list of patched CRs.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
 <div class="sect5">
 <h6 id="cluster-tuning-crs_plan-component-configuration">Cluster tuning reference CRs</h6>
 <div class="paragraph _abstract">
@@ -4693,7 +4734,12 @@ The reference CRs that enable kdump have an increased memory reservation based o
 </div>
 </div>
 <div class="sect4">
-<h5 id="telco-ran-agent-based-installer-abi_plan-component-configuration">Agent-based installer</h5>
+<h5 id="telco-ran-du-deployment-components_plan-component-configuration">Telco RAN DU deployment components</h5>
+<div class="paragraph _abstract">
+<p>The following sections describe the various Red&#160;Hat OpenShift Container Platform components and configurations that you use to configure the hub cluster with RHACM.</p>
+</div>
+<div class="sect5">
+<h6 id="telco-ran-agent-based-installer-abi_plan-component-configuration">Agent-based installer</h6>
 <div class="paragraph _abstract">
 <p>The optional Agent-based Installer component provides installation capabilities without centralized infrastructure.</p>
 </div>
@@ -4746,8 +4792,8 @@ A container image registry is required for cluster installation.</p>
 </dl>
 </div>
 </div>
-<div class="sect4">
-<h5 id="telco-ran-siteconfig-operator_plan-component-configuration">SiteConfig Operator</h5>
+<div class="sect5">
+<h6 id="telco-ran-siteconfig-operator_plan-component-configuration">SiteConfig Operator</h6>
 <div class="paragraph _abstract">
 <p>The SiteConfig Operator is a template-driven solution designed to provision clusters through various installation methods.</p>
 </div>
@@ -4827,8 +4873,8 @@ The Image-based Installer is particularly well-suited for remote or disconnected
 </dl>
 </div>
 </div>
-<div class="sect4">
-<h5 id="telco-ran-red-hat-advanced-cluster-management-rhacm_plan-component-configuration">Red Hat Advanced Cluster Management</h5>
+<div class="sect5">
+<h6 id="telco-ran-red-hat-advanced-cluster-management-rhacm_plan-component-configuration">Red Hat Advanced Cluster Management</h6>
 <div class="paragraph _abstract">
 <p>RHACM provides Multi Cluster Engine (MCE) installation and ongoing lifecycle management functionality for deployed clusters.</p>
 </div>
@@ -4908,8 +4954,8 @@ These configurations should be managed using RHACM policy hub-side templating wi
 </dl>
 </div>
 </div>
-<div class="sect4">
-<h5 id="telco-ran-topology-aware-lifecycle-manager-talm_plan-component-configuration">Topology Aware Lifecycle Manager</h5>
+<div class="sect5">
+<h6 id="telco-ran-topology-aware-lifecycle-manager-talm_plan-component-configuration">Topology Aware Lifecycle Manager</h6>
 <div class="paragraph _abstract">
 <p>TALM manages how changes like cluster upgrades, Operator upgrades, and cluster configuration are rolled out to the network.</p>
 </div>
@@ -4993,8 +5039,8 @@ Review the <a href="https://github.com/openshift-kni/cluster-group-upgrades-oper
 </dl>
 </div>
 </div>
-<div class="sect4">
-<h5 id="telco-ran-gitops-operator-and-ztp-plugins_plan-component-configuration">GitOps Operator and GitOps ZTP</h5>
+<div class="sect5">
+<h6 id="telco-ran-gitops-operator-and-ztp-plugins_plan-component-configuration">GitOps Operator and GitOps ZTP</h6>
 <div class="paragraph _abstract">
 <p>GitOps Operator and GitOps ZTP provide a GitOps-based infrastructure for managing cluster deployment and configuration.</p>
 </div>
@@ -5096,6 +5142,7 @@ If needed, you can use a <code>ConfigMap</code> generator to create the <code>Co
 </div>
 </div>
 </div>
+</div>
 <div class="paragraph nav-footer">
 <p>← Previous: <a href="plan-telco-hub-cluster-deployment-intro_plan-telco-hub-cluster-deployment.html">Plan telco hub cluster deployment</a> | ↑ Up: <a href="_plan.html">Plan</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="choose-an-installation-method-con_choose-an-installation-method.html">Choose an installation method</a> →</p>
 </div>
@@ -5108,7 +5155,7 @@ If needed, you can use a <code>ConfigMap</code> generator to create the <code>Co
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>

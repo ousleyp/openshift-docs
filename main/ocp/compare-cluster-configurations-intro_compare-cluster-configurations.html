@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="compare-cluster-configurations-intro_compare-cluster-configurations" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -842,6 +887,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -1873,7 +1920,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#cc-understand-intro_cc-understand">Understand the cluster-compare plugin</a></li><li class="level-5"><a href="#cluster-compare-overview_cc-understand">Overview of the cluster-compare plugin</a></li><li class="level-5"><a href="#understanding-a-reference-config_cc-understand">Understanding a reference configuration</a></li><li class="level-4"><a href="#cc-install-intro_cc-install">Install the cluster-compare plugin</a></li><li class="level-5"><a href="#installing-cluster-compare_cc-install">Installing the cluster-compare plugin</a></li><li class="level-4"><a href="#cc-use-intro_cc-use">Use the cluster-compare plugin</a></li><li class="level-5"><a href="#using-cluster-compare-live-cluster_cc-use">Using the cluster-compare plugin with a live cluster</a></li><li class="level-5"><a href="#using-cluster-compare-must-gather_cc-use">Using the cluster-compare plugin with must-gather data</a></li><li class="level-5"><a href="#cluster-compare-reference-args_cc-use">Reference cluster-compare plugin options</a></li><li class="level-5"><a href="#using-cluster-compare-telco_ref_cc-use">Example: Comparing a cluster with the telco core reference configuration</a></li><li class="level-4"><a href="#cc-create-reference-intro_cc-create-reference">Create a reference configuration</a></li><li class="level-5"><a href="#cluster-compare-metadata-structure_cc-create-reference">Structure of the metadata.yaml file</a></li><li class="level-5"><a href="#cluster-compare-template-groupings_cc-create-reference">Configuring template relationships</a></li><li class="level-5"><a href="#cluster-compare-templating_cc-create-reference">Configuring expected variation in a template</a></li><li class="level-6"><a href="#cluster-compare-templating-reference_cc-create-reference">Reference template functions</a></li><li class="level-5"><a href="#cluster-compare-exclude-metadata_cc-create-reference">Configuring the metadata.yaml file to exclude template fields</a></li><li class="level-6"><a href="#cluster-compare-ignore-all-fields_cc-create-reference">Excluding all fields not specified in a template</a></li><li class="level-6"><a href="#cluster-compare-ignore-default-fields_cc-create-reference">Excluding specific fields by setting default exclusion fields</a></li><li class="level-6"><a href="#cluster-compare-ignore-specified-fields_cc-create-reference">Excluding specific fields</a></li><li class="level-6"><a href="#cluster-compare-ignore-default-groups_cc-create-reference">Excluding specific fields by setting default exclusion groups</a></li><li class="level-5"><a href="#cluster-compare-configure-inline-diff_cc-create-reference">Configuring inline validation for template fields</a></li><li class="level-6"><a href="#cluster-compare-configure-regex_cc-create-reference">Configuring inline validation with the regex function</a></li><li class="level-6"><a href="#cluster-compare-configure-capturegroups_cc-create-reference">Configuring inline validation with the capturegroups function</a></li><li class="level-5"><a href="#cluster-compare-output-description_cc-create-reference">Configuring descriptions for the output</a></li><li class="level-4"><a href="#cc-customize-advanced-intro_cc-customize-advanced">Customize reference configurations</a></li><li class="level-5"><a href="#cluster-compare-manual-match_cc-customize-advanced">Configuring manual matching between CRs and templates</a></li><li class="level-5"><a href="#cluster-compare-patching_cc-customize-advanced">Patching a reference configuration</a></li><li class="level-6"><a href="#_using_the_cluster_compare_plugin_to_generate_a_patch">Using the cluster-compare plugin to generate a patch</a></li><li class="level-6"><a href="#_creating_a_patch_file_manually">Creating a patch file manually</a></li><li class="level-4"><a href="#cc-troubleshoot-intro_cc-troubleshoot">Troubleshoot cluster comparisons</a></li><li class="level-5"><a href="#troubleshooting-cc-false-positives_cc-troubleshoot">Troubleshooting false positives for missing resources</a></li><li class="level-5"><a href="#troubleshooting-cc-multiple-matches_cc-troubleshoot">Troubleshooting multiple template matches for the same CR</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#cc-understand-intro_cc-understand">Understand the cluster-compare plugin</a></li><li class="level-5"><a href="#cluster-compare-overview_cc-understand">Overview of the cluster-compare plugin</a></li><li class="level-5"><a href="#understanding-a-reference-config_cc-understand">Understanding a reference configuration</a></li><li class="level-4"><a href="#cc-install-intro_cc-install">Install the cluster-compare plugin</a></li><li class="level-5"><a href="#installing-cluster-compare_cc-install">Installing the cluster-compare plugin</a></li><li class="level-4"><a href="#cc-use-intro_cc-use">Use the cluster-compare plugin</a></li><li class="level-5"><a href="#using-cluster-compare-live-cluster_cc-use">Using the cluster-compare plugin with a live cluster</a></li><li class="level-5"><a href="#using-cluster-compare-must-gather_cc-use">Using the cluster-compare plugin with must-gather data</a></li><li class="level-5"><a href="#cluster-compare-reference-args_cc-use">Reference cluster-compare plugin options</a></li><li class="level-5"><a href="#using-cluster-compare-telco_ref_cc-use">Example: Comparing a cluster with the telco core reference configuration</a></li><li class="level-4"><a href="#cc-create-reference-intro_cc-create-reference">Create a reference configuration</a></li><li class="level-5"><a href="#cluster-compare-metadata-structure_cc-create-reference">Structure of the metadata.yaml file</a></li><li class="level-5"><a href="#cluster-compare-template-groupings_cc-create-reference">Configuring template relationships</a></li><li class="level-5"><a href="#cluster-compare-templating_cc-create-reference">Configuring expected variation in a template</a></li><li class="level-6"><a href="#cluster-compare-templating-reference_cc-create-reference">Reference template functions</a></li><li class="level-5"><a href="#cluster-compare-exclude-metadata_cc-create-reference">Configuring the metadata.yaml file to exclude template fields</a></li><li class="level-5"><a href="#cluster-compare-ignore-all-fields_cc-create-reference">Excluding all fields not specified in a template</a></li><li class="level-5"><a href="#cluster-compare-ignore-default-fields_cc-create-reference">Excluding specific fields by setting default exclusion fields</a></li><li class="level-5"><a href="#cluster-compare-ignore-specified-fields_cc-create-reference">Excluding specific fields</a></li><li class="level-5"><a href="#cluster-compare-ignore-default-groups_cc-create-reference">Excluding specific fields by setting default exclusion groups</a></li><li class="level-5"><a href="#cluster-compare-configure-inline-diff_cc-create-reference">Configuring inline validation for template fields</a></li><li class="level-5"><a href="#cluster-compare-configure-regex_cc-create-reference">Configuring inline validation with the regex function</a></li><li class="level-5"><a href="#cluster-compare-configure-capturegroups_cc-create-reference">Configuring inline validation with the capturegroups function</a></li><li class="level-5"><a href="#cluster-compare-output-description_cc-create-reference">Configuring descriptions for the output</a></li><li class="level-4"><a href="#cc-customize-advanced-intro_cc-customize-advanced">Customize reference configurations</a></li><li class="level-5"><a href="#cluster-compare-manual-match_cc-customize-advanced">Configuring manual matching between CRs and templates</a></li><li class="level-5"><a href="#cluster-compare-patching_cc-customize-advanced">Patching a reference configuration</a></li><li class="level-5"><a href="#cluster-compare-generate-patch_cc-customize-advanced">Using the cluster-compare plugin to generate a patch</a></li><li class="level-5"><a href="#cluster-compare-create-patch-manually_cc-customize-advanced">Creating a patch file manually</a></li><li class="level-4"><a href="#cc-troubleshoot-intro_cc-troubleshoot">Troubleshoot cluster comparisons</a></li><li class="level-5"><a href="#troubleshooting-cc-false-positives_cc-troubleshoot">Troubleshooting false positives for missing resources</a></li><li class="level-5"><a href="#troubleshooting-cc-multiple-matches_cc-troubleshoot">Troubleshooting multiple template matches for the same CR</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="compare-cluster-configurations-intro_compare-cluster-configurations">Compare cluster configurations</h3>
@@ -2462,7 +2509,7 @@ No patched CRs</code></pre>
 <p>The following content describes the options for the <code>cluster-compare</code> plugin.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1129. Cluster-compare plugin options</caption>
+<caption class="title">Table 1131. Cluster-compare plugin options</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
@@ -3302,7 +3349,7 @@ spec:
 <p>The following table describes the additional template functions for the <code>cluster-compare</code> plugin:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1130. Additional cluster-compare template functions</caption>
+<caption class="title">Table 1132. Additional cluster-compare template functions</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 33.3333%;">
@@ -3546,9 +3593,10 @@ data:
 </li>
 </ul>
 </div>
-<div class="sect5">
-<h6 id="cluster-compare-ignore-all-fields_cc-create-reference">Excluding all fields not specified in a template</h6>
-<div class="paragraph">
+</div>
+<div class="sect4">
+<h5 id="cluster-compare-ignore-all-fields_cc-create-reference">Excluding all fields not specified in a template</h5>
+<div class="paragraph _abstract">
 <p>During the comparison process, the <code>cluster-compare</code> plugin renders a template by merging fields from the corresponding custom resource (CR). If you configure the <code>ignore-unspecified-fields</code> to <code>true</code>, all fields that are present in the CR, but not in the template, are excluded from the merge. Use this approach when you want to focus the comparison on the fields specified in the template only.</p>
 </div>
 <div class="ulist">
@@ -3585,9 +3633,9 @@ parts:
 </ul>
 </div>
 </div>
-<div class="sect5">
-<h6 id="cluster-compare-ignore-default-fields_cc-create-reference">Excluding specific fields by setting default exclusion fields</h6>
-<div class="paragraph">
+<div class="sect4">
+<h5 id="cluster-compare-ignore-default-fields_cc-create-reference">Excluding specific fields by setting default exclusion fields</h5>
+<div class="paragraph _abstract">
 <p>You can exclude fields by defining a default value for <code>fieldsToOmitRefs</code> in the <code>defaultOmitRef</code> field. This default exclusion applies to all templates, unless overridden by the <code>config.fieldsToOmitRefs</code> field for a specific template.</p>
 </div>
 <div class="ulist">
@@ -3595,8 +3643,10 @@ parts:
 <ul>
 <li>
 <p>Create a <code>metadata.yaml</code> file to match your use case. Use the following structure as an example:</p>
+<div class="paragraph">
+<p>Example <code>metadata.yaml</code> file:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example metadata.yaml file</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v2
 parts:
@@ -3629,9 +3679,9 @@ fieldsToOmit:
 </ul>
 </div>
 </div>
-<div class="sect5">
-<h6 id="cluster-compare-ignore-specified-fields_cc-create-reference">Excluding specific fields</h6>
-<div class="paragraph">
+<div class="sect4">
+<h5 id="cluster-compare-ignore-specified-fields_cc-create-reference">Excluding specific fields</h5>
+<div class="paragraph _abstract">
 <p>You can specify fields to exclude by defining the path to the field, and then referencing the definition in the <code>config</code> section for a template.</p>
 </div>
 <div class="ulist">
@@ -3639,8 +3689,10 @@ fieldsToOmit:
 <ul>
 <li>
 <p>Create a <code>metadata.yaml</code> file to match your use case. Use the following structure as an example:</p>
+<div class="paragraph">
+<p>Example <code>metadata.yaml</code> file:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example metadata.yaml file</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v2
 parts:
@@ -3693,9 +3745,9 @@ fieldsToOmit:
 </ul>
 </div>
 </div>
-<div class="sect5">
-<h6 id="cluster-compare-ignore-default-groups_cc-create-reference">Excluding specific fields by setting default exclusion groups</h6>
-<div class="paragraph">
+<div class="sect4">
+<h5 id="cluster-compare-ignore-default-groups_cc-create-reference">Excluding specific fields by setting default exclusion groups</h5>
+<div class="paragraph _abstract">
 <p>You can create default groups of fields to exclude. A group of exclusions can reference another group to avoid duplication when defining exclusions.</p>
 </div>
 <div class="ulist">
@@ -3703,8 +3755,10 @@ fieldsToOmit:
 <ul>
 <li>
 <p>Create a <code>metadata.yaml</code> file to match your use case. Use the following structure as an example:</p>
+<div class="paragraph">
+<p>Example <code>metadata.yaml</code> file:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example metadata.yaml file</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v2
 parts:
@@ -3742,7 +3796,6 @@ fieldsToOmit:
 </ul>
 </div>
 </div>
-</div>
 <div class="sect4">
 <h5 id="cluster-compare-configure-inline-diff_cc-create-reference">Configuring inline validation for template fields</h5>
 <div class="paragraph _abstract">
@@ -3764,9 +3817,10 @@ fieldsToOmit:
 <div class="paragraph">
 <p>When you use either the <code>regex</code> or <code>capturegroups</code> function for inline validation, the <code>cluster-compare</code> plugin enforces that identically named capture groups have the same values across multiple fields within a template. This means that if a named capture group, such as <code>(?&lt;username&gt;[a-z0-9]+)</code>, appears in multiple fields, the values for that group must be consistent throughout the template.</p>
 </div>
-<div class="sect5">
-<h6 id="cluster-compare-configure-regex_cc-create-reference">Configuring inline validation with the regex function</h6>
-<div class="paragraph">
+</div>
+<div class="sect4">
+<h5 id="cluster-compare-configure-regex_cc-create-reference">Configuring inline validation with the regex function</h5>
+<div class="paragraph _abstract">
 <p>Use the <code>regex</code> inline function to validate fields using regular expressions.</p>
 </div>
 <div class="olist arabic">
@@ -3824,9 +3878,9 @@ data:
 </ol>
 </div>
 </div>
-<div class="sect5">
-<h6 id="cluster-compare-configure-capturegroups_cc-create-reference">Configuring inline validation with the capturegroups function</h6>
-<div class="paragraph">
+<div class="sect4">
+<h5 id="cluster-compare-configure-capturegroups_cc-create-reference">Configuring inline validation with the capturegroups function</h5>
+<div class="paragraph _abstract">
 <p>Use the <code>capturegroups</code> inline function for more precise validation of fields featuring multi-line strings. This function also ensures that identically named capture groups have the same values across multiple fields.</p>
 </div>
 <div class="olist arabic">
@@ -3894,9 +3948,6 @@ data:
 <div class="paragraph">
 <p>If the username value captured in the <code>data.username</code> field does not match the value captured in <code>bigTextBlock</code>, the <code>cluster-compare</code> plugin warns you about the inconsistent matching.</p>
 </div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>The following is example output with a warning about the inconsistent matching:</p>
 </div>
@@ -3905,6 +3956,8 @@ data:
 <pre class="highlight"><code class="language-terminal" data-lang="terminal">WARNING: Capturegroup (?&lt;username&gt;…) matched multiple values: « mismatchuser | exampleuser »</code></pre>
 </div>
 </div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect4">
@@ -4059,9 +4112,10 @@ parts:
 </li>
 </ul>
 </div>
-<div class="sect5">
-<h6 id="_using_the_cluster_compare_plugin_to_generate_a_patch">Using the cluster-compare plugin to generate a patch</h6>
-<div class="paragraph">
+</div>
+<div class="sect4">
+<h5 id="cluster-compare-generate-patch_cc-customize-advanced">Using the cluster-compare plugin to generate a patch</h5>
+<div class="paragraph _abstract">
 <p>You can use the <code>cluster-compare</code> plugin to generate a patch for specific template files. The plugin adjusts the template to ensure it matches with the cluster custom resource (CR). Any previously valid differences in the patched template are not reported. The plugin highlights the patched files in the output.</p>
 </div>
 <div class="olist arabic">
@@ -4110,8 +4164,10 @@ parts:
 </li>
 <li>
 <p>Optional: Review the patch file before applying to the reference configuration:</p>
+<div class="paragraph">
+<p>Example <code>patch-config</code> file:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example <code>patch-config</code> file</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">- apiVersion: storage.k8s.io/v1
   kind: StorageClass
@@ -4156,12 +4212,6 @@ parts:
 </li>
 <li>
 <p><code>-p</code> specifies the path to the patch file.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>The following is example output:</p>
 </div>
@@ -4184,10 +4234,16 @@ Metadata Hash: bb2165004c496b32e0c8509428fb99c653c3cf4fba41196ea6821bd05c3083ab
 Cluster CRs with patches applied: 1</code></pre>
 </div>
 </div>
+</li>
+</ul>
 </div>
-<div class="sect5">
-<h6 id="_creating_a_patch_file_manually">Creating a patch file manually</h6>
-<div class="paragraph">
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="cluster-compare-create-patch-manually_cc-customize-advanced">Creating a patch file manually</h5>
+<div class="paragraph _abstract">
 <p>You can write a patch file to handle expected deviations in a cluster configuration.</p>
 </div>
 <div class="admonitionblock note">
@@ -4225,8 +4281,10 @@ Cluster CRs with patches applied: 1</code></pre>
 <ol class="arabic">
 <li>
 <p>Create a patch file to match your use case. Use the following structure as an example:</p>
+<div class="paragraph">
+<p>Example <code>patch-config</code>:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example <code>patch-config</code></div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">- apiVersion: v1
   kind: Namespace
@@ -4303,12 +4361,6 @@ Cluster CRs with patches applied: 1</code></pre>
 </li>
 <li>
 <p><code>p</code> specifies the path to the patch file.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>The following is example output:</p>
 </div>
@@ -4333,6 +4385,11 @@ Metadata Hash: bb2165004c496b32e0c8509428fb99c653c3cf4fba41196ea6821bd05c3083ab
 Cluster CRs with patches applied: 1</code></pre>
 </div>
 </div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -4395,7 +4452,7 @@ Cluster CRs with patches applied: 1</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>

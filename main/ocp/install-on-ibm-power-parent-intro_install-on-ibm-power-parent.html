@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="install-on-ibm-power-parent-intro_install-on-ibm-power-parent" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -841,6 +886,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -6196,10 +6243,10 @@ page, the recommended way to obtain the correct version of your RHCOS images are
 <div class="listingblock">
 <div class="title">Example output</div>
 <div class="content">
-<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">"location": "&lt;url&gt;/art/storage/releases/rhcos-4.22-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live.aarch64.iso",
-"location": "&lt;url&gt;/art/storage/releases/rhcos-4.22-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live.ppc64le.iso",
-"location": "&lt;url&gt;/art/storage/releases/rhcos-4.22-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live.s390x.iso",
-"location": "&lt;url&gt;/art/storage/releases/rhcos-4.22/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live.x86_64.iso",</code></pre>
+<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">"location": "&lt;url&gt;/art/storage/releases/rhcos-5.0-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live.aarch64.iso",
+"location": "&lt;url&gt;/art/storage/releases/rhcos-5.0-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live.ppc64le.iso",
+"location": "&lt;url&gt;/art/storage/releases/rhcos-5.0-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live.s390x.iso",
+"location": "&lt;url&gt;/art/storage/releases/rhcos-5.0/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live.x86_64.iso",</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -6825,18 +6872,18 @@ from the output of <code>openshift-install</code> command:</p>
 <div class="listingblock">
 <div class="title">Example output</div>
 <div class="content">
-<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">"&lt;url&gt;/art/storage/releases/rhcos-4.22-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-kernel-aarch64"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-initramfs.aarch64.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-rootfs.aarch64.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-ppc64le/49.84.202110081256-0/ppc64le/rhcos-&lt;release&gt;-live-kernel-ppc64le"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live-initramfs.ppc64le.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live-rootfs.ppc64le.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-kernel-s390x"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-initramfs.s390x.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-rootfs.s390x.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-kernel-x86_64"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-initramfs.x86_64.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-rootfs.x86_64.img"</code></pre>
+<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">"&lt;url&gt;/art/storage/releases/rhcos-5.0-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-kernel-aarch64"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-initramfs.aarch64.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-rootfs.aarch64.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-ppc64le/49.84.202110081256-0/ppc64le/rhcos-&lt;release&gt;-live-kernel-ppc64le"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live-initramfs.ppc64le.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live-rootfs.ppc64le.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-kernel-s390x"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-initramfs.s390x.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-rootfs.s390x.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-kernel-x86_64"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-initramfs.x86_64.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-rootfs.x86_64.img"</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -12061,10 +12108,10 @@ page, the recommended way to obtain the correct version of your RHCOS images are
 <div class="listingblock">
 <div class="title">Example output</div>
 <div class="content">
-<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">"location": "&lt;url&gt;/art/storage/releases/rhcos-4.22-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live.aarch64.iso",
-"location": "&lt;url&gt;/art/storage/releases/rhcos-4.22-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live.ppc64le.iso",
-"location": "&lt;url&gt;/art/storage/releases/rhcos-4.22-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live.s390x.iso",
-"location": "&lt;url&gt;/art/storage/releases/rhcos-4.22/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live.x86_64.iso",</code></pre>
+<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">"location": "&lt;url&gt;/art/storage/releases/rhcos-5.0-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live.aarch64.iso",
+"location": "&lt;url&gt;/art/storage/releases/rhcos-5.0-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live.ppc64le.iso",
+"location": "&lt;url&gt;/art/storage/releases/rhcos-5.0-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live.s390x.iso",
+"location": "&lt;url&gt;/art/storage/releases/rhcos-5.0/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live.x86_64.iso",</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -12690,18 +12737,18 @@ from the output of <code>openshift-install</code> command:</p>
 <div class="listingblock">
 <div class="title">Example output</div>
 <div class="content">
-<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">"&lt;url&gt;/art/storage/releases/rhcos-4.22-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-kernel-aarch64"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-initramfs.aarch64.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-rootfs.aarch64.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-ppc64le/49.84.202110081256-0/ppc64le/rhcos-&lt;release&gt;-live-kernel-ppc64le"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live-initramfs.ppc64le.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live-rootfs.ppc64le.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-kernel-s390x"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-initramfs.s390x.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-rootfs.s390x.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-kernel-x86_64"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-initramfs.x86_64.img"
-"&lt;url&gt;/art/storage/releases/rhcos-4.22/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-rootfs.x86_64.img"</code></pre>
+<pre class="highlight nowrap"><code class="language-terminal" data-lang="terminal">"&lt;url&gt;/art/storage/releases/rhcos-5.0-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-kernel-aarch64"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-initramfs.aarch64.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-aarch64/&lt;release&gt;/aarch64/rhcos-&lt;release&gt;-live-rootfs.aarch64.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-ppc64le/49.84.202110081256-0/ppc64le/rhcos-&lt;release&gt;-live-kernel-ppc64le"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live-initramfs.ppc64le.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-ppc64le/&lt;release&gt;/ppc64le/rhcos-&lt;release&gt;-live-rootfs.ppc64le.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-kernel-s390x"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-initramfs.s390x.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0-s390x/&lt;release&gt;/s390x/rhcos-&lt;release&gt;-live-rootfs.s390x.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-kernel-x86_64"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-initramfs.x86_64.img"
+"&lt;url&gt;/art/storage/releases/rhcos-5.0/&lt;release&gt;/x86_64/rhcos-&lt;release&gt;-live-rootfs.x86_64.img"</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -26631,7 +26678,7 @@ cluster.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>

@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="install-on-azure-intro_install-on-azure" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -841,6 +886,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -10476,7 +10523,7 @@ it to install multiple clusters.</p>
 <p>See the following machine types based on 64-bit x86 architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -10488,7 +10535,7 @@ it to install multiple clusters.</p>
 <p>See the following machine types based on 64-bit ARM architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -14659,7 +14706,7 @@ it to install multiple clusters.</p>
 <p>See the following machine types based on 64-bit x86 architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -14671,7 +14718,7 @@ it to install multiple clusters.</p>
 <p>See the following machine types based on 64-bit ARM architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -17264,7 +17311,7 @@ cluster.</p>
 <p>See the following machine types based on 64-bit x86 architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -17276,7 +17323,7 @@ cluster.</p>
 <p>See the following machine types based on 64-bit ARM architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -20110,7 +20157,7 @@ cluster.</p>
 <p>See the following machine types based on 64-bit x86 architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -22095,7 +22142,7 @@ it to install multiple clusters.</p>
 <p>See the following machine types based on 64-bit x86 architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -22107,7 +22154,7 @@ it to install multiple clusters.</p>
 <p>See the following machine types based on 64-bit ARM architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -25845,7 +25892,7 @@ See <a href="https://access.redhat.com/articles/rhel-limits">Red Hat Enterprise 
 <p>See the following machine types based on 64-bit x86 architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -25857,7 +25904,7 @@ See <a href="https://access.redhat.com/articles/rhel-limits">Red Hat Enterprise 
 <p>See the following machine types based on 64-bit ARM architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md</a></p>
 </div>
 </div>
 </div>
@@ -27623,7 +27670,7 @@ VNet that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/01_vnet.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/01_vnet.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -27711,7 +27758,7 @@ describes the image storage that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/02_storage.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/02_storage.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -28288,7 +28335,7 @@ resource group where the public DNS zone exists.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/03_infra.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/03_infra.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -28400,7 +28447,7 @@ describes the bootstrap machine that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/04_bootstrap.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/04_bootstrap.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -28497,7 +28544,7 @@ This template describes the control plane machines that your cluster requires.</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/05_masters.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/05_masters.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -28713,7 +28760,7 @@ template describes the worker machines that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/06_workers.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/06_workers.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -31367,7 +31414,7 @@ See <a href="https://access.redhat.com/articles/rhel-limits">Red Hat Enterprise 
 <p>See the following machine types based on 64-bit x86 architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_x86_64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_x86_64.md</a></p>
 </div>
 </div>
 <div class="sect5">
@@ -31379,7 +31426,7 @@ See <a href="https://access.redhat.com/articles/rhel-limits">Red Hat Enterprise 
 <p>See the following machine types based on 64-bit ARM architecture:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-4.22/docs/user/azure/tested_instance_types_aarch64.md</a></p>
+<p><a href="https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md" class="bare include">https://raw.githubusercontent.com/openshift/installer/release-5.0/docs/user/azure/tested_instance_types_aarch64.md</a></p>
 </div>
 </div>
 </div>
@@ -33225,7 +33272,7 @@ VNet that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/01_vnet.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/01_vnet.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -33313,7 +33360,7 @@ describes the image storage that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/02_storage.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/02_storage.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -33890,7 +33937,7 @@ resource group where the public DNS zone exists.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/03_infra.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/03_infra.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -34002,7 +34049,7 @@ describes the bootstrap machine that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/04_bootstrap.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/04_bootstrap.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -34099,7 +34146,7 @@ This template describes the control plane machines that your cluster requires.</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/05_masters.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/05_masters.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -34301,7 +34348,7 @@ template describes the worker machines that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azure/06_workers.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azure/06_workers.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -42878,7 +42925,7 @@ VNet that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azurestack/01_vnet.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azurestack/01_vnet.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -42966,7 +43013,7 @@ describes the image storage that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azurestack/02_storage.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azurestack/02_storage.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -43566,7 +43613,7 @@ record in it instead:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azurestack/03_infra.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azurestack/03_infra.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -43695,7 +43742,7 @@ describes the bootstrap machine that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azurestack/04_bootstrap.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azurestack/04_bootstrap.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -43778,7 +43825,7 @@ This template describes the control plane machines that your cluster requires.</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azurestack/05_masters.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azurestack/05_masters.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -43966,7 +44013,7 @@ template describes the worker machines that your cluster requires.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-4.22/upi/azurestack/06_workers.json[role=include]</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">link:https://raw.githubusercontent.com/openshift/installer/release-5.0/upi/azurestack/06_workers.json[role=include]</code></pre>
 </div>
 </div>
 </div>
@@ -44381,7 +44428,7 @@ prometheus-k8s-openshift-monitoring.apps.cluster.basedomain.com</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>

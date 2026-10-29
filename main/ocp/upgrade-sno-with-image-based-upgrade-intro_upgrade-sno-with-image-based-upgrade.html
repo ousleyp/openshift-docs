@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="upgrade-sno-with-image-based-upgrade-intro_upgrade-sno-with-image-based-upgrade" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -841,6 +886,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -4493,8 +4540,10 @@ spec:
 <div class="paragraph">
 <p>The <code>source-crs/ibu/PlatformBackupRestoreWithIBGU.yaml</code> file is provided in the ZTP container image.</p>
 </div>
+<div class="paragraph">
+<p><code>PlatformBackupRestoreWithIBGU.yaml</code>:</p>
+</div>
 <div class="listingblock">
-<div class="title">PlatformBackupRestoreWithIBGU.yaml</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
 kind: Backup
@@ -4564,8 +4613,10 @@ spec:
 <div class="paragraph">
 <p>If you use LVM Storage to create persistent volumes, you can use the <code>source-crs/ibu/PlatformBackupRestoreLvms.yaml</code> provided in the ZTP container image to back up your LVM Storage resources.</p>
 </div>
+<div class="paragraph">
+<p><code>PlatformBackupRestoreLvms.yaml</code>:</p>
+</div>
 <div class="listingblock">
-<div class="title">PlatformBackupRestoreLvms.yaml</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
 kind: Backup
@@ -4612,8 +4663,12 @@ spec:
 <ol class="loweralpha" type="a">
 <li>
 <p>Create the OADP CRs for cluster-scoped application artifacts in the <code>openshift-adp</code> namespace:</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Example OADP CRs for cluster-scoped application artifacts for LSO and LVM Storage:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example OADP CRs for cluster-scoped application artifacts for LSO and LVM Storage</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
 kind: Backup
@@ -4647,23 +4702,22 @@ spec:
     backup-app-cluster-resources</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Replace the example resource names in the <code>lca.openshift.io/apply-label</code> field with your actual resources.</p>
-</li>
-<li>
-<p>The value in the <code>lca.openshift.io/apply-wave</code> field must be higher than the value in the platform <code>Restore</code> CRs and lower than the value in the application namespace-scoped <code>Restore</code> CR.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>+
+*  Replace the example resource names in the <code>lca.openshift.io/apply-label</code> field with your actual resources.
+* The value in the <code>lca.openshift.io/apply-wave</code> field must be higher than the value in the platform <code>Restore</code> CRs and lower than the value in the application namespace-scoped <code>Restore</code> CR.</p>
+</div>
+</div>
 </div>
 </li>
 <li>
 <p>Create the OADP CRs for your namespace-scoped application artifacts in the <code>source-crs/custom-crs</code> directory:</p>
 <div class="openblock">
 <div class="content">
+<div class="paragraph">
+<p>Example OADP CRs namespace-scoped application artifacts when LSO is used:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example OADP CRs namespace-scoped application artifacts when LSO is used</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
 kind: Backup
@@ -4710,8 +4764,10 @@ spec:
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Example OADP CRs namespace-scoped application artifacts when LVM Storage is used:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example OADP CRs namespace-scoped application artifacts when LVM Storage is used</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: velero.io/v1
 kind: Backup
@@ -6466,7 +6522,7 @@ spec:
 </div>
 </div>
 <div class="paragraph">
-<p>Where:</p>
+<p>where:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -6475,9 +6531,6 @@ spec:
 </li>
 <li>
 <p><code>seedImageRef</code>: Target platform version, the seed image, and the secret required to access the image.</p>
-</li>
-</ul>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -6492,8 +6545,7 @@ spec:
 </tr>
 </table>
 </div>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p><code>extraManifests</code>: Optional: Applies additional manifests, which are not in the seed image, to the target cluster. Also applies <code>ConfigMap</code> objects for custom catalog sources.</p>
 </li>
@@ -6525,8 +6577,10 @@ spec:
 <pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get ibgu -o yaml</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Example output:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example output</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml"># ...
 status:
@@ -6630,8 +6684,10 @@ The TALM deletes the resources that are related to the upgrade on the selected c
 <pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get ibgu -o yaml</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Example output:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example output</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml"># ...
 status:
@@ -6797,8 +6853,10 @@ spec:
 <pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get ibgu -o yaml</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Example output:</p>
+</div>
 <div class="listingblock">
-<div class="title">Example output</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml"># ...
 status:
@@ -7028,8 +7086,11 @@ spec:
 <pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get ibgu -o yaml</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>+
+.Example output</p>
+</div>
 <div class="listingblock">
-<div class="title">Example output</div>
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml"># ...
 status:
@@ -7061,7 +7122,7 @@ status:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>

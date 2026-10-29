@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="configure-ptp-clock-synchronization-intro_configure-ptp-clock-synchronization" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -842,6 +887,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -2398,10 +2445,17 @@ The DPLL continuously adjusts the local clock frequency and phase to minimize th
 <div class="paragraph">
 <p>A leap second is a one-second adjustment that is occasionally applied to Coordinated Universal Time (UTC) to keep it synchronized with International Atomic Time (TAI).
 UTC leap seconds are unpredictable.
-Internationally agreed leap seconds are listed in <a href="https://hpiers.obspm.fr/iers/bul/bulc/ntp/leap-seconds.list">leap-seconds.list</a>.
-This file is regularly updated by the International Earth Rotation and Reference Systems Service (IERS).
+Internationally agreed leap seconds are listed in the <code>leap-seconds.list</code> file, which is regularly updated by the International Earth Rotation and Reference Systems Service (IERS).
 An unhandled leap second can have a significant impact on far edge RAN networks.
 It can cause the far edge RAN application to immediately disconnect voice calls and data sessions.</p>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://hpiers.obspm.fr/iers/bul/bulc/ntp/leap-seconds.list">leap-seconds.list</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2882,7 +2936,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 911. PTP ordinary clock CR configuration options</caption>
+<caption class="title">Table 913. PTP ordinary clock CR configuration options</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3206,7 +3260,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 912. PTP boundary clock CR configuration options</caption>
+<caption class="title">Table 914. PTP boundary clock CR configuration options</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5358,7 +5412,7 @@ t-bc   10s</code></pre>
 <p>The following table describes the time receiver (TR) profile parameters used in the dual-port high availability configuration.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 913. Time receiver (TR) profile parameters for dual-port high availability</caption>
+<caption class="title">Table 915. Time receiver (TR) profile parameters for dual-port high availability</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 20%;">
@@ -5441,7 +5495,7 @@ t-bc   10s</code></pre>
 <p>The following table describes the time transmitter (TT) profile parameters used in the dual-port high availability configuration.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 914. Time transmitter (TT) profile parameters</caption>
+<caption class="title">Table 916. Time transmitter (TT) profile parameters</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 20%;">
@@ -5484,7 +5538,7 @@ t-bc   10s</code></pre>
 <p>The following table describes the individual <code>phc2sys</code> flags used in the dual time receiver port configuration.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 915. phc2sys flags for dual time receiver port high availability</caption>
+<caption class="title">Table 917. phc2sys flags for dual time receiver port high availability</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -5562,7 +5616,7 @@ t-bc   10s</code></pre>
 <p>The following table describes the time receiver (TR) profile parameters used in the dual-port high availability configuration on a GNR-D platform.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 916. Time receiver (TR) profile parameters for dual-port high availability on GNR-D</caption>
+<caption class="title">Table 918. Time receiver (TR) profile parameters for dual-port high availability on GNR-D</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 20%;">
@@ -5620,7 +5674,7 @@ t-bc   10s</code></pre>
 <p>The following table describes the time transmitter (TT) profile parameters used in the dual-port high availability configuration on a GNR-D platform.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 917. Time transmitter (TT) profile parameters</caption>
+<caption class="title">Table 919. Time transmitter (TT) profile parameters</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 20%;">
@@ -5663,7 +5717,7 @@ t-bc   10s</code></pre>
 <p>The following table describes the individual <code>phc2sys</code> flags used in the dual time receiver port configuration on a GNR-D platform.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 918. phc2sys flags for dual time receiver port high availability on GNR-D</caption>
+<caption class="title">Table 920. phc2sys flags for dual time receiver port high availability on GNR-D</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -5716,7 +5770,7 @@ t-bc   10s</code></pre>
 <p>The following table describes the <code>HardwareConfig</code> CR parameters used for dual time receiver port high availability on a GNR-D platform.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 919. HardwareConfig parameters for dual-port high availability on GNR-D</caption>
+<caption class="title">Table 921. HardwareConfig parameters for dual-port high availability on GNR-D</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 20%;">
@@ -5774,7 +5828,7 @@ t-bc   10s</code></pre>
 <p>The following table describes the <code>openshift_ptp_interface_role</code> metric values that you use to identify active and standby time receiver ports on a GNR-D platform.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 920. openshift_ptp_interface_role metric values</caption>
+<caption class="title">Table 922. openshift_ptp_interface_role metric values</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 28.5714%;">
@@ -11474,7 +11528,7 @@ Use the binary value to decode the firmware version.
 For example:</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 921. DPLL firmware version</caption>
+<caption class="title">Table 923. DPLL firmware version</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -12050,7 +12104,7 @@ $GPGSV,3,1,10,04,12,039,41,05,31,222,46,06,50,064,48,09,28,064,42,1*62</code></p
 The Intel E810 NIC has four connectors for external 1PPS signals: <code>SMA1</code>, <code>SMA2</code>, <code>U.FL1</code>, and <code>U.FL2</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 922. Intel E810 NIC hardware connectors configuration</caption>
+<caption class="title">Table 924. Intel E810 NIC hardware connectors configuration</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -12211,7 +12265,7 @@ To get the required delay offset value, you must measure the cable delay using e
 <p>The following table describes the equivalent <code>ubxtool</code> commands:</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 923. Intel E810 ublxCmds configuration</caption>
+<caption class="title">Table 925. Intel E810 ublxCmds configuration</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -12272,7 +12326,7 @@ Various factors such as cable length, ambient temperature, and component and man
 To compensate for the delay, you must calculate the specific value that you use to offset the signal delay.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 924. E810 dual-NIC T-GM PtpConfig CR reference</caption>
+<caption class="title">Table 926. E810 dual-NIC T-GM PtpConfig CR reference</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -12388,7 +12442,7 @@ Various factors such as cable length, ambient temperature, and component and man
 To compensate for the delay, you must calculate the specific value that you use to offset the signal delay.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 925. 3-card E810 T-GM PtpConfig CR reference</caption>
+<caption class="title">Table 927. 3-card E810 T-GM PtpConfig CR reference</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -12456,7 +12510,7 @@ The value that you configure depends on your specific measurements and SMA1 cabl
 <p>Holdover specification is the amount of time a PTP clock can maintain synchronization without receiving updates from the primary time source.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 926. T-GM clock class states</caption>
+<caption class="title">Table 928. T-GM clock class states</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -12494,7 +12548,7 @@ The clock source might not be traceable to a category 1 frequency source.</p></t
 <p>The following reference information describes the configuration options for the <code>PtpConfig</code> custom resource (CR) that configures the <code>linuxptp</code> services (<code>ptp4l</code>, <code>phc2sys</code>, <code>ts2phc</code>) as a grandmaster clock.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 927. PtpConfig configuration options for PTP Grandmaster clock</caption>
+<caption class="title">Table 929. PtpConfig configuration options for PTP Grandmaster clock</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -12653,7 +12707,7 @@ For example, <code>compute-1.example.com</code>.</p></td>
 <p>The following table describes the changes that you must make to the reference PTP configuration to use Intel Columbiaville E800 series NICs as ordinary clocks. Make the changes in a <code>PtpConfig</code> custom resource (CR) that you apply to the cluster.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 928. Recommended PTP settings for Intel Columbiaville NIC</caption>
+<caption class="title">Table 930. Recommended PTP settings for Intel Columbiaville NIC</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -12708,7 +12762,7 @@ For example, <code>compute-1.example.com</code>.</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>

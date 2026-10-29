@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="validate-telco-configuration-compliance-intro_validate-telco-configuration-compliance" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -842,6 +887,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -1873,7 +1920,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#cnf-performing-end-to-end-tests-image-parameters_validate-telco-configuration-compliance">Configuring the tests to consume images from a custom registry</a></li><li class="level-4"><a href="#cnf-performing-end-to-end-tests-mirroring-images-to-custom-registry_validate-telco-configuration-compliance">Mirroring the images to a custom registry accessible from the cluster</a></li><li class="level-4"><a href="#cnf-performing-end-to-end-tests-mirroring-to-cluster-internal-registry_validate-telco-configuration-compliance">Mirroring images to the cluster OpenShift image registry</a></li><li class="level-4"><a href="#mirroring-different-set-of-images_validate-telco-configuration-compliance">Mirroring a different set of test images</a></li><li class="level-4"><a href="#using-cluster-compare-telco_hub_validate-telco-configuration-compliance">Comparing a cluster with the {rds} reference configuration</a></li><li class="level-4"><a href="#using-cluster-compare-telco-ran_validate-telco-configuration-compliance">Comparing a cluster with the {rds} reference configuration</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#cnf-performing-end-to-end-tests-image-parameters_validate-telco-configuration-compliance">Configuring the tests to consume images from a custom registry</a></li><li class="level-4"><a href="#cnf-performing-end-to-end-tests-mirroring-images-to-custom-registry_validate-telco-configuration-compliance">Mirroring the images to a custom registry accessible from the cluster</a></li><li class="level-4"><a href="#cnf-performing-end-to-end-tests-mirroring-to-cluster-internal-registry_validate-telco-configuration-compliance">Mirroring images to the cluster OpenShift image registry</a></li><li class="level-4"><a href="#mirroring-different-set-of-images_validate-telco-configuration-compliance">Mirroring a different set of test images</a></li><li class="level-4"><a href="#using-cluster-compare-telco_hub_validate-telco-configuration-compliance">Comparing a cluster with the telco hub reference configuration</a></li><li class="level-4"><a href="#using-cluster-compare-telco-ran_validate-telco-configuration-compliance">Comparing a cluster with the telco RAN DU reference configuration</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="validate-telco-configuration-compliance-intro_validate-telco-configuration-compliance">Validate telco configuration compliance</h3>
@@ -2102,21 +2149,21 @@ registry.redhat.io/openshift4/cnf-tests-rhel9:v{product-version} /usr/bin/mirror
 </div>
 </div>
 <div class="sect3">
-<h4 id="using-cluster-compare-telco_hub_validate-telco-configuration-compliance">Comparing a cluster with the {rds} reference configuration</h4>
+<h4 id="using-cluster-compare-telco_hub_validate-telco-configuration-compliance">Comparing a cluster with the telco hub reference configuration</h4>
 <div class="paragraph _abstract">
-<p>After you deploy a {rds} cluster, you can use the <code>cluster-compare</code> plugin to assess the cluster&#8217;s compliance with the {rds} reference design specifications (RDS).</p>
+<p>After you deploy a telco hub cluster, you can use the <code>cluster-compare</code> plugin to assess the cluster&#8217;s compliance with the telco hub reference design specifications (RDS).</p>
 </div>
 <div class="paragraph">
-<p>The <code>cluster-compare</code> plugin is an OpenShift CLI (<code>oc</code>) plugin. The plugin uses a {rds} reference configuration to validate the cluster with the {rds} custom resources (CRs).</p>
+<p>The <code>cluster-compare</code> plugin is an OpenShift CLI (<code>oc</code>) plugin. The plugin uses a telco hub reference configuration to validate the cluster with the telco hub custom resources (CRs).</p>
 </div>
 <div class="paragraph">
-<p>The plugin-specific reference configuration for {rds} is packaged in a container image with the {rds} CRs.</p>
+<p>The plugin-specific reference configuration for telco hub is packaged in a container image with the telco hub CRs.</p>
 </div>
 <div class="paragraph">
 <p>For further information about the <code>cluster-compare</code> plugin, see "Understanding the cluster-compare plugin".</p>
 </div>
 <div class="paragraph">
-<p>The following example shows how to compare the configuration of a cluster to the {rds} reference configuration by using <code>must-gather</code> data.</p>
+<p>The following example shows how to compare the configuration of a cluster to the telco hub reference configuration by using <code>must-gather</code> data.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2126,7 +2173,7 @@ registry.redhat.io/openshift4/cnf-tests-rhel9:v{product-version} /usr/bin/mirror
 </td>
 <td class="content">
 <div class="paragraph">
-<p>When comparing a cluster to the {rds} reference configuration by using <code>must-gather</code> data, you must use the <code>--all-images</code> flag when generating the <code>must-gather</code> data. You must also collect cluster-scoped resource information, as well as Operator and registry configurations. Without this data, the plugin might report false positives.</p>
+<p>When comparing a cluster to the telco hub reference configuration by using <code>must-gather</code> data, you must use the <code>--all-images</code> flag when generating the <code>must-gather</code> data. You must also collect cluster-scoped resource information and Operator and registry configurations. Without this data, the plugin might report false positives.</p>
 </div>
 </td>
 </tr>
@@ -2145,7 +2192,7 @@ registry.redhat.io/openshift4/cnf-tests-rhel9:v{product-version} /usr/bin/mirror
 <p>You installed the <code>cluster-compare</code> plugin.</p>
 </li>
 <li>
-<p>You extracted the {rds} reference configuration from the <code>openshift-telco-hub-rds-rhel9</code> container image.</p>
+<p>You extracted the telco hub reference configuration from the <code>openshift-telco-hub-rds-rhel9</code> container image.</p>
 </li>
 </ul>
 </div>
@@ -2162,7 +2209,7 @@ registry.redhat.io/openshift4/cnf-tests-rhel9:v{product-version} /usr/bin/mirror
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>--all-images</code> flag ensures that the <code>must-gather</code> command collects all the data required by the {rds} reference configuration.</p>
+<p>The <code>--all-images</code> flag ensures that the <code>must-gather</code> command collects all the data required by the telco hub reference configuration.</p>
 </li>
 </ul>
 </div>
@@ -2290,15 +2337,15 @@ No patched CRs</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="using-cluster-compare-telco-ran_validate-telco-configuration-compliance">Comparing a cluster with the {rds} reference configuration</h4>
+<h4 id="using-cluster-compare-telco-ran_validate-telco-configuration-compliance">Comparing a cluster with the telco RAN DU reference configuration</h4>
 <div class="paragraph _abstract">
-<p>After you deploy a {rds} cluster, you can use the <code>cluster-compare</code> plugin to assess the cluster&#8217;s compliance with the {rds} reference design specifications (RDS).</p>
+<p>After you deploy a telco RAN DU cluster, you can use the <code>cluster-compare</code> plugin to assess the cluster&#8217;s compliance with the telco RAN DU reference design specifications (RDS).</p>
 </div>
 <div class="paragraph">
-<p>The <code>cluster-compare</code> plugin is an OpenShift CLI (<code>oc</code>) plugin. The plugin uses a {rds} reference configuration to validate the cluster with the {rds} custom resources (CRs).</p>
+<p>The <code>cluster-compare</code> plugin is an OpenShift CLI (<code>oc</code>) plugin. The plugin uses a telco RAN DU reference configuration to validate the cluster with the telco RAN DU custom resources (CRs).</p>
 </div>
 <div class="paragraph">
-<p>The plugin-specific reference configuration for {rds} is packaged in a container image with the {rds} CRs.</p>
+<p>The plugin-specific reference configuration for telco RAN DU is packaged in a container image with the telco RAN DU CRs.</p>
 </div>
 <div class="paragraph">
 <p>For further information about the <code>cluster-compare</code> plugin, see "Understanding the cluster-compare plugin".</p>
@@ -2481,7 +2528,7 @@ No patched CRs</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>

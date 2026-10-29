@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="use-developer-workflows-in-the-console-con_use-developer-workflows-in-the-console" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -842,6 +887,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -2060,7 +2107,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect3">
 <h4 id="odc-using-quickstarts_use-developer-workflows-in-the-console">Creating applications by using Quick Starts</h4>
-<div class="paragraph">
+<div class="paragraph _abstract">
 <p>The <strong>Quick Starts</strong> page shows you how to create, import, and run applications on Red&#160;Hat OpenShift Container Platform, with step-by-step instructions and tasks.</p>
 </div>
 <div class="ulist">
@@ -2753,8 +2800,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect3">
 <h4 id="odc-adding-components-to-an-existing-project_use-developer-workflows-in-the-console">Adding components to an existing project</h4>
-<div class="paragraph">
-<p>You can add components to a project.</p>
+<div class="paragraph _abstract">
+<p>You can add components or services to an existing project from the <strong>+Add</strong> view in the <strong>Developer</strong> perspective.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -2773,9 +2820,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="title">Figure 78. Adding component via quick search</div>
 </div>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p>Alternatively, you can also use the available  options in the context menu, such as <strong>Import from Git</strong>, <strong>Container Image</strong>, <strong>Database</strong>, <strong>From Catalog</strong>, <strong>Operator Backed</strong>, <strong>Helm Charts</strong>, <strong>Samples</strong>, or <strong>Upload JAR file</strong>, by right-clicking in the topology <strong>Graph view</strong> to add a component to your project.</p>
 </div>
@@ -2785,10 +2829,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="title">Figure 79. Context menu to add services</div>
 </div>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect3">
 <h4 id="odc-grouping-multiple-components_use-developer-workflows-in-the-console">Grouping multiple components within an application</h4>
-<div class="paragraph">
+<div class="paragraph _abstract">
 <p>You can use the <strong>+Add</strong> view to add multiple components or services to your project and use the topology <strong>Graph view</strong> to group applications and resources within an application group.</p>
 </div>
 <div class="ulist">
@@ -2810,9 +2857,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="title">Figure 80. Application grouping</div>
 </div>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <p>Alternatively, you can also add the component to an application as follows:</p>
 </div>
@@ -2829,16 +2873,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>Click <strong>Save</strong> to add the service to the application group.</p>
+<div class="paragraph">
+<p>You can remove a component from an application group by selecting the component and using <kbd>Shift</kbd>+ drag to drag it out of the application group.</p>
+</div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>You can remove a component from an application group by selecting the component and using <kbd>Shift</kbd>+ drag to drag it out of the application group.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="odc-adding-services-to-your-application_use-developer-workflows-in-the-console">Adding services to your application</h4>
-<div class="paragraph">
+<div class="paragraph _abstract">
 <p>To add a service to your application use the <strong>+Add</strong> actions using the context menu in the topology <strong>Graph view</strong>.</p>
 </div>
 <div class="admonitionblock note">
@@ -2878,7 +2925,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect3">
 <h4 id="odc-removing-services-from-your-application_use-developer-workflows-in-the-console">Removing services from your application</h4>
-<div class="paragraph">
+<div class="paragraph _abstract">
 <p>In the topology <strong>Graph view</strong> remove a service from your application using the context menu.</p>
 </div>
 <div class="olist arabic">
@@ -2901,6 +2948,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect3">
 <h4 id="odc-labels-and-annotations-used-for-topology-view_use-developer-workflows-in-the-console">Labels and annotations used for the Topology view</h4>
+<div class="paragraph _abstract">
+<p>The <strong>Topology</strong> view uses labels and annotations to display icons, source links, node connectors, and application groupings on the topology graph.</p>
+</div>
 <div class="paragraph">
 <p>The <strong>Topology</strong> view uses the following labels and annotations:</p>
 </div>
@@ -2924,12 +2974,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>For detailed information on the labels and annotations Red&#160;Hat OpenShift Container Platform applications must use, see <a href="https://github.com/redhat-developer/app-labels/blob/master/labels-annotation-for-openshift.adoc">Guidelines for labels and annotations for OpenShift applications</a>.</p>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://github.com/redhat-developer/app-labels/blob/master/labels-annotation-for-openshift.adoc">Guidelines for labels and annotations for OpenShift applications</a></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="installing-a-helm-chart-on-an-openshift-cluster_use-developer-workflows-in-the-console">Installing a Helm chart on an Red&#160;Hat OpenShift Container Platform cluster</h4>
+<div class="paragraph _abstract">
+<p>You can install a Helm chart on an Red&#160;Hat OpenShift Container Platform cluster using the Helm CLI.</p>
+</div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
@@ -3014,6 +3072,9 @@ example-vault	vault    	1       	2022-03-11 12:02:12.296226673 +0530 IST	deploye
 </div>
 <div class="sect3">
 <h4 id="creating-a-custom-helm-chart-on-openshift_use-developer-workflows-in-the-console">Creating a custom Helm chart on Red&#160;Hat OpenShift Container Platform</h4>
+<div class="paragraph _abstract">
+<p>You can create a custom Helm chart on Red&#160;Hat OpenShift Container Platform to package and deploy application resources using the Helm CLI.</p>
+</div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
 <ol class="arabic">
@@ -3045,36 +3106,39 @@ example-vault	vault    	1       	2022-03-11 12:02:12.296226673 +0530 IST	deploye
 <p>Edit the <code>Chart.yaml</code> file  and add a description of your chart:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v2 <img src="data:image/png;base64," alt="1">
-name: nodejs-ex-k <img src="data:image/png;base64," alt="2">
-description: A Helm chart for OpenShift <img src="data:image/png;base64," alt="3">
-icon: https://static.redhat.com/libs/redhat/brand-assets/latest/corp/logo.svg <img src="data:image/png;base64," alt="4">
-version: 0.2.1 <img src="data:image/png;base64," alt="5"></code></pre>
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v2
+name: nodejs-ex-k
+description: A Helm chart for OpenShift
+icon: https://static.redhat.com/libs/redhat/brand-assets/latest/corp/logo.svg
+version: 0.2.1</code></pre>
 </div>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><img src="data:image/png;base64," alt="1"></td>
-<td>The chart API version. It should be <code>v2</code> for Helm charts that require at least Helm 3.</td>
-</tr>
-<tr>
-<td><img src="data:image/png;base64," alt="2"></td>
-<td>The name of your chart.</td>
-</tr>
-<tr>
-<td><img src="data:image/png;base64," alt="3"></td>
-<td>The description of your chart.</td>
-</tr>
-<tr>
-<td><img src="data:image/png;base64," alt="4"></td>
-<td>The URL to an image to be used as an icon.</td>
-</tr>
-<tr>
-<td><img src="data:image/png;base64," alt="5"></td>
-<td>The Version of your chart as per the Semantic Versioning (SemVer) 2.0.0 Specification.</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>apiVersion</code></dt>
+<dd>
+<p>Specifies the chart API version. It should be <code>v2</code> for Helm charts that require at least Helm 3.</p>
+</dd>
+<dt class="hdlist1"><code>name</code></dt>
+<dd>
+<p>Specifies the name of your chart.</p>
+</dd>
+<dt class="hdlist1"><code>description</code></dt>
+<dd>
+<p>Specifies the description of your chart.</p>
+</dd>
+<dt class="hdlist1"><code>icon</code></dt>
+<dd>
+<p>Specifies the URL to an image to be used as an icon.</p>
+</dd>
+<dt class="hdlist1"><code>version</code></dt>
+<dd>
+<p>Specifies the version of your chart as per the Semantic Versioning (SemVer) 2.0.0 Specification.</p>
+</dd>
+</dl>
 </div>
 </li>
 <li>
@@ -3301,14 +3365,11 @@ azure-sample-repo        1m</pre>
 </div>
 <div class="sect3">
 <h4 id="creating-credentials-and-certificates-to-add-helm-repositories_use-developer-workflows-in-the-console">Creating credentials and CA certificates to add Helm chart repositories</h4>
-<div class="paragraph">
+<div class="paragraph _abstract">
 <p>Some Helm chart repositories need credentials and custom certificate authority (CA) certificates to connect to it. You can use the web console as well as the CLI to add credentials and certificates.</p>
 </div>
-<div class="paragraph">
-<div class="title">Procedure</div>
-<p>To configure the credentials and certificates, and then add a Helm chart repository using the CLI:</p>
-</div>
 <div class="olist arabic">
+<div class="title">Procedure</div>
 <ol class="arabic">
 <li>
 <p>In the <code>openshift-config</code> namespace, create a <code>ConfigMap</code> object with a custom CA certificate in PEM encoded format, and store it under the <code>ca-bundle.crt</code> key within the config map:</p>
@@ -3400,7 +3461,7 @@ EOF</code></pre>
 </div>
 <div class="sect3">
 <h4 id="filtering-helm-charts-by-certification-level_use-developer-workflows-in-the-console">Filtering Helm Charts by their certification level</h4>
-<div class="paragraph">
+<div class="paragraph _abstract">
 <p>You can filter Helm charts based on their certification level in the <strong>Developer Catalog</strong>.</p>
 </div>
 <div class="olist arabic">
@@ -3421,12 +3482,6 @@ EOF</code></pre>
 </li>
 <li>
 <p>Use the <strong>Source</strong> filter to filter charts sourced from <strong>Partners</strong>, <strong>Community</strong>, or <strong>Red Hat</strong>. Certified charts are indicated with the (<span class="image"><img src="data:image/png;base64," alt="odc verified icon" title="Certified icon"></span>) icon.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3444,10 +3499,16 @@ EOF</code></pre>
 <div class="paragraph">
 <p>You can now select the required chart and install it.</p>
 </div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect3">
 <h4 id="helm-disabling-helm-chart-repositories_use-developer-workflows-in-the-console">Disabling Helm Chart repositories</h4>
-<div class="paragraph">
+<div class="paragraph _abstract">
 <p>You can disable Helm Charts from a particular Helm Chart Repository in the catalog by setting the <code>disabled</code> property in the <code>HelmChartRepository</code> custom resource to <code>true</code>.</p>
 </div>
 <div class="ulist">
@@ -3916,7 +3977,7 @@ EOF</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>

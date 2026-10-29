@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="network-observability-operator_understand-network-observability-netobserv" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -842,6 +887,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -2787,7 +2834,7 @@ spec:
 </table>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 893. Shared cache parameters</caption>
+<caption class="title">Table 895. Shared cache parameters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 16.6666%;">
@@ -3051,7 +3098,7 @@ flowlogs-pipeline-informers-7d9f8b5c4d-xyz34   1/1     Running   0          5m</
 <p>If you only want to export flows to a Kafka consumer or IPFIX collector, or you only need dashboard metrics, then you do not need to install Loki or provide storage for Loki. The following table compares available features with and without Loki.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 894. Comparison of feature availability with and without Loki</caption>
+<caption class="title">Table 896. Comparison of feature availability with and without Loki</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3391,7 +3438,7 @@ flowlogs-pipeline-informers-7d9f8b5c4d-xyz34   1/1     Running   0          5m</
 <p>The query language uses the following syntax:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 895. Query language syntax</caption>
+<caption class="title">Table 897. Query language syntax</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3529,7 +3576,7 @@ spec:
 </ul>
 </div>
 <table id="network-observability-resource-recommendations-table_optimize-collection-performance-and-resource-usage" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 896. Resource recommendations for cluster sizes</caption>
+<caption class="title">Table 898. Resource recommendations for cluster sizes</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -3638,7 +3685,7 @@ spec:
 </table>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
-<caption class="title">Table 897. Total average resource usage</caption>
+<caption class="title">Table 899. Total average resource usage</caption>
 <colgroup>
 <col>
 <col>
@@ -3714,7 +3761,7 @@ spec:
 <p>Reference the required and optional parameters for configuring flow filter rules in the <code>FlowCollector</code> resource, including CIDR ranges, filter actions, protocols, and specific port configurations.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 898. Required configuration parameters</caption>
+<caption class="title">Table 900. Required configuration parameters</caption>
 <colgroup>
 <col style="width: 27.2727%;">
 <col style="width: 72.7273%;">
@@ -3808,7 +3855,7 @@ spec:
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 899. Optional configuration parameters</caption>
+<caption class="title">Table 901. Optional configuration parameters</caption>
 <colgroup>
 <col style="width: 27.2727%;">
 <col style="width: 72.7273%;">
@@ -4336,7 +4383,7 @@ spec:
 <p>This reference applies to compression configured in both <code>spec.kafka.compression</code> for flow collection and <code>spec.exporters</code> for flow export.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 900. Kafka compression codec comparison</caption>
+<caption class="title">Table 902. Kafka compression codec comparison</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 14.2857%;">
@@ -4505,7 +4552,7 @@ spec:
 <div class="openblock">
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 901. Fields for the <code>netobserv_io_network_health</code> annotation in recording rules</caption>
+<caption class="title">Table 903. Fields for the <code>netobserv_io_network_health</code> annotation in recording rules</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -4616,7 +4663,7 @@ spec:
 </ul>
 </div>
 <table id="network-observability-resource-recommendations-table_scale-components-based-on-cluster-size" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 902. Resource recommendations for cluster sizes</caption>
+<caption class="title">Table 904. Resource recommendations for cluster sizes</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4724,7 +4771,7 @@ spec:
 </table>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
-<caption class="title">Table 903. Total average resource usage</caption>
+<caption class="title">Table 905. Total average resource usage</caption>
 <colgroup>
 <col>
 <col>
@@ -6387,7 +6434,7 @@ spec:
 <p>The query language uses the following syntax:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 904. Query language syntax</caption>
+<caption class="title">Table 906. Query language syntax</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6481,7 +6528,7 @@ spec:
 <p>Here is a list of all available filter keys:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 905. Filter keys</caption>
+<caption class="title">Table 907. Filter keys</caption>
 <colgroup>
 <col style="width: 9.0909%;">
 <col style="width: 9.0909%;">
@@ -10109,7 +10156,7 @@ spec:
 <p>The optional <code>netobserv_io_network_health</code> annotation is a JSON string that controls how the alert renders on the <strong>Network Health</strong> page.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 906. Fields for the <code>netobserv_io_network_health</code> annotation</caption>
+<caption class="title">Table 908. Fields for the <code>netobserv_io_network_health</code> annotation</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -10365,7 +10412,7 @@ spec:
 <div class="openblock">
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 907. Fields for the <code>netobserv_io_network_health</code> annotation in recording rules</caption>
+<caption class="title">Table 909. Fields for the <code>netobserv_io_network_health</code> annotation in recording rules</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -13486,7 +13533,7 @@ netobserv-ebpf-agent-abc12              1/1     Running   0          2m</code></
 <p>Transport Layer Security (TLS) metadata fields track and define encryption protocols, protocol versions, and cipher suite data to help you analyze secure network flows.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 908. TLS tracking fields</caption>
+<caption class="title">Table 910. TLS tracking fields</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 28.5714%;">
@@ -14657,7 +14704,7 @@ spec:
 </table>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 909. DNS flow metadata</caption>
+<caption class="title">Table 911. DNS flow metadata</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 50%;">
@@ -16338,14 +16385,20 @@ $ podman rm netobserv-cli</code></pre>
 <div class="listingblock">
 <div class="title"><code>oc netobserv</code> syntax</div>
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc netobserv [&lt;command&gt;] [&lt;feature_option&gt;] [&lt;command_options&gt;] <img src="data:image/png;base64," alt="1"></code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc netobserv [&lt;command&gt;] [&lt;feature_option&gt;] [&lt;command_options&gt;]</code></pre>
 </div>
 </div>
-<div class="colist arabic">
+<div class="admonitionblock note">
 <table>
 <tr>
-<td><img src="data:image/png;base64," alt="1"></td>
-<td>Feature options can only be used with the <code>oc netobserv flows</code> command. They cannot be used with the <code>oc netobserv packets</code> command.</td>
+<td class="icon">
+<img src="data:image/png;base64," alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Feature options can only be used with the <code>oc netobserv flows</code> command. They cannot be used with the <code>oc netobserv packets</code> command.</p>
+</div>
+</td>
 </tr>
 </table>
 </div>
@@ -16353,7 +16406,7 @@ $ podman rm netobserv-cli</code></pre>
 <div class="sect6">
 <h7 id="cli-basic-commands_troubleshoot-network-issues-1362-execute-localized-network-diagnostics-using-the-oc-netobserv-cli">Basic commands</h7>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 910. Basic commands</caption>
+<caption class="title">Table 912. Basic commands</caption>
 <colgroup>
 <col style="width: 27.2727%;">
 <col style="width: 72.7273%;">
@@ -18277,7 +18330,7 @@ spec:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>

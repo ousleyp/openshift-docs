@@ -477,8 +477,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 <!-- navmap-right-toc-end -->
+<!-- navmap-preview-warning-start -->
+<style>
+  .navmap-preview-warning {
+    background: #fff1f1;
+    border: 2px solid #c9190b;
+    border-radius: 4px;
+    color: #3b0a0a;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 1em auto;
+    max-width: 70em;
+    padding: 1em 1.25em;
+  }
+  .navmap-preview-warning strong { color: #a30000; }
+  .navmap-preview-warning details { margin-top: .75em; }
+  .navmap-preview-warning pre {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    max-height: 20em;
+    overflow: auto;
+    padding: .75em;
+    white-space: pre-wrap;
+  }
+</style>
+<!-- navmap-preview-warning-end -->
 </head>
 <body id="oadp-intro_protect-application-data-with-oadp" class="book toc2 toc-left navmap-has-right-toc">
+<div class="navmap-preview-warning" role="alert"><strong>Preview warning: this preview is incomplete.</strong><p>One or more AsciiDoc includes are missing. Content may be absent from this page or from related pages.</p><details><summary>Show missing-include report</summary><pre>Include preflight failed for maps/ocp/navigation.adoc
+
+Missing include targets:
+  maps/ocp/ocp-jobs/install-single-node-openshift.adoc:37
+    include::modules/installation-aws_con-installing-sno-on-aws.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/installation-aws_con-installing-sno-on-aws.adoc
+  maps/ocp/ocp-jobs/create-remote-worker-nodes.adoc:15
+    include::modules/nodes-rwn_con-adding-remote-worker-nodes.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/nodes-rwn_con-adding-remote-worker-nodes.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:37
+    include::modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc[leveloffset=+1]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-customizing-a-developer-catalog-or-its-sub-catalogs.adoc
+  maps/ocp/ocp-jobs/customize-the-web-console.adoc:41
+    include::modules/odc_con-example-yaml-file-changes.adoc[leveloffset=+3]
+    expected: maps/ocp/ocp-jobs/modules/odc_con-example-yaml-file-changes.adoc
+
+How to fix these errors:
+  1. Restore or create the expected .adoc file, preserving the path relative to the referring map; or
+  2. Change the include directive to the path of the existing source file if the topic was renamed or moved.
+  Then rerun this audit and the preview. Do not ignore the error: Asciidoctor can otherwise generate incomplete HTML.
+</pre></details><details><summary>How to remediate missing content</summary><ol><li>Restore or create the expected <code>.adoc</code> file at the reported path, including its required content and attributes.</li><li>If the topic was renamed or moved, update the reported <code>include::</code> directive to point to the existing file. The path is relative to the file containing the directive.</li><li>If the topic is intentionally not ready, remove the include from the map and track the content gap separately.</li></ol><p>After fixing the includes, rebuild the preview with <code>./preview-map &lt;distro&gt;</code>.</p></details></div>
 <div id="header">
 <h1>Red Hat OpenShift Container Platform</h1>
 <div id="toc" class="toc2">
@@ -841,6 +886,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="machineconfig-garbage-collect-removing_remove-no-longer-used-machine-config-objects.html">Remove unused rendered machine configs</a>
 </li>
 <li><a href="machine-health-checks-resource_review-sample-machinehealthcheck-resource.html">About the MachineHealthCheck custom resource</a>
+</li>
+<li><a href="remote-health-monitoring-overview_remote-health-monitoring.html">Remotely monitor the health of Red&#160;Hat OpenShift Container Platform clusters</a>
 </li>
 <li><a href="nodes-pods-daemonsets-about_run-background-tasks-on-a-node-with-daemonsets.html">Daemon set scheduling</a>
 </li>
@@ -1873,7 +1920,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#oadp-understand-capabilities_learn-about-oadp-capabilities">Understand OADP capabilities</a></li><li class="level-5"><a href="#oadp-features_learn-about-oadp-capabilities">OADP features</a></li><li class="level-5"><a href="#oadp-plugins_learn-about-oadp-capabilities">OADP plugins</a></li><li class="level-5"><a href="#oadp-fips_learn-about-oadp-capabilities">OADP and FIPS</a></li><li class="level-5"><a href="#oadp-supported-architecture_learn-about-oadp-capabilities">Supported architectures for OADP</a></li><li class="level-5"><a href="#oadp-support-ibm_learn-about-oadp-capabilities">OADP support for IBM Power and IBM Z</a></li><li class="level-6"><a href="#oadp-ibm-power-test-matrix_learn-about-oadp-capabilities">OADP support for target backup locations using IBM Power</a></li><li class="level-6"><a href="#oadp-ibm-z-test-support_learn-about-oadp-capabilities">OADP testing and support for target backup locations using IBM Z</a></li><li class="level-6"><a href="#oadp-ibm-power-and-z-known-issues_learn-about-oadp-capabilities">Known issue of OADP using IBM Power® and IBM Z® platforms</a></li><li class="level-5"><a href="#oadp-operator-supported_learn-about-oadp-capabilities">Support for OpenShift API for Data Protection</a></li><li class="level-6"><a href="#oadp-operator-unsupported_learn-about-oadp-capabilities">Unsupported versions of the OADP Operator</a></li><li class="level-4"><a href="#oadp-release-notes-intro_review-oadp-release-notes">OADP release notes</a></li><li class="level-5"><a href="#oadp-1-6-0-release-notes_review-oadp-release-notes">OADP 1.6.0 release notes</a></li><li class="level-6"><a href="#new-features-1-6-0_review-oadp-release-notes">New features</a></li><li class="level-6"><a href="#resolved-issues-1-6-0_review-oadp-release-notes">Resolved issues</a></li><li class="level-6"><a href="#known-issues-1-6-0_review-oadp-release-notes">Known issues</a></li><li class="level-6"><a href="#technology-preview-features-1-6-0_review-oadp-release-notes">Technology Preview features</a></li><li class="level-6"><a href="#removed-features-1-6-0_review-oadp-release-notes">Removed features</a></li><li class="level-5"><a href="#oadp-1-6-1-release-notes_review-oadp-release-notes">OADP 1.6.1 release notes</a></li><li class="level-6"><a href="#resolved-issues-1-6-1_review-oadp-release-notes">Resolved issues</a></li><li class="level-6"><a href="#known-issues-1-6-1_review-oadp-release-notes">Known issues</a></li><li class="level-4"><a href="#oadp-plan-deployment-intro_plan-oadp-deployment">Plan an OADP deployment</a></li><li class="level-5"><a href="#oadp-s3-compatible-backup-storage-providers_plan-oadp-deployment">AWS S3 compatible backup storage providers</a></li><li class="level-6"><a href="#oadp-certified-backup-storage-providers_plan-oadp-deployment">Certified backup storage providers</a></li><li class="level-6"><a href="#oadp-s3-compatible-backup-storage-providers-unsupported">Unsupported backup storage providers</a></li><li class="level-6"><a href="#oadp-s3-compatible-backup-storage-providers-known-limitations">Backup storage providers with known limitations</a></li><li class="level-5"><a href="#oadp-support-backup-data-immutability_plan-oadp-deployment">OADP support for backup data immutability</a></li><li class="level-5"><a href="#oadp-configuring-noobaa-for-dr_plan-oadp-deployment">Configure Multicloud Object Gateway (MCG) for disaster recovery on OpenShift Data Foundation</a></li><li class="level-5"><a href="#oadp-velero-cpu-memory-requirements_plan-oadp-deployment">Velero CPU and memory requirements based on collected data</a></li><li class="level-6"><a href="#_cpu_and_memory_requirement_for_configurations">CPU and memory requirement for configurations</a></li><li class="level-6"><a href="#_additional_resources_8">Additional resources</a></li><li class="level-5"><a href="#oadp-odf-cpu-memory-requirements_plan-oadp-deployment">Adjust Ceph CPU and memory requirements based on collected data</a></li><li class="level-6"><a href="#oadp-odf-config-cpu-memory-requirements_plan-oadp-deployment">CPU and memory requirement for configurations</a></li><li class="level-5"><a href="#oadp-performance-network-requirements_plan-oadp-deployment">OADP network requirements</a></li><li class="level-5"><a href="#oadp-backup-restore-for-large-usage_plan-oadp-deployment">NodeAgent CPU for large usage</a></li><li class="level-4"><a href="#oadp-install-intro_install-oadp">About installing OADP</a></li><li class="level-5"><a href="#velero-oadp-version-relationship_install-oadp">OADP-Velero-Red Hat OpenShift Container Platform version relationship</a></li><li class="level-5"><a href="#about-oadp-update-channels_install-oadp">About OADP update channels</a></li><li class="level-5"><a href="#about-installing-oadp-on-multiple-namespaces_install-oadp">Installation of OADP on multiple namespaces</a></li><li class="level-5"><a href="#installing-operator-oadp_install-oadp">Install the OADP Operator</a></li><li class="level-4"><a href="#oadp-connect-to-backup-storage-intro_connect-oadp-to-backup-storage">About connecting OADP to backup storage</a></li><li class="level-5"><a href="#oadp-about-backup-snapshot-locations_connect-oadp-to-backup-storage">About backup and snapshot locations and their secrets</a></li><li class="level-6"><a href="#backup-locations_connect-oadp-to-backup-storage">Backup locations</a></li><li class="level-6"><a href="#snapshot-locations_connect-oadp-to-backup-storage">Snapshot locations</a></li><li class="level-6"><a href="#secrets_connect-oadp-to-backup-storage">Secrets</a></li><li class="level-5"><a href="#migration-configuring-aws-s3_connect-oadp-to-backup-storage">Configure Amazon Web Services</a></li><li class="level-6"><a href="#oadp-creating-default-secret_connect-oadp-to-backup-storage">Create a default Secret</a></li><li class="level-6"><a href="#oadp-aws-secrets-for-different-credentials_connect-oadp-to-backup-storage">Create profiles for different credentials</a></li><li class="level-6"><a href="#oadp-s3-and-gov-cloud_connect-oadp-to-backup-storage">About Amazon Simple Storage Service, Identity and Access Management, and GovCloud</a></li><li class="level-6"><a href="#oadp-configuring-aws-md5sum_connect-oadp-to-backup-storage">Configure the backup storage location with a MD5 checksum algorithm</a></li><li class="level-6"><a href="#oadp-ssec-encrypted-backups_connect-oadp-to-backup-storage">Create an OADP SSE-C encryption key for additional data security</a></li><li class="level-6"><a href="#oadp-ssec-encrypted-backups-velero_connect-oadp-to-backup-storage">Download a file with an SSE-C encryption key for files backed up by Velero</a></li><li class="level-6"><a href="#oadp-using-legacy-aws-plugin_connect-oadp-to-backup-storage">Use the legacy-aws Velero plugin in the DataProtectionApplication CR</a></li><li class="level-5"><a href="#oadp-about-aws-sts_connect-oadp-to-backup-storage">About installing OADP on AWS STS clusters</a></li><li class="level-5"><a href="#preparing-aws-sts-credentials-for-oadp_connect-oadp-to-backup-storage">Prepare AWS STS credentials for OADP</a></li><li class="level-6"><a href="#installing-oadp-aws-sts_connect-oadp-to-backup-storage">Install the OADP Operator and provide the IAM role</a></li><li class="level-6"><a href="#performing-a-backup-oadp-aws-sts_connect-oadp-to-backup-storage">Perform a backup with OADP and AWS STS</a></li><li class="level-6"><a href="#cleanup-a-backup-oadp-aws-sts_connect-oadp-to-backup-storage">Clean up a cluster after a backup with OADP and AWS STS</a></li><li class="level-5"><a href="#migration-configuring-azure_connect-oadp-to-backup-storage">Configure Microsoft Azure</a></li><li class="level-6"><a href="#oadp-auth-azure-methods_connect-oadp-to-backup-storage">About authenticating OADP with Azure</a></li><li class="level-6"><a href="#oadp-auth-azure-secret-based_connect-oadp-to-backup-storage">Use a service principal or a storage account access key</a></li><li class="level-6"><a href="#oadp-auth-azure-STS_connect-oadp-to-backup-storage">Use OADP with Azure Security Token Service authentication</a></li><li class="level-5"><a href="#migration-configuring-gcp_connect-oadp-to-backup-storage">Configure Google Cloud</a></li><li class="level-6"><a href="#oadp-gcp-wif-cloud-authentication_connect-oadp-to-backup-storage">Google workload identity federation cloud authentication</a></li><li class="level-6"><a href="#oadp-secrets-for-different-credentials_connect-oadp-to-backup-storage">Create secrets for different credentials</a></li><li class="level-5"><a href="#migration-configuring-mcg_connect-oadp-to-backup-storage">Retrieve Multicloud Object Gateway credentials</a></li><li class="level-5"><a href="#oadp-creating-object-bucket-claim_connect-oadp-to-backup-storage">Create an Object Bucket Claim for disaster recovery on OpenShift Data Foundation</a></li><li class="level-5"><a href="#configuring-ibm-cos_connect-oadp-to-backup-storage">Configure the COS instance</a></li><li class="level-5"><a href="#oadp-configuring-velero-plugins_connect-oadp-to-backup-storage">About OADP Velero plugins</a></li><li class="level-6"><a href="#_default_velero_cloud_provider_plugins">Default Velero cloud provider plugins</a></li><li class="level-6"><a href="#_custom_velero_plugins">Custom Velero plugins</a></li><li class="level-5"><a href="#oadp-installing-dpa_connect-oadp-to-backup-storage">Install the Data Protection Application</a></li><li class="level-6"><a href="#oadp-dpa-configuration-by-provider_connect-oadp-to-backup-storage">DataProtectionApplication CR examples by storage provider</a></li><li class="level-5"><a href="#oadp-self-signed-certificate_connect-oadp-to-backup-storage">Enable self-signed CA certificates</a></li><li class="level-5"><a href="#oadp-using-ca-certificates-with-velero-command-aliased-for-velero-deployment_connect-oadp-to-backup-storage">Use CA certificates with the velero command aliased for Velero deployment</a></li><li class="level-5"><a href="#oadp-multiple-bsl-use-case_connect-oadp-to-backup-storage">Configure two backup BSLs with different cloud credentials</a></li><li class="level-6"><a href="#oadp-configuring-dpa-multiple-bsl_connect-oadp-to-backup-storage">Configure the DPA with more than one BSL</a></li><li class="level-6"><a href="#oadp-changing-default-bsl_connect-oadp-to-backup-storage">Change the default backup storage location in a DPA</a></li><li class="level-5"><a href="#oadp-configuring-dpa-multiple-vsl_connect-oadp-to-backup-storage">Configure the DPA with more than one VSL</a></li><li class="level-4"><a href="#oadp-configure-security-performance-intro_configure-oadp-security-and-performance">Configure OADP security and performance</a></li><li class="level-5"><a href="#oadp-enabling-csi-dpa_configure-oadp-security-and-performance">Enable CSI in the DataProtectionApplication CR</a></li><li class="level-5"><a href="#oadp-about-disable-node-agent-dpa_configure-oadp-security-and-performance">Disable the node agent in DataProtectionApplication</a></li><li class="level-5"><a href="#oadp-configuring-node-agents_configure-oadp-security-and-performance">Configure node agents and node labels</a></li><li class="level-6"><a href="#oadp-configuring-node-agent-load-affinity_configure-oadp-security-and-performance">Configure node agent load affinity</a></li><li class="level-6"><a href="#oadp-node-agent-load-affinity-guidelines_configure-oadp-security-and-performance">Node agent load affinity guidelines</a></li><li class="level-6"><a href="#oadp-configuring-node-agent-load-concurrency_configure-oadp-security-and-performance">Configure node agent load concurrency</a></li><li class="level-6"><a href="#oadp-configuring-node-agent-non-root_configure-oadp-security-and-performance">Configure the node agent as a non-root and non-privileged user</a></li><li class="level-5"><a href="#oadp-setting-resource-limits-and-requests_configure-oadp-security-and-performance">Set Velero CPU and memory resource allocations</a></li><li class="level-5"><a href="#oadp-configuring-priority-class_configure-oadp-security-and-performance">Configure a priority class for node agent and Velero pods</a></li><li class="level-5"><a href="#oadp-configuring-client-burst-qps_configure-oadp-security-and-performance">Configure the DPA with client burst and QPS settings</a></li><li class="level-5"><a href="#oadp-configuring-velero-load-affinity_configure-oadp-security-and-performance">Configure Velero load affinity</a></li><li class="level-5"><a href="#oadp-configuring-imagepullpolicy_configure-oadp-security-and-performance">Override the imagePullPolicy setting in the DPA</a></li><li class="level-5"><a href="#oadp-configuring-repository-maintenance_configure-oadp-security-and-performance">Configure repository maintenance</a></li><li class="level-4"><a href="#oadp-manage-with-cli-plugin-intro_manage-oadp-with-cli-plugin">Manage OADP with the CLI plugin</a></li><li class="level-5"><a href="#oadp-cli-setup_manage-oadp-with-cli-plugin">Set up the OADP CLI plugin</a></li><li class="level-5"><a href="#oadp-cli-client-config_manage-oadp-with-cli-plugin">OADP CLI client configuration commands</a></li><li class="level-6"><a href="#oadp-cli-client-config-get_manage-oadp-with-cli-plugin">Current configuration viewing command</a></li><li class="level-6"><a href="#oadp-cli-client-config-set_manage-oadp-with-cli-plugin">Configuration value setting command</a></li><li class="level-5"><a href="#oadp-cli-completion_manage-oadp-with-cli-plugin">Enable shell completion for the OADP CLI</a></li><li class="level-5"><a href="#oadp-cli-admin-backups_manage-oadp-with-cli-plugin">Backup management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-create_manage-oadp-with-cli-plugin">Backup creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-list_manage-oadp-with-cli-plugin">Backup listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-describe_manage-oadp-with-cli-plugin">Backup description command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-logs_manage-oadp-with-cli-plugin">Backup logs command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-download_manage-oadp-with-cli-plugin">Backup download command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-delete_manage-oadp-with-cli-plugin">Backup deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-restores_manage-oadp-with-cli-plugin">Restore management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-create_manage-oadp-with-cli-plugin">Restore creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-list_manage-oadp-with-cli-plugin">Restore listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-describe_manage-oadp-with-cli-plugin">Restore description command</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-logs_manage-oadp-with-cli-plugin">Restore logs command</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-delete_manage-oadp-with-cli-plugin">Restore deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-schedules_manage-oadp-with-cli-plugin">Schedule management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-schedules-create_manage-oadp-with-cli-plugin">Schedule creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-schedules-list_manage-oadp-with-cli-plugin">Schedule listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-schedules-describe_manage-oadp-with-cli-plugin">Schedule description command</a></li><li class="level-6"><a href="#oadp-cli-admin-schedules-delete_manage-oadp-with-cli-plugin">Schedule deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-bsl_manage-oadp-with-cli-plugin">Backup storage location management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-bsl-create_manage-oadp-with-cli-plugin">Backup storage location creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-bsl-list_manage-oadp-with-cli-plugin">Backup storage location listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-bsl-set-default_manage-oadp-with-cli-plugin">Default backup storage location command</a></li><li class="level-6"><a href="#oadp-cli-admin-bsl-delete_manage-oadp-with-cli-plugin">Backup storage location deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-vsl_manage-oadp-with-cli-plugin">Volume snapshot location management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-vsl-create_manage-oadp-with-cli-plugin">Volume snapshot location creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-vsl-list_manage-oadp-with-cli-plugin">Volume snapshot location listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-vsl-set-default_manage-oadp-with-cli-plugin">Default volume snapshot location command</a></li><li class="level-6"><a href="#oadp-cli-admin-vsl-delete_manage-oadp-with-cli-plugin">Volume snapshot location deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-nabsl-requests_manage-oadp-with-cli-plugin">NonAdminBackupStorageLocation approval request commands</a></li><li class="level-6"><a href="#oadp-cli-admin-nabsl-list_manage-oadp-with-cli-plugin">NABSL approval request listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-nabsl-describe_manage-oadp-with-cli-plugin">NABSL approval request description command</a></li><li class="level-6"><a href="#oadp-cli-admin-nabsl-approve_manage-oadp-with-cli-plugin">NABSL approval request approval command</a></li><li class="level-6"><a href="#oadp-cli-admin-nabsl-reject_manage-oadp-with-cli-plugin">NABSL approval request rejection command</a></li><li class="level-5"><a href="#oadp-cli-must-gather_manage-oadp-with-cli-plugin">Collect diagnostic data</a></li><li class="level-5"><a href="#oadp-cli-nonadmin-about_manage-oadp-with-cli-plugin">OADP self-service</a></li><li class="level-6"><a href="#oadp-cli-nonadmin-about-limitations_manage-oadp-with-cli-plugin">Limitations</a></li><li class="level-6"><a href="#oadp-cli-nonadmin-backups_manage-oadp-with-cli-plugin">Non-admin backup management commands</a></li><li class="level-6"><a href="#oadp-cli-nonadmin-restores_manage-oadp-with-cli-plugin">Non-administrator restore management commands</a></li><li class="level-6"><a href="#oadp-cli-nonadmin-bsl_manage-oadp-with-cli-plugin">NonAdminBackupStorageLocation management commands</a></li><li class="level-4"><a href="#oadp-back-up-applications-intro_back-up-applications">About backing up applications</a></li><li class="level-5"><a href="#oadp-review-backup-restore_back-up-applications">Preview resources before running backup and restore</a></li><li class="level-5"><a href="#backingup-persistent-volumes_back-up-applications">Back up persistent volumes with CSI snapshots</a></li><li class="level-5"><a href="#oadp-about-file-system-backup_back-up-applications">About File System Backup</a></li><li class="level-5"><a href="#oadp-about-kopia_back-up-applications">About Kopia</a></li><li class="level-5"><a href="#oadp-backingup-file-system-backup_back-up-applications">Back up applications with File System Backup</a></li><li class="level-5"><a href="#oadp-creating-backup-cr_back-up-applications">Creating a Backup CR</a></li><li class="level-5"><a href="#oadp-parallel-backup-processing_back-up-applications">Parallel backup processing in OADP</a></li><li class="level-5"><a href="#oadp-enabling-parallel-backup-processing_back-up-applications">Enabling parallel backup processing</a></li><li class="level-5"><a href="#oadp-creating-backup-hooks_back-up-applications">Creating backup hooks</a></li><li class="level-5"><a href="#oadp-scheduling-backups_back-up-applications">Scheduling backups using Schedule CR</a></li><li class="level-5"><a href="#oadp-1-3-backing-csi-snapshots_back-up-applications">Back up persistent volumes with CSI snapshots</a></li><li class="level-5"><a href="#oadp-deletion-policy-1-3_back-up-applications">Deletion policy for OADP 1.3</a></li><li class="level-6"><a href="#oadp-deletion-policy-guidelines-1-3_back-up-applications">Deletion policy guidelines for OADP 1.3</a></li><li class="level-5"><a href="#oadp-about-kopia-repo-maintenance_back-up-applications">About Kopia repository maintenance</a></li><li class="level-6"><a href="#kopia-maint-in-oadp_back-up-applications">Kopia maintenance in OADP</a></li><li class="level-5"><a href="#oadp-about-backup-deletion-timing_back-up-applications">About backup deletion artifact timing</a></li><li class="level-5"><a href="#oadp-deleting-backups-using-oc_back-up-applications">Delete a backup by creating a DeleteBackupRequest CR</a></li><li class="level-5"><a href="#oadp-deleting-backups-using-velero_back-up-applications">Delete a backup by using the OADP CLI</a></li><li class="level-5"><a href="#oadp-deleting-backup-repository_back-up-applications">Delete a backup repository</a></li><li class="level-5"><a href="#oadp-usecase-backup-odf_back-up-applications">Back up an application using OADP and ODF</a></li><li class="level-5"><a href="#oadp-usecase-include-ca-cert-backup_back-up-applications">Back up an application and its self-signed CA certificate</a></li><li class="level-4"><a href="#oadp-restore-applications-intro_restore-applications">Restore applications</a></li><li class="level-5"><a href="#oadp-review-backup-restore_restore-applications">Preview resources before running backup and restore</a></li><li class="level-5"><a href="#oadp-creating-restore-cr_restore-applications">Create a Restore CR</a></li><li class="level-5"><a href="#oadp-creating-restore-hooks_restore-applications">Create restore hooks</a></li><li class="level-5"><a href="#oadp-1-3-restoring-csi-snapshots_restore-applications">Restore CSI volume snapshots</a></li><li class="level-5"><a href="#oadp-storage-class-mapping_restore-applications">Storage class mapping</a></li><li class="level-6"><a href="#oadp-storage-class-mapping-oadp_restore-applications">Map storage classes with OADP</a></li><li class="level-5"><a href="#oadp-usecase-restore_restore-applications">Restore an application to a different namespace using OADP</a></li><li class="level-5"><a href="#oadp-about-enable-api-group-versions_restore-applications">About Enable API Group Versions</a></li><li class="level-6"><a href="#oadp-using-enable-api-group-versions_restore-applications">Use Enable API Group Versions</a></li><li class="level-6"><a href="#oadp-checking-api-group-versions_restore-applications">List the Kubernetes API group versions on a cluster</a></li><li class="level-4"><a href="#oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management">About backing up and restoring 3scale API Management</a></li><li class="level-5"><a href="#creating-the-data-protection-application_back-up-and-restore-3scale-api-management">Create the Data Protection Application</a></li><li class="level-5"><a href="#backing-up-the-3scale-operator-secret-apimanager_back-up-and-restore-3scale-api-management">Back up the 3scale API Management operator, secret, and APIManager</a></li><li class="level-5"><a href="#backing-up-the-backend-redis-database_back-up-and-restore-3scale-api-management">Back up the back-end Redis database</a></li><li class="level-5"><a href="#backing-up-the-mysql-database_back-up-and-restore-3scale-api-management">Back up a MySQL database</a></li><li class="level-5"><a href="#restoring-the-3scale-api-management-operator-secrets-and-apimanager_back-up-and-restore-3scale-api-management">Restore the 3scale API Management operator, secrets, and APIManager</a></li><li class="level-6"><a href="#restoring-the-backend-redis-database_back-up-and-restore-3scale-api-management">Restore the back-end Redis database</a></li><li class="level-6"><a href="#restoring-the-mysql-database_back-up-and-restore-3scale-api-management">Restore a MySQL database</a></li><li class="level-6"><a href="#scaling-up-the-3scale-api-management-operator-and-deployment_back-up-and-restore-3scale-api-management">Scale up the 3scale API Management operator and deployment</a></li><li class="level-4"><a href="#oadp-rosa-sts-intro_back-up-and-restore-applications-on-rosa-with-sts">About backing up and restoring applications on ROSA with STS</a></li><li class="level-5"><a href="#preparing-aws-credentials-for-oadp_back-up-and-restore-applications-on-rosa-with-sts">Prepare AWS credentials for OADP</a></li><li class="level-6"><a href="#installing-oadp-rosa-sts_back-up-and-restore-applications-on-rosa-with-sts">Install the OADP Operator and provide the IAM role</a></li><li class="level-6"><a href="#updating-role-arn-oadp-rosa-sts_back-up-and-restore-applications-on-rosa-with-sts">Update the IAM role ARN in the OADP Operator subscription</a></li><li class="level-6"><a href="#performing-a-backup-oadp-rosa-sts_back-up-and-restore-applications-on-rosa-with-sts">Example: Performing a backup with OADP and Red Hat OpenShift Container Platform</a></li><li class="level-6"><a href="#cleanup-a-backup-oadp-rosa-sts_back-up-and-restore-applications-on-rosa-with-sts">Clean up a cluster after a backup with OADP and ROSA STS</a></li><li class="level-4"><a href="#oadp-optimize-backup-performance-intro_optimize-backup-performance">Optimize backup performance</a></li><li class="level-5"><a href="#oadp-about-data-mover_optimize-backup-performance">About the OADP Data Mover</a></li><li class="level-5"><a href="#oadp-data-mover-support_optimize-backup-performance">Data Mover support</a></li><li class="level-5"><a href="#built-in-data-mover-crds_optimize-backup-performance">Built-in Data Mover controller and custom resource definitions (CRDs)</a></li><li class="level-5"><a href="#enabling-oadp-data-mover_optimize-backup-performance">Enable the built-in Data Mover</a></li><li class="level-5"><a href="#oadp-about-incremental-backup-support_optimize-backup-performance">About incremental backup support</a></li><li class="level-5"><a href="#configuring-backup-pvc_optimize-backup-performance">Configure a backup PVC for a Data Mover backup</a></li><li class="level-5"><a href="#configuring-restore-pvc_optimize-backup-performance">Configure a restorePVC for a Data Mover restore</a></li><li class="level-5"><a href="#oadp-kopia-algorithms-benchmarking_optimize-backup-performance">Benchmark Kopia hashing, encryption, and splitter algorithms</a></li><li class="level-6"><a href="#oadp-kopia-configuring-algorithms_optimize-backup-performance">Configure the DPA to override Kopia hashing, encryption, and splitter algorithms</a></li><li class="level-6"><a href="#oadp-usecase-kopia-override-algorithms_optimize-backup-performance">Use case for overriding Kopia hashing, encryption, and splitter algorithms</a></li><li class="level-4"><a href="#oadp-back-up-and-restore-vms-intro_back-up-and-restore-virtual-machines">Back up and restore virtual machines</a></li><li class="level-5"><a href="#oadp-protect-virtual-machine-data-intro_back-up-and-restore-virtual-machines">Protect virtual machine data</a></li><li class="level-5"><a href="#install-and-configure-oadp-kubevirt_back-up-and-restore-virtual-machines">Install and configure OADP with OpenShift Virtualization</a></li><li class="level-5"><a href="#oadp-backup-single-vm_back-up-and-restore-virtual-machines">Back up a single VM</a></li><li class="level-5"><a href="#oadp-restore-single-vm_back-up-and-restore-virtual-machines">Restore a single VM</a></li><li class="level-5"><a href="#oadp-restore-single-vm-from-multiple-vm-backup_back-up-and-restore-virtual-machines">Restore a single VM from a backup of multiple VMs</a></li><li class="level-4"><a href="#oadp-recover-files-from-vm-backups-intro_recover-files-from-vm-backups">Recover individual files from VM backups</a></li><li class="level-5"><a href="#oadp-vmfr-overview_recover-files-from-vm-backups">What problem is OADP VMFR solving</a></li><li class="level-5"><a href="#oadp-vmfr-how-it-works_recover-files-from-vm-backups">How OADP VMFR works</a></li><li class="level-6"><a href="#_backup_discovery_phase">Backup discovery phase</a></li><li class="level-6"><a href="#_file_restore_phase">File restore phase</a></li><li class="level-6"><a href="#_file_serving_pod_architecture">File-serving pod architecture</a></li><li class="level-5"><a href="#oadp-vmfr-custom-resources_recover-files-from-vm-backups">OADP VMFR custom resources</a></li><li class="level-5"><a href="#oadp-vmfr-phases_recover-files-from-vm-backups">OADP VMFR discovery and restore phases</a></li><li class="level-5"><a href="#oadp-vmfr-access-methods_recover-files-from-vm-backups">OADP VMFR file access methods</a></li><li class="level-6"><a href="#oadp-vmfr-web-browser-access_recover-files-from-vm-backups">Web browser access</a></li><li class="level-6"><a href="#_ssh_based_access">SSH-based access</a></li><li class="level-5"><a href="#oadp-vmfr-prerequisites_recover-files-from-vm-backups">OADP VMFR prerequisites</a></li><li class="level-5"><a href="#oadp-vmfr-limitations_recover-files-from-vm-backups">OADP VMFR limitations</a></li><li class="level-5"><a href="#oadp-vmfr-security_recover-files-from-vm-backups">OADP VMFR security considerations</a></li><li class="level-5"><a href="#oadp-vmfr-use-scenarios_recover-files-from-vm-backups">When to use OADP VMFR</a></li><li class="level-5"><a href="#oadp-vmfr-enabling_recover-files-from-vm-backups">Enable OADP VMFR</a></li><li class="level-6"><a href="#oadp-vmfr-creating-vmbd_recover-files-from-vm-backups">Create a VirtualMachineBackupsDiscovery CR</a></li><li class="level-6"><a href="#oadp-vmfr-creating-vmfr_recover-files-from-vm-backups">Create a VirtualMachineFileRestore CR</a></li><li class="level-6"><a href="#oadp-vmfr-accessing-files-web_recover-files-from-vm-backups">Access restored files through a web browser</a></li><li class="level-6"><a href="#oadp-vmfr-accessing-files-ssh_recover-files-from-vm-backups">Access restored files through SSH</a></li><li class="level-6"><a href="#oadp-vmfr-deleting-vmfr_recover-files-from-vm-backups">Delete a VirtualMachineFileRestore CR</a></li><li class="level-6"><a href="#oadp-vmfr-end-to-end-workflow_recover-files-from-vm-backups">Test the VM file restore workflow</a></li><li class="level-4"><a href="#oadp-enable-crash-consistent-vm-backups-intro_enable-crash-consistent-vm-backups">Enable crash-consistent VM backups</a></li><li class="level-5"><a href="#oadp-vmdp-overview_enable-crash-consistent-vm-backups">About OADP virtual machine data protection</a></li><li class="level-6"><a href="#_what_problem_is_vmdp_solving">What problem is VMDP solving</a></li><li class="level-6"><a href="#_what_vmdp_does">What VMDP does</a></li><li class="level-6"><a href="#_who_uses_vmdp">Who uses VMDP</a></li><li class="level-6"><a href="#_vmdp_and_vmfr_comparison">VMDP and VMFR comparison</a></li><li class="level-5"><a href="#oadp-vmdp-configuration_enable-crash-consistent-vm-backups">OADP virtual machine data protection configuration</a></li><li class="level-6"><a href="#_environment_variables">Environment variables</a></li><li class="level-6"><a href="#_file_locations">File locations</a></li><li class="level-6"><a href="#_kopia_compatibility">Kopia compatibility</a></li><li class="level-5"><a href="#oadp-vmdp-storage-backends_enable-crash-consistent-vm-backups">OADP virtual machine data protection backend storage</a></li><li class="level-6"><a href="#_s3_compatible_storage">S3-compatible storage</a></li><li class="level-6"><a href="#_filesystem_storage">Filesystem storage</a></li><li class="level-5"><a href="#oadp-vmdp-supported-platforms_enable-crash-consistent-vm-backups">Supported platforms for OADP virtual machine data protection</a></li><li class="level-5"><a href="#oadp-vmdp-installing-cli_enable-crash-consistent-vm-backups">Install the OADP virtual machine data protection CLI</a></li><li class="level-6"><a href="#oadp-vmdp-creating-bsl-s3_enable-crash-consistent-vm-backups">Create a backup storage location with S3-compatible storage by using the VMDP CLI</a></li><li class="level-6"><a href="#oadp-vmdp-creating-bsl-filesystem_enable-crash-consistent-vm-backups">Create a backup storage location with file system storage by using the VMDP CLI</a></li><li class="level-6"><a href="#oadp-vmdp-managing-bsl_enable-crash-consistent-vm-backups">OADP VMDP BSL management commands</a></li><li class="level-6"><a href="#oadp-vmdp-backing-up-data_enable-crash-consistent-vm-backups">Back up data from a virtual machine by using the VMDP CLI</a></li><li class="level-6"><a href="#oadp-vmdp-restoring-data_enable-crash-consistent-vm-backups">Restore data to a virtual machine by using the VMDP CLI</a></li><li class="level-6"><a href="#oadp-vmdp-troubleshooting_enable-crash-consistent-vm-backups">Troubleshoot OADP virtual machine data protection</a></li><li class="level-4"><a href="#oadp-delegate-backup-restore-namespace-admins-intro_delegate-backup-and-restore-to-namespace-admins">Delegate backup and restore to namespace administrators</a></li><li class="level-5"><a href="#oadp-self-service-overview_delegate-backup-and-restore-to-namespace-admins">About OADP Self-Service</a></li><li class="level-5"><a href="#oadp-self-service-how-it-works_delegate-backup-and-restore-to-namespace-admins">How OADP Self-Service works</a></li><li class="level-5"><a href="#oadp-self-service-custom-resources_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service custom resources</a></li><li class="level-5"><a href="#oadp-self-service-overview-namespace-scope_delegate-backup-and-restore-to-namespace-admins">What namespace-scoped backup and restore means</a></li><li class="level-5"><a href="#oadp-self-service-namespace-permissions_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service namespace permissions</a></li><li class="level-6"><a href="#oadp-self-service-yaml-backup-operation_delegate-backup-and-restore-to-namespace-admins">Example RBAC YAML for backup operation</a></li><li class="level-5"><a href="#oadp-self-service-phases_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service backup and restore phases</a></li><li class="level-5"><a href="#oadp-self-service-about-nabsl_delegate-backup-and-restore-to-namespace-admins">About NonAdminBackupStorageLocation CR</a></li><li class="level-5"><a href="#oadp-self-service-prerequisites_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service prerequisites</a></li><li class="level-5"><a href="#oadp-self-service-unsupported-features_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service limitations</a></li><li class="level-5"><a href="#oadp-self-service-admin-enable-disable_delegate-backup-and-restore-to-namespace-admins">Enable and disable OADP Self-Service</a></li><li class="level-6"><a href="#oadp-self-service-admin-spec-enforcement_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service administrator DPA spec enforcement</a></li><li class="level-6"><a href="#oadp-self-service-admin-spec-enforce-nab_delegate-backup-and-restore-to-namespace-admins">Self-Service administrator spec enforcement for NAB</a></li><li class="level-6"><a href="#oadp-self-service-admin-spec-enforce-nar_delegate-backup-and-restore-to-namespace-admins">Self-Service administrator spec enforcement for NAR</a></li><li class="level-6"><a href="#oadp-self-service-admin-spec-enforce-nabsl_delegate-backup-and-restore-to-namespace-admins">Self-Service administrator spec enforcement for NABSL</a></li><li class="level-6"><a href="#oadp-self-service-enabling-nabsl-approval_delegate-backup-and-restore-to-namespace-admins">Enable NonAdminBackupStorageLocation administrator approval workflow</a></li><li class="level-6"><a href="#oadp-self-service-approving-nabsl_delegate-backup-and-restore-to-namespace-admins">Approve a NonAdminBackupStorageLocation request</a></li><li class="level-6"><a href="#oadp-self-service-rejecting-nabsl_delegate-backup-and-restore-to-namespace-admins">Reject a NonAdminBackupStorageLocation request</a></li><li class="level-5"><a href="#oadp-self-service-creating-nab_delegate-backup-and-restore-to-namespace-admins">Create a NonAdminBackup CR</a></li><li class="level-6"><a href="#oadp-self-service-creating-nar_delegate-backup-and-restore-to-namespace-admins">Create a NonAdminRestore CR</a></li><li class="level-6"><a href="#oadp-self-service-creating-nabsl_delegate-backup-and-restore-to-namespace-admins">Create a NonAdminBackupStorageLocation CR</a></li><li class="level-6"><a href="#oadp-self-service-about-nadr_delegate-backup-and-restore-to-namespace-admins">About NonAdminDownloadRequest CR</a></li><li class="level-6"><a href="#oadp-self-service-deleting-nab_delegate-backup-and-restore-to-namespace-admins">Delete a NonAdminBackup CR</a></li><li class="level-6"><a href="#oadp-self-service-nab-nar-logs_delegate-backup-and-restore-to-namespace-admins">Review NAB and NAR logs</a></li><li class="level-5"><a href="#oadp-self-service-troubleshoot-nabsl-default_delegate-backup-and-restore-to-namespace-admins">Resolve error NonAdminBackupStorageLocation cannot be set as default</a></li><li class="level-5"><a href="#oadp-self-service-troubleshoot-nabsl-same-ns_delegate-backup-and-restore-to-namespace-admins">Resolve error NonAdminBackupStorageLocation not found in the namespace</a></li><li class="level-4"><a href="#oadp-migrate-data-across-clusters-intro_migrate-data-across-clusters">Migrate data across clusters</a></li><li class="level-5"><a href="#oadp-about-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters">About backing up data from one cluster and restoring it on another cluster</a></li><li class="level-6"><a href="#oadp-cluster-to-cluster-operators_migrate-data-across-clusters">Operators</a></li><li class="level-6"><a href="#oadp-cluster-to-cluster-velero_migrate-data-across-clusters">Use of Velero</a></li><li class="level-5"><a href="#oadp-cluster-to-cluster-uid-and-gid-ranges_migrate-data-across-clusters">UID and GID ranges</a></li><li class="level-5"><a href="#oadp-pod-volume-backup_migrate-data-across-clusters">About determining which pod volumes to back up</a></li><li class="level-6"><a href="#pod-volume-limitations_migrate-data-across-clusters">Limitations</a></li><li class="level-5"><a href="#oadp-backing-up-opt-in_migrate-data-across-clusters">Back up pod volumes by using the opt-in method</a></li><li class="level-5"><a href="#oadp-backing-up-opt-out_migrate-data-across-clusters">Back up pod volumes by using the opt-out method</a></li><li class="level-5"><a href="#oadp-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters">Back up data from one cluster and restore it to another cluster</a></li><li class="level-4"><a href="#oadp-upgrade-intro_upgrade-oadp">Upgrade OADP</a></li><li class="level-5"><a href="#changes-from-oadp-1-5-to-1-6_upgrade-oadp">Changes from OADP 1.5 to 1.6</a></li><li class="level-5"><a href="#oadp-backing-up-dpa-configuration-1-6-0_upgrade-oadp">Back up the DPA configuration</a></li><li class="level-5"><a href="#oadp-upgrading-dpa-operator-1-6-0_upgrade-oadp">Upgrade the OADP Operator</a></li><li class="level-5"><a href="#converting-dpa-to-the-new-version-for-oadp-1-6-0_upgrade-oadp">Convert DPA to the new version for OADP 1.6.0</a></li><li class="level-5"><a href="#verifying-upgrade-1-6-0_upgrade-oadp">Verify the upgrade</a></li><li class="level-4"><a href="#oadp-monitor-and-validate-intro_monitor-and-validate-oadp">Monitor and validate OADP</a></li><li class="level-5"><a href="#oadp-monitoring-setup-monitor_monitor-and-validate-oadp">OADP monitoring setup</a></li><li class="level-6"><a href="#oadp-creating-service-monitor_monitor-and-validate-oadp">Create OADP service monitor</a></li><li class="level-6"><a href="#list-of-metrics_monitor-and-validate-oadp">List of available metrics</a></li><li class="level-6"><a href="#viewing-metrics-observe-ui_monitor-and-validate-oadp">View metrics using the Observe UI</a></li><li class="level-6"><a href="#creating-alerting-rules_monitor-and-validate-oadp">Create an alerting rule</a></li><li class="level-5"><a href="#using-data-protection-test_monitor-and-validate-oadp">Use the DataProtectionTest custom resource</a></li><li class="level-6"><a href="#oadp-dpt-spec_monitor-and-validate-oadp">OADP DataProtectionTest CR specification fields</a></li><li class="level-6"><a href="#oadp-dpt-status_monitor-and-validate-oadp">OADP DataProtectionTest CR status fields</a></li><li class="level-6"><a href="#oadp-dpt-use-case-bsl-spec_monitor-and-validate-oadp">Run a data protection test by configuring a backup storage location specification</a></li><li class="level-6"><a href="#oadp-dpt-use-case-azure_monitor-and-validate-oadp">Run a data protection test on an Azure object storage</a></li><li class="level-6"><a href="#oadp-troubleshooting-dpt_monitor-and-validate-oadp">Troubleshoot the DataProtectionTest custom resource</a></li><li class="level-4"><a href="#oadp-api-reference-intro_oadp-api-reference">OADP API reference</a></li><li class="level-5"><a href="#dataprotectionapplicationspec-type_oadp-api-reference">DataProtectionApplicationSpec type</a></li><li class="level-6"><a href="#backuplocation-type_oadp-api-reference">BackupLocation type</a></li><li class="level-6"><a href="#snapshotlocation-type_oadp-api-reference">SnapshotLocation type</a></li><li class="level-6"><a href="#applicationconfig-type_oadp-api-reference">ApplicationConfig type</a></li><li class="level-6"><a href="#veleroconfig-type_oadp-api-reference">VeleroConfig type</a></li><li class="level-6"><a href="#resticconfig-type_oadp-api-reference">ResticConfig type</a></li><li class="level-6"><a href="#podconfig-type_oadp-api-reference">PodConfig type</a></li><li class="level-6"><a href="#features-type_oadp-api-reference">Features type</a></li><li class="level-6"><a href="#datamover-type_oadp-api-reference">DataMover type</a></li><li class="level-6"><a href="#customplugin-type_oadp-api-reference">CustomPlugin type</a></li><li class="level-4"><a href="#oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures">About troubleshooting OADP</a></li><li class="level-5"><a href="#oadp-cli-installing_diagnose-and-resolve-oadp-failures">Install the OADP CLI plugin</a></li><li class="level-5"><a href="#velero-oadp-version-relationship_diagnose-and-resolve-oadp-failures">OADP-Velero-Red Hat OpenShift Container Platform version relationship</a></li><li class="level-5"><a href="#velero-obtaining-by-downloading_diagnose-and-resolve-oadp-failures">Download the Velero CLI tool</a></li><li class="level-5"><a href="#migration-debugging-velero-resources_diagnose-and-resolve-oadp-failures">Debug backups and restores using the OADP CLI</a></li><li class="level-5"><a href="#oadp-debugging-oc-cli_diagnose-and-resolve-oadp-failures">Debug Velero resources with the OpenShift CLI tool</a></li><li class="level-5"><a href="#oadp-cli-must-gather_diagnose-and-resolve-oadp-failures">Collect diagnostic data</a></li><li class="level-5"><a href="#resolving-oadp-operator-fails-silently-issue_diagnose-and-resolve-oadp-failures">Resolve silent failure of the OADP Operator</a></li><li class="level-5"><a href="#resolving-incorrect-aws-credentials-issue_diagnose-and-resolve-oadp-failures">Resolve incorrect AWS credentials</a></li><li class="level-5"><a href="#resolving-backup-storage-contains-invalid-directories-issue_diagnose-and-resolve-oadp-failures">Resolve invalid directories in backup storage</a></li><li class="level-5"><a href="#troubleshooting-backup-cr-status-remains-in-progress-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR status remains in progress</a></li><li class="level-5"><a href="#troubleshooting-backup-cr-status-remains-in-partiallyfailed-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR status remains partially failed</a></li><li class="level-5"><a href="#troubleshooting-backup-cr-cannot-retrieve-volume-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR cannot retrieve volume</a></li><li class="level-5"><a href="#oadp-troubleshooting-pvc-binding-delay_diagnose-and-resolve-oadp-failures">Troubleshoot PVC binding failures with the waitForFirstConsumer storage class</a></li><li class="level-5"><a href="#velero-default-item-operation-timeout_diagnose-and-resolve-oadp-failures">Implement velero default item operation timeout</a></li><li class="level-6"><a href="#velero-timeout_diagnose-and-resolve-oadp-failures">Implement velero resource timeout</a></li><li class="level-6"><a href="#restic-timeout_diagnose-and-resolve-oadp-failures">Implement restic timeout</a></li><li class="level-6"><a href="#item-operation-timeout-backup_diagnose-and-resolve-oadp-failures">Implement item operation timeout - backup</a></li><li class="level-6"><a href="#item-operation-timeout-restore_diagnose-and-resolve-oadp-failures">Implement item operation timeout - restore</a></li><li class="level-6"><a href="#csisnapshot-timeout_diagnose-and-resolve-oadp-failures">Implement CSI snapshot timeout</a></li><li class="level-6"><a href="#datamover-timeout_diagnose-and-resolve-oadp-failures">Implement Data Mover timeout</a></li><li class="level-5"><a href="#oadp-about-pod-resource-requirements_diagnose-and-resolve-oadp-failures">About Velero and Restic pod resource requirements</a></li><li class="level-5"><a href="#oadp-pod-crash-resource-request-velero_diagnose-and-resolve-oadp-failures">Set resource requests for a Velero pod</a></li><li class="level-6"><a href="#oadp-pod-crash-resource-request-retics_diagnose-and-resolve-oadp-failures">Set resource requests for a Restic pod</a></li><li class="level-6"><a href="#setting-resource-requests-for-a-nodeagent-pod_diagnose-and-resolve-oadp-failures">Set resource requests for a nodeAgent pod</a></li><li class="level-6"><a href="#velero-oomkilled-large-kopia-repos_diagnose-and-resolve-oadp-failures">Velero server terminates with OOMKilled when accessing large Kopia repositories</a></li><li class="level-5"><a href="#oadp-restic-restore-failing-psa-policy_diagnose-and-resolve-oadp-failures">Troubleshoot restic restore partially failed issue on OpenShift Container Platform 4.14 onward due to changed PSA policy</a></li><li class="level-5"><a href="#restic-backup-cr-cannot-be-recreated-after-bucket-is-emptied_diagnose-and-resolve-oadp-failures">Troubleshoot Restic Backup CR issue that cannot be re-created after bucket is emptied</a></li><li class="level-5"><a href="#restic-permission-error-for-nfs-data-volumes-with-root-squash-enabled_diagnose-and-resolve-oadp-failures">Troubleshoot Restic permission errors for NFS data volumes</a></li><li class="level-5"><a href="#oadp-about-velero-admission-webhooks_diagnose-and-resolve-oadp-failures">About Velero restore issues with admission webhooks</a></li><li class="level-5"><a href="#avoiding-the-velero-plugin-panic-error_diagnose-and-resolve-oadp-failures">Avoid the Velero plugin panic error</a></li><li class="level-5"><a href="#workaround-for-openshift-adp-controller-segmentation-fault_diagnose-and-resolve-oadp-failures">Workaround for OpenShift ADP Controller segmentation fault</a></li><li class="level-5"><a href="#migration-debugging-velero-admission-webhooks-knative_diagnose-and-resolve-oadp-failures">Restore Knative resources</a></li><li class="level-5"><a href="#migration-debugging-velero-admission-webhooks-ibm-appconnect_diagnose-and-resolve-oadp-failures">Restore IBM AppConnect resources</a></li><li class="level-4"><a href="#oadp-uninstall-intro_uninstall-oadp">Uninstall OADP</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#oadp-understand-capabilities_learn-about-oadp-capabilities">Understand OADP capabilities</a></li><li class="level-5"><a href="#oadp-features_learn-about-oadp-capabilities">OADP features</a></li><li class="level-5"><a href="#oadp-plugins_learn-about-oadp-capabilities">OADP plugins</a></li><li class="level-5"><a href="#oadp-fips_learn-about-oadp-capabilities">OADP and FIPS</a></li><li class="level-5"><a href="#oadp-supported-architecture_learn-about-oadp-capabilities">Supported architectures for OADP</a></li><li class="level-5"><a href="#oadp-support-ibm_learn-about-oadp-capabilities">OADP support for IBM Power and IBM Z</a></li><li class="level-6"><a href="#oadp-ibm-power-test-matrix_learn-about-oadp-capabilities">OADP support for target backup locations using IBM Power</a></li><li class="level-6"><a href="#oadp-ibm-z-test-support_learn-about-oadp-capabilities">OADP testing and support for target backup locations using IBM Z</a></li><li class="level-6"><a href="#oadp-ibm-power-and-z-known-issues_learn-about-oadp-capabilities">Known issue of OADP using IBM Power® and IBM Z® platforms</a></li><li class="level-5"><a href="#oadp-operator-supported_learn-about-oadp-capabilities">Support for OpenShift API for Data Protection</a></li><li class="level-6"><a href="#oadp-operator-unsupported_learn-about-oadp-capabilities">Unsupported versions of the OADP Operator</a></li><li class="level-4"><a href="#oadp-release-notes-intro_review-oadp-release-notes">OADP release notes</a></li><li class="level-5"><a href="#oadp-1-6-2-release-notes_review-oadp-release-notes">OADP 1.6.2 release notes</a></li><li class="level-6"><a href="#new-features-1-6-2_review-oadp-release-notes">New features</a></li><li class="level-6"><a href="#resolved-issues-1-6-2_review-oadp-release-notes">Resolved issues</a></li><li class="level-6"><a href="#known-issues-1-6-2_review-oadp-release-notes">Known issues</a></li><li class="level-6"><a href="#technology-preview-features-1-6-2_review-oadp-release-notes">Technology Preview features</a></li><li class="level-5"><a href="#oadp-1-6-1-release-notes_review-oadp-release-notes">OADP 1.6.1 release notes</a></li><li class="level-6"><a href="#resolved-issues-1-6-1_review-oadp-release-notes">Resolved issues</a></li><li class="level-6"><a href="#known-issues-1-6-1_review-oadp-release-notes">Known issues</a></li><li class="level-5"><a href="#oadp-1-6-0-release-notes_review-oadp-release-notes">OADP 1.6.0 release notes</a></li><li class="level-6"><a href="#new-features-1-6-0_review-oadp-release-notes">New features</a></li><li class="level-6"><a href="#resolved-issues-1-6-0_review-oadp-release-notes">Resolved issues</a></li><li class="level-6"><a href="#known-issues-1-6-0_review-oadp-release-notes">Known issues</a></li><li class="level-6"><a href="#technology-preview-features-1-6-0_review-oadp-release-notes">Technology Preview features</a></li><li class="level-6"><a href="#removed-features-1-6-0_review-oadp-release-notes">Removed features</a></li><li class="level-4"><a href="#oadp-plan-deployment-intro_plan-oadp-deployment">Plan an OADP deployment</a></li><li class="level-5"><a href="#oadp-s3-compatible-backup-storage-providers_plan-oadp-deployment">AWS S3 compatible backup storage providers</a></li><li class="level-6"><a href="#oadp-certified-backup-storage-providers_plan-oadp-deployment">Certified backup storage providers</a></li><li class="level-6"><a href="#oadp-s3-compatible-backup-storage-providers-unsupported">Unsupported backup storage providers</a></li><li class="level-6"><a href="#oadp-s3-compatible-backup-storage-providers-known-limitations">Backup storage providers with known limitations</a></li><li class="level-5"><a href="#oadp-support-backup-data-immutability_plan-oadp-deployment">OADP support for backup data immutability</a></li><li class="level-5"><a href="#oadp-configuring-noobaa-for-dr_plan-oadp-deployment">Configure Multicloud Object Gateway (MCG) for disaster recovery on OpenShift Data Foundation</a></li><li class="level-5"><a href="#oadp-velero-cpu-memory-requirements_plan-oadp-deployment">Velero CPU and memory requirements based on collected data</a></li><li class="level-6"><a href="#_cpu_and_memory_requirement_for_configurations">CPU and memory requirement for configurations</a></li><li class="level-6"><a href="#_additional_resources_8">Additional resources</a></li><li class="level-5"><a href="#oadp-odf-cpu-memory-requirements_plan-oadp-deployment">Adjust Ceph CPU and memory requirements based on collected data</a></li><li class="level-6"><a href="#oadp-odf-config-cpu-memory-requirements_plan-oadp-deployment">CPU and memory requirement for configurations</a></li><li class="level-5"><a href="#oadp-performance-network-requirements_plan-oadp-deployment">OADP network requirements</a></li><li class="level-5"><a href="#oadp-backup-restore-for-large-usage_plan-oadp-deployment">NodeAgent CPU for large usage</a></li><li class="level-4"><a href="#oadp-install-intro_install-oadp">About installing OADP</a></li><li class="level-5"><a href="#velero-oadp-version-relationship_install-oadp">OADP-Velero-Red Hat OpenShift Container Platform version relationship</a></li><li class="level-5"><a href="#about-oadp-update-channels_install-oadp">About OADP update channels</a></li><li class="level-5"><a href="#about-installing-oadp-on-multiple-namespaces_install-oadp">Installation of OADP on multiple namespaces</a></li><li class="level-5"><a href="#installing-operator-oadp_install-oadp">Install the OADP Operator</a></li><li class="level-4"><a href="#oadp-connect-to-backup-storage-intro_connect-oadp-to-backup-storage">About connecting OADP to backup storage</a></li><li class="level-5"><a href="#oadp-about-backup-snapshot-locations_connect-oadp-to-backup-storage">About backup and snapshot locations and their secrets</a></li><li class="level-6"><a href="#backup-locations_connect-oadp-to-backup-storage">Backup locations</a></li><li class="level-6"><a href="#snapshot-locations_connect-oadp-to-backup-storage">Snapshot locations</a></li><li class="level-6"><a href="#secrets_connect-oadp-to-backup-storage">Secrets</a></li><li class="level-5"><a href="#migration-configuring-aws-s3_connect-oadp-to-backup-storage">Configure Amazon Web Services</a></li><li class="level-6"><a href="#oadp-creating-default-secret_connect-oadp-to-backup-storage">Create a default Secret</a></li><li class="level-6"><a href="#oadp-aws-secrets-for-different-credentials_connect-oadp-to-backup-storage">Create profiles for different credentials</a></li><li class="level-6"><a href="#oadp-s3-and-gov-cloud_connect-oadp-to-backup-storage">About Amazon Simple Storage Service, Identity and Access Management, and GovCloud</a></li><li class="level-6"><a href="#oadp-configuring-aws-md5sum_connect-oadp-to-backup-storage">Configure the backup storage location with a MD5 checksum algorithm</a></li><li class="level-6"><a href="#oadp-ssec-encrypted-backups_connect-oadp-to-backup-storage">Create an OADP SSE-C encryption key for additional data security</a></li><li class="level-6"><a href="#oadp-ssec-encrypted-backups-velero_connect-oadp-to-backup-storage">Download a file with an SSE-C encryption key for files backed up by Velero</a></li><li class="level-6"><a href="#oadp-using-legacy-aws-plugin_connect-oadp-to-backup-storage">Use the legacy-aws Velero plugin in the DataProtectionApplication CR</a></li><li class="level-5"><a href="#oadp-about-aws-sts_connect-oadp-to-backup-storage">About installing OADP on AWS STS clusters</a></li><li class="level-5"><a href="#preparing-aws-sts-credentials-for-oadp_connect-oadp-to-backup-storage">Prepare AWS STS credentials for OADP</a></li><li class="level-6"><a href="#installing-oadp-aws-sts_connect-oadp-to-backup-storage">Install the OADP Operator and provide the IAM role</a></li><li class="level-6"><a href="#performing-a-backup-oadp-aws-sts_connect-oadp-to-backup-storage">Perform a backup with OADP and AWS STS</a></li><li class="level-6"><a href="#cleanup-a-backup-oadp-aws-sts_connect-oadp-to-backup-storage">Clean up a cluster after a backup with OADP and AWS STS</a></li><li class="level-5"><a href="#migration-configuring-azure_connect-oadp-to-backup-storage">Configure Microsoft Azure</a></li><li class="level-6"><a href="#oadp-auth-azure-methods_connect-oadp-to-backup-storage">About authenticating OADP with Azure</a></li><li class="level-6"><a href="#oadp-auth-azure-secret-based_connect-oadp-to-backup-storage">Use a service principal or a storage account access key</a></li><li class="level-6"><a href="#oadp-auth-azure-STS_connect-oadp-to-backup-storage">Use OADP with Azure Security Token Service authentication</a></li><li class="level-5"><a href="#migration-configuring-gcp_connect-oadp-to-backup-storage">Configure Google Cloud</a></li><li class="level-6"><a href="#oadp-gcp-wif-cloud-authentication_connect-oadp-to-backup-storage">Google workload identity federation cloud authentication</a></li><li class="level-6"><a href="#oadp-secrets-for-different-credentials_connect-oadp-to-backup-storage">Create secrets for different credentials</a></li><li class="level-5"><a href="#migration-configuring-mcg_connect-oadp-to-backup-storage">Retrieve Multicloud Object Gateway credentials</a></li><li class="level-5"><a href="#oadp-creating-object-bucket-claim_connect-oadp-to-backup-storage">Create an Object Bucket Claim for disaster recovery on OpenShift Data Foundation</a></li><li class="level-5"><a href="#configuring-ibm-cos_connect-oadp-to-backup-storage">Configure the COS instance</a></li><li class="level-5"><a href="#oadp-configuring-velero-plugins_connect-oadp-to-backup-storage">About OADP Velero plugins</a></li><li class="level-6"><a href="#_default_velero_cloud_provider_plugins">Default Velero cloud provider plugins</a></li><li class="level-6"><a href="#_custom_velero_plugins">Custom Velero plugins</a></li><li class="level-5"><a href="#oadp-installing-dpa_connect-oadp-to-backup-storage">Install the Data Protection Application</a></li><li class="level-6"><a href="#oadp-dpa-configuration-by-provider_connect-oadp-to-backup-storage">DataProtectionApplication CR examples by storage provider</a></li><li class="level-5"><a href="#oadp-self-signed-certificate_connect-oadp-to-backup-storage">Enable self-signed CA certificates</a></li><li class="level-5"><a href="#oadp-using-ca-certificates-with-velero-command-aliased-for-velero-deployment_connect-oadp-to-backup-storage">Use CA certificates with the velero command aliased for Velero deployment</a></li><li class="level-5"><a href="#oadp-multiple-bsl-use-case_connect-oadp-to-backup-storage">Configure two backup BSLs with different cloud credentials</a></li><li class="level-6"><a href="#oadp-configuring-dpa-multiple-bsl_connect-oadp-to-backup-storage">Configure the DPA with more than one BSL</a></li><li class="level-6"><a href="#oadp-changing-default-bsl_connect-oadp-to-backup-storage">Change the default backup storage location in a DPA</a></li><li class="level-5"><a href="#oadp-configuring-dpa-multiple-vsl_connect-oadp-to-backup-storage">Configure the DPA with more than one VSL</a></li><li class="level-4"><a href="#oadp-configure-security-performance-intro_configure-oadp-security-and-performance">Configure OADP security and performance</a></li><li class="level-5"><a href="#oadp-enabling-csi-dpa_configure-oadp-security-and-performance">Enable CSI in the DataProtectionApplication CR</a></li><li class="level-5"><a href="#oadp-about-disable-node-agent-dpa_configure-oadp-security-and-performance">Disable the node agent in DataProtectionApplication</a></li><li class="level-5"><a href="#oadp-configuring-node-agents_configure-oadp-security-and-performance">Configure node agents and node labels</a></li><li class="level-6"><a href="#oadp-configuring-node-agent-load-affinity_configure-oadp-security-and-performance">Configure node agent load affinity</a></li><li class="level-6"><a href="#oadp-node-agent-load-affinity-guidelines_configure-oadp-security-and-performance">Node agent load affinity guidelines</a></li><li class="level-6"><a href="#oadp-configuring-node-agent-load-concurrency_configure-oadp-security-and-performance">Configure node agent load concurrency</a></li><li class="level-6"><a href="#oadp-configuring-node-agent-non-root_configure-oadp-security-and-performance">Configure the node agent as a non-root and non-privileged user</a></li><li class="level-5"><a href="#oadp-setting-resource-limits-and-requests_configure-oadp-security-and-performance">Set Velero CPU and memory resource allocations</a></li><li class="level-5"><a href="#oadp-configuring-priority-class_configure-oadp-security-and-performance">Configure a priority class for node agent and Velero pods</a></li><li class="level-5"><a href="#oadp-configuring-client-burst-qps_configure-oadp-security-and-performance">Configure the DPA with client burst and QPS settings</a></li><li class="level-5"><a href="#oadp-configuring-velero-load-affinity_configure-oadp-security-and-performance">Configure Velero load affinity</a></li><li class="level-5"><a href="#oadp-configuring-imagepullpolicy_configure-oadp-security-and-performance">Override the imagePullPolicy setting in the DPA</a></li><li class="level-5"><a href="#oadp-configuring-repository-maintenance_configure-oadp-security-and-performance">Configure repository maintenance</a></li><li class="level-4"><a href="#oadp-manage-with-cli-plugin-intro_manage-oadp-with-cli-plugin">Manage OADP with the CLI plugin</a></li><li class="level-5"><a href="#oadp-cli-setup_manage-oadp-with-cli-plugin">Set up the OADP CLI plugin</a></li><li class="level-5"><a href="#oadp-cli-client-config_manage-oadp-with-cli-plugin">OADP CLI client configuration commands</a></li><li class="level-6"><a href="#oadp-cli-client-config-get_manage-oadp-with-cli-plugin">Current configuration viewing command</a></li><li class="level-6"><a href="#oadp-cli-client-config-set_manage-oadp-with-cli-plugin">Configuration value setting command</a></li><li class="level-5"><a href="#oadp-cli-completion_manage-oadp-with-cli-plugin">Enable shell completion for the OADP CLI</a></li><li class="level-5"><a href="#oadp-cli-admin-backups_manage-oadp-with-cli-plugin">Backup management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-create_manage-oadp-with-cli-plugin">Backup creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-list_manage-oadp-with-cli-plugin">Backup listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-describe_manage-oadp-with-cli-plugin">Backup description command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-logs_manage-oadp-with-cli-plugin">Backup logs command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-download_manage-oadp-with-cli-plugin">Backup download command</a></li><li class="level-6"><a href="#oadp-cli-admin-backups-delete_manage-oadp-with-cli-plugin">Backup deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-restores_manage-oadp-with-cli-plugin">Restore management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-create_manage-oadp-with-cli-plugin">Restore creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-list_manage-oadp-with-cli-plugin">Restore listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-describe_manage-oadp-with-cli-plugin">Restore description command</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-logs_manage-oadp-with-cli-plugin">Restore logs command</a></li><li class="level-6"><a href="#oadp-cli-admin-restores-delete_manage-oadp-with-cli-plugin">Restore deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-schedules_manage-oadp-with-cli-plugin">Schedule management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-schedules-create_manage-oadp-with-cli-plugin">Schedule creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-schedules-list_manage-oadp-with-cli-plugin">Schedule listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-schedules-describe_manage-oadp-with-cli-plugin">Schedule description command</a></li><li class="level-6"><a href="#oadp-cli-admin-schedules-delete_manage-oadp-with-cli-plugin">Schedule deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-bsl_manage-oadp-with-cli-plugin">Backup storage location management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-bsl-create_manage-oadp-with-cli-plugin">Backup storage location creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-bsl-list_manage-oadp-with-cli-plugin">Backup storage location listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-bsl-set-default_manage-oadp-with-cli-plugin">Default backup storage location command</a></li><li class="level-6"><a href="#oadp-cli-admin-bsl-delete_manage-oadp-with-cli-plugin">Backup storage location deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-vsl_manage-oadp-with-cli-plugin">Volume snapshot location management commands</a></li><li class="level-6"><a href="#oadp-cli-admin-vsl-create_manage-oadp-with-cli-plugin">Volume snapshot location creation command</a></li><li class="level-6"><a href="#oadp-cli-admin-vsl-list_manage-oadp-with-cli-plugin">Volume snapshot location listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-vsl-set-default_manage-oadp-with-cli-plugin">Default volume snapshot location command</a></li><li class="level-6"><a href="#oadp-cli-admin-vsl-delete_manage-oadp-with-cli-plugin">Volume snapshot location deletion command</a></li><li class="level-5"><a href="#oadp-cli-admin-nabsl-requests_manage-oadp-with-cli-plugin">NonAdminBackupStorageLocation approval request commands</a></li><li class="level-6"><a href="#oadp-cli-admin-nabsl-list_manage-oadp-with-cli-plugin">NABSL approval request listing command</a></li><li class="level-6"><a href="#oadp-cli-admin-nabsl-describe_manage-oadp-with-cli-plugin">NABSL approval request description command</a></li><li class="level-6"><a href="#oadp-cli-admin-nabsl-approve_manage-oadp-with-cli-plugin">NABSL approval request approval command</a></li><li class="level-6"><a href="#oadp-cli-admin-nabsl-reject_manage-oadp-with-cli-plugin">NABSL approval request rejection command</a></li><li class="level-5"><a href="#oadp-cli-must-gather_manage-oadp-with-cli-plugin">Collect diagnostic data</a></li><li class="level-5"><a href="#oadp-cli-nonadmin-about_manage-oadp-with-cli-plugin">OADP self-service</a></li><li class="level-6"><a href="#oadp-cli-nonadmin-about-limitations_manage-oadp-with-cli-plugin">Limitations</a></li><li class="level-6"><a href="#oadp-cli-nonadmin-backups_manage-oadp-with-cli-plugin">Non-admin backup management commands</a></li><li class="level-6"><a href="#oadp-cli-nonadmin-restores_manage-oadp-with-cli-plugin">Non-administrator restore management commands</a></li><li class="level-6"><a href="#oadp-cli-nonadmin-bsl_manage-oadp-with-cli-plugin">NonAdminBackupStorageLocation management commands</a></li><li class="level-4"><a href="#oadp-back-up-applications-intro_back-up-applications">About backing up applications</a></li><li class="level-5"><a href="#oadp-review-backup-restore_back-up-applications">Preview resources before running backup and restore</a></li><li class="level-5"><a href="#backingup-persistent-volumes_back-up-applications">Back up persistent volumes with CSI snapshots</a></li><li class="level-5"><a href="#oadp-about-file-system-backup_back-up-applications">About File System Backup</a></li><li class="level-5"><a href="#oadp-about-kopia_back-up-applications">About Kopia</a></li><li class="level-5"><a href="#oadp-backingup-file-system-backup_back-up-applications">Back up applications with File System Backup</a></li><li class="level-5"><a href="#oadp-creating-backup-cr_back-up-applications">Creating a Backup CR</a></li><li class="level-5"><a href="#oadp-parallel-backup-processing_back-up-applications">Parallel backup processing in OADP</a></li><li class="level-5"><a href="#oadp-enabling-parallel-backup-processing_back-up-applications">Enabling parallel backup processing</a></li><li class="level-5"><a href="#oadp-creating-backup-hooks_back-up-applications">Creating backup hooks</a></li><li class="level-5"><a href="#oadp-scheduling-backups_back-up-applications">Scheduling backups using Schedule CR</a></li><li class="level-5"><a href="#oadp-1-3-backing-csi-snapshots_back-up-applications">Back up persistent volumes with CSI snapshots</a></li><li class="level-5"><a href="#oadp-deletion-policy-1-3_back-up-applications">Deletion policy for OADP 1.3</a></li><li class="level-6"><a href="#oadp-deletion-policy-guidelines-1-3_back-up-applications">Deletion policy guidelines for OADP 1.3</a></li><li class="level-5"><a href="#oadp-about-kopia-repo-maintenance_back-up-applications">About Kopia repository maintenance</a></li><li class="level-6"><a href="#kopia-maint-in-oadp_back-up-applications">Kopia maintenance in OADP</a></li><li class="level-5"><a href="#oadp-about-backup-deletion-timing_back-up-applications">About backup deletion artifact timing</a></li><li class="level-5"><a href="#oadp-deleting-backups-using-oc_back-up-applications">Delete a backup by creating a DeleteBackupRequest CR</a></li><li class="level-5"><a href="#oadp-deleting-backups-using-velero_back-up-applications">Delete a backup by using the OADP CLI</a></li><li class="level-5"><a href="#oadp-deleting-backup-repository_back-up-applications">Delete a backup repository</a></li><li class="level-5"><a href="#oadp-usecase-backup-odf_back-up-applications">Back up an application using OADP and ODF</a></li><li class="level-5"><a href="#oadp-usecase-include-ca-cert-backup_back-up-applications">Back up an application and its self-signed CA certificate</a></li><li class="level-4"><a href="#oadp-restore-applications-intro_restore-applications">Restore applications</a></li><li class="level-5"><a href="#oadp-review-backup-restore_restore-applications">Preview resources before running backup and restore</a></li><li class="level-5"><a href="#oadp-creating-restore-cr_restore-applications">Create a Restore CR</a></li><li class="level-5"><a href="#oadp-creating-restore-hooks_restore-applications">Create restore hooks</a></li><li class="level-5"><a href="#oadp-1-3-restoring-csi-snapshots_restore-applications">Restore CSI volume snapshots</a></li><li class="level-5"><a href="#oadp-storage-class-mapping_restore-applications">Storage class mapping</a></li><li class="level-6"><a href="#oadp-storage-class-mapping-oadp_restore-applications">Map storage classes with OADP</a></li><li class="level-5"><a href="#oadp-usecase-restore_restore-applications">Restore an application to a different namespace using OADP</a></li><li class="level-5"><a href="#oadp-about-enable-api-group-versions_restore-applications">About Enable API Group Versions</a></li><li class="level-6"><a href="#oadp-using-enable-api-group-versions_restore-applications">Use Enable API Group Versions</a></li><li class="level-6"><a href="#oadp-checking-api-group-versions_restore-applications">List the Kubernetes API group versions on a cluster</a></li><li class="level-4"><a href="#oadp-3scale-backup-restore-intro_back-up-and-restore-3scale-api-management">About backing up and restoring 3scale API Management</a></li><li class="level-5"><a href="#creating-the-data-protection-application_back-up-and-restore-3scale-api-management">Create the Data Protection Application</a></li><li class="level-5"><a href="#backing-up-the-3scale-operator-secret-apimanager_back-up-and-restore-3scale-api-management">Back up the 3scale API Management operator, secret, and APIManager</a></li><li class="level-5"><a href="#backing-up-the-backend-redis-database_back-up-and-restore-3scale-api-management">Back up the back-end Redis database</a></li><li class="level-5"><a href="#backing-up-the-mysql-database_back-up-and-restore-3scale-api-management">Back up a MySQL database</a></li><li class="level-5"><a href="#restoring-the-3scale-api-management-operator-secrets-and-apimanager_back-up-and-restore-3scale-api-management">Restore the 3scale API Management operator, secrets, and APIManager</a></li><li class="level-6"><a href="#restoring-the-backend-redis-database_back-up-and-restore-3scale-api-management">Restore the back-end Redis database</a></li><li class="level-6"><a href="#restoring-the-mysql-database_back-up-and-restore-3scale-api-management">Restore a MySQL database</a></li><li class="level-6"><a href="#scaling-up-the-3scale-api-management-operator-and-deployment_back-up-and-restore-3scale-api-management">Scale up the 3scale API Management operator and deployment</a></li><li class="level-4"><a href="#oadp-rosa-sts-intro_back-up-and-restore-applications-on-rosa-with-sts">About backing up and restoring applications on ROSA with STS</a></li><li class="level-5"><a href="#preparing-aws-credentials-for-oadp_back-up-and-restore-applications-on-rosa-with-sts">Prepare AWS credentials for OADP</a></li><li class="level-6"><a href="#installing-oadp-rosa-sts_back-up-and-restore-applications-on-rosa-with-sts">Install the OADP Operator and provide the IAM role</a></li><li class="level-6"><a href="#updating-role-arn-oadp-rosa-sts_back-up-and-restore-applications-on-rosa-with-sts">Update the IAM role ARN in the OADP Operator subscription</a></li><li class="level-6"><a href="#performing-a-backup-oadp-rosa-sts_back-up-and-restore-applications-on-rosa-with-sts">Example: Performing a backup with OADP and Red Hat OpenShift Container Platform</a></li><li class="level-6"><a href="#cleanup-a-backup-oadp-rosa-sts_back-up-and-restore-applications-on-rosa-with-sts">Clean up a cluster after a backup with OADP and ROSA STS</a></li><li class="level-4"><a href="#oadp-optimize-backup-performance-intro_optimize-backup-performance">Optimize backup performance</a></li><li class="level-5"><a href="#oadp-about-data-mover_optimize-backup-performance">About the OADP Data Mover</a></li><li class="level-5"><a href="#oadp-data-mover-support_optimize-backup-performance">Data Mover support</a></li><li class="level-5"><a href="#built-in-data-mover-crds_optimize-backup-performance">Built-in Data Mover controller and custom resource definitions (CRDs)</a></li><li class="level-5"><a href="#enabling-oadp-data-mover_optimize-backup-performance">Enable the built-in Data Mover</a></li><li class="level-5"><a href="#oadp-about-incremental-backup-support_optimize-backup-performance">About incremental backup support</a></li><li class="level-5"><a href="#configuring-backup-pvc_optimize-backup-performance">Configure a backup PVC for a Data Mover backup</a></li><li class="level-5"><a href="#configuring-restore-pvc_optimize-backup-performance">Configure a restorePVC for a Data Mover restore</a></li><li class="level-5"><a href="#oadp-kopia-algorithms-benchmarking_optimize-backup-performance">Benchmark Kopia hashing, encryption, and splitter algorithms</a></li><li class="level-6"><a href="#oadp-kopia-configuring-algorithms_optimize-backup-performance">Configure the DPA to override Kopia hashing, encryption, and splitter algorithms</a></li><li class="level-6"><a href="#oadp-usecase-kopia-override-algorithms_optimize-backup-performance">Use case for overriding Kopia hashing, encryption, and splitter algorithms</a></li><li class="level-4"><a href="#oadp-back-up-and-restore-vms-intro_back-up-and-restore-virtual-machines">Back up and restore virtual machines</a></li><li class="level-5"><a href="#oadp-protect-virtual-machine-data-intro_back-up-and-restore-virtual-machines">Protect virtual machine data</a></li><li class="level-5"><a href="#install-and-configure-oadp-kubevirt_back-up-and-restore-virtual-machines">Install and configure OADP with OpenShift Virtualization</a></li><li class="level-5"><a href="#oadp-backup-single-vm_back-up-and-restore-virtual-machines">Back up a single VM</a></li><li class="level-5"><a href="#oadp-restore-single-vm_back-up-and-restore-virtual-machines">Restore a single VM</a></li><li class="level-5"><a href="#oadp-restore-single-vm-from-multiple-vm-backup_back-up-and-restore-virtual-machines">Restore a single VM from a backup of multiple VMs</a></li><li class="level-4"><a href="#oadp-recover-files-from-vm-backups-intro_recover-files-from-vm-backups">Recover individual files from VM backups</a></li><li class="level-5"><a href="#oadp-vmfr-overview_recover-files-from-vm-backups">What problem is OADP VMFR solving</a></li><li class="level-5"><a href="#oadp-vmfr-how-it-works_recover-files-from-vm-backups">How OADP VMFR works</a></li><li class="level-6"><a href="#_backup_discovery_phase">Backup discovery phase</a></li><li class="level-6"><a href="#_file_restore_phase">File restore phase</a></li><li class="level-6"><a href="#_file_serving_pod_architecture">File-serving pod architecture</a></li><li class="level-5"><a href="#oadp-vmfr-custom-resources_recover-files-from-vm-backups">OADP VMFR custom resources</a></li><li class="level-5"><a href="#oadp-vmfr-phases_recover-files-from-vm-backups">OADP VMFR discovery and restore phases</a></li><li class="level-5"><a href="#oadp-vmfr-access-methods_recover-files-from-vm-backups">OADP VMFR file access methods</a></li><li class="level-6"><a href="#oadp-vmfr-web-browser-access_recover-files-from-vm-backups">Web browser access</a></li><li class="level-6"><a href="#_ssh_based_access">SSH-based access</a></li><li class="level-5"><a href="#oadp-vmfr-prerequisites_recover-files-from-vm-backups">OADP VMFR prerequisites</a></li><li class="level-5"><a href="#oadp-vmfr-limitations_recover-files-from-vm-backups">OADP VMFR limitations</a></li><li class="level-5"><a href="#oadp-vmfr-security_recover-files-from-vm-backups">OADP VMFR security considerations</a></li><li class="level-5"><a href="#oadp-vmfr-use-scenarios_recover-files-from-vm-backups">When to use OADP VMFR</a></li><li class="level-5"><a href="#oadp-vmfr-enabling_recover-files-from-vm-backups">Enable OADP VMFR</a></li><li class="level-6"><a href="#oadp-vmfr-creating-vmbd_recover-files-from-vm-backups">Create a VirtualMachineBackupsDiscovery CR</a></li><li class="level-6"><a href="#oadp-vmfr-creating-vmfr_recover-files-from-vm-backups">Create a VirtualMachineFileRestore CR</a></li><li class="level-6"><a href="#oadp-vmfr-accessing-files-web_recover-files-from-vm-backups">Access restored files through a web browser</a></li><li class="level-6"><a href="#oadp-vmfr-accessing-files-ssh_recover-files-from-vm-backups">Access restored files through SSH</a></li><li class="level-6"><a href="#oadp-vmfr-deleting-vmfr_recover-files-from-vm-backups">Delete a VirtualMachineFileRestore CR</a></li><li class="level-6"><a href="#oadp-vmfr-end-to-end-workflow_recover-files-from-vm-backups">Test the VM file restore workflow</a></li><li class="level-4"><a href="#oadp-enable-crash-consistent-vm-backups-intro_enable-crash-consistent-vm-backups">Enable crash-consistent VM backups</a></li><li class="level-5"><a href="#oadp-vmdp-overview_enable-crash-consistent-vm-backups">About OADP virtual machine data protection</a></li><li class="level-6"><a href="#_what_problem_is_vmdp_solving">What problem is VMDP solving</a></li><li class="level-6"><a href="#_what_vmdp_does">What VMDP does</a></li><li class="level-6"><a href="#_who_uses_vmdp">Who uses VMDP</a></li><li class="level-6"><a href="#_vmdp_and_vmfr_comparison">VMDP and VMFR comparison</a></li><li class="level-5"><a href="#oadp-vmdp-configuration_enable-crash-consistent-vm-backups">OADP virtual machine data protection configuration</a></li><li class="level-6"><a href="#_environment_variables">Environment variables</a></li><li class="level-6"><a href="#_file_locations">File locations</a></li><li class="level-6"><a href="#_kopia_compatibility">Kopia compatibility</a></li><li class="level-5"><a href="#oadp-vmdp-storage-backends_enable-crash-consistent-vm-backups">OADP virtual machine data protection backend storage</a></li><li class="level-6"><a href="#_s3_compatible_storage">S3-compatible storage</a></li><li class="level-6"><a href="#_filesystem_storage">Filesystem storage</a></li><li class="level-5"><a href="#oadp-vmdp-supported-platforms_enable-crash-consistent-vm-backups">Supported platforms for OADP virtual machine data protection</a></li><li class="level-5"><a href="#oadp-vmdp-installing-cli_enable-crash-consistent-vm-backups">Install the OADP virtual machine data protection CLI</a></li><li class="level-6"><a href="#oadp-vmdp-creating-bsl-s3_enable-crash-consistent-vm-backups">Create a backup storage location with S3-compatible storage by using the VMDP CLI</a></li><li class="level-6"><a href="#oadp-vmdp-creating-bsl-filesystem_enable-crash-consistent-vm-backups">Create a backup storage location with file system storage by using the VMDP CLI</a></li><li class="level-6"><a href="#oadp-vmdp-managing-bsl_enable-crash-consistent-vm-backups">OADP VMDP BSL management commands</a></li><li class="level-6"><a href="#oadp-vmdp-backing-up-data_enable-crash-consistent-vm-backups">Back up data from a virtual machine by using the VMDP CLI</a></li><li class="level-6"><a href="#oadp-vmdp-restoring-data_enable-crash-consistent-vm-backups">Restore data to a virtual machine by using the VMDP CLI</a></li><li class="level-6"><a href="#oadp-vmdp-troubleshooting_enable-crash-consistent-vm-backups">Troubleshoot OADP virtual machine data protection</a></li><li class="level-4"><a href="#oadp-delegate-backup-restore-namespace-admins-intro_delegate-backup-and-restore-to-namespace-admins">Delegate backup and restore to namespace administrators</a></li><li class="level-5"><a href="#oadp-self-service-overview_delegate-backup-and-restore-to-namespace-admins">About OADP Self-Service</a></li><li class="level-5"><a href="#oadp-self-service-how-it-works_delegate-backup-and-restore-to-namespace-admins">How OADP Self-Service works</a></li><li class="level-5"><a href="#oadp-self-service-custom-resources_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service custom resources</a></li><li class="level-5"><a href="#oadp-self-service-overview-namespace-scope_delegate-backup-and-restore-to-namespace-admins">What namespace-scoped backup and restore means</a></li><li class="level-5"><a href="#oadp-self-service-namespace-permissions_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service namespace permissions</a></li><li class="level-6"><a href="#oadp-self-service-yaml-backup-operation_delegate-backup-and-restore-to-namespace-admins">Example RBAC YAML for backup operation</a></li><li class="level-5"><a href="#oadp-self-service-phases_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service backup and restore phases</a></li><li class="level-5"><a href="#oadp-self-service-about-nabsl_delegate-backup-and-restore-to-namespace-admins">About NonAdminBackupStorageLocation CR</a></li><li class="level-5"><a href="#oadp-self-service-prerequisites_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service prerequisites</a></li><li class="level-5"><a href="#oadp-self-service-unsupported-features_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service limitations</a></li><li class="level-5"><a href="#oadp-self-service-admin-enable-disable_delegate-backup-and-restore-to-namespace-admins">Enable and disable OADP Self-Service</a></li><li class="level-6"><a href="#oadp-self-service-admin-spec-enforcement_delegate-backup-and-restore-to-namespace-admins">OADP Self-Service administrator DPA spec enforcement</a></li><li class="level-6"><a href="#oadp-self-service-admin-spec-enforce-nab_delegate-backup-and-restore-to-namespace-admins">Self-Service administrator spec enforcement for NAB</a></li><li class="level-6"><a href="#oadp-self-service-admin-spec-enforce-nar_delegate-backup-and-restore-to-namespace-admins">Self-Service administrator spec enforcement for NAR</a></li><li class="level-6"><a href="#oadp-self-service-admin-spec-enforce-nabsl_delegate-backup-and-restore-to-namespace-admins">Self-Service administrator spec enforcement for NABSL</a></li><li class="level-6"><a href="#oadp-self-service-enabling-nabsl-approval_delegate-backup-and-restore-to-namespace-admins">Enable NonAdminBackupStorageLocation administrator approval workflow</a></li><li class="level-6"><a href="#oadp-self-service-approving-nabsl_delegate-backup-and-restore-to-namespace-admins">Approve a NonAdminBackupStorageLocation request</a></li><li class="level-6"><a href="#oadp-self-service-rejecting-nabsl_delegate-backup-and-restore-to-namespace-admins">Reject a NonAdminBackupStorageLocation request</a></li><li class="level-5"><a href="#oadp-self-service-creating-nab_delegate-backup-and-restore-to-namespace-admins">Create a NonAdminBackup CR</a></li><li class="level-6"><a href="#oadp-self-service-creating-nar_delegate-backup-and-restore-to-namespace-admins">Create a NonAdminRestore CR</a></li><li class="level-6"><a href="#oadp-self-service-creating-nabsl_delegate-backup-and-restore-to-namespace-admins">Create a NonAdminBackupStorageLocation CR</a></li><li class="level-6"><a href="#oadp-self-service-about-nadr_delegate-backup-and-restore-to-namespace-admins">About NonAdminDownloadRequest CR</a></li><li class="level-6"><a href="#oadp-self-service-deleting-nab_delegate-backup-and-restore-to-namespace-admins">Delete a NonAdminBackup CR</a></li><li class="level-6"><a href="#oadp-self-service-nab-nar-logs_delegate-backup-and-restore-to-namespace-admins">Review NAB and NAR logs</a></li><li class="level-5"><a href="#oadp-self-service-troubleshoot-nabsl-default_delegate-backup-and-restore-to-namespace-admins">Resolve error NonAdminBackupStorageLocation cannot be set as default</a></li><li class="level-5"><a href="#oadp-self-service-troubleshoot-nabsl-same-ns_delegate-backup-and-restore-to-namespace-admins">Resolve error NonAdminBackupStorageLocation not found in the namespace</a></li><li class="level-4"><a href="#oadp-migrate-data-across-clusters-intro_migrate-data-across-clusters">Migrate data across clusters</a></li><li class="level-5"><a href="#oadp-about-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters">About backing up data from one cluster and restoring it on another cluster</a></li><li class="level-6"><a href="#oadp-cluster-to-cluster-operators_migrate-data-across-clusters">Operators</a></li><li class="level-6"><a href="#oadp-cluster-to-cluster-velero_migrate-data-across-clusters">Use of Velero</a></li><li class="level-5"><a href="#oadp-cluster-to-cluster-uid-and-gid-ranges_migrate-data-across-clusters">UID and GID ranges</a></li><li class="level-5"><a href="#oadp-pod-volume-backup_migrate-data-across-clusters">About determining which pod volumes to back up</a></li><li class="level-6"><a href="#pod-volume-limitations_migrate-data-across-clusters">Limitations</a></li><li class="level-5"><a href="#oadp-backing-up-opt-in_migrate-data-across-clusters">Back up pod volumes by using the opt-in method</a></li><li class="level-5"><a href="#oadp-backing-up-opt-out_migrate-data-across-clusters">Back up pod volumes by using the opt-out method</a></li><li class="level-5"><a href="#oadp-backing-and-restoring-from-cluster-to-cluster_migrate-data-across-clusters">Back up data from one cluster and restore it to another cluster</a></li><li class="level-4"><a href="#oadp-upgrade-intro_upgrade-oadp">Upgrade OADP</a></li><li class="level-5"><a href="#changes-from-oadp-1-5-to-1-6_upgrade-oadp">Changes from OADP 1.5 to 1.6</a></li><li class="level-5"><a href="#oadp-backing-up-dpa-configuration-1-6-0_upgrade-oadp">Back up the DPA configuration</a></li><li class="level-5"><a href="#oadp-upgrading-dpa-operator-1-6-0_upgrade-oadp">Upgrade the OADP Operator</a></li><li class="level-5"><a href="#converting-dpa-to-the-new-version-for-oadp-1-6-0_upgrade-oadp">Convert DPA to the new version for OADP 1.6.0</a></li><li class="level-5"><a href="#verifying-upgrade-1-6-0_upgrade-oadp">Verify the upgrade</a></li><li class="level-4"><a href="#oadp-monitor-and-validate-intro_monitor-and-validate-oadp">Monitor and validate OADP</a></li><li class="level-5"><a href="#oadp-monitoring-setup-monitor_monitor-and-validate-oadp">OADP monitoring setup</a></li><li class="level-6"><a href="#oadp-creating-service-monitor_monitor-and-validate-oadp">Create OADP service monitor</a></li><li class="level-6"><a href="#list-of-metrics_monitor-and-validate-oadp">List of available metrics</a></li><li class="level-6"><a href="#viewing-metrics-observe-ui_monitor-and-validate-oadp">View metrics using the Observe UI</a></li><li class="level-6"><a href="#creating-alerting-rules_monitor-and-validate-oadp">Create an alerting rule</a></li><li class="level-5"><a href="#using-data-protection-test_monitor-and-validate-oadp">Use the DataProtectionTest custom resource</a></li><li class="level-6"><a href="#oadp-dpt-spec_monitor-and-validate-oadp">OADP DataProtectionTest CR specification fields</a></li><li class="level-6"><a href="#oadp-dpt-status_monitor-and-validate-oadp">OADP DataProtectionTest CR status fields</a></li><li class="level-6"><a href="#oadp-dpt-use-case-bsl-spec_monitor-and-validate-oadp">Run a data protection test by configuring a backup storage location specification</a></li><li class="level-6"><a href="#oadp-dpt-use-case-azure_monitor-and-validate-oadp">Run a data protection test on an Azure object storage</a></li><li class="level-6"><a href="#oadp-troubleshooting-dpt_monitor-and-validate-oadp">Troubleshoot the DataProtectionTest custom resource</a></li><li class="level-4"><a href="#oadp-api-reference-intro_oadp-api-reference">OADP API reference</a></li><li class="level-5"><a href="#dataprotectionapplicationspec-type_oadp-api-reference">DataProtectionApplicationSpec type</a></li><li class="level-6"><a href="#backuplocation-type_oadp-api-reference">BackupLocation type</a></li><li class="level-6"><a href="#snapshotlocation-type_oadp-api-reference">SnapshotLocation type</a></li><li class="level-6"><a href="#applicationconfig-type_oadp-api-reference">ApplicationConfig type</a></li><li class="level-6"><a href="#veleroconfig-type_oadp-api-reference">VeleroConfig type</a></li><li class="level-6"><a href="#resticconfig-type_oadp-api-reference">ResticConfig type</a></li><li class="level-6"><a href="#podconfig-type_oadp-api-reference">PodConfig type</a></li><li class="level-6"><a href="#features-type_oadp-api-reference">Features type</a></li><li class="level-6"><a href="#datamover-type_oadp-api-reference">DataMover type</a></li><li class="level-6"><a href="#customplugin-type_oadp-api-reference">CustomPlugin type</a></li><li class="level-4"><a href="#oadp-troubleshoot-intro_diagnose-and-resolve-oadp-failures">About troubleshooting OADP</a></li><li class="level-5"><a href="#oadp-cli-installing_diagnose-and-resolve-oadp-failures">Install the OADP CLI plugin</a></li><li class="level-5"><a href="#velero-oadp-version-relationship_diagnose-and-resolve-oadp-failures">OADP-Velero-Red Hat OpenShift Container Platform version relationship</a></li><li class="level-5"><a href="#velero-obtaining-by-downloading_diagnose-and-resolve-oadp-failures">Download the Velero CLI tool</a></li><li class="level-5"><a href="#migration-debugging-velero-resources_diagnose-and-resolve-oadp-failures">Debug backups and restores using the OADP CLI</a></li><li class="level-5"><a href="#oadp-debugging-oc-cli_diagnose-and-resolve-oadp-failures">Debug Velero resources with the OpenShift CLI tool</a></li><li class="level-5"><a href="#oadp-cli-must-gather_diagnose-and-resolve-oadp-failures">Collect diagnostic data</a></li><li class="level-5"><a href="#resolving-oadp-operator-fails-silently-issue_diagnose-and-resolve-oadp-failures">Resolve silent failure of the OADP Operator</a></li><li class="level-5"><a href="#resolving-incorrect-aws-credentials-issue_diagnose-and-resolve-oadp-failures">Resolve incorrect AWS credentials</a></li><li class="level-5"><a href="#resolving-backup-storage-contains-invalid-directories-issue_diagnose-and-resolve-oadp-failures">Resolve invalid directories in backup storage</a></li><li class="level-5"><a href="#troubleshooting-backup-cr-status-remains-in-progress-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR status remains in progress</a></li><li class="level-5"><a href="#troubleshooting-backup-cr-status-remains-in-partiallyfailed-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR status remains partially failed</a></li><li class="level-5"><a href="#troubleshooting-backup-cr-cannot-retrieve-volume-issue_diagnose-and-resolve-oadp-failures">Troubleshoot issue where backup CR cannot retrieve volume</a></li><li class="level-5"><a href="#oadp-troubleshooting-pvc-binding-delay_diagnose-and-resolve-oadp-failures">Troubleshoot PVC binding failures with the waitForFirstConsumer storage class</a></li><li class="level-5"><a href="#velero-default-item-operation-timeout_diagnose-and-resolve-oadp-failures">Implement velero default item operation timeout</a></li><li class="level-6"><a href="#velero-timeout_diagnose-and-resolve-oadp-failures">Implement velero resource timeout</a></li><li class="level-6"><a href="#restic-timeout_diagnose-and-resolve-oadp-failures">Implement restic timeout</a></li><li class="level-6"><a href="#item-operation-timeout-backup_diagnose-and-resolve-oadp-failures">Implement item operation timeout - backup</a></li><li class="level-6"><a href="#item-operation-timeout-restore_diagnose-and-resolve-oadp-failures">Implement item operation timeout - restore</a></li><li class="level-6"><a href="#csisnapshot-timeout_diagnose-and-resolve-oadp-failures">Implement CSI snapshot timeout</a></li><li class="level-6"><a href="#datamover-timeout_diagnose-and-resolve-oadp-failures">Implement Data Mover timeout</a></li><li class="level-5"><a href="#oadp-about-pod-resource-requirements_diagnose-and-resolve-oadp-failures">About Velero and Restic pod resource requirements</a></li><li class="level-5"><a href="#oadp-pod-crash-resource-request-velero_diagnose-and-resolve-oadp-failures">Set resource requests for a Velero pod</a></li><li class="level-6"><a href="#oadp-pod-crash-resource-request-retics_diagnose-and-resolve-oadp-failures">Set resource requests for a Restic pod</a></li><li class="level-6"><a href="#setting-resource-requests-for-a-nodeagent-pod_diagnose-and-resolve-oadp-failures">Set resource requests for a nodeAgent pod</a></li><li class="level-6"><a href="#velero-oomkilled-large-kopia-repos_diagnose-and-resolve-oadp-failures">Velero server terminates with OOMKilled when accessing large Kopia repositories</a></li><li class="level-5"><a href="#oadp-restic-restore-failing-psa-policy_diagnose-and-resolve-oadp-failures">Troubleshoot restic restore partially failed issue on OpenShift Container Platform 4.14 onward due to changed PSA policy</a></li><li class="level-5"><a href="#restic-backup-cr-cannot-be-recreated-after-bucket-is-emptied_diagnose-and-resolve-oadp-failures">Troubleshoot Restic Backup CR issue that cannot be re-created after bucket is emptied</a></li><li class="level-5"><a href="#restic-permission-error-for-nfs-data-volumes-with-root-squash-enabled_diagnose-and-resolve-oadp-failures">Troubleshoot Restic permission errors for NFS data volumes</a></li><li class="level-5"><a href="#oadp-about-velero-admission-webhooks_diagnose-and-resolve-oadp-failures">About Velero restore issues with admission webhooks</a></li><li class="level-5"><a href="#avoiding-the-velero-plugin-panic-error_diagnose-and-resolve-oadp-failures">Avoid the Velero plugin panic error</a></li><li class="level-5"><a href="#workaround-for-openshift-adp-controller-segmentation-fault_diagnose-and-resolve-oadp-failures">Workaround for OpenShift ADP Controller segmentation fault</a></li><li class="level-5"><a href="#migration-debugging-velero-admission-webhooks-knative_diagnose-and-resolve-oadp-failures">Restore Knative resources</a></li><li class="level-5"><a href="#migration-debugging-velero-admission-webhooks-ibm-appconnect_diagnose-and-resolve-oadp-failures">Restore IBM AppConnect resources</a></li><li class="level-4"><a href="#oadp-uninstall-intro_uninstall-oadp">Uninstall OADP</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="oadp-intro_protect-application-data-with-oadp">Protect application data with OADP</h3>
@@ -1998,7 +2045,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>OADP also provides plugins for Red&#160;Hat OpenShift Container Platform resource backups, OpenShift Virtualization resource backups, and Container Storage Interface (CSI) snapshots.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 656. OADP plugins</caption>
+<caption class="title">Table 658. OADP plugins</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2095,7 +2142,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://velero.io/docs/v1.16/custom-plugins/">Custom plugins</a></p>
+<p><a href="https://velero.io/docs/v1.18/custom-plugins/">Custom plugins</a></p>
 </li>
 </ul>
 </div>
@@ -2217,7 +2264,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Review the OADP support matrix for version compatibility with Red&#160;Hat OpenShift Container Platform releases and lifecycle policy information, including Extended Update Support (EUS) options.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 657. Supported versions of OADP</caption>
+<caption class="title">Table 659. Supported versions of OADP</caption>
 <colgroup>
 <col style="width: 10%;">
 <col style="width: 12%;">
@@ -2449,7 +2496,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect5">
 <h6 id="oadp-operator-unsupported_learn-about-oadp-capabilities">Unsupported versions of the OADP Operator</h6>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 658. Previous versions of the OADP Operator which are no longer supported</caption>
+<caption class="title">Table 660. Previous versions of the OADP Operator which are no longer supported</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -2506,6 +2553,357 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><a href="https://access.redhat.com/articles/5456281">OADP FAQ</a></p>
 </li>
 </ul>
+</div>
+<div class="sect4">
+<h5 id="oadp-1-6-2-release-notes_review-oadp-release-notes">OADP 1.6.2 release notes</h5>
+<div class="paragraph _abstract">
+<p>OpenShift API for Data Protection (OADP) 1.6.2 release notes list new features, resolved and known issues, and Technology Preview features.</p>
+</div>
+<div class="paragraph">
+<p>The following Red Hat Security Advisory (RHSA) is available for OADP 1.6.2:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://access.redhat.com/errata/RHSA-2026:91613">RHSA-2026:91613 - New version of Red&#160;Hat OpenShift API for Data Protection</a></p>
+</li>
+</ul>
+</div>
+<div class="sect5">
+<h6 id="new-features-1-6-2_review-oadp-release-notes">New features</h6>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OADP backs up the trusted CA <code>ConfigMap</code> with cluster Proxy resources</dt>
+<dd>
+<p>When a backup includes a cluster Proxy resource, OADP also includes the <code>ConfigMap</code> referenced by its <code>spec.trustedCA</code> field in the <code>openshift-config</code> namespace. This preserves the Proxy&#8217;s trusted Certificate Authority (CA) configuration for restore, even when namespace or resource filters exclude the <code>ConfigMap</code>.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8792">OADP-8792</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Secret-backed CA certificates support rotation without editing the backup storage location</dt>
+<dd>
+<p>You can reference a Certificate Authority (CA) certificate in a Kubernetes secret by using <code>caCertRef</code>. When you provide a CA certificate inline in a <code>CloudStorage</code> configuration, OADP creates and manages a secret and configures the resulting backup storage location to use that reference. You can rotate the certificate by updating the secret, without editing the <code>DataProtectionApplication</code> (DPA) custom resource or backup storage location. If you provide <code>caCertRef</code> directly, OADP passes the reference through so that you can manage the secret yourself.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8056">OADP-8056</a></p>
+</div>
+</dd>
+<dt class="hdlist1">OADP network policies isolate its components without blocking unrelated workloads</dt>
+<dd>
+<p>The OADP Operator creates and reconciles network policies for OADP-managed workloads in the installation namespace. These component-specific policies restrict ingress and egress while allowing traffic required for backup and restore, including access to configured backup storage locations. Unlike a namespace-wide default-deny policy, they do not isolate unrelated workloads, such as the Red&#160;Hat Advanced Cluster Management cluster-backup controller, which can retain its required network access.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-6074">OADP-6074</a>, <a href="https://redhat.atlassian.net/browse/OADP-8926">OADP-8926</a></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect5">
+<h6 id="resolved-issues-1-6-2_review-oadp-release-notes">Resolved issues</h6>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>VolumeGroupSnapshot</code> backups no longer fail when snapshots are deleted too early</dt>
+<dd>
+<p>Before this update, OADP deleted a <code>VolumeGroupSnapshot</code> (VGS) and its bound <code>VolumeGroupSnapshotContent</code> (VGSC) while it was still processing the group&#8217;s member <code>VolumeSnapshots</code>. The Container Storage Interface (CSI) snapshot controller could then remove <code>VolumeSnapshot</code> resources that OADP still needed to complete the backup. As a consequence, the backup could fail partially with a <code>VolumeSnapshot not found</code> error. With this release, OADP defers VGS and VGSC cleanup until the backup reaches a terminal state. As a result, OADP can finish processing the group members before cleanup, and the backup can complete successfully.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8861">OADP-8861</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Backup queues continue processing after a backup fails validation</dt>
+<dd>
+<p>Before this update, a race could leave a stale queue-tracker entry when a dequeued backup failed validation immediately, such as when its <code>BackupStorageLocation</code> was temporarily unavailable. The stale entry could prevent the queue from dequeuing later backups, even after the location recovered. With this update, the tracker is updated before the backup is made visible to the backup reconciler, preventing the queue from becoming permanently stuck.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8846">OADP-8846</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Backups to S3-compatible storage no longer fail when no object tags are configured</dt>
+<dd>
+<p>Before this update, the Amazon Web Services (AWS) plugin sent an empty x-amz-tagging header when the backup storage location did not configure object tags. As a consequence, some S3-compatible storage providers rejected the request to write the <code>velero-backup.json</code> file, and the backup failed. With this release, the AWS plugin omits the x-amz-tagging header when no tags are configured. As a result, backups to affected S3-compatible storage providers complete successfully.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8791">OADP-8791</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Google Cloud WIF backup locations remain available when <code>CloudStorage</code> specifies a region</dt>
+<dd>
+<p>Before this update, when a <code>CloudStorage</code> custom resource (CR) for Google Cloud Workload Identity Federation (WIF) specified a region, OADP also copied that value into the <code>BackupStorageLocation</code> (BSL) configuration. The Google Cloud plugin does not support a region setting in this BSL configuration. As a consequence, BSL became unavailable with an invalid configuration error. With this release, OADP adds the region to BSL configuration only for AWS STS providers and removes the unsupported <code>spec.config.region</code> entries from <code>CloudStorage</code>-backed BSLs during reconciliation for other providers. As a result, Google Cloud WIF BSLs remain available when the <code>CloudStorage</code> CR specifies a region.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8704">OADP-8704</a></p>
+</div>
+</dd>
+<dt class="hdlist1">OADP containers include liveness, readiness, and startup probes</dt>
+<dd>
+<p>Before this update, the OADP command-line interface (CLI) and virtual machine data protection (VMDP) containers did not have configured Kubernetes health probes (liveness, readiness, and startup). As a consequence, workloads could not automatically recover from common failures, such as pod, host, or network issues. With this release, the OADP Operator adds liveness, readiness, and startup probes to the deployed containers. As a result, workloads can use native Kubernetes health-checking mechanisms to self-recover from failures and ensure reliable application traffic routing.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8483">OADP-8483</a>, <a href="https://redhat.atlassian.net/browse/OADP-8445">OADP-8445</a></p>
+</div>
+</dd>
+<dt class="hdlist1">OADP workload pods use dedicated service accounts</dt>
+<dd>
+<p>Before this update, the <code>oadp-cli-server</code> workload pods in the <code>openshift-adp</code> namespace used the default service account instead of dedicated, workload-specific service accounts. As a consequence, access control validation checks failed during deployment verification. With this release, dedicated and valid service accounts are properly assigned to these workload pods. As a result, all OADP workload pods comply with access control verification and adhere to cluster security standards.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8448">OADP-8448</a>, <a href="https://redhat.atlassian.net/browse/OADP-8447">OADP-8447</a></p>
+</div>
+</dd>
+<dt class="hdlist1">OADP no longer panics when a repository-maintenance job is evicted</dt>
+<dd>
+<p>Before this update, an evicted repository-maintenance job could leave incomplete maintenance history without a last-maintenance timestamp. During reconciliation, OADP dereferenced the missing timestamp and panicked. As a consequence, the OADP pod restarted while processing the <code>BackupRepository</code> custom resource. With this release, OADP checks that maintenance timestamps are present before using them. As a result, OADP reconciles <code>BackupRepository</code> without panicking.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8444">OADP-8444</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Label-selected VM backups run guest freeze and thaw hooks</dt>
+<dd>
+<p>Before this update, a backup that used a label selector to include a VM but not its <code>virt-launcher</code> pod could include the pod as an additional item without running its pre- and post-backup hooks. As a consequence, the <code>virt-freezer</code> hooks did not freeze and thaw the guest file system, and the backup was crash-consistent rather than application-consistent. With this release, the <code>KubeVirt</code> plugin groups the VM with its related resources during backup processing. As a result, configured guest freeze and thaw hooks run even when a label selector selects only the VM.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8333">OADP-8333</a></p>
+</div>
+</dd>
+<dt class="hdlist1"><code>KubeVirt</code> VM backups include referenced <code>NetworkAttachmentDefinitions</code></dt>
+<dd>
+<p>Before this update, the <code>KubeVirt</code> Velero plugin did not include <code>NetworkAttachmentDefinitions</code> (NADs) referenced by a virtual machine in its backup dependency graph. With this update, the plugin includes these NADs in VM backup and restore processing, so the referenced network resources are included with the VM.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8146">OADP-8146</a></p>
+</div>
+</dd>
+<dt class="hdlist1"><code>CloudStorage</code> bucket creation succeeds with Google Cloud WIF</dt>
+<dd>
+<p>Before this update, the <code>CloudStorage</code> resource failed to detect when a Google Cloud bucket did not exist when using Workload Identity Federation (WIF) authentication. As a consequence, it reported a <code>BucketCheckError</code> condition and did not create the bucket. With this release, OADP correctly identifies bucket-not-found errors, including wrapped errors returned by the Google Cloud Storage client. As a result, the Operator creates the bucket during reconciliation.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8085">OADP-8085</a></p>
+</div>
+</dd>
+<dt class="hdlist1">PVC backups complete when the KubeVirt DataMover plugin is enabled without OpenShift Virtualization</dt>
+<dd>
+<p>Before this update, when the <code>kubevirt-datamover</code> plugin was enabled on a cluster without OpenShift Virtualization, the persistent volume claim (PVC) backup action attempted to list virtual machines (VMs). The missing <code>KubeVirt</code> API caused backups to finish with the <code>PartiallyFailed</code> status. With this release, the plugin checks if the <code>kubevirt.io</code> API group is present and skips VM ownership lookup when it is absent. PVC backup processing continues, and the backup reports a warning.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7996">OADP-7996</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Node agent data mover pods use the configured priority class</dt>
+<dd>
+<p>Before this update, OADP applied the <code>priorityClassName</code> from <code>spec.configuration.nodeAgent.podConfig</code> to the node agent <code>DaemonSet</code> but did not include it in the node agent <code>ConfigMap</code>. As a consequence, data mover pods launched by node agent used the default priority and could be preempted under resource pressure. With this release, OADP includes the configured priority class in the node agent <code>ConfigMap</code>. As a result, node agent data mover pods use the priority class configured in the <code>DataProtectionApplication</code> custom resource.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7984">OADP-7984</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Node agent restarts no longer cancel data uploads on other nodes</dt>
+<dd>
+<p>Before this update, restarting one node agent caused OADP to cancel all accepted data uploads, including uploads handled by other node agent pods. As a consequence, backups could fail and the backup queue could remain blocked for extended periods. With this release, OADP handles a node agent restart without canceling uploads managed by other node agent pods. As a result, unaffected uploads can complete and backup processing can continue.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7953">OADP-7953</a></p>
+</div>
+</dd>
+<dt class="hdlist1">DPA annotation and <code>ConfigMap</code> changes trigger reconciliation without an Operator restart</dt>
+<dd>
+<p>Before this update, changes to the <code>oadp.openshift.io/unsupported-velero-server-args</code> or <code>oadp.openshift.io/unsupported-node-agent-server-args</code> annotations on a <code>DataProtectionApplication</code> (DPA), or to a <code>ConfigMap</code> referenced by those annotations, did not trigger reconciliation. As a result, updated server arguments might not be applied until the OADP Operator restarted. With this release, the Operator detects changes to these annotations and watches their referenced <code>ConfigMaps</code>, so it reconciles the DPA and applies the updated configuration without requiring an Operator restart.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7943">OADP-7943</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Non-admin backup descriptions report completed pod volume backups</dt>
+<dd>
+<p>Before this update, the <code>oc oadp nonadmin backup describe</code> command could report that no pod volume backups were included even when file system backups completed successfully. With this update, the command reports completed pod volume backups, and the <code>--details</code> option displays volume-level information.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7895">OADP-7895</a></p>
+</div>
+</dd>
+<dt class="hdlist1">CSI <code>VolumeGroupSnapshot</code> restore no longer fails with Ceph RBD storage class</dt>
+<dd>
+<p>Before this update, restoring a <code>VolumeGroupSnapshot</code> (VGS) backed up from Ceph RBD storage failed with a <code>cannot find the group snapshot for VolumeSnapshot</code> error message. This error occurred because Velero deleted the <code>VolumeGroupSnapshotContent</code> after backup, leaving no matching resource during restore. Also the <code>VolumeSnapshotClassName</code> was deleted from restored <code>VolumeSnapshotContent</code>, preventing the Container Storage Interface (CSI) controller from authenticating to verify snapshots. With this update, Velero preserves the group snapshot handle as an annotation during backup, recreates a stub <code>VolumeGroupSnapshotContent</code> during restores, and restores the correct <code>VolumeSnapshotClass</code> reference. As a result, VGS restores with Ceph RBD complete successfully. Note that VGS is a Technology Preview feature.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7892">OADP-7892</a></p>
+</div>
+</dd>
+<dt class="hdlist1">VM file restores complete in a user-specified namespace</dt>
+<dd>
+<p>Before this update, when a VM file restore specified <code>spec.restoreNamespace</code>, the VM File Restore controller did not create the file server&#8217;s service account and privileged security context constraint (SCC) role binding in that namespace. As a consequence, file-server pod creation failed because the service account was missing, and the restore failed. With this release, the controller creates the required access resources in the specified namespace and has permission to remove restored persistent volume claims (PVCs) during cleanup. As a result, the file restore completes and the controller can clean up its resources without deleting the user-provided namespace.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7467">OADP-7467</a></p>
+</div>
+</dd>
+<dt class="hdlist1"><code>ImageStream</code> backups fail when a promoted image&#8217;s source tag is pruned</dt>
+<dd>
+<p>Before this update, when you backed up an <code>ImageStream</code> containing an image promoted from another namespace, OADP used the source namespace&#8217;s image repository to copy the image. If a retention policy had removed the source tag, that repository no longer served the image digest. As a consequence, the backup failed with a manifest unknown error. With this release, OADP copies the image from the repository for the <code>ImageStream</code> being backed up. As a result, the backup can complete even after the source tag is pruned.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7384">OADP-7384</a></p>
+</div>
+</dd>
+<dt class="hdlist1">AWS S3 bucket region is auto-detected in <code>CloudStorage</code>-backed <code>BackupStorageLocation</code> configuration</dt>
+<dd>
+<p>Before this update, an Amazon Web Services (AWS) S3 backup storage location without an explicitly configured bucket region could cause Kopia repository initialization and Container Storage Interface (CSI) snapshot data movement backups to fail. With this release, the OADP Operator automatically detects and populates the AWS S3 bucket region for <code>CloudStorage</code>-backed <code>BackupStorageLocation</code> when no region is explicitly configured. This prevents backup-time region-discovery failures. Note that this automatic detection applies to AWS S3 rather than custom S3-compatible endpoints.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-6065">OADP-6065</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Backups fail promptly when the built-in data mover has no running node-agent</dt>
+<dd>
+<p>Before this update, a backup using Container Storage Interface (CSI) snapshot data movement could remain in <code>WaitingForPluginOperations</code> until it timed out when no node agent pods were running. With this update, OADP checks for a running node agent before starting snapshot data movement and reports the backup failure promptly. The check applies to the built-in OADP data mover.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-2938">OADP-2938</a></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect5">
+<h6 id="known-issues-1-6-2_review-oadp-release-notes">Known issues</h6>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Volume group snapshot backups time out with ODF</dt>
+<dd>
+<p>When using OADP with Red&#160;Hat OpenShift Data Foundation (ODF), volume group snapshot backups can time out if the Ceph Container Storage Interface (CSI) driver resource has <code>spec.snapshotPolicy</code> set to its default <code>volumeSnapshot</code>. In this configuration, the CSI snapshot controller does not process <code>VolumeGroupSnapshotContent</code> resources, which can remain not ready while OADP waits for the CSI snapshot timeout. Standard <code>VolumeSnapshot</code> backups are not affected.</p>
+<div class="paragraph">
+<p>To work around this problem, set <code>spec.snapshotPolicy</code> to <code>volumeGroupSnapshot</code> on the affected driver resource. For example, for the CephFS driver, enter:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc -n openshift-storage patch driver openshift-storage.cephfs.csi.ceph.com \
+   --type merge \
+   -p '{"spec":{"snapshotPolicy":"volumeGroupSnapshot"}}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8896">OADP-8896</a></p>
+</div>
+</dd>
+<dt class="hdlist1"><code>ImageStream</code> backups fail on Azure STS</dt>
+<dd>
+<p>When OADP is deployed on Microsoft Azure with Security Token Service (STS), <code>ImageStream</code> backups fail with an error such as <code>azure: DefaultAzureCredential: failed to acquire a token</code>.</p>
+<div class="paragraph">
+<p>No known workaround exists.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8337">OADP-8337</a></p>
+</div>
+</dd>
+<dt class="hdlist1"><code>VolumeGroupSnapshot</code> backups might fail when labels match PVCs excluded by volume policies</dt>
+<dd>
+<p>When Velero creates a <code>VolumeGroupSnapshot</code> (VGS), it uses the label key specified by <code>spec.volumeGroupSnapshotLabelKey</code> to select persistent volume claims (PVCs). The Container Storage Interface (CSI) snapshot controller can also select PVCs with that label even when a volume policy excludes them from backup. If the selected PVCs use a non-CSI storage driver or different CSI drivers, VGS creation can fail and the backup can be partially failed.</p>
+<div class="paragraph">
+<p>To work around this problem, use a dedicated VGS label and apply it only to the CSI-backed PVCs that you want to snapshot together. Set <code>spec.volumeGroupSnapshotLabelKey</code> to that label. This prevents the VGS selector from matching PVCs excluded by volume policies. As a result, the group snapshot includes only the intended PVCs.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-6880">OADP-6880</a></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect5">
+<h6 id="technology-preview-features-1-6-2_review-oadp-release-notes">Technology Preview features</h6>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Incremental QCOW2 backups for <code>KubeVirt</code> VMs (Technology Preview)</dt>
+<dd>
+<p>OADP introduces storage agnostic QCOW2 incremental backup for <code>KubeVirt</code> virtual machines (VMs) as a Technology Preview feature. This feature provides a lightweight alternative to traditional <code>VolumeSnapshot</code>-based backups by using <code>libvirt</code> tools to perform incremental QCOW2 backups. After an initial full backup, later backups capture only changed blocks, improving backup performance and reducing resource usage compared to Container Storage Interface (CSI) snapshot methods. This enables more frequent backup schedules with minimal impact on running VM performance.</p>
+<div class="paragraph">
+<p>To use this feature, enable QEMU backup on VM disks (<code>CBT = true</code>) and set up the volume policy to <code>virt</code> for target volumes.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7978">OADP-7978</a></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="oadp-1-6-1-release-notes_review-oadp-release-notes">OADP 1.6.1 release notes</h5>
+<div class="paragraph _abstract">
+<p>OpenShift API for Data Protection (OADP) 1.6.1 release notes list resolved and known issues.</p>
+</div>
+<div class="paragraph">
+<p>The following Red Hat Security Advisory (RHSA) is available for OADP 1.6.1:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://access.redhat.com/errata/RHSA-2026:43692">RHSA-2026:43692 - New version of Red&#160;Hat OpenShift API for Data Protection</a></p>
+</li>
+</ul>
+</div>
+<div class="sect5">
+<h6 id="resolved-issues-1-6-1_review-oadp-release-notes">Resolved issues</h6>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OADP CLI no longer exposes the namespace flag for non-admin operations</dt>
+<dd>
+<p>Before this update, the OADP command-line interface (CLI) exposed the global <code>--namespace</code> or <code>-n</code> flag in the help output of all <code>oc oadp nonadmin</code> commands, even though non-admin operations do not support namespace selection because of multi-tenancy boundaries. As a consequence, if you specified the namespace flag during a non-admin backup or restore operation, the CLI ignored the provided value and used the active <code>oc project</code> context instead, potentially creating resources in an unintended namespace.</p>
+<div class="paragraph">
+<p>With this update, the <code>--namespace</code> flag is hidden from all <code>oc oadp nonadmin</code> subcommands so that it is no longer displayed in the help output and does not accept user input for non-admin operations. As a result, non-admin CLI commands operate correctly only within your current project context, which eliminates the risk of namespace mismatch.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7955">OADP-7955</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Wildcard handling for <code>excludedClusterScopedResources</code> no longer causes validation failures</dt>
+<dd>
+<p>Before this update, the OADP Operator incorrectly appended default resources to <code>excludedClusterScopedResources</code> in the <code>NonAdminBackup</code> custom resource (CR) when a wildcard (<code>*</code>) was present. As a consequence, <code>FailedValidation</code> errors occurred when you excluded all cluster-scoped resources. With this update, the Operator correctly handles the wildcard without appending default resources. As a result, validation failures no longer occur when you use a wildcard to exclude cluster-scoped resources.</p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7897">OADP-7897</a></p>
+</div>
+</dd>
+<dt class="hdlist1"><code>VolumePolicy</code> support for phase conditions to allow skipping PVCs</dt>
+<dd>
+<p>Before this update, OADP volume policies lacked the capability to evaluate and filter persistent volume claims (PVCs) based on their lifecycle status phase. As a consequence, backups could trigger unwanted warnings or errors for unbound or pending PVCs that you excluded, such as in scaled-down serverless environments.</p>
+<div class="paragraph">
+<p>With this update, volume policy actions have been improved to natively support the phase condition of PVCs. As a result, you can define custom volume policies in your <code>ConfigMap</code> object to automatically skip pending or unbound PVCs during backup operations. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: volume-policy
+  namespace: velero
+data:
+  policy.yaml: |
+    version: v1
+    volumePolicies:
+    - conditions:
+        pvcPhase: ["Pending", "Lost"]
+      action:
+        type: skip</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-6428">OADP-6428</a></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect5">
+<h6 id="known-issues-1-6-1_review-oadp-release-notes">Known issues</h6>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>CloudStorage</code> bucket creation fails on Google Cloud with WIF authentication</dt>
+<dd>
+<p>When you configure <code>CloudStorage</code> on OpenShift clusters on Google Cloud by using Workload Identity Federation (WIF) authentication, the <code>CloudStorage</code> resource fails to detect that a Google Cloud bucket does not exist. As a consequence, the resource returns a <code>BucketCheckError</code> condition and prevents automatic bucket creation.</p>
+<div class="paragraph">
+<p>To work around this problem, use an existing Google Cloud bucket when configuring <code>CloudStorage</code> on OpenShift clusters on Google Cloud using Workload Identity Federation (WIF) authentication. As a result, the controller skips bucket creation and proceeds with the existing bucket for backup storage.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-8085">OADP-8085</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Non-admin backups of ODF encrypted volumes fail with OADP</dt>
+<dd>
+<p>When the OADP Data Mover backs up an encrypted Red&#160;Hat OpenShift Data Foundation (ODF) volume, it creates a temporary persistent volume claim (PVC) in the <code>openshift-adp</code> namespace. The ceph-csi driver then attempts to fetch the <code>ceph-csi-kms-token</code> secret from the <code>openshift-adp</code> namespace instead of the original application namespace that contains the secret. As a consequence, the <code>NonAdminBackup</code> custom resource (CR) fails with an error similar to the following output:</p>
+<div class="listingblock">
+<div class="content">
+<pre>openshift-adp   2h11m       Warning   ProvisioningFailed     persistentvolumeclaim/NAMESPACE-rh-cf00000c-0000-0000-0000-22abf391t6dr   failed to provision volume with StorageClass "ocs-storagecluster-ceph-rbd-encrypted": rpc error: code = InvalidArgument desc = invalid encryption kms configuration: failed fetching token from openshift-adp/ceph-csi-kms-token: secrets "ceph-csi-kms-token" not found</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To work around this problem, copy <code>ceph-csi-kms-token</code> and the associated Key Management Service (KMS) config map from the application namespace to <code>openshift-adp</code> before running the backup. As a result, the ceph-csi driver can locate the encryption credentials and the backup completes successfully.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/OADP-7972">OADP-7972</a></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 <div class="sect4">
 <h5 id="oadp-1-6-0-release-notes_review-oadp-release-notes">OADP 1.6.0 release notes</h5>
@@ -2983,105 +3381,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The Changing PVC selected-node feature, which allowed overriding the <code>volume.kubernetes.io/selected-node</code> annotation to change the node selected for a persistent volume claim (PVC) during restore, is removed and is no longer supported. You can ensure PVCs are scheduled to the correct node by using the native Kubernetes <code>WaitForFirstConsumer</code> volume binding mode instead.</p>
 <div class="paragraph">
 <p><a href="https://redhat.atlassian.net/browse/OADP-6729">OADP-6729</a></p>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="oadp-1-6-1-release-notes_review-oadp-release-notes">OADP 1.6.1 release notes</h5>
-<div class="paragraph _abstract">
-<p>OpenShift API for Data Protection (OADP) 1.6.1 release notes list resolved and known issues.</p>
-</div>
-<div class="paragraph">
-<p>The following Red Hat Security Advisory (RHSA) is available for OADP 1.6.1:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://access.redhat.com/errata/RHSA-2026:43692">RHSA-2026:43692 - New version of Red&#160;Hat OpenShift API for Data Protection</a></p>
-</li>
-</ul>
-</div>
-<div class="sect5">
-<h6 id="resolved-issues-1-6-1_review-oadp-release-notes">Resolved issues</h6>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">OADP CLI no longer exposes the namespace flag for non-admin operations</dt>
-<dd>
-<p>Before this update, the OADP command-line interface (CLI) exposed the global <code>--namespace</code> or <code>-n</code> flag in the help output of all <code>oc oadp nonadmin</code> commands, even though non-admin operations do not support namespace selection because of multi-tenancy boundaries. As a consequence, if you specified the namespace flag during a non-admin backup or restore operation, the CLI ignored the provided value and used the active <code>oc project</code> context instead, potentially creating resources in an unintended namespace.</p>
-<div class="paragraph">
-<p>With this update, the <code>--namespace</code> flag is hidden from all <code>oc oadp nonadmin</code> subcommands so that it is no longer displayed in the help output and does not accept user input for non-admin operations. As a result, non-admin CLI commands operate correctly only within your current project context, which eliminates the risk of namespace mismatch.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://redhat.atlassian.net/browse/OADP-7955">OADP-7955</a></p>
-</div>
-</dd>
-<dt class="hdlist1">Wildcard handling for <code>excludedClusterScopedResources</code> no longer causes validation failures</dt>
-<dd>
-<p>Before this update, the OADP Operator incorrectly appended default resources to <code>excludedClusterScopedResources</code> in the <code>NonAdminBackup</code> custom resource (CR) when a wildcard (<code>*</code>) was present. As a consequence, <code>FailedValidation</code> errors occurred when you excluded all cluster-scoped resources. With this update, the Operator correctly handles the wildcard without appending default resources. As a result, validation failures no longer occur when you use a wildcard to exclude cluster-scoped resources.</p>
-<div class="paragraph">
-<p><a href="https://redhat.atlassian.net/browse/OADP-7897">OADP-7897</a></p>
-</div>
-</dd>
-<dt class="hdlist1"><code>VolumePolicy</code> support for phase conditions to allow skipping PVCs</dt>
-<dd>
-<p>Before this update, OADP volume policies lacked the capability to evaluate and filter persistent volume claims (PVCs) based on their lifecycle status phase. As a consequence, backups could trigger unwanted warnings or errors for unbound or pending PVCs that you excluded, such as in scaled-down serverless environments.</p>
-<div class="paragraph">
-<p>With this update, volume policy actions have been improved to natively support the phase condition of PVCs. As a result, you can define custom volume policies in your <code>ConfigMap</code> object to automatically skip pending or unbound PVCs during backup operations. For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: volume-policy
-  namespace: velero
-data:
-  policy.yaml: |
-    version: v1
-    volumePolicies:
-    - conditions:
-        pvcPhase: ["Pending", "Lost"]
-      action:
-        type: skip</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="https://redhat.atlassian.net/browse/OADP-6428">OADP-6428</a></p>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect5">
-<h6 id="known-issues-1-6-1_review-oadp-release-notes">Known issues</h6>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>CloudStorage</code> bucket creation fails on Google Cloud with WIF authentication</dt>
-<dd>
-<p>When you configure <code>CloudStorage</code> on OpenShift clusters on Google Cloud by using Workload Identity Federation (WIF) authentication, the <code>CloudStorage</code> resource fails to detect that a Google Cloud bucket does not exist. As a consequence, the resource returns a <code>BucketCheckError</code> condition and prevents automatic bucket creation.</p>
-<div class="paragraph">
-<p>To work around this problem, use an existing Google Cloud bucket when configuring <code>CloudStorage</code> on OpenShift clusters on Google Cloud using Workload Identity Federation (WIF) authentication. As a result, the controller skips bucket creation and proceeds with the existing bucket for backup storage.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://redhat.atlassian.net/browse/OADP-8085">OADP-8085</a></p>
-</div>
-</dd>
-<dt class="hdlist1">Non-admin backups of ODF encrypted volumes fail with OADP</dt>
-<dd>
-<p>When the OADP Data Mover backs up an encrypted Red&#160;Hat OpenShift Data Foundation (ODF) volume, it creates a temporary persistent volume claim (PVC) in the <code>openshift-adp</code> namespace. The ceph-csi driver then attempts to fetch the <code>ceph-csi-kms-token</code> secret from the <code>openshift-adp</code> namespace instead of the original application namespace that contains the secret. As a consequence, the <code>NonAdminBackup</code> custom resource (CR) fails with an error similar to the following output:</p>
-<div class="listingblock">
-<div class="content">
-<pre>openshift-adp   2h11m       Warning   ProvisioningFailed     persistentvolumeclaim/NAMESPACE-rh-cf00000c-0000-0000-0000-22abf391t6dr   failed to provision volume with StorageClass "ocs-storagecluster-ceph-rbd-encrypted": rpc error: code = InvalidArgument desc = invalid encryption kms configuration: failed fetching token from openshift-adp/ceph-csi-kms-token: secrets "ceph-csi-kms-token" not found</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To work around this problem, copy <code>ceph-csi-kms-token</code> and the associated Key Management Service (KMS) config map from the application namespace to <code>openshift-adp</code> before running the backup. As a result, the ceph-csi driver can locate the encryption credentials and the backup completes successfully.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://redhat.atlassian.net/browse/OADP-7972">OADP-7972</a></p>
 </div>
 </dd>
 </dl>
@@ -3911,7 +4210,7 @@ data:
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://velero.io/docs/v1.16/">Velero 1.16 documentation</a></p>
+<p><a href="https://velero.io/docs/v1.18/">Velero 1.18 documentation</a></p>
 </li>
 </ul>
 </div>
@@ -9980,7 +10279,7 @@ spec:
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://velero.io/docs/v1.16/">Velero 1.16 documentation</a></p>
+<p><a href="https://velero.io/docs/v1.18/">Velero 1.18 documentation</a></p>
 </li>
 </ul>
 </div>
@@ -10152,7 +10451,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 659. Flags for the <code>oc oadp completion install</code> command</caption>
+<caption class="title">Table 661. Flags for the <code>oc oadp completion install</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10240,7 +10539,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 660. Flags for the <code>oc oadp backup create</code> command</caption>
+<caption class="title">Table 662. Flags for the <code>oc oadp backup create</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10339,7 +10638,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 661. Flags for the <code>oc oadp backup get</code> command</caption>
+<caption class="title">Table 663. Flags for the <code>oc oadp backup get</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10369,7 +10668,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 662. Flags for the <code>oc oadp backup describe</code> command</caption>
+<caption class="title">Table 664. Flags for the <code>oc oadp backup describe</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10421,7 +10720,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 663. Flags for the <code>oc oadp backup delete</code> command</caption>
+<caption class="title">Table 665. Flags for the <code>oc oadp backup delete</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10473,7 +10772,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 664. Flags for the <code>oc oadp restore create</code> command</caption>
+<caption class="title">Table 666. Flags for the <code>oc oadp restore create</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10559,7 +10858,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 665. Flags for the <code>oc oadp restore get</code> command</caption>
+<caption class="title">Table 667. Flags for the <code>oc oadp restore get</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10589,7 +10888,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 666. Flags for the <code>oc oadp restore describe</code> command</caption>
+<caption class="title">Table 668. Flags for the <code>oc oadp restore describe</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10630,7 +10929,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 667. Flags for the <code>oc oadp restore delete</code> command</caption>
+<caption class="title">Table 669. Flags for the <code>oc oadp restore delete</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10679,7 +10978,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 668. Flags for the <code>oc oadp schedule create</code> command</caption>
+<caption class="title">Table 670. Flags for the <code>oc oadp schedule create</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10770,7 +11069,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 669. Flags for the <code>oc oadp schedule get</code> command</caption>
+<caption class="title">Table 671. Flags for the <code>oc oadp schedule get</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10811,7 +11110,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 670. Flags for the <code>oc oadp schedule delete</code> command</caption>
+<caption class="title">Table 672. Flags for the <code>oc oadp schedule delete</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10860,7 +11159,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 671. Flags for the <code>oc oadp backup-location create</code> command</caption>
+<caption class="title">Table 673. Flags for the <code>oc oadp backup-location create</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10924,7 +11223,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 672. Flags for the <code>oc oadp backup-location get</code> command</caption>
+<caption class="title">Table 674. Flags for the <code>oc oadp backup-location get</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -10965,7 +11264,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 673. Flags for the <code>oc oadp backup-location delete</code> command</caption>
+<caption class="title">Table 675. Flags for the <code>oc oadp backup-location delete</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11014,7 +11313,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 674. Flags for the <code>oc oadp snapshot-location create</code> command</caption>
+<caption class="title">Table 676. Flags for the <code>oc oadp snapshot-location create</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11060,7 +11359,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 675. Flags for the <code>oc oadp snapshot-location get</code> command</caption>
+<caption class="title">Table 677. Flags for the <code>oc oadp snapshot-location get</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11101,7 +11400,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 676. Flags for the <code>oc oadp snapshot-location delete</code> command</caption>
+<caption class="title">Table 678. Flags for the <code>oc oadp snapshot-location delete</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11153,7 +11452,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 677. Flags for the <code>oc oadp nabsl-request get</code> command</caption>
+<caption class="title">Table 679. Flags for the <code>oc oadp nabsl-request get</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11200,7 +11499,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 678. Flags for the <code>oc oadp nabsl-request approve</code> command</caption>
+<caption class="title">Table 680. Flags for the <code>oc oadp nabsl-request approve</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11239,7 +11538,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 679. Flags for the <code>oc oadp nabsl-request reject</code> command</caption>
+<caption class="title">Table 681. Flags for the <code>oc oadp nabsl-request reject</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11298,7 +11597,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 680. Flags for the <code>oc oadp must-gather</code> command</caption>
+<caption class="title">Table 682. Flags for the <code>oc oadp must-gather</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11453,7 +11752,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 681. Flags for the <code>oc oadp nonadmin backup create</code> command</caption>
+<caption class="title">Table 683. Flags for the <code>oc oadp nonadmin backup create</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11553,7 +11852,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 682. Flags for the <code>oc oadp nonadmin backup get</code> command</caption>
+<caption class="title">Table 684. Flags for the <code>oc oadp nonadmin backup get</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11583,7 +11882,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 683. Flags for the <code>oc oadp nonadmin backup describe</code> command</caption>
+<caption class="title">Table 685. Flags for the <code>oc oadp nonadmin backup describe</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11617,7 +11916,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 684. Flags for the <code>oc oadp nonadmin backup logs</code> command</caption>
+<caption class="title">Table 686. Flags for the <code>oc oadp nonadmin backup logs</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11661,7 +11960,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 685. Flags for the <code>oc oadp nonadmin backup delete</code> command</caption>
+<caption class="title">Table 687. Flags for the <code>oc oadp nonadmin backup delete</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11740,7 +12039,7 @@ spec:
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 686. Flags for the <code>oc oadp nonadmin restore create</code> command</caption>
+<caption class="title">Table 688. Flags for the <code>oc oadp nonadmin restore create</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11810,7 +12109,7 @@ spec:
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 687. Flags for the <code>oc oadp nonadmin restore get</code> command</caption>
+<caption class="title">Table 689. Flags for the <code>oc oadp nonadmin restore get</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11851,7 +12150,7 @@ spec:
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 688. Flags for the <code>oc oadp nonadmin restore describe</code> command</caption>
+<caption class="title">Table 690. Flags for the <code>oc oadp nonadmin restore describe</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11896,7 +12195,7 @@ spec:
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 689. Flags for the <code>oc oadp nonadmin restore logs</code> command</caption>
+<caption class="title">Table 691. Flags for the <code>oc oadp nonadmin restore logs</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -11951,7 +12250,7 @@ spec:
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 690. Flags for the <code>oc oadp nonadmin restore delete</code> command</caption>
+<caption class="title">Table 692. Flags for the <code>oc oadp nonadmin restore delete</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -12044,7 +12343,7 @@ spec:
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 691. Flags for the <code>oc oadp nonadmin bsl create</code> command</caption>
+<caption class="title">Table 693. Flags for the <code>oc oadp nonadmin bsl create</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -12149,7 +12448,7 @@ spec:
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 692. Flags for the <code>oc oadp nonadmin bsl get</code> command</caption>
+<caption class="title">Table 694. Flags for the <code>oc oadp nonadmin bsl get</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -12757,7 +13056,7 @@ spec:
 <li>
 <p>Namespace partitioning: To keep data integrity, OADP uses namespace-level isolation when processing parallel backups. Two backups cannot run simultaneously if they share any included namespaces.</p>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 693. Parallel backup execution examples</caption>
+<caption class="title">Table 695. Parallel backup execution examples</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -17727,7 +18026,7 @@ spec:
 <p>OADP supports incremental backups of <code>block</code> and <code>Filesystem</code> persistent volumes for both containerized, and OpenShift Virtualization workloads. The following table summarizes the support for File System Backup (FSB), Container Storage Interface (CSI), and CSI Data Mover:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 694. OADP backup support matrix for containerized workloads</caption>
+<caption class="title">Table 696. OADP backup support matrix for containerized workloads</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -17762,7 +18061,7 @@ spec:
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 695. OADP backup support matrix for OpenShift Virtualization workloads</caption>
+<caption class="title">Table 697. OADP backup support matrix for OpenShift Virtualization workloads</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -18632,7 +18931,7 @@ Format version:      3</code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>The latest version of the OADP Operator installs Velero 1.16.</p>
+<p>The latest version of the OADP Operator installs Velero 1.18.</p>
 </div>
 </td>
 </tr>
@@ -19112,7 +19411,7 @@ spec:
 <p>The OADP VMFR feature uses the following custom resources (CRs) to perform file-level restore operations:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 696. Custom resources</caption>
+<caption class="title">Table 698. Custom resources</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -19141,7 +19440,7 @@ spec:
 <p>Review the status phases of <code>VirtualMachineBackupsDiscovery</code> (VMBD) and <code>VirtualMachineFileRestore</code> (VMFR) custom resources (CRs) to track the progress of file-level restore operations. This helps you monitor and troubleshoot VMFR requests.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 697. VirtualMachineBackupsDiscovery phases</caption>
+<caption class="title">Table 699. VirtualMachineBackupsDiscovery phases</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -19176,7 +19475,7 @@ spec:
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 698. VirtualMachineFileRestore phases</caption>
+<caption class="title">Table 700. VirtualMachineFileRestore phases</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -19215,7 +19514,7 @@ spec:
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 699. PVC restore state values</caption>
+<caption class="title">Table 701. PVC restore state values</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -21039,7 +21338,7 @@ spec:
 <div class="sect5">
 <h6 id="_environment_variables">Environment variables</h6>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 700. Credential environment variables</caption>
+<caption class="title">Table 702. Credential environment variables</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -21070,7 +21369,7 @@ spec:
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 701. Configuration environment variables</caption>
+<caption class="title">Table 703. Configuration environment variables</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -21102,7 +21401,7 @@ spec:
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 702. Behavior environment variables</caption>
+<caption class="title">Table 704. Behavior environment variables</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -21139,7 +21438,7 @@ spec:
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 703. Logging environment variables</caption>
+<caption class="title">Table 705. Logging environment variables</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -21174,7 +21473,7 @@ spec:
 <div class="sect5">
 <h6 id="_file_locations">File locations</h6>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 704. Default file locations</caption>
+<caption class="title">Table 706. Default file locations</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -21207,7 +21506,7 @@ spec:
 <p>VMDP is based on Kopia and uses the same repository format. Repositories are fully compatible between the two tools.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 705. Command mapping between VMDP and Kopia</caption>
+<caption class="title">Table 707. Command mapping between VMDP and Kopia</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -21250,7 +21549,7 @@ spec:
 <div class="sect5">
 <h6 id="_s3_compatible_storage">S3-compatible storage</h6>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 706. S3 storage options</caption>
+<caption class="title">Table 708. S3 storage options</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -21339,7 +21638,7 @@ spec:
 <div class="sect5">
 <h6 id="_filesystem_storage">Filesystem storage</h6>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 707. Filesystem storage options</caption>
+<caption class="title">Table 709. Filesystem storage options</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -21391,7 +21690,7 @@ spec:
 <p>VMDP is built for <a href="https://access.redhat.com/articles/4234591">OpenShift Virtualization certified guest operating systems</a> on the following platforms:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 708. Supported guest operating systems</caption>
+<caption class="title">Table 710. Supported guest operating systems</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -21719,7 +22018,7 @@ Flags:
 <p>Review the available commands for managing backup storage locations (BSL) with the virtual machine data protection (VMDP) command-line interface (CLI). This helps you to connect, disconnect, and manage your BSL connections.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 709. BSL management commands</caption>
+<caption class="title">Table 711. BSL management commands</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -22125,7 +22424,7 @@ Flags:
 <p>The OADP Self-Service feature has the following new custom resources (CRs) to perform the backup and restore operations for a namespace admin user:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 710. Custom resources</caption>
+<caption class="title">Table 712. Custom resources</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -22269,7 +22568,7 @@ Flags:
 <p>The phase of the CRs only progress forward. Once a phase transitions to the next phase, it cannot revert to a previous phase.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 711. Phases</caption>
+<caption class="title">Table 713. Phases</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -23710,7 +24009,7 @@ status:
 <p>You can download the following NADR resources:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 712. NADR resources</caption>
+<caption class="title">Table 714. NADR resources</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -25081,7 +25380,7 @@ spec:
 <p>Review the following table for a list of <code>Velero</code> metrics provided by OADP together with their <a href="https://prometheus.io/docs/concepts/metric_types/">Types</a>:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 713. Velero metrics</caption>
+<caption class="title">Table 715. Velero metrics</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -25582,7 +25881,7 @@ status:
 <p>Review the specification fields available in the <code>DataProtectionTest</code> (DPT) custom resource (CR) to configure backup location, upload speed tests, CSI volume snapshot tests, and other options. This helps you customize the DPT CR to validate your specific OADP configuration requirements.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 714. DPT CR spec fields</caption>
+<caption class="title">Table 716. DPT CR spec fields</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -25635,7 +25934,7 @@ status:
 <p>Review the status fields in the <code>DataProtectionTest</code> (DPT) custom resource (CR) to monitor test progress, upload speed results, bucket metadata, and snapshot test outcomes. This helps you interpret the DPT CR results and identify any issues with your OADP configuration.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 715. DPT CR status fields</caption>
+<caption class="title">Table 717. DPT CR status fields</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -25996,7 +26295,7 @@ spec:
 <p>Troubleshoot common <code>DataProtectionTest</code> (DPT) custom resource (CR) issues, such as stuck progress states, upload test failures, and snapshot test failures. This helps you identify and resolve problems with your DPT configuration.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 716. DPT CR troubleshooting</caption>
+<caption class="title">Table 718. DPT CR troubleshooting</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26106,7 +26405,7 @@ spec:
 <p>The following are <code>DataProtectionApplicationSpec</code> OADP APIs:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 717. DataProtectionApplicationSpec</caption>
+<caption class="title">Table 719. DataProtectionApplicationSpec</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26181,7 +26480,7 @@ spec:
 <p>Use the <code>BackupLocation</code> OADP API type to define where OADP stores backups in Red&#160;Hat OpenShift Container Platform. You can specify a Velero backup storage location or an automatically provisioned cloud storage bucket.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 718. BackupLocation</caption>
+<caption class="title">Table 720. BackupLocation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26239,7 +26538,7 @@ spec:
 <p>Use the <code>SnapshotLocation</code> OADP API type to define where OADP stores volume snapshots in Red&#160;Hat OpenShift Container Platform. It uses the Velero <code>VolumeSnapshotLocationSpec</code> to specify the snapshot storage backend.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 719. SnapshotLocation</caption>
+<caption class="title">Table 721. SnapshotLocation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26275,7 +26574,7 @@ spec:
 <p>Use the <code>ApplicationConfig</code> OADP API type to define Velero and Restic server configuration for OADP backup and restore operations in Red&#160;Hat OpenShift Container Platform.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 720. ApplicationConfig</caption>
+<caption class="title">Table 722. ApplicationConfig</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26316,7 +26615,7 @@ spec:
 <p>Use the <code>VeleroConfig</code> OADP API type to configure the Velero server instance for OADP in Red&#160;Hat OpenShift Container Platform. It controls plugins, feature flags, pod configuration, and logging for the Velero server.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 721. VeleroConfig</caption>
+<caption class="title">Table 723. VeleroConfig</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26382,7 +26681,7 @@ spec:
 <p>Use the <code>ResticConfig</code> OADP API type to enable and configure Restic-based backup and restore in Red&#160;Hat OpenShift Container Platform. It defines the Restic timeout, supplemental groups, and pod configuration.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 722. ResticConfig</caption>
+<caption class="title">Table 724. ResticConfig</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26433,7 +26732,7 @@ spec:
 <p>Use the <code>PodConfig</code> OADP API type to configure pod-level settings for Velero and Restic pods in Red&#160;Hat OpenShift Container Platform. It defines node selectors, tolerations, resource limits, and labels for backup and restore pods.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 723. PodConfig</caption>
+<caption class="title">Table 725. PodConfig</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26476,7 +26775,7 @@ spec:
 <p>Use the <code>Features</code> OADP API type to configure optional OADP features in Red&#160;Hat OpenShift Container Platform. It defines the Data Mover configuration for volume snapshot data movement.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 724. Features</caption>
+<caption class="title">Table 726. Features</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26512,7 +26811,7 @@ spec:
 <p>Use the <code>DataMover</code> OADP API type to enable and configure the volume snapshot mover controller and CSI Data Mover plugin in Red&#160;Hat OpenShift Container Platform. It controls data movement for volume snapshot backup and restore operations.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 725. DataMover</caption>
+<caption class="title">Table 727. DataMover</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26550,7 +26849,7 @@ spec:
 <p>Use the <code>CustomPlugin</code> OADP API type to define the name and container image of a custom Velero plugin for OADP in Red&#160;Hat OpenShift Container Platform.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 726. CustomPlugin</caption>
+<caption class="title">Table 728. CustomPlugin</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -26773,7 +27072,7 @@ spec:
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Open a browser and navigate to <a href="https://velero.io/docs/v1.16/basic-install/#install-the-cli">"Install the CLI" on the Velero website</a>.</p>
+<p>Open a browser and navigate to <a href="https://velero.io/docs/v1.18/basic-install/#install-the-cli">"Install the CLI" on the Velero website</a>.</p>
 </li>
 <li>
 <p>Follow the appropriate procedure for macOS, GitHub, or Windows.</p>
@@ -26961,7 +27260,7 @@ spec:
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 727. Flags for the <code>oc oadp must-gather</code> command</caption>
+<caption class="title">Table 729. Flags for the <code>oc oadp must-gather</code> command</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -28287,7 +28586,7 @@ runtime error: index out of range with length 1, stack trace: goroutine 94…</c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 12:31:09 -0400
+Last updated 2026-10-29 11:11:59 -0400
 </div>
 </div>
 <style>
